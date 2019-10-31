@@ -3,4 +3,4 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 #opensourcealltheway
 
 
-![image](extraFigures/epfl.png =200x200)
+![image](extraFigures/epfl.png)
