@@ -1,4 +1,4 @@
-# epflSemesterOne 
+# epflSemesterOne | <img src="extraFigures/epfl.png" width="100">
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convienience I have added the direct links below:
 
 1. [ SemesterOne-2019](#sm1)
@@ -11,10 +11,10 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 > Analysis 1: https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/analysis/ch1.pdf
 
-> Programming in Java: 
+> Programming in Java: https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/ch1.pdf
 *Physics course has been omitted*
 
 
 
 
-<img src="extraFigures/epfl.png" width="100">
+
