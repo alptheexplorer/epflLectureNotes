@@ -1,0 +1,863 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.9.10)  1 OCT 2019 14:13
+entering extended mode
+**./ch1.tex
+(ch1.tex
+LaTeX2e <2018-12-01>
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/a
+rticle.cls"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/s
+ize10.clo"
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/i
+nputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmat
+h/amsmath.sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmat
+h/amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmat
+h/amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmat
+h/amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmat
+h/amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tcolor
+box/tcolorbox.sty"
+Package: tcolorbox 2019/09/19 version 4.21 text color boxes
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/ba
+siclayer/pgf.sty"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/ut
+ilities/pgfrcs.sty"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfutil-common.tex"
+\pgfutil@everybye=\toks21
+\pgfutil@tempdima=\dimen112
+\pgfutil@tempdimb=\dimen113
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfutil-common-lists.tex"))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfutil-latex.def"
+\pgfutil@abb=\box29
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ms/eve
+ryshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfrcs.code.tex"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+pgf.revision.tex")
+Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
+))
+Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/ba
+siclayer/pgfcore.sty"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs/graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs/keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs/graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs/trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs-cfg/graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs-def/pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/sy
+stemlayer/pgfsys.sty"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgfsys.code.tex"
+Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+utilities/pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks25
+))
+\pgf@x=\dimen116
+\pgf@y=\dimen117
+\pgf@xa=\dimen118
+\pgf@ya=\dimen119
+\pgf@xb=\dimen120
+\pgf@yb=\dimen121
+\pgf@xc=\dimen122
+\pgf@yc=\dimen123
+\pgf@xd=\dimen124
+\pgf@yd=\dimen125
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count100
+\c@pgf@countb=\count101
+\c@pgf@countc=\count102
+\c@pgf@countd=\count103
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count104
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgf.cfg"
+File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2019/08/03 v3.1.4b (3.1.4b)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
+)))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfsyssoftpath@smallbuffer@items=\count105
+\pgfsyssoftpath@bigbuffer@items=\count106
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+systemlayer/pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor
+/xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphi
+cs-cfg/color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcore.code.tex"
+Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmath.code.tex"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathcalc.code.tex"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathutil.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen126
+\pgfmath@count=\count107
+\pgfmath@box=\box30
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.code.tex"
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.basic.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.trigonometric.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.random.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.comparison.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.base.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.round.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.misc.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfunctions.integerarithmetics.code.tex")))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count108
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+math/pgfint.code.tex")
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@picminx=\dimen127
+\pgf@picmaxx=\dimen128
+\pgf@picminy=\dimen129
+\pgf@picmaxy=\dimen130
+\pgf@pathminx=\dimen131
+\pgf@pathmaxx=\dimen132
+\pgf@pathminy=\dimen133
+\pgf@pathmaxy=\dimen134
+\pgf@xx=\dimen135
+\pgf@xy=\dimen136
+\pgf@yx=\dimen137
+\pgf@yy=\dimen138
+\pgf@zx=\dimen139
+\pgf@zy=\dimen140
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@path@lastx=\dimen141
+\pgf@path@lasty=\dimen142
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@shorten@end@additional=\dimen143
+\pgf@shorten@start@additional=\dimen144
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count109
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgflinewidth=\dimen145
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@pt@x=\dimen146
+\pgf@pt@y=\dimen147
+\pgf@pt@temp=\dimen148
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfarrowsep=\dimen149
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@max=\dimen150
+\pgf@sys@shading@range@num=\count110
+\pgf@shadingcount=\count111
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfexternal@startupbox=\box34
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+basiclayer/pgfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+modules/pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfnodeparttextbox=\box35
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/
+modules/pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/co
+mpatibility/pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@nodesepstart=\dimen151
+\pgf@nodesepend=\dimen152
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/co
+mpatibility/pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/
+verbatim.sty"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks32
+\verbatim@line=\toks33
+\verbatim@in@stream=\read2
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/enviro
+n/environ.sty"
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/trimsp
+aces/trimspaces.sty"
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolb
+ox/etoolbox.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count112
+)
+\tcb@titlebox=\box36
+\tcb@upperbox=\box37
+\tcb@lowerbox=\box38
+\tcb@phantombox=\box39
+\c@tcbbreakpart=\count113
+\c@tcblayer=\count114
+\tcolorbox@number=\count115
+\tcb@temp=\box40
+\tcb@temp=\box41
+\tcb@temp=\box42
+\tcb@temp=\box43
+\tcb@out=\write4
+\tcb@record@out=\write5
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfon
+ts/amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfon
+ts/amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amscls
+/amsthm.sty"
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks34
+\thm@bodyfont=\toks35
+\thm@headfont=\toks36
+\thm@notefont=\toks37
+\thm@headpunct=\toks38
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks39
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geomet
+ry/geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/ifpdf.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ifxe
+tex/ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count116
+\Gm@cntv=\count117
+\c@Gm@tempcnt=\count118
+\Gm@bindingoffset=\dimen153
+\Gm@wd@mp=\dimen154
+\Gm@odd@mp=\dimen155
+\Gm@even@mp=\dimen156
+\Gm@layoutwidth=\dimen157
+\Gm@layoutheight=\dimen158
+\Gm@layouthoffset=\dimen159
+\Gm@layoutvoffset=\dimen160
+\Gm@dimlist=\toks40
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geomet
+ry/geometry.cfg"))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fancyh
+dr/fancyhdr.sty"
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip49
+\f@nch@O@elh=\skip50
+\f@nch@O@erh=\skip51
+\f@nch@O@olh=\skip52
+\f@nch@O@orh=\skip53
+\f@nch@O@elf=\skip54
+\f@nch@O@erf=\skip55
+\f@nch@O@olf=\skip56
+\f@nch@O@orf=\skip57
+)
+\c@thm=\count119
+\c@property=\count120
+\c@cor=\count121
+
+No file ch1.aux.
+\openout1 = `ch1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+ABD: EveryShipout initializing macros
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/context/base
+/mkii/supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count122
+\scratchdimen=\dimen161
+\scratchbox=\box44
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen162
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks42
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/oberdi
+ek/epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/oberdi
+ek/grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/oberdi
+ek/kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ober
+diek/pdftexcmds.sty"
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(78.24507pt, 457.80486pt, 78.24507pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=457.80486pt
+* \textheight=652.70622pt
+* \oddsidemargin=5.97508pt
+* \evensidemargin=5.97508pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfon
+ts/umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfon
+ts/umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
+
+("/Users/Alp/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/o
+mscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 
+     
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.84 
+     
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.84 
+     
+? 
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \end{equation*}
+                    
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.85 \end{equation*}
+                    
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.85 \end{equation*}
+                    
+? 
+[1
+
+{/Users/Alp/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/pdftex
+.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+
+! LaTeX Error: Environment example undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \begin{example}
+                    
+? 
+
+! LaTeX Error: \begin{document} ended by \end{example}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.109 \end{example}
+                   
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 
+      
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.135 \begin{bmatrix}
+                     
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.137 \end{bmatrix}
+                   
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 
+      
+? 
+
+LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/linearGauss.png' not
+ found on input line 146.
+
+
+! Package pdftex.def Error: File `epflSemesterOne/linearAlgebra/figures/linearG
+auss.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146 ...ne/linearAlgebra/figures/linearGauss.png}
+                                                  
+? 
+[2]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 T
+       he most common vector space is that of $\mathbb{R}^{n}$. It's vector ...
+
+? 
+[3] [4]
+
+LaTeX Warning: Reference `comb' on page 5 undefined on input line 316.
+
+
+! Package amsmath Error: \tag not allowed here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329     \tag
+              *{\qedhere}
+? 
+[5] (ch1.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12902 strings out of 494859
+ 256534 string characters out of 3176686
+ 308049 words of memory out of 3000000
+ 16305 multiletter control sequences out of 15000+200000
+ 12017 words of font info for 47 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 54i,16n,73p,828b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
+</Users/Alp/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb></Users/Alp/Library/Application Support/MiKTeX/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/Alp/Library/Applica
+tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+Users/Alp/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></Users/Alp/Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/Alp/Library/Application 
+Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/
+Alp/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></Users/Alp/Library/Application Support/MiKTeX/texmfs/install/f
+onts/type1/public/amsfonts/cm/cmr17.pfb></Users/Alp/Library/Application Support
+/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/Alp/Libr
+ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></Users/Alp/Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></Users/Alp/Library/Application Support/MiKTe
+X/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/Alp/Library/
+Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb></Users/Alp/Library/Application Support/MiKTeX/texmfs/install/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ch1.pdf (5 pages, 185059 bytes).
+PDF statistics:
+ 77 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+
