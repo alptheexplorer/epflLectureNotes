@@ -8,13 +8,13 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 <a name="sm1"></a>
 ## SemesterOne-2019
-> Linear Algebra: [latest linear alg. notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/linearAlgebra/linear.pdf)
+> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/linearAlgebra/linear.pdf)
 
-> Advanced information and computation: https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/advancedComputation/AICCv0.6.pdf
+> Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/advancedComputation/aicc.pdf)
 
-> Analysis 1: https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/analysis/ch1.pdf
+> Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/analysis/analysis.pdf)
 
-> Programming in Java: https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/ch1.pdf
+> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/java.pdf)
 *Physics course has been omitted*
 
 
