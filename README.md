@@ -3,4 +3,4 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 #opensourcealltheway
 
 
-![alt text](extraFigures/epfl.png) :scale 60%
+![](extraFigures/epfl.png =200x200)
