@@ -1,4 +1,4 @@
-<img src="extraFigures/epfl.png", width="100">
+<img src="extraFigures/epfl.png" width="100">
 
 # epflSemesterOne  
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convienience I have added the direct links below:
