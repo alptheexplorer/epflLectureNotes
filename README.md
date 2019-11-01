@@ -8,7 +8,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 <a name="sm1"></a>
 ## SemesterOne-2019
-> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/linearAlgebra/linear.pdf)
+> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/linearAlgebra/linearAlgebra.pdf)
 
 > Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/advancedComputation/aicc.pdf)
 
