@@ -6,7 +6,7 @@ cd epflLectureNotes/epflLectureNotes
 
 git pull origin
 
-pdflatex -interaction=nonstopmode analysis/analysis.tex
+pdflatex -interaction=nonstopmode /analysis/analysis.tex
 
 
 
