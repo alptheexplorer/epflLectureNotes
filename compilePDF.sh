@@ -6,9 +6,7 @@ cd epflLectureNotes/epflLectureNotes
 
 git pull origin
 
-pdflatex -interaction=nonstopmode analysis/analysis.tex
-pdflatex -interaction=nonstopmode advancedComputation/aicc.tex
-pdflatex -interaction=nonstopmode linearAlgebra/linearAlgebra.tex
+pdflatex -interaction=nonstopmode -aux-directory=<auxFiles> -output-directory=<analysis> analysis/analysis.tex
 
 git add .
 git commit -m "pdf update"
