@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.10.13)  1 NOV 2019 01:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.10.13)  1 NOV 2019 01:33
 entering extended mode
 **./linearAlgebra/ch1.tex
 (linearAlgebra/ch1.tex
@@ -818,7 +818,10 @@ Type  H <return>  for immediate help.
                                                   
 l.67 
      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
@@ -829,13 +832,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--81
                 $
 l.99 
      
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 ! Display math should end with $$.
 <to be read again> 
                    \par 
 l.99 
      
-? 
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -845,19 +852,29 @@ Type  H <return>  for immediate help.
                                                   
 l.100 \end{equation*}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.100 \end{equation*}
                      
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
 l.100 \end{equation*}
                      
-? 
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
@@ -877,7 +894,10 @@ Type  H <return>  for immediate help.
                                                   
 l.110 \begin{example}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [2
 
 ]
@@ -890,7 +910,10 @@ Type  H <return>  for immediate help.
                                                   
 l.124 \end{example}
                    
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -900,7 +923,10 @@ Type  H <return>  for immediate help.
                                                   
 l.142 
       
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
@@ -911,13 +937,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--145
                 $
 l.150 \begin{bmatrix}
                      
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.152 \end{bmatrix}
                    
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -927,7 +960,10 @@ Type  H <return>  for immediate help.
                                                   
 l.156 
       
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/linearGauss.png' not
  found on input line 161.
@@ -942,7 +978,9 @@ Type  H <return>  for immediate help.
                                                   
 l.161 ...ne/linearAlgebra/figures/linearGauss.png}
                                                   
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [3]
 
 ! LaTeX Error: There's no line here to end.
@@ -954,7 +992,10 @@ Type  H <return>  for immediate help.
 l.235 T
        he most common vector space is that of $\mathbb{R}^{n}$. It's vector ...
 
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [4] [5]
 
 LaTeX Warning: Reference `comb' on page 6 undefined on input line 331.
@@ -968,7 +1009,10 @@ Type  H <return>  for immediate help.
                                                   
 l.344     \tag
               *{\qedhere}
-? 
+\tag cannot be used at this point. If you don't understand why
+you should consult the documentation.
+But don't worry: just continue, and I'll forget what happened. 
+
 
 ! Package amsmath Error: \tag not allowed here.
 
@@ -978,7 +1022,10 @@ Type  H <return>  for immediate help.
                                                   
 l.375  \tag
            *{\qedhere}
-? 
+\tag cannot be used at this point. If you don't understand why
+you should consult the documentation.
+But don't worry: just continue, and I'll forget what happened. 
+
 [6]
 Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
@@ -998,7 +1045,10 @@ Type  H <return>  for immediate help.
                                                   
 l.422 \begin{example}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: \begin{document} ended by \end{example}.
 
@@ -1008,7 +1058,10 @@ Type  H <return>  for immediate help.
                                                   
 l.450 \end{example}
                    
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [7]
 
 ! LaTeX Error: Environment remark undefined.
@@ -1019,7 +1072,10 @@ Type  H <return>  for immediate help.
                                                   
 l.495 \begin{remark}
                     
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: \begin{document} ended by \end{remark}.
 
@@ -1029,7 +1085,10 @@ Type  H <return>  for immediate help.
                                                   
 l.497 \end{remark}
                   
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 499--502
 
@@ -1041,37 +1100,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 499--502
                 $
 l.529 Consider the matrix $E_{1}=$\begin{bmatrix}
                                                  
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.533 \end{bmatrix}
                     and $A=$ $E_{1}=$\begin{bmatrix}
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.533 ...bmatrix} and $A=$ $E_{1}=$\begin{bmatrix}
                                                   
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.537 \end{bmatrix}
                     Then notice that $E_{1}A=$ $E_{1}=$ \begin{bmatrix}
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.537 ...e that $E_{1}A=$ $E_{1}=$ \begin{bmatrix}
                                                   
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.541 \end{bmatrix}
                    
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 
 ! Package pgfkeys Error: I do not know the key '/tcb/drop shadow' and I am goin
 g to ignore it. Perhaps you misspelled it.
@@ -1082,7 +1162,11 @@ Type  H <return>  for immediate help.
                                                   
 l.548 ...n inverse matrices),lower separated=true]
                                                   
-? 
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
 
 ! Package keyval Error: valign undefined.
 
@@ -1092,7 +1176,9 @@ Type  H <return>  for immediate help.
                                                   
 l.550 ...One/linearAlgebra/figures/invertible.JPG}
                                                   
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/invertible.JPG' not 
 found on input line 550.
@@ -1107,7 +1193,9 @@ Type  H <return>  for immediate help.
                                                   
 l.550 ...One/linearAlgebra/figures/invertible.JPG}
                                                   
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [9]
 
 LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/proof.JPG' not found
@@ -1123,7 +1211,9 @@ Type  H <return>  for immediate help.
                                                   
 l.557 ...esterOne/linearAlgebra/figures/proof.JPG}
                                                   
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [10
 
 ]
@@ -1136,7 +1226,10 @@ Type  H <return>  for immediate help.
                                                   
 l.633 A
        nd now an important theorem is the following:
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [11
 
 ]
@@ -1149,7 +1242,10 @@ Type  H <return>  for immediate help.
                                                   
 l.677 
       
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 LaTeX Warning: Reference `1' on page 12 undefined on input line 678.
 
@@ -1171,7 +1267,10 @@ Type  H <return>  for immediate help.
                                                   
 l.734 \begin{example}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: \begin{document} ended by \end{example}.
 
@@ -1181,7 +1280,10 @@ Type  H <return>  for immediate help.
                                                   
 l.740 \end{example}
                    
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 742--744
 
@@ -1201,7 +1303,10 @@ Type  H <return>  for immediate help.
                                                   
 l.773 
       
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [13]
 Underfull \hbox (badness 10000) in paragraph at lines 786--788
 
