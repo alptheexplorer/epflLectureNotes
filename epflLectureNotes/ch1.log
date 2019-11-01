@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.10.13)  1 NOV 2019 01:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.10.13)  1 NOV 2019 01:30
 entering extended mode
-**./ch1.tex
-(ch1.tex
+**./linearAlgebra/ch1.tex
+(linearAlgebra/ch1.tex
 LaTeX2e <2018-12-01>
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -420,65 +420,187 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip48
 \dth@everypar=\toks39
 )
-(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/mathtools\empheq.sty
-Package: empheq 2017/03/31 v2.15 Emphasizing equations
+(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/physics\physics.sty
+Package: physics 
 
-(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/mathtools\mhsetup.sty
-Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
-)
-(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/mathtools\mathtools.sty
-Package: mathtools 2019/07/31 v1.22 mathematical typesetting tools
+(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xparse.s
+ty (C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
+Package: expl3 2019-10-27 L3 programming layer (loader) 
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count116
-\calc@Bcount=\count117
-\calc@Adimen=\dimen153
-\calc@Bdimen=\dimen154
-\calc@Askip=\skip49
-\calc@Bskip=\skip50
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count118
-\calc@Cskip=\skip51
-)
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count119
-\l_MT_multwidth_dim=\dimen155
-\origjot=\skip52
-\l_MT_shortvdotswithinadjustabove_dim=\dimen156
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen157
-\l_MT_above_intertext_sep=\dimen158
-\l_MT_below_intertext_sep=\dimen159
-\l_MT_above_shortintertext_sep=\dimen160
-\l_MT_below_shortintertext_sep=\dimen161
-)
-\l_EQ_equationtype_int=\count120
-\l_EQ_alignmentmode_int=\count121
-\l_EQ_totalwidth_dim=\dimen162
-\l_EQ_displaywidth_dim=\dimen163
-\l_EQ_temp_linewidth_dim=\dimen164
-\EmphEqdelimitershortfall=\dimen165
-\EmphEqdelimiterfactor=\count122
-\g_EQ_toptag_height_dim=\dimen166
-\g_EQ_bottomtag_depth_dim=\dimen167
-\g_EQ_toprow_height_dim=\dimen168
-\g_EQ_bottomrow_depth_dim=\dimen169
-\g_EQ_widesttag_dim=\dimen170
-\EQ_mathdisplay_box=\box44
-\EQ_tag_box=\box45
-\g_EQ_temprow_int=\count123
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
+(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3-code.tex
+Package: expl3 2019-10-27 L3 programming layer (code)
+\c_max_int=\count116
+\l_tmpa_int=\count117
+\l_tmpb_int=\count118
+\g_tmpa_int=\count119
+\g_tmpb_int=\count120
+\l__seq_internal_a_int=\count121
+\l__seq_internal_b_int=\count122
+\g__kernel_prg_map_int=\count123
+\c__ior_term_noprompt_ior=\count124
+\c_log_iow=\count125
+\l_iow_line_count_int=\count126
+\l__iow_line_target_int=\count127
+\l__iow_one_indent_int=\count128
+\l__iow_indent_int=\count129
+\c_zero_dim=\dimen153
+\c_max_dim=\dimen154
+\l_tmpa_dim=\dimen155
+\l_tmpb_dim=\dimen156
+\g_tmpa_dim=\dimen157
+\g_tmpb_dim=\dimen158
+\c_zero_skip=\skip49
+\c_max_skip=\skip50
+\l_tmpa_skip=\skip51
+\l_tmpb_skip=\skip52
+\g_tmpa_skip=\skip53
+\g_tmpb_skip=\skip54
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count130
+\l__intarray_loop_int=\count131
+\c__intarray_sp_dim=\dimen159
+\g__intarray_font_int=\count132
+\c__fp_leading_shift_int=\count133
+\c__fp_middle_shift_int=\count134
+\c__fp_trailing_shift_int=\count135
+\c__fp_big_leading_shift_int=\count136
+\c__fp_big_middle_shift_int=\count137
+\c__fp_big_trailing_shift_int=\count138
+\c__fp_Bigg_leading_shift_int=\count139
+\c__fp_Bigg_middle_shift_int=\count140
+\c__fp_Bigg_trailing_shift_int=\count141
+\c__kernel_randint_max_int=\count142
+\g__fp_array_int=\count143
+\l__fp_array_loop_int=\count144
+\l__sort_length_int=\count145
+\l__sort_min_int=\count146
+\l__sort_top_int=\count147
+\l__sort_max_int=\count148
+\l__sort_true_max_int=\count149
+\l__sort_block_int=\count150
+\l__sort_begin_int=\count151
+\l__sort_end_int=\count152
+\l__sort_A_int=\count153
+\l__sort_B_int=\count154
+\l__sort_C_int=\count155
+\l__str_internal_int=\count156
+\c__str_replacement_char_int=\count157
+\l__tl_analysis_normal_int=\count158
+\l__tl_analysis_index_int=\count159
+\l__tl_analysis_nesting_int=\count160
+\l__tl_analysis_type_int=\count161
+\l__regex_internal_a_int=\count162
+\l__regex_internal_b_int=\count163
+\l__regex_internal_c_int=\count164
+\l__regex_balance_int=\count165
+\l__regex_group_level_int=\count166
+\l__regex_mode_int=\count167
+\c__regex_cs_in_class_mode_int=\count168
+\c__regex_cs_mode_int=\count169
+\l__regex_catcodes_int=\count170
+\l__regex_default_catcodes_int=\count171
+\c__regex_catcode_D_int=\count172
+\c__regex_catcode_S_int=\count173
+\c__regex_catcode_L_int=\count174
+\c__regex_catcode_O_int=\count175
+\c__regex_catcode_A_int=\count176
+\c__regex_all_catcodes_int=\count177
+\l__regex_show_lines_int=\count178
+\l__regex_min_state_int=\count179
+\l__regex_max_state_int=\count180
+\l__regex_left_state_int=\count181
+\l__regex_right_state_int=\count182
+\l__regex_capturing_group_int=\count183
+\l__regex_min_pos_int=\count184
+\l__regex_max_pos_int=\count185
+\l__regex_curr_pos_int=\count186
+\l__regex_start_pos_int=\count187
+\l__regex_success_pos_int=\count188
+\l__regex_curr_char_int=\count189
+\l__regex_curr_catcode_int=\count190
+\l__regex_last_char_int=\count191
+\l__regex_case_changed_char_int=\count192
+\l__regex_curr_state_int=\count193
+\l__regex_step_int=\count194
+\l__regex_min_active_int=\count195
+\l__regex_max_active_int=\count196
+\l__regex_replacement_csnames_int=\count197
+\l__regex_match_count_int=\count198
+\l__regex_min_submatch_int=\count199
+\l__regex_submatch_int=\count266
+\l__regex_zeroth_submatch_int=\count267
+\g__regex_trace_regex_int=\count268
+\c_empty_box=\box44
+\l_tmpa_box=\box45
+\l_tmpb_box=\box46
+\g_tmpa_box=\box47
+\g_tmpb_box=\box48
+\l__box_top_dim=\dimen160
+\l__box_bottom_dim=\dimen161
+\l__box_left_dim=\dimen162
+\l__box_right_dim=\dimen163
+\l__box_top_new_dim=\dimen164
+\l__box_bottom_new_dim=\dimen165
+\l__box_left_new_dim=\dimen166
+\l__box_right_new_dim=\dimen167
+\l__box_internal_box=\box49
+\l__coffin_internal_box=\box50
+\l__coffin_internal_dim=\dimen168
+\l__coffin_offset_x_dim=\dimen169
+\l__coffin_offset_y_dim=\dimen170
+\l__coffin_x_dim=\dimen171
+\l__coffin_y_dim=\dimen172
+\l__coffin_x_prime_dim=\dimen173
+\l__coffin_y_prime_dim=\dimen174
+\c_empty_coffin=\box51
+\l__coffin_aligned_coffin=\box52
+\l__coffin_aligned_internal_coffin=\box53
+\l_tmpa_coffin=\box54
+\l_tmpb_coffin=\box55
+\g_tmpa_coffin=\box56
+\g_tmpb_coffin=\box57
+\l__coffin_bounding_shift_dim=\dimen175
+\l__coffin_left_corner_dim=\dimen176
+\l__coffin_right_corner_dim=\dimen177
+\l__coffin_bottom_corner_dim=\dimen178
+\l__coffin_top_corner_dim=\dimen179
+\l__coffin_scaled_total_height_dim=\dimen180
+\l__coffin_scaled_width_dim=\dimen181
+\c__coffin_empty_coffin=\box58
+\l__coffin_display_coffin=\box59
+\l__coffin_display_coord_coffin=\box60
+\l__coffin_display_pole_coffin=\box61
+\l__coffin_display_offset_dim=\dimen182
+\l__coffin_display_x_dim=\dimen183
+\l__coffin_display_y_dim=\dimen184
+\g__char_data_ior=\read3
+
+(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\l3deprecation.def
+File: l3deprecation.def 2019-04-06 v L3 Deprecated functions
+))
+(C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-pdfmod
+e.def
+File: l3backend-pdfmode.def 2019-04-06 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count269
+\l__pdf_internal_box=\box62
+))
+Package: xparse 2019-10-11 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count270
+\g__xparse_grabber_int=\count271
+\l__xparse_m_args_int=\count272
+\l__xparse_v_nesting_int=\count273
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count124
+\c@float@type=\count274
 \float@exts=\toks40
-\float@box=\box46
+\float@box=\box63
 \@float@everytoks=\toks41
-\@floatcapt=\box47
+\@floatcapt=\box64
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
@@ -493,69 +615,91 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count125
-\Gm@cntv=\count126
-\c@Gm@tempcnt=\count127
-\Gm@bindingoffset=\dimen171
-\Gm@wd@mp=\dimen172
-\Gm@odd@mp=\dimen173
-\Gm@even@mp=\dimen174
-\Gm@layoutwidth=\dimen175
-\Gm@layoutheight=\dimen176
-\Gm@layouthoffset=\dimen177
-\Gm@layoutvoffset=\dimen178
+\Gm@cnth=\count275
+\Gm@cntv=\count276
+\c@Gm@tempcnt=\count277
+\Gm@bindingoffset=\dimen185
+\Gm@wd@mp=\dimen186
+\Gm@odd@mp=\dimen187
+\Gm@even@mp=\dimen188
+\Gm@layoutwidth=\dimen189
+\Gm@layoutheight=\dimen190
+\Gm@layouthoffset=\dimen191
+\Gm@layoutvoffset=\dimen192
 \Gm@dimlist=\toks42
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
 (C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip53
-\f@nch@O@elh=\skip54
-\f@nch@O@erh=\skip55
-\f@nch@O@olh=\skip56
-\f@nch@O@orh=\skip57
-\f@nch@O@elf=\skip58
-\f@nch@O@erf=\skip59
-\f@nch@O@olf=\skip60
-\f@nch@O@orf=\skip61
+\f@nch@headwidth=\skip55
+\f@nch@O@elh=\skip56
+\f@nch@O@erh=\skip57
+\f@nch@O@olh=\skip58
+\f@nch@O@orh=\skip59
+\f@nch@O@elf=\skip60
+\f@nch@O@erf=\skip61
+\f@nch@O@olf=\skip62
+\f@nch@O@orf=\skip63
 )
-\c@remark=\count128
-\c@theorem=\count129
-\c@prop=\count130
-\c@definition=\count131
-\c@example=\count132
-\c@axiom=\count133
-\c@cor=\count134
+\c@thm=\count278
+\c@property=\count279
+\c@cor=\count280
+\c@prop=\count281
+\c@rem=\count282
+\c@definition=\count283
+\c@exm=\count284
 
-(ch1.aux)
+(ch1.aux
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+)
 \openout1 = `ch1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
  ABD: EveryShipout initializing macros
 (C:\Users\alpoz\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen179
-\scratchbox=\box48
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\scratchcounter=\count285
+\scratchdimen=\dimen193
+\scratchbox=\box65
+\nofMPsegments=\count286
+\nofMParguments=\count287
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen180
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen194
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
 \everyMPtoPDFconversion=\toks44
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -600,8 +744,6 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\Hy@linkcounter=\count141
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -636,127 +778,170 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/alpoz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-No file ch1.toc.
+{C:/Users/alpoz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (ch1.toc)
 \tf@toc=\write6
 \openout6 = `ch1.toc'.
 
-[1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+ [1]
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
 
-! Missing \right. inserted.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 
+     
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
+
+ []
+
+! Missing $ inserted.
 <inserted text> 
-                \right .
-l.91 ...defined as $\left]a,b[; r\in A, a < r < b$
-                                                  
+                $
+l.99 
+     
 ? 
-! Missing \right. inserted.
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.99 
+     
+? 
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.100 \end{equation*}
+                     
+? 
+! Missing $ inserted.
 <inserted text> 
-                \right .
-l.92 ...B(a,\lambda) = \left]a-\lambda,a+\lambda[$
-                                                  
+                $
+l.100 \end{equation*}
+                     
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.100 \end{equation*}
+                     
 ? 
 
-! LaTeX Error: \mathbb allowed only in math mode.
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+
+! LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 The reals, denoted \mathbb
-                               {R} are an ordered field. Here is a more prec...
-
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.102     \item \mathbb
-                       {R} is an abelian group under (+) and \mathbb{R*} is ...
-
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.102 ...is an abelian group under (+) and \mathbb
-                                                  {R*} is an abelian group u...
-
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...uitively clear that any subset of \mathbb
-                                                  {R}
+l.110 \begin{example}
+                     
 ? 
 [2
 
 ]
 
-! LaTeX Error: \mathbb allowed only in math mode.
+! LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117 Take some subset S in \mathbb
-                                   {R}. An element B is called an upper boun...
-
+l.124 \end{example}
+                   
 ? 
 
-! LaTeX Error: \mathbb allowed only in math mode.
+! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 ...ection{\mathbb{Q} is dense in \mathbb{R}}
-                                                  
+l.142 
+      
 ? 
 
-! LaTeX Error: \mathbb allowed only in math mode.
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.150 \begin{bmatrix}
+                     
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.152 \end{bmatrix}
+                   
+? 
+
+! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 ...ection{\mathbb{Q} is dense in \mathbb{R}}
-                                                  
+l.156 
+      
 ? 
 
-! Package amsmath Error: \tag not allowed here.
+LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/linearGauss.png' not
+ found on input line 161.
 
-See the amsmath package documentation for explanation.
+
+! Package pdftex.def Error: File `epflSemesterOne/linearAlgebra/figures/linearG
+auss.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172     \tag
-              *{\qedhere}
+l.161 ...ne/linearAlgebra/figures/linearGauss.png}
+                                                  
 ? 
 [3]
 
@@ -766,30 +951,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.194 
-      
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
-
- []
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.214     Now $s_{e$
-                     is also not a lower bound, so let's pick $\epsilon^{\pr...
+l.235 T
+       he most common vector space is that of $\mathbb{R}^{n}$. It's vector ...
 
 ? 
+[4] [5]
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
-
- []
+LaTeX Warning: Reference `comb' on page 6 undefined on input line 331.
 
 
 ! Package amsmath Error: \tag not allowed here.
@@ -798,98 +966,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.221     \tag
-              *{\qedhere}
-? 
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.226 L
-       et's now prove that $\sqrt{2}$ belongs to the reals. For this, we nee...
-
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.229 Every non-empty subset of \mathbb
-                                       {R} with an upper boundary admits a s...
-
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.233 An ordered field F, which \mathbb
-                                       {R} is, has the Archimedean property ...
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--254
-
- []
-
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.266     \tag
-              *{\qedhere}
-? 
-[4]
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.270 \subsection{More theorems about \mathbb{R}}
-                                                 
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.279 ...{[an]+1}{n}< b$ where $c = \frac{[an]+1}$
-                                                  
-? 
-! Extra }, or forgotten \endgroup.
-\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
-                                                 
-l.279 ...{[an]+1}{n}< b$ where $c = \frac{[an]+1}$
-                                                  
-? 
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281     \tag
+l.344     \tag
               *{\qedhere}
 ? 
 
@@ -899,346 +976,28 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.292     \tag
-              *{\qedhere}
-? 
-[5]
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.324     \tag
-              *{\qedhere}
+l.375  \tag
+           *{\qedhere}
 ? 
 [6]
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.361 \tag
-          *{\qedhere}
-? 
-
-! LaTeX Error: \mathbb allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.367 A sequence $x_{n} $\mathbb
-                                {conveges} to $x$ if $\forall \epsilon > 0$ ...
-
-? 
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.381 \tag
-          *{\qedhere}
-? 
-[7
-
-]
-
-LaTeX Warning: Reference `1' on page 8 undefined on input line 418.
-
-
-LaTeX Warning: Reference `2' on page 8 undefined on input line 418.
-
-
-! Package amsmath Error: \tag not allowed here.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.424 \tag
-          *{\qedhere}
-? 
-
-LaTeX Warning: File `epflSemesterOne/analysis/figures/usefula.JPG' not found on
- input line 433.
-
-
-! Package pdftex.def Error: File `epflSemesterOne/analysis/figures/usefula.JPG'
- not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.433 ...SemesterOne/analysis/figures/usefula.JPG}
-                                                  
-? 
-
-LaTeX Warning: File `epflSemesterOne/analysis/figures/usefula2.JPG' not found o
-n input line 440.
-
-
-! Package pdftex.def Error: File `epflSemesterOne/analysis/figures/usefula2.JPG
-' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.440 ...emesterOne/analysis/figures/usefula2.JPG}
-                                                  
-? 
-[8]
-! Undefined control sequence.
-<recently read> \n 
-                   
-l.457 ... that $n > \frac{b-1}{3}$ and such an $\n
-                                                   \in \mathbb{N}$ exists if...
-
-? 
-[9]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 510.
-
-[10
-
-]
-! Extra }, or forgotten $.
-l.545 ...+\sqrt{5}}|y_{n - \frac{1+\sqrt{5}}{2}}|}
-                                                  $ because we know that $y_...
-
-? 
-[11]
-
-! Package pgfkeys Error: I do not know the key '/tcb/drop shadow' and I am goin
-g to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.551 ...recursive sequence),lower separated=true]
-                                                  
-? 
-
-LaTeX Warning: Reference `monotone' on page 12 undefined on input line 607.
-
-[12
-
-]
-
-! Package pgfkeys Error: I do not know the key '/tcb/drop shadow' and I am goin
-g to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.614 ... (Exploration of e),lower separated=true]
-                                                  
-? 
-! Misplaced alignment tab character &.
-<argument> LimSup &
-                    LimInf
-l.635 ...inition. That of \textit{LimSup & LimInf}
-                                                  .
-? 
-! Extra }, or forgotten $.
-l.639 ...q k \in \mathbb{N}\}} \text{(resp. inf)}}
-                                                  $$
-? 
-! Extra }, or forgotten $.
-l.644 ... k \in \mathbb{N}\}} \text{(resp. inf)}}}
-                                                  $$
-? 
-[13
-
-]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.729 
-      
-? 
-
-Overfull \hbox (19.98082pt too wide) in paragraph at lines 736--737
-[]\OT1/cmr/bx/n/10 Theorem 3.2. []\OT1/cmr/m/it/10 As fol-lows from the Cauchy 
-cri-te-rion, we have that $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10  > \OT1/cmr/m/n/
-10 0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 
-8\OML/cmm/m/it/10 n; m > n[]  [][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[]\OMS/c
-msy/m/n/10 j 
- []
-
-
-! Package pgfkeys Error: I do not know the key '/tcb/drop shadow' and I am goin
-g to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 ...er way to obtain e),lower separated=true]
-                                                  
-? 
-! Extra }, or forgotten $.
-l.752 ... \frac{1}{n}) \ldots (1 - \frac{k-1}{n})}
-                                                   \geq 2 + \sum_{k=2}^{\inf...
-
-? 
-! Extra }, or forgotten $.
-l.752 ...y} \frac{1}{k!}(1 - \frac{k-1}{n}^{k-1})}
-                                                   \geq \sum_{k=0}^{n} \frac...
-
-? 
-! Extra }, or forgotten $.
-l.765 ...rac{1}{n}\sum_{k=2}^{n} \frac{1}{(k-2)!}}
-                                                   = \frac{1}{n}\sum_{k=0}^{...
-
-? 
-! Extra }, or forgotten $.
-l.765 ...rac{1}{n}\sum_{k=0}^{n-2} \frac{1}{(k)!}}
-                                                    \leq 3$$
-? 
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 797--802
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
  []
 
 
-LaTeX Warning: File `epflSemesterOne/analysis/figures/series.JPG' not found on 
-input line 822.
-
-
-! Package pdftex.def Error: File `epflSemesterOne/analysis/figures/series.JPG' 
-not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.822 ...lSemesterOne/analysis/figures/series.JPG}
-                                                  
-? 
-[16
-
-]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.843 
-      
-? 
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.850 
-      
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 851--853
+Underfull \hbox (badness 10000) in paragraph at lines 397--399
 
  []
 
-! Undefined control sequence.
-l.865 Let's show that $\lim_{x\to\2
-                                   }(x^2) = 4$ using the first definition.
-? 
-! Undefined control sequence.
-l.878 ...w that for $f(x) = x^2 + 1$ $ \lim_{x \ti
-                                                   0} x^2 + 1 = 1$. Now defi...
 
-? 
-
-! LaTeX Error: Bad math environment delimiter.
+! LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.894 \end{empheq}
-                  $$
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.894 \end{empheq}
-                  $$
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.894 \end{empheq}
-                  $$
-? 
-
-! LaTeX Error: \begin{example} on input line 888 ended by \end{AmSequation*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.894 \end{empheq}
-                  $$
-? 
-! Undefined control sequence.
-\EQ_post_process: ...quation =\l_EQ_equation_fint 
-                                                  \relax 
-l.894 \end{empheq}
-                  $$
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.894 \end{empheq}
-                  $$
-? 
-
-! LaTeX Error: \begin{document} ended by \end{empheq}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.894 \end{empheq}
-                  $$
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.894 \end{empheq}
-                  $$
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.895 
-      
-? 
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.895 
-      
+l.422 \begin{example}
+                     
 ? 
 
 ! LaTeX Error: \begin{document} ended by \end{example}.
@@ -1247,32 +1006,127 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.897 \end{example}
+l.450 \end{example}
                    
 ? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.897 \end{example}
-                   
-? 
+[7]
 
-! LaTeX Error: There's no line here to end.
+! LaTeX Error: Environment remark undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.899 A
-       nd now using our earlier construct of the limit of a function, we def...
-
+l.495 \begin{remark}
+                    
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 899--901
+! LaTeX Error: \begin{document} ended by \end{remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.497 \end{remark}
+                  
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--502
 
  []
 
-[17]
+[8]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.529 Consider the matrix $E_{1}=$\begin{bmatrix}
+                                                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.533 \end{bmatrix}
+                    and $A=$ $E_{1}=$\begin{bmatrix}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.533 ...bmatrix} and $A=$ $E_{1}=$\begin{bmatrix}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.537 \end{bmatrix}
+                    Then notice that $E_{1}A=$ $E_{1}=$ \begin{bmatrix}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.537 ...e that $E_{1}A=$ $E_{1}=$ \begin{bmatrix}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.541 \end{bmatrix}
+                   
+? 
+
+! Package pgfkeys Error: I do not know the key '/tcb/drop shadow' and I am goin
+g to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548 ...n inverse matrices),lower separated=true]
+                                                  
+? 
+
+! Package keyval Error: valign undefined.
+
+See the keyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.550 ...One/linearAlgebra/figures/invertible.JPG}
+                                                  
+? 
+
+LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/invertible.JPG' not 
+found on input line 550.
+
+
+! Package pdftex.def Error: File `epflSemesterOne/linearAlgebra/figures/inverti
+ble.JPG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.550 ...One/linearAlgebra/figures/invertible.JPG}
+                                                  
+? 
+[9]
+
+LaTeX Warning: File `epflSemesterOne/linearAlgebra/figures/proof.JPG' not found
+ on input line 557.
+
+
+! Package pdftex.def Error: File `epflSemesterOne/linearAlgebra/figures/proof.J
+PG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.557 ...esterOne/linearAlgebra/figures/proof.JPG}
+                                                  
+? 
+[10
+
+]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1280,45 +1134,116 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.910 
+l.633 A
+       nd now an important theorem is the following:
+? 
+[11
+
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.677 
       
 ? 
-[18] (ch1.aux)
+
+LaTeX Warning: Reference `1' on page 12 undefined on input line 678.
+
+
+LaTeX Warning: Reference `2' on page 12 undefined on input line 681.
+
+
+LaTeX Warning: Reference `3' on page 12 undefined on input line 685.
+
+[12
+
+]
+
+! LaTeX Error: Environment example undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \begin{example}
+                     
+? 
+
+! LaTeX Error: \begin{document} ended by \end{example}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.740 \end{example}
+                   
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--744
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--750
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.773 
+      
+? 
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 786--788
+
+ []
+
+[14] [15] (ch1.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13796 strings out of 492895
- 266777 string characters out of 3133478
- 339428 words of memory out of 3000000
- 17434 multiletter control sequences out of 15000+200000
- 13381 words of font info for 51 fonts, out of 3000000 for 9000
+ 23683 strings out of 492895
+ 458438 string characters out of 3133478
+ 498816 words of memory out of 3000000
+ 27298 multiletter control sequences out of 15000+200000
+ 544528 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,16n,73p,1111b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb>
-Output written on ch1.pdf (19 pages, 304905 bytes).
+ 54i,16n,73p,842b,465s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/s
+ymbols/msbm7.pfb>
+Output written on ch1.pdf (16 pages, 278035 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
