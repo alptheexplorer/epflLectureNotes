@@ -4,10 +4,10 @@
 
 cd epflLectureNotes/epflLectureNotes
 
+
+pdflatex -interaction=nonstopmode analysis/analysis.tex
+
 git pull origin
-
-pdflatex -interaction=nonstopmode /analysis/analysis.tex
-
 
 
 
