@@ -938,10 +938,66 @@ Suppose that we have the statement $P(1)$ true and also that $P(k) \rightarrow P
 \subsection{Lec. 15 notes}
 
 \subsubsection{Worse than exponential time}
-We note that $n!$ is worse than exponential time $b^d$ as 
+We note that $n!$ is worse than exponential time $b^d$. And now let's derive an expression for subexponential time complexity. That is we need a function that lies between $n^d$ and $b^n$ where $d,b$ are constants. We write $n^d$ as:
+$$n^d = b^{(\log_{b}n)^{d}}$$
+From this we note that the expression:
+$$ b^{d\cdot n^{r}(\log_{b}n)^{1-r} $$ denotes subexponential time. The closer r is to 1, the closer we are to exponential time.
+\\
+Another function that lies between polynomial and exponential time is quasi-polynomial time. Consider the expression: 
+$$ b^{(\log_{b}(n))^c}$$. For instance when $c=1$ we have $n^{log_{b}n}$ which is worse than polynomial time as the exponent grows and is unbounded. 
 
+\subsubsection{Some exemplary proofs}
 
+\begin{example}
+We claim that any natural number greater than or equal to 8 can be represented as a combination of 3's and 5's.
+\end{example}
 
+\begin{proof}
+We will use strong induction here(which we remind is equivalent to induction). Strong induction is the tautology that:
+$$ P(0) \land \forall k[\forall l \leq k \ P(l) \rightarrow P(k+1)] \rightarrow \forall k P(k)$$
+\\
+Now our base case P(8) is clear. Let now $P(k-2)\land P(k-1)\land P(k)$ be our inductive hypothesis. We need to show $P(k+1)$. Well $P(k+1)$ clearly holds because given that $P(k-2)$ if we simply add 3 to the combination present in $P(k-2)$ we are done. Therefore we have shown that $P(k-2)\land P(k-1)\land P(k) \rightarrow P(k+1)$ is a tautology. And since we have that $P(8) \land P(9) \land P(10)$ as our basis step we are done.
+\end{proof}
+
+\subsection{Lec 16. Notes}
+\subsubsection{Some wrong proofs}
+Consider the statement that everyone is equal. Let's tackle this with weak induction. 
+
+\begin{example}
+Now our statement says $P(n) \ \forall n \geq 1$ As a basis step we take $P(1)$ which is trivially true. Now assume $\forall k \ P(k)$ Then we get that $P(k+1)$ also holds because persons through $2 - k+1$ are the same(by IH) and persons through $1 - k$. Yet, the problem lies in our basis. That is $1$ person being the same does not imply that any two other persons are the same. 
+\end{example}
+
+\begin{example}
+Suppose we claim that $p^2 + p + 1 | p^{n+1} + p^{2n-1} \ \forall n\geq1$ The basis $P(1)$ is trivial. Now assume $\forall k P(k)$ Then we have that $P(k+1)$ is:
+$$p^2 + p + 1 | p^{n+2} + p^{2n+1}$$ Now we try to rewrite $p^{n+2} + p^{2n+1}$ as:
+$ p(p^{n+1} + p^{2n-1}) + x $ where $x = (p^2 + p + 1)(p+1)^{2k-1}$ hence we are done.
+\end{example}
+
+\begin{example}
+Consider the claim that every $ 2 \leq n\in \mathbb{Z}$ is divisible by a prime number. Basis is trivial. Now assume that $\forall l \ 2 \leq l \leq k P(l)$ Given this, for $P(k+1)$ we have that either $k+1$ is prime or that $k+1 = a\cdot b$ where both $a,b \leq k$ hence IH applies to both and we are done. 
+\end{example}
+
+And now we come to a more appealing example. 
+
+\begin{example}
+\label{exC}
+We claim that a chocolate bar of $m$ single blocks can be broken into $m$ single blocks in $m-1$ breaks. Let's use strong induction again. Now base case $P(1)$ is trivial. Let now our IH be:
+$$ \forall l, \ 1\leq l \leq k \ P(l)$$ Now given this consider we have a bar of $m-1$ blocks. Then suppose we break it into $m$ and $k+1 - m$ pieces at the cost of \textcolor{red}{1} break. Now our IH applies to both the blocks since their size is less than $m$. Through this we have that $m$ will take $m-1$ and $k+1-m$ will take $k+1-m-1$ steps which in total gives $m-1 + k+1-m-1 + 1 = k$ steps and we are done. 
+\end{example}
+\\ 
+Let's now expand on example \ref{exC}. Suppose that instead of defining one single break as a cost of 1, the cost of breaking $m$ blocks into $m-L$ and $L$ blocks is defined as $L(m-L)$. Now our goal is to find the optimal cost and prove it. As an example if we break $n$ pieces into $n-L$ and $L$ many pieces than net cost is $L(n-L)$. Notice that we may define the total cost $S(n)$ of breaking $n$ pieces into $n$ single units recursively as:
+
+$$ S(n) = \min_{1\leq k \leq n}(k(n-k) + S(n-k) + S(k))$$
+Now we conjecture that $S(n) = \frac{n(n-1)}{2} \ \forall n \geq 1$
+
+\begin{proof}
+Basis is trivial. As for strong IH, we have that $$ \forall 1 \leq l \leq n, \ S(l) = \frac{l(l-1)}{2} $$ We now have to show that $S(k+1) = \frac{k(k+1)}{2}$ Now by definition we have that:
+$$ S(k+1) = \min_{1\leq l \leq k}(l(k+1-L) + S(k+1-l) + S(l))$$ By our hypothesis and simplifications we get that $S(k+1) = \frac{(k+1)k}{2}$ as intended. 
+\end{proof}
+
+\begin{tcolorbox}[drop shadow, title=(Useful analogy),lower separated=true]
+An intuition for our above result is the handshaking example. Suppose that a group of $n$ people split up into a group of $n-k$ and $k$ people. Hence at every splitting there are $(n-k)k$ handshakes. And at the end there are obviously $n-1 + n-2 + \ldots + 1$ many handshakes which is equal to $\frac{n(n-1)}{2}(by summation for arithmetic series)$
+\end{tcolorbox}
 
 
 
