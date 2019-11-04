@@ -1,10 +1,5 @@
 # Table of contents
 
-1. [Week 4](#week4)
-2. [Week 5](#week5)
-
-
-
 ## Week 4 <a name="week4"></a>
 
 Char is used to represent any character. 
@@ -251,7 +246,81 @@ public static void main(String Args[]){
 }
 ```
 
-The above behaviour happens because when we call change(x), we are essentially making val = x meaning that val is a copy of the object x. Yet, for primitive data types, this is not the case. We have that both the copy val and x point to the same value hence when val changes, so does x!
+The above behaviour happens because when we call change(x), we are essentially making val = x meaning that val is a copy of the object x. Yet, for primitive data types, this is not the case. We have that both the copy val and x point to the same v.
+
+
+## Week 7 
+
+### Concepts in OOP
+
+The main notion of OOP is encapsulation. The idea is to capture related attributes and methods under one common hood. 
+
+Now there are two sides to encapsulation:
+> We encapsulate similar attributes and methods under one object.
+> We may also define an *interface* which is a set of methods that an object *implements* and it is up to the programmer to use these. 
+
+And most importantly, our design must be such that we are able to change the implementation without causing any change in the interface.
+
+We note that any class attribute has a global scope within the class and hence do not need to be parametrized inside methods. ie.:
+
+``` java 
+class Test{
+    double height;
+    double getHeight(){
+        return height;
+    }
+}
+```
+
+Whenever an attribute must not appear outside the instance of an object, we limit its scope using the *private* keyword. 
+
+``` java 
+
+class Rectangle{
+    private int height;
+}
+
+class Test{
+    System.out.println(rect.height); // gives error
+}
+
+```
+
+In general, it is good practice to only make methods and attributes that are used by the client-side public. An example to this is the famous getters and setters. 
+
+#### Copy constructor 
+
+Suppose we want to define a constructor so that we can create a separate copy instance(this is because if we set two objects equal to other than they both point to the same object in memory.)
+
+
+``` java
+
+class test{
+    private int val1;
+    private int val2;
+
+    public test(test instance){
+        val1 = instance.val1;
+        // and so on.
+    }
+}
+```
+
+## Week 8
+
+### Introducing inheritance 
+
+The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *private* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. 
+
+
+
+
+
+
+
+
+
+
 
 
 
