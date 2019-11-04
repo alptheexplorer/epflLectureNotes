@@ -116,7 +116,7 @@ We shall now come the \textbf{inf} and \textbf{sup} axioms. It should be intuiti
 \subsection{Bounds}
 Take some subset S in \mathbb{R}. An element B is called an upper bound of S if $\forall x \in S, B \geq x$. Similarly, it is a lower bound of S if $\forall x \in S, B \leq x$.
 \\
-The maximum B of a set S denoted $max(S)$ is such that $B \in S, \forall x \in S B \geq x$. 
+The maximum B of a set S denoted $max(S)$ is such that $B \in S, \forall x \in S, \ B \geq x$. 
 \\
 The supremum of a set S(if it exists) is the lowest upper bound. That is $sup(S) = b$ is such that,
 
@@ -930,6 +930,85 @@ then \ $\lim_{x \to \infty}h(x) = l$
 \begin{example}
 Consider $\lim_{x \to 0} \frac{\sin(x)}{x}$. We have that $\frac{\sin(x)}{x} \leq 1$ and also that $\frac{\sin(x)}{x}\geq \cos(x)$ As both approach $1$ so does our function. 
 \end{example}
+
+And some more theorems on continuity:
+\begin{theorem}
+If $f$ and $g$ are continuous functions defined on the same domain, then we have are continuous as well:
+\begin{enumerate}
+    \item $af + bg \forall a,b \in \mathbb{R}$
+    \item $f\cdot g$
+    \item $g|_{E}$ (to mean that $\forall x \in E, f(x) \not = 0$) where $\frac{f}{g}$
+\end{enumerate}
+\end{theorem}
+
+And as for composition of functions, we state the composed map is continuous iff. both functions are continuous and the image of the inside function is a subset of the domain of the outer function.
+\\
+
+And now our goal is to define limits at infinity. Let's first define a pointed neighbourhood at infinity:
+
+\begin{definition}
+A pointed neighbourhood of $+\infty$ is an open interval of form $]a,+\infty[$
+\end{definition}
+
+Now for one last time, let's recall what it means for a function $f:E \to \mathbb{R}$ to have a limit $L$ at some $x_{0}$ We say that $\lim_{x\to x_{0}} f(x) = L$ iff :
+$$ \forall (x_{n} \in \mathbb{E}\backslash\{x_{0}\}) \ lim_{n \to \infty}x_{n} = x_{0} \rightarrow \lim_{n \to infty} f(x_{n}) = f(x_{0})$$
+
+\begin{prop}
+We claim that $\lim_{x \to 0} \frac{1}{x}$ does not exist. To see this consider $x_{n} = \frac{1}{n}$ defined on $]a,\infty[$ and $y_{n} = \frac{-1}{n}$ defined on $]- \infty, -a[$ Now both sequences are defined on the pointed neighborhood $\mathbb{R}\backslash \{0\}$ yet the first approaches $\infty$ and the latter $- \infty$  
+\end{prop}
+
+\begin{tcolorbox}[drop shadow, title = (Limit of functions algebra),lower separated=true]
+
+for functions $f,g: E \to \mathbb{R}$
+\begin{enumerate}
+    \item (Addition rule)
+    \\
+    if $f$ approaches infinity at $x_{0}$ and $g$ is bounded from below then: $(f+g)(x)$ approaches infinity at $x_{0}$. 
+      \item (Product rule)
+    \\
+    if $f$ approaches infinity at $x_{0}$ and $g$ is bounded from below by a positive number and $f(x)g(x) > 0 \forall x \in E$ then: $(fg)(x) \to \infty$ at $x_{0}$. 
+    \\
+    
+    \item (First division rule)
+    \\
+    we have that $f$ is bounded, $g$ is nowhere 0 and $\lim_{x \to x_{0}}|g(x)| = \infty$ then $\lim_{x \to x_{0}} \frac{f(x)}{g(x)} = 0$
+    \\
+    
+    \item (Second division rule)
+    \\
+    we have that $f$ is bounded from below by a positive number, $g(x)$ converges to 0 at $x_{0}$ and $\frac{f(x)}{g(x)} > 0$ then $\frac{f(x)}{g(x)}$ approaches $+\infty$ at $x_{0}$
+    \\
+    
+    We do not state the squeeze theorem as it is essentially the same as that for non-infinity limits of functions. 
+    \\
+    
+    In particular, a rule of thumb is to never use the addition rule for limits of type $ \infty - \infty$ which is also obvious from how we defined the bounded below property. 
+\end{enumerate}
+\\
+\end{tcolorbox}
+
+Now how do we make sense of limits for which a left or a right side does not exists aka.(a pointed neighbourhood of some $x_{0}$ is not a subset of the domain. We introduce left and right neighbourhoods. 
+
+\begin{definition}
+A left neighbourhood(voisinage a gauche in French) of $x_{0}$ is a closed interval of the form $]x_{0} - \delta, x_{0}[$ (resp. applies right neighbourhood)
+\end{definition}
+\\
+
+Using this we define limits from the right and from the left denoted by $x_{0}^{+}$ and $x_{0}^{-}$
+\\
+
+\begin{example}
+$\lim_{x\to 0^{+}} \sqrt{x} = 0$ since this definition invokes a right neighbourhood of $x_{0} = 0$. 
+\end{example}
+\\
+
+Now an important theorem following from this is the following:
+
+\begin{theorem}
+If the right and left limit of $f$ at $x_{0}$ are equal, then $f$ is said to \textit{have a limit at $x_{0}$}
+\end{theorem}
+
+
 
 
 
