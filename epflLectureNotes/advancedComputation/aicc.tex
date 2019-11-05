@@ -21,6 +21,7 @@
 }
 
 
+
 \theoremstyle{definition}
 
 
@@ -960,7 +961,7 @@ Now our base case P(8) is clear. Let now $P(k-2)\land P(k-1)\land P(k)$ be our i
 \end{proof}
 
 \subsection{Lec 16. Notes}
-\subsubsection{Some wrong proofs}
+
 Consider the statement that everyone is equal. Let's tackle this with weak induction. 
 
 \begin{example}
@@ -992,12 +993,50 @@ Now we conjecture that $S(n) = \frac{n(n-1)}{2} \ \forall n \geq 1$
 
 \begin{proof}
 Basis is trivial. As for strong IH, we have that $$ \forall 1 \leq l \leq n, \ S(l) = \frac{l(l-1)}{2} $$ We now have to show that $S(k+1) = \frac{k(k+1)}{2}$ Now by definition we have that:
-$$ S(k+1) = \min_{1\leq l \leq k}(l(k+1-L) + S(k+1-l) + S(l))$$ By our hypothesis and simplifications we get that $S(k+1) = \frac{(k+1)k}{2}$ as intended. 
+$$ S(k+1) = \min_{1\leq l \leq k+1}(l(k+1-L) + S(k+1-l) + S(l))$$ By our hypothesis and simplifications we get that $S(k+1) = \frac{(k+1)k}{2}$ as intended. 
 \end{proof}
 
 \begin{tcolorbox}[drop shadow, title=(Useful analogy),lower separated=true]
-An intuition for our above result is the handshaking example. Suppose that a group of $n$ people split up into a group of $n-k$ and $k$ people. Hence at every splitting there are $(n-k)k$ handshakes. And at the end there are obviously $n-1 + n-2 + \ldots + 1$ many handshakes which is equal to $\frac{n(n-1)}{2}(by summation for arithmetic series)$
+An intuition for our above result is the handshaking example. Suppose that a group of $n$ people split up into a group of $n-k$ and $k$ people. Hence at every splitting there are $(n-k)k$ handshakes. And at the end there are obviously $\underbrace{n-1 + n-2 + \ldots + 1}_{\text{each person is a node}}$ many handshakes which is equal to $\frac{n(n-1)}{2}(\text{by summation for arithmetic series})$
 \end{tcolorbox}
+
+\subsection{Lec 17. notes}
+We come to the subject of recursion. Recursion is similar to induction in the way that it exploits a base step called "bottom of recursion". Let's first see examples of where recursion is hidden. 
+
+\begin{example}
+We may define summation $\sum_{i}^{u} x_{i}$ recursively as:
+
+$$ \sum_{i}^{u-1} x_{i} + x_{u} \ \text{if $i \leq u$} \ \text{and if $i > u$} \sum_{i}^{u} x_{i} = 0$$
+\end{example}
+
+We may do the same for multiplication, that is:
+
+\begin{example}
+We define $\prod_{i}^{u} x_{i} $: 
+
+$$ x_{u} \cdot \prod_{i}^{u-1}  \text{if $i\leq u$} \ \text{and else} \prod_{i}^{u} = 1$$
+\end{example}
+
+And notice that the above may be implemented programmatically:
+
+\begin{lstlisting}
+    sum(i,u,$x_{i}$) = if l>u then 0 else sum(i,u-1,$x_{i}$) + $x_{u}$
+\end{lstlisting}
+
+Similarly the factorial function is defined recursively as:
+$$n! = n \cdot (n-1), \ 0!=1$$
+\\
+
+Now recursion becomes very useful for fast exponentiation. Observing the following:
+
+$$ a^{171} = (a^{85})^{2} \cdot a = ((a^{42})^{2}\cdot a)^{2} \cdot a = \ldots$$
+
+We define $p_{l}$ the exponentiation function as:
+
+$$ p_{l}(a,l) = \text{if} \ n\leq 0 \ \text{then} 1\ \text{else} \ a^{n\text{&}1}\cdot p_{l}(a,\floor{\frac{n}{2}})^{2}$$ where $a^{n\text{&}1} = \{0,1\}$ and is equal to 1 iff n is even. 
+
+
+
 
 
 
