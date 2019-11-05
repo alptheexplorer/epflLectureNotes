@@ -16,6 +16,14 @@ right  = 2.75cm]{geometry}
 \lhead{Linear algebra 1}
 \rhead{EPFL/Alp Ozen}
 
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
 \newtheorem{thm}{Theorem}[subsection]
 \newtheorem{property}{Property}
 \newtheorem{cor}{Corollary}[subsection]
@@ -840,7 +848,7 @@ The vector $x$ is mapped to $[x]_{B}$. This is an example of a mapping from some
 And another important theorem is the linear independence theorem:
 
 \begin{thm}
-If a vector space has a basis set with $n$ elements, than another set with more than $n$ elements has linearly dependent elements. 
+If a vector space has a basis set with $n$ elements, then another set with more than $n$ elements has linearly dependent elements. 
 \end{thm}
 
 \begin{proof}
@@ -909,9 +917,106 @@ Intuitively this should be obvious because $dim(Col(A))$ gives us the number of 
 
 \begin{thm} For a matrix $A$ with echelon form $B$, the row space of $A$ and $B$ are the same. The column space of $A$ has the same dimension as the column space of $B$ yet is not equivalent to it. However the column indices for which $B$ has pivot columns form a basis for $A$. 
 \end{thm}
-
-
 \end{tcolorbox}
+
+\subsection{Change of basis}
+Recall that we have already stated that every finite dimensional vector space is isomorphic to $\Rn$ through $x \to [x]_{B}$ known as the coordinate mapping. Given this coordinate mapping we know consider what it means to change basis.
+
+\begin{exm}
+Suppose that we have two bases $B_{i}$ and $C_{i}$ for some 2-dimensional $V$. And suppose that $b_{1} = 4c_{1}+c_{2}$ and $b_{2} = -6c_{1} + c_{2}$. Given that $[x]_{B} = \begin{bmatrix}
+    3\\
+    1
+\end{bmatrix}$ we want to find $[x]_{C}$ Now we have:
+$$ [x]_{B} = [3b_{1} + b_{2}]_{C} = 3[b_{1}]_{C} + [b_{2}]_{C} $$ which simplifies to the matrix multiplication:
+
+$$ \begin{bmatrix}
+    [b_{1}]_{C} & [b_{2}]_{C}
+\end{bmatrix}\begin{bmatrix}
+    3\\
+    1
+\end{bmatrix} = [x]_{C}$$ 
+\end{exm}
+
+From this we obtain the change of basis formula which is:
+$$ [x]_{C} = \underbrace{P_{B \to C}}_{\text{\makebox[0pt]{known as change of basis matrix}}}[x]_{B} $$
+
+Now since the change of basis matrix is a non-zero square matrix, it follows that it is also invertible and in particular:
+
+$$P_{B \to C}^{-1} = P_{C \to B}$$
+
+\begin{exm}
+Consider bases $B= \{ \begin{bmatrix}
+    1\\
+    1\\
+    0
+\end{bmatrix}, \begin{bmatrix}
+    0\\
+    1\\
+    0
+\end{bmatrix}, \begin{bmatrix}
+    0\\
+    0\\
+    1
+\end{bmatrix} \}$ and $C= \{ \begin{bmatrix}
+    1\\
+    2\\
+    0
+\end{bmatrix}, \begin{bmatrix}
+    3\\
+    2\\
+    0
+\end{bmatrix}, \begin{bmatrix}
+    0\\
+    0\\
+    1
+\end{bmatrix} \}$ And suppose that we want to find $P_{B\to C}$. Now this is equivalent to asking what the coordinate vectors of the basis $B$ are in the basis $C$. This result in having to solve 3 separate systems of the form:
+$$ \begin{bmatrix}
+    1\\
+    1\\
+    0
+\end{bmatrix} = a\begin{bmatrix}
+    1\\
+    2\\
+    0
+\end{bmatrix} + b\begin{bmatrix}
+    3\\
+    2\\
+    0
+\end{bmatrix} + c\begin{bmatrix}
+    0\\
+    0\\
+    1
+\end{bmatrix}$$ which we simplify to the augmented matrix:
+
+$$
+  \begin{bmatrix}[ccc|ccc]
+   1 & 3 & 0 & 1 & 0 & 0\\
+   2 & 2 & 0 & 1 & 1 & 0\\
+   3 & 0 & 1 & 0 & 0 & 1\\
+\end{bmatrix}
+$$
+\end{exm}
+
+We generalize our above example to that, to find $P_{B\to C}$ solve the matrix:
+
+$$\begin{bmatrix}[c|c]
+    P_{C} & P_{B}
+\end{bmatrix} \rightarrow \begin{bmatrix}[c|c]
+    I & P_{B\to C}
+\end{bmatrix}$$
+
+\subsection{Eigenvectors and eigenvalues}
+
+\begin{definition}
+An \textbf{eigenvector} is a vector such that $Ax$ can be written in form $\lambda x$ where $\lambda$ is a scalar. Of course when we state $Ax=\lambda x$, $x$ must be a non-trivial solution. 
+\end{definition}
+
+From the defining equation, we obtain that:
+$$ (A - \lambda I)x = 0$$ and the set of all solutions belongs to the null space of the matrix $(A - \lambda I)$ and is called the $\textbf{eigenspace}$
+
+\begin{thm}
+The eigenvalues of a triangular matrix are the entries along its main diagonal. 
+\end{thm}
 
 
 
