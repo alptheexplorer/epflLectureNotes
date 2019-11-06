@@ -310,7 +310,58 @@ class test{
 
 ### Introducing inheritance 
 
-The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *private* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. 
+The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *protected* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. Hence a workaround is to use getters and setters defined in the parent class for access in subclasses. 
+
+When instantiating a subclass, we use a separate constructor for instantiating attributes of the superclass. Here's the syntax":
+
+``` java
+
+Class Car{
+    Car(){
+        System.out.println("im a car");
+    }
+}
+
+Class Ferrari extends Car{
+    Ferrari{
+        super(); 
+        System.out.println("im a ferrari");
+    }
+}
+
+```
+
+The above is always good practice because it avoids a compilation error since the *super* keyword invokes the parent class constructor assuring access to private variables. And some rules for parent class instantiation:
+1. Each constructor of a subclass must call *super*
+2. Arguments provided to super must match constructor of parent class. 
+3. call to super must be first instruction. 
+4. no other method must call super
+> as an aside, note that a default constructor(this is either no constructor or a constructor without any arguments) is provided only if no constructor has been defined. Consider these examples:
+
+``` java
+class Rectangle {
+    private double largeur;
+    private double hauteur;
+    // il y a un constructeur par defaut !
+        public Rectangle()
+        { largeur = 0; hauteur = 0;}
+        // le reste de la classe...
+        };
+class Rectangle3D extends Rectangle {
+    private double profondeur;
+    public Rectangle3D(double p)
+    {profondeur=p;}
+}
+
+```
+
+And yet another way to call the parent constructor is through *this(...)*
+
+
+
+
+
+
 
 
 

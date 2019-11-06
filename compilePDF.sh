@@ -1,16 +1,18 @@
 #!/bin/bash
 
 
+echo $"Im about to pull from origin"
+echo $"press e to proceed"
+read userResponse
 
-cd epflLectureNotes/epflLectureNotes
+if[$userResponse == "e"] 
+	then
+		cd Desktop/epflLectureNotes/epflLectureNotes/analysis
+		pdflatex analysis.latex -interaction=nonstopmode
+	
+	else
+		echo$"goodbye"
+
+fi
 
 
-pdflatex analysis/analysis.tex -interaction=nonstopmode 
-
-git pull origin
-
-
-
-git add .
-git commit -m "pdf update"
-git push origin 
