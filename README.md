@@ -1,6 +1,6 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
-# epflSemesterOne
+# Welcome to the universe of my lecture notes
 
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
 
@@ -14,7 +14,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 > Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/analysis/analysis.pdf)
 
-> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/java.pdf)
+> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/ch1.md)
 
 *Physics course has been omitted*
 
