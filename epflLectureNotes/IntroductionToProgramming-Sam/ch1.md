@@ -338,6 +338,7 @@ The above is always good practice because it avoids a compilation error since th
 4. no other method must call super
 > as an aside, note that a default constructor(this is either no constructor or a constructor without any arguments) is provided only if no constructor has been defined. Consider these examples:
 
+
 ``` java
 class Rectangle {
     private double largeur;
