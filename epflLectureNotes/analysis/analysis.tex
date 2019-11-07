@@ -835,6 +835,7 @@ Whenever a sequence maps $\mathbb{N} \to \mathbb{R^{+}}$ or the opposite and all
 \end{theorem}
 
 \section{Real-valued functions of 1-variable}
+\subsection{Basics}
 \begin{definition}(Defining what it means to be  a function of one variable)
 \\
 Let $E\subseteq\mathbb{R}$. Then $f$ is subset of $E\times\mathbb{R}$ where each element of $f$ is of form $(a,b)$ and each $a$ occurs only once. 
@@ -857,12 +858,12 @@ We now define what it means to be the limit of a function.
 Suppose $f:E\to\mathbb{R}$ is defined on a pointed neighbourhood of $x_{n}\in \mathbb{R}$. We say that $\lim_{x \to x_{0}} f(x) = L$ if:
 \begin{enumerate}
     \item $\forall 0 < \epsilon \in \mathbb{R}$, $\exists 0<\sigma \in \mathbb{R} $ such that $|x - x_{0}| < \sigma \rightarrow |f(x) - L| < \epsilon$
-    \item for every sequence $x_{n} \subseteq E-\{x_{0}\}$ we have that $\lim_{n\to \infty}x_{n} = x_{0} \rightarrow \lim_{n\to\infty}f(x_{n})=L$
+    \item for every sequence $x_{n} \subseteq E-\{x_{0}\}$ we have that $\lim_{n\to \infty}x_{n} = x_{0} \rightarrow \lim_{n\to\infty}f(x_{n})= f(x_{0}) = L$
 \end{enumerate}
 \end{definition}
 
 \begin{example}
-Let's show that $\lim_{x\to\2}(x^2) = 4$ using the first definition.
+Let's show that $\lim_{x\to 2}(x^2) = 4$ using the first definition.
 We need:
 $$ |x-2| < \sigma \rightarrow |x^2 - 4| < \epsilon$$
 Now pick suppose that $|x-2| \leq 1 $ which yields that $ 1\leq x \leq 3 \equiv 3\leq x + 2 \leq 5$ Particularly because $|x+2| \leq 5$ we get that:
@@ -1007,6 +1008,56 @@ Now an important theorem following from this is the following:
 \begin{theorem}
 If the right and left limit of $f$ at $x_{0}$ are equal, then $f$ is said to \textit{have a limit at $x_{0}$}
 \end{theorem}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{epflLectureNotes/analysis/figures/formula.jpg}
+    \caption{Your friend for exams}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection{More continuity and consequences}
+
+We remind once again that a function is said to be continuous iff it is continuous forall $x$ in its domain. That is, both $\frac{1}{x}$ and $\frac{1}{x^{2}}$ are continuous on $\mathbb{R}\backslash\{0\}$. Similarly any $p \in \mathbb{P}_{n}$ is continuous over $\mathbb{R}$
+\\
+
+When it comes to some monotone sequence approaching infinity, if the sequences is bounded it's limit simply becomes the sup of its image. Otherwise we say that it tends to infinity. 
+\\
+
+And now uniform continuity:
+\begin{theorem}
+A function $f:E \to \mathbb{R}$ is uniformly continuous iff. $\forall \epsilon > 0$, $\exists \delta > 0$ s.t. $\forall x,y \in E$ we have:
+$$|x-y| < \delta \rightarrow |f(x) - f(y)|<\epsilon$$
+\end{theorem}
+Note that this definition differs from continuity in that it states for all $x,y$ whereas in continuity we state that for a given $x_{0}$. 
+\\
+
+\begin{tcolorbox}
+\begin{remark}
+       Speaking in a naive sense, continuity is to say that a small change in x results in a small change in its image. However as we move across the domain, this small change in x may gradually cause a larger and larger increase between two near x's. However uniform continuity asserts that the small change in the image of our x is uniform aka. constant. 
+\end{remark}
+\end{tcolorbox}
+
+\begin{theorem}
+Uniform continuity implies continuity. 
+\end{theorem}
+
+\begin{example}
+$f(x) = x^2$ is not uniformly continuous. To show this, we need the negation of implication which is $|x-y|<\delta$ and $|x^{2} - y^{2}|\not<\epsilon$ Now set $|x+y|>\frac{2\epsilon}{\delta}$ and $|x-y| = \frac{\delta}{2}$ hence simply pick to very large numbers that are very close to each other. But then because $|x^2 - y^2| = |x-y||x+y| \geq \frac{2\epsilon}{\delta}\frac{\delta}{2} = \epsilon$ hence a contradiction. 
+\end{example}
+
+\begin{prop}
+$\cos{x}$ is uniformly continuous hence also continuous.
+\end{prop}
+
+\begin{proof}
+Now we have that $|\cos{x} - \cos{y}|=2|\sin{\frac{x+y}{2}}\sin{\frac{x-y}{2}}| \leq 2|\sin{\frac{x+y}{2}}|\leq 2|x-y|$
+
+And now we have that:(setting $\delta = \frac{\epsilon}{2}$
+$$|x-y|\leq \delta \rightarrow |\cos{x} - \cos{y}|\leq  2|x-y|\leq \epsilon$$
+\end{proof}
+
+
 
 
 
