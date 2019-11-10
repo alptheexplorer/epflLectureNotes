@@ -5,6 +5,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{physics}
+\usepackage{empheq}
+\usepackage{xcolor}
 \usepackage{float}
 \usepackage[
 top    = 2.50cm,
@@ -36,6 +38,8 @@ right  = 2.75cm]{geometry}
 %useful macros
 \newcommand{\Rn}{\mathbb{R}^n}
 \newcommand{\Rm}{\mathbb{R}^m}
+\newcommand{\ld}{linearly dependent}
+\newcommand{\li}{linearly independent}
 
 
 \title{\textbf{Linear Algebra 1}}
@@ -647,7 +651,7 @@ The area of the parallelogram determined by $a_{1}$ and $a_{2}$ is the same as t
 And furthermore:
 
 \begin{thm}
-For a linear transformation $T: \mathbb{R^{n}} \to  \mathbb{R^{n}}$ we have that whenever S is the generic shape in this vector space than the new area after T is given by:
+For a linear transformation $T: \Rn \to  \Rn$ we have that whenever S is the generic shape in this vector space than the new area after T is given by:
 
 $$ |T(s)| = |\det{A} \cdot |S|s$$
 \end{thm}
@@ -1008,14 +1012,126 @@ $$\begin{bmatrix}[c|c]
 \subsection{Eigenvectors and eigenvalues}
 
 \begin{definition}
-An \textbf{eigenvector} is a vector such that $Ax$ can be written in form $\lambda x$ where $\lambda$ is a scalar. Of course when we state $Ax=\lambda x$, $x$ must be a non-trivial solution. 
+An \textbf{eigenvector} of a square matrix is a vector such that $Ax$ can be written in form $\lambda x$ where $\lambda$ is a scalar. Of course when we state $Ax=\lambda x$, $x$ must be a non-trivial solution. 
 \end{definition}
 
 From the defining equation, we obtain that:
-$$ (A - \lambda I)x = 0$$ and the set of all solutions belongs to the null space of the matrix $(A - \lambda I)$ and is called the $\textbf{eigenspace}$
+$$ (A - \lambda I)x = 0$$ and the set of all solutions belongs to the null space of the matrix $(A - \lambda I)$ and is called the $\textbf{eigenspace}$ of $A$ corresponding to $\lambda$. 
 
 \begin{thm}
-The eigenvalues of a triangular matrix are the entries along its main diagonal. 
+\label{eig}
+The eigenvalues of a triangular matrix are the entries along its main diagonal.
+\end{thm}
+
+Now in general, what follows about determining if a matrix has an eigenvector is shown by the  following example:
+
+\begin{property}
+Suppose that $Ax = \lambda x$ where $x\not = 0_{v}$ Then it must follow that:
+$$(A-\lambda I)x=0$$ has a nontrivial solution. Now since $A-\lambda I$ is a square matrix, we have that it will have a non-trivial solution $x$ iff. it's columns are linearly dependent. But note that this is equivalent to saying that $\det{A-\lambda I} = 0$ The fact the determinant is 0 iff. the matrix columns are \ld follows from the fact that the homogeneous equation of a square matrix in its echelon form will have at least one zero row to admit a nonzero solution and given that determinant of a triangular matrix is the product of entries in main diagonal we have that it will have determinant equal to zero. 
+\end{property} 
+
+\begin{thm}
+If the matrix $(A-\lambda I)$ has no \ld \ columns than it has no eigenvectors. 
+\end{thm}
+
+Now note that we cannot use the equation $(A - \lambda I)=0$ to solve for $\lambda$
+\\
+
+Let's continue our exploration of eigenspaces(noting that an eigenspace is a supspace of $V_{n}$:
+
+\begin{exm}
+Suppose $A = \begin{bmatrix}
+    4 & -1 & 6\\
+    2 & 1 & 6\\
+    2 & -1 & 8 
+\end{bmatrix}$ and we are given that $2$ is an eigenvalue of $A$. Now we have that $A - 2I = \begin{bmatrix}
+    2 & -1 & 6\\
+    2 & -1 & 6\\
+    2 & -1 & 6 
+\end{bmatrix}$ and in reduced homogeneous form we get:
+
+$$  \begin{bmatrix}
+    2 & -1 & 6 & 0\\
+    0 & 0 & 0 & 0\\
+     0 & 0 & 0 & 0
+\end{bmatrix}$$ which gives a general solution: $x = y -6z$ and in parametric form: 
+
+$$\begin{bmatrix}
+    x\\
+    y\\
+    z
+\end{bmatrix} = y\begin{bmatrix}
+    1\\
+    2\\
+    0
+\end{bmatrix} + z\begin{bmatrix}
+    -3\\
+    0\\
+    1
+\end{bmatrix}$$ Thus telling us also that the eigenspace for $2$ is a two-dimensional subspace of $\mathbb{R}^3$ Visually this is to say that matrix multiplication by $A$ has the same effect as scalar vector addition. 
+\end{exm}
+
+Given this, we now prove our earlier theorem \ref{eig}.
+\begin{proof}
+Note that a matrix has eigenvectors iff $A - \lambda I$ has determinant 0. Now determinant of a square triangular matrix is the entries along its diagonal hence we get:
+$$(a_{11} - \lambda)(a_{22} - \lambda)(a_{33} - \lambda) = 0$$ which completes our proof.
+\end{proof}
+\\
+
+And now we come to an interesting theorem of eigenvectors.
+
+\begin{thm}
+Suppose that for a square matrix $A$, $v_{i}$ are eigenvectors corresponding to eigenvalues $\lambda_{i}$. Then we have that the $v_{i}$ are \li .
+\end{thm}
+
+\begin{proof}
+Now suppose that $p$ is the least index for which some $\underbrace{v_{p+1}}_{\text{\makebox[0pt]{$v_{i}$ are all nonzero$}}}$ can be written as a linear combination of vectors with smaller indices. Then we have that:
+
+$$ v_{p+1} = a_{1}v_{1} + \ldots + a_{p}v_{p}$$ where at least one of the $a_{i} \not = 0$ Now using the fact that $Av_{k} = \lambda_{k}v_{k}$ we multiply the above by $A$ and replace the $Av_{k}$ to get:
+
+$$ \lambda_{p+1}v_{p+1} = \lambda_{1}a_{1}v_{1} + \ldots + \lambda_{p}a_{p}v_{p} $$
+As a final step we multiply our first equation with $\lambda_{p+1}$ and \underbrace{\text{subtract it from the above to get}}_{\text{\makebox[0pt]{our goal in doing is to obtain 0 on LHS}}}:
+
+$$ a_{1}(\lambda_{1}-\lambda_{p+1})v_{1} + \ldots + a_{p}(\lambda_{p} - \lambda_{p+1})v_{p} = 0$$ Now because our $v_{i}$ up to $p$ are \li we have that the coefficients must all be 0. Since no $\lambda_{i} - \lambda_{i+1}$ can equal 0, we have that all of our $a_{i}$ must be 0. But then $v_{p+1}$ would be 0 which it cant be since it is an eigenvector.
+\end{proof}
+
+Now to present our next theorem we present the reminder that if we reduce square matrix $A$ to $U$ only using $r$ many row exchanges and row addition then:
+
+\begin{empheq}[left =\text{$\det{A} = $}\empheqlbrace]{align*}
+(-1)^{r}\det{U} \\
+0 \ \text{if not invertible}
+\end{empheq}
+
+
+
+Now given our findings of eigenvectors we extend the invertible matrix theorem:
+\begin{thm}(Extending invertible matrix theorem)
+\begin{enumerate}
+    \item $A$ is invertible iff. 0 is not an eigenvalue of $A$ This holds because than the echelon form of A will not have determinant 0 implying columns of A are \li
+    \item $\det{A}$ is not 0. 
+\end{enumerate}
+\end{thm}
+
+And this brings us to the characteristic equation theorem.
+
+\begin{thm}(Characteristic equation theorem)
+\\
+$\lambda$ is a eigenvalue of square matrix $A$ iff. it satisfies:
+
+$$\det{A-\lambda I} = 0$$ The expansion of $\det{A-\lambda I}$ is known as the \textbf{characteristic polynomial}. The \textbf{multiplicity} of some $\lambda$ value is in how many repeated roots $\lambda_{1}$ appears.
+\end{thm}
+\\
+
+Moving on, two square matrices are said to be similar if both:
+\begin{align*}
+    P^{-1}AP = B\\
+    PBP^{-1} = A
+\end{align*}
+
+This is related to eigenvectors through:
+
+\begin{thm}
+If $A$ and $B$ are similar matrices, then they have the same characteristic polynomial hence the same eigenvalues. 
 \end{thm}
 
 
