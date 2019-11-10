@@ -1,4 +1,5 @@
 # Table of contents
+[week4]<!-- TOC -->autoauto- [Table of contents](#table-of-contents)auto    - [Week 4 <a name="week4"></a>](#week-4-a-nameweek4a)auto            - [Parametrized types](#parametrized-types)auto    - [Week 5 <a name="week5"></a>](#week-5-a-nameweek5a)auto    - [Extension point of the week (Unicode)](#extension-point-of-the-week-unicode)auto            - [Methods and defaults](#methods-and-defaults)auto            - [Why use methods?](#why-use-methods)auto                - [Method evaluation](#method-evaluation)auto    - [Week 7](#week-7)auto        - [Concepts in OOP](#concepts-in-oop)auto            - [Copy constructor](#copy-constructor)auto    - [Week 8](#week-8)auto        - [Introducing inheritance](#introducing-inheritance)autoauto<!-- /TOC -->
 
 ## Week 4 <a name="week4"></a>
 
@@ -357,6 +358,8 @@ class Rectangle3D extends Rectangle {
 ```
 
 And yet another way to call the parent constructor is through *this(...)*
+
+
 
 
 
