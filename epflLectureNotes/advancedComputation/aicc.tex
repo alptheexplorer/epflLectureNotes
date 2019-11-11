@@ -1035,8 +1035,46 @@ We define $p_{l}$ the exponentiation function as:
 
 $$ p_{l}(a,l) = \text{if} \ n\leq 0 \ \text{then} 1\ \text{else} \ a^{n\text{&}1}\cdot p_{l}(a,\floor{\frac{n}{2}})^{2}$$ where $a^{n\text{&}1} = \{0,1\}$ and is equal to 1 iff n is even. 
 
+\subsection{Lec 18. notes}
 
+Consider applications of counting principles. Suppose we create a password using characters and digits. In total we have 70 possibilities for each entry which follows from the \textbf{addition rule} as we may have upper case or lower case or digits or specials hence $26+26+10+8$ And now consider how many possible passwords we have of 12 entries. Using the product rule, we obtain $70^{12}$ And some more examples:
 
+\begin{enumerate}
+    \item Not containing a digit is $60^{12}$
+    \item Begin with a digit is $10 \cdot 70^{11}$
+    \item Begin with a digit and end with a character is $10 \cdot 26 \cdot 70^{10}$
+    \item Begin with a digit or special character is $(10 + 8) \cdot 70^{11}$
+\end{enumerate}
+
+The last example follows from $|A\cup B| = |A| + |B| - |A\cap B|$ with $|A\cap B| = 0$ And now a slightly more complicated example. Consider the set of passwords that begin with a digit or end with a special character. Then $|A| = 10 \cdot 70^{11}$ and $|B| = 8 \cdot 70^{11}$ hence this gives $|A\cup B| = 10 \cdot 70^{11} + 8 \cdot 70^{11} - 10\cdot 8 \cdot70^{10}$ Also note that for $|A| \cup |B| \cup |C|$ we have that it equals: $|A| + |B| + |C| - |B\cup C| - |A\cup C| - |A\cup C| - |A\cup B \cup C|$
+
+\textbf{Complementarity:} If we asked the number of passwords consisting of at least one digit, we could simply figure this using total number of passwords - number of passwords with no digits. More formally this is: $|A \cap B| = |A| - |A\cap B^{*}|$
+\\
+
+Consider now all possible mappings $A \to B$ where $|A| = r$ and $|B| = n$. How many such mappings are there? Well it follows that for each $x \in A$ we have $n$ many choices which means multiplying $n$,  $r$ many times hence $|B|^{|A|}$ many possible maps.
+\\
+
+And now consider how many possible injective mappings we have from $A$ to $B$. Well for first element we have $|B|$, for second $|B-1|$ many and for last element $|B|-|A|+1$ many choices. This yields:
+$$ |B| + \ldots + |B|-|A|+1 = \frac{n!}{(n-r)!} $$
+which also happens to be the permutation formula. 
+
+Having introduced the permutation formula, the slight difference in combination formula is that because order does not matter, we must rid our count of all occurrences of the same combination. If we are picking $r$ objects out of $n$ then we know that there are $\frac{n!}{(n-r)!}$ many choices and $r!$ many repetitions hence we divide by $r!$ to get the combination formula: $$\binom{n}{r} = \frac{n!}{r!(n-r)!} $$
+
+And yet more detail follows when we consider all possibilities of permutations:
+\begin{itemize}
+    \item permutation with replacement: password selection
+    \item permutation without replacement: sports competition winners
+    \item combination with replacement: choosing cookies from jar
+    \item combination without replacement: selecting members of a committee 
+\end{itemize}
+
+An application of the permutation is a password without repetition. We have that for password of length $r$ there are $P(n,r)$ many options. 
+
+And now we state the pigeonhole principle.
+
+\begin{theorem}
+If $k+1$ many objects are to be placed in $k$ many boxes, then at least one box contains 2 objects.
+\end{theorem}
 
 
 
