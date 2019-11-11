@@ -1037,7 +1037,7 @@ If the matrix $(A-\lambda I)$ has no \ld \ columns than it has no eigenvectors.
 Now note that we cannot use the equation $(A - \lambda I)=0$ to solve for $\lambda$
 \\
 
-Let's continue our exploration of eigenspaces(noting that an eigenspace is a supspace of $V_{n}$:
+Let's continue our exploration of eigenspaces noting that an eigenspace is a subspace of $V_{n}$:
 
 \begin{exm}
 Suppose $A = \begin{bmatrix}
@@ -1128,11 +1128,54 @@ Moving on, two square matrices are said to be similar if both:
     PBP^{-1} = A
 \end{align*}
 
-This is related to eigenvectors through:
+The point of two matrices being similar is that whenever two matrices are similar, they essentially represent the same linear transformation between spaces however only in different bases.
+
 
 \begin{thm}
 If $A$ and $B$ are similar matrices, then they have the same characteristic polynomial hence the same eigenvalues. 
 \end{thm}
+
+
+\begin{thm}\textbf{(Representation of one matrix in another basis)}
+\
+Consider how we might represent one matrix in another basis $B$. That is suppose $A = \begin{bmatrix}
+    -1 & 4 \\
+    -2 & 3
+\end{bmatrix}$ and we are given a basis $B = \{ \begin{bmatrix}
+    3 \\
+    2
+\end{bmatrix}, \begin{bmatrix}
+    -1 \\ 
+    1
+\end{bmatrix} \}$ Now it should be somewhat obvious that we must first apply the transformation to the bases and then find the coordinate of each result in the given basis. The matrix formed by these is then simply the coordinates of the bases $B$ after the transformation. Doing this follows as first finding the product $AB$ since for instance $A(\begin{bmatrix}
+    3 \\
+    2
+\end{bmatrix}) = \text{first column of AB} = \begin{bmatrix}
+    5 \\ 
+    0
+\end{bmatrix}$ And after we will have to solve $\begin{bmatrix}
+    5 \\
+    0
+\end{bmatrix} = a \begin{bmatrix}
+    3 \\ 
+    2
+\end{bmatrix} + b\begin{bmatrix}
+    -1 \\ 
+    1
+\end{bmatrix}$ Formalizing this a little more we get that finding A in basis $B$ follows as solving:
+
+$$\begin{bmatrix}[c|c]
+    B & AB
+\end{bmatrix} \rightarrow \begin{bmatrix}[c|c]
+    I & A_{B}
+\end{bmatrix}$$
+
+In fact we can be even more formal. The matrix $A_B$ is nothing more that as input takes a coordinate vector in basis $B$ and applies transformation $A$ on it. We obtain that:
+$$A_{B} = \underbrace{B^{-1}}_{\text{\makebox[0pt]{obtain coordinates of bases after transformation}}}AB$$
+
+\end{thm}
+
+
 
 
 

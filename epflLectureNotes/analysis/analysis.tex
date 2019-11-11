@@ -876,7 +876,7 @@ $$ |x^2 - 4| \leq \underbrace{5|x-2|}_{\text{\makebox[0pt]{because $|x+2|\leq5$}
 Let's now go through an example demonstration using the sequence definition of the limit.
 
 \begin{example}
-Suppose we want to show that for $f(x) = x^2 + 1$ $ \lim_{x \ti 0} x^2 + 1 = 1$. Now define $x_{n} = n$ which gives us a sequence such that $\lim_{n \to \infty}x_{n} = 0$. Now we want $\lim_{n \to \infty}x_{n}^{2} + 1 = 1$. By limit algebra we get:
+Suppose we want to show that for $f(x) = x^2 + 1$ $ \lim_{x \to 0} x^2 + 1 = 1$. Now define $x_{n} = n$ which gives us a sequence such that $\lim_{n \to \infty}x_{n} = 0$. Now we want $\lim_{n \to \infty}x_{n}^{2} + 1 = 1$. By limit algebra we get:
 $$ = (\lim_{n \to \infty}x_{n})^2 + 1 = 0^2 + 1 = 1$$
 \end{example}
 
@@ -1056,6 +1056,22 @@ Now we have that $|\cos{x} - \cos{y}|=2|\sin{\frac{x+y}{2}}\sin{\frac{x-y}{2}}| 
 And now we have that:(setting $\delta = \frac{\epsilon}{2}$
 $$|x-y|\leq \delta \rightarrow |\cos{x} - \cos{y}|\leq  2|x-y|\leq \epsilon$$
 \end{proof}
+
+
+\begin{remark}\textbf{Difference between uniform and standard continuity}
+\\
+The only difference between the two definitions is the order of quantifiers. That is, $f$ is continuous on $A$ if:
+$$\forall c \in A \ \forall \epsilon > 0 \ \exists \delta > 0 \ \forall x \in \ A[ |x-c| \leq \delta \rightarrow |f(x) - f(c)|\leq \epsilon|$$ Whereas $f$ is uniformly continuous on $A$ if: 
+$$\forall \epsilon > 0 \ \exists \ \delta > 0 \ \forall x,c \in A \ [|x-c| \leq \delta \rightarrow |f(x) - f(c)|\leq \epsilon|]$$
+
+This goes on to simply show that in uniform continuity, our choice of $\delta$ is independent of the value of $c$. So if we imagine our chosen epsilon and delta as forming a rectangle, then uniform continuity implies that there is always a delta value such that the rectangle may be fitted in any arbitrary range in the domain. This also then clarifies why uniform continuity implies contunuity. 
+\end{remark}
+
+\begin{example}\textbf{(Continuous extensions)}
+\\
+Consider $f:]0,1]\backslash A \to \mathbb{R}$ where $A = \{(\frac{\pi}{2} + n\pi)^{-1} : n\in \mathbb{N} \}$ and $f(x) = \tan{\frac{1}{x}}(1-\sin{\frac{1}{x}^2)} $ Now we want to observe whether $f$ has a continuous extension for $x_{0} \in A \cup \{0\}$ Notice that we may simplify $f(x)$ to $f(x) = \sin{\frac{1}{x}}\cos{\frac{1}{x}}$ And the next trick is to define a sequence $ x:= a_{n} = (\frac{\pi}{2} + n\pi)^{-1} $ Then we have that $\sin{\frac{\pi}{2} + n\pi}\cos{\frac{\pi}{2} + n\pi} = (-1)^{n}\cdot 0 = 0$ Hence a continuous extension is a possible as the limit at any value of $(\frac{\pi}{2} + n\pi)^{-1}$ exists. 
+
+\end{example}
 
 
 
