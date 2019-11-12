@@ -22,7 +22,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 **Please note that I am a broke college student who likes spending money on gymshark shirts, perhaps you could help me fullfill my childhood dreams of unlimited gymshark shirt :)**
 
 
-<a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="100" align="right" ></a>
+<a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
 
 
