@@ -19,7 +19,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 *Physics course has been omitted*
 
 
-**Please note that I am a broke college student who likes to spend money on supplements and gymshark shirts, so perhaps you could help me fill my childhood dreams by donating, merci :)**
+**Please note that I am a broke college student who likes spending money on gymshark shirts, perhaps you could help me fullfill my childhood dreams of unlimited gymshark shirt :)**
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
