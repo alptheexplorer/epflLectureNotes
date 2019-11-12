@@ -21,7 +21,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 **Please note that I am a broke college student who likes spending money on gymshark shirts, perhaps you could help me fullfill my childhood dreams of unlimited gymshark shirt :)**
 
-<a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="MGcsKPtYI" data-description="Donate just a tiny bit fam." data-message="I need coffee as a preworkout." data-color="#FF5F5F" data-position="right" data-x_margin="18" data-y_margin="18"></script>
 
 
 
