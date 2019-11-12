@@ -1076,6 +1076,31 @@ And now we state the pigeonhole principle.
 If $k+1$ many objects are to be placed in $k$ many boxes, then at least one box contains 2 objects.
 \end{theorem}
 
+\subsection{Summary of counting principles}
+
+\begin{tcolorbox}[drop shadow, title=(Counting principles),lower separated=true]
+
+\textbf{Product rule}: Break a task into two subtasks of cost $n_{1}$ and $n_{2}$ then total cost is $n_{1}n_{2}$
+\begin{example}
+Labeling a name tag with one character and one digit less than 100, then in total we have $26\cdot100$ choices
+\end{example}
+
+And a more elaborate example using nested loops:
+\begin{lstlisting}
+    int k = 0;
+        for i=1 to a{ //loop 1
+            for i=1 to b{ //loop 2
+                k += 1;
+            }
+        }
+\end{lstlisting}
+For each traversal of length $n$, $n$ is added to $k$ and since for example loop 2 is done $a$ many times we have that $k = a\cdot b$
+\\
+
+\textbf{Division rule}: If there are $n$ total ways to do a procedure and $w$ of these procedures correspond to the same task $d$ then there are $\frac{n}{d}$ ways of doing the task. 
+ 
+\end{tcolorbox}
+
 
 
 
