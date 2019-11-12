@@ -19,6 +19,11 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 *Physics course has been omitted*
 
 
+**Please note that I am a broke college student who likes to spend money on supplements and gymshark shirts, so perhaps you could help me fill my childhood dreams by donating, merci :) buymeacoff.ee/MGcsKPtYI **
+
+
+
+
 
 
 
