@@ -259,7 +259,7 @@ $$ (x - \frac{1}{m})^2 = x^2 - \frac{2x}{m} + \frac{1}{m^2} > x^2 - \frac{2x}{m}
 We want to choose $m$ s.t. $x^2 - \frac{2x}{m} > 2$. This way, if $x^2 - \frac{2x}{m} > 2$ holds, then since $(x - \frac{1}{m})^2 > x^2 - \frac{2x}{m}$, we will have that $x - \frac{1}{m}$ is an upper bound. We obtain:
 $$\frac{x^2 -2}{2x} > \frac{1}{m}$$
 \\
-Now as $\frac{x^2 -2}{2x}$ is positive, ${1}{m}$ dpes exist. Hence, $x - \frac{1}{m}$ is also an upper bound that implies $x \not = sup S$ if $x^2 > 2$.
+Now as $\frac{x^2 -2}{2x}$ is positive, ${1}{m}$ does exist. Hence, $x - \frac{1}{m}$ is also an upper bound that implies $x \not = sup S$ if $x^2 > 2$.
 \\
 Therefore, $sup S = x = \sqrt{2}$ and since every $sup S \in \mathbb{R}$, $\sqrt{2} \in \mathbb{R}$
    
@@ -876,7 +876,7 @@ $$ |x^2 - 4| \leq \underbrace{5|x-2|}_{\text{\makebox[0pt]{because $|x+2|\leq5$}
 Let's now go through an example demonstration using the sequence definition of the limit.
 
 \begin{example}
-Suppose we want to show that for $f(x) = x^2 + 1$ $ \lim_{x \ti 0} x^2 + 1 = 1$. Now define $x_{n} = n$ which gives us a sequence such that $\lim_{n \to \infty}x_{n} = 0$. Now we want $\lim_{n \to \infty}x_{n}^{2} + 1 = 1$. By limit algebra we get:
+Suppose we want to show that for $f(x) = x^2 + 1$ $ \lim_{x \to 0} x^2 + 1 = 1$. Now define $x_{n} = n$ which gives us a sequence such that $\lim_{n \to \infty}x_{n} = 0$. Now we want $\lim_{n \to \infty}x_{n}^{2} + 1 = 1$. By limit algebra we get:
 $$ = (\lim_{n \to \infty}x_{n})^2 + 1 = 0^2 + 1 = 1$$
 \end{example}
 
@@ -1056,6 +1056,73 @@ Now we have that $|\cos{x} - \cos{y}|=2|\sin{\frac{x+y}{2}}\sin{\frac{x-y}{2}}| 
 And now we have that:(setting $\delta = \frac{\epsilon}{2}$
 $$|x-y|\leq \delta \rightarrow |\cos{x} - \cos{y}|\leq  2|x-y|\leq \epsilon$$
 \end{proof}
+
+
+\begin{remark}\textbf{Difference between uniform and standard continuity}
+\\
+The only difference between the two definitions is the order of quantifiers. That is, $f$ is continuous on $A$ if:
+$$\forall c \in A \ \forall \epsilon > 0 \ \exists \delta > 0 \ \forall x \in \ A[ |x-c| \leq \delta \rightarrow |f(x) - f(c)|\leq \epsilon|$$ Whereas $f$ is uniformly continuous on $A$ if: 
+$$\forall \epsilon > 0 \ \exists \ \delta > 0 \ \forall x,c \in A \ [|x-c| \leq \delta \rightarrow |f(x) - f(c)|\leq \epsilon|]$$
+
+This goes on to simply show that in uniform continuity, our choice of $\delta$ is independent of the value of $c$. So if we imagine our chosen epsilon and delta as forming a rectangle, then uniform continuity implies that there is always a delta value such that the rectangle may be fitted in any arbitrary range in the domain. This also then clarifies why uniform continuity implies contunuity. 
+\end{remark}
+
+\begin{example}\textbf{(Continuous extensions)}
+\\
+Consider $f:]0,1]\backslash A \to \mathbb{R}$ where $A = \{(\frac{\pi}{2} + n\pi)^{-1} : n\in \mathbb{N} \}$ and $f(x) = \tan{\frac{1}{x}}(1-\sin{\frac{1}{x}^2)} $ Now we want to observe whether $f$ has a continuous extension for $x_{0} \in A \cup \{0\}$ Notice that we may simplify $f(x)$ to $f(x) = \sin{\frac{1}{x}}\cos{\frac{1}{x}}$ And the next trick is to define a sequence $ x:= a_{n} = (\frac{\pi}{2} + n\pi)^{-1} $ Then we have that $\sin{\frac{\pi}{2} + n\pi}\cos{\frac{\pi}{2} + n\pi} = (-1)^{n}\cdot 0 = 0$ Hence a continuous extension is a possible as the limit at any value of $(\frac{\pi}{2} + n\pi)^{-1}$ exists. 
+\end{example}
+
+
+\begin{tcolorbox}[drop shadow, title = (Consequences of Bolzano-Weierstrass),lower separated=true]
+\begin{theorem}
+For any function $f: [a,b] \to \mathbb{R}$, if $f$ is continuous, then there always exists a maximum and a minimum.
+\end{theorem}
+
+\begin{proof}
+We only prove the max case and do this using contradiction. Now suppose that we have a closed interval and a continuous function defined over it and define $x_{n} \subseteq [a,b]$ Now suppose that $\forall n \in \mathbb{N} \ f(x_{n} \geq n$ Now set $\underbrace{\lim_{n \to \infty}x_{n} = c}_{\text{\makebox[0pt]{allowed using Bolzano-Weierstrass}}} $ Since our function is continuous, by definition of continuity we have that $f(c)$ equals some limit. But by our supposition, we have that for $x_{n} \subseteq [a,b], \ \lim_{n\to \infty}x_{n} = \infty$ and since $\lim_{n \to \infty}f(x_{n}) = f(c)$ this is a contradiction.  As a sidenote, the main idea in this proof is to suppose a non-convergent sequence exists as a subset of our domain and to show that because of our assumption of continuity we get a contradiction.
+\end{proof}
+
+
+\begin{theorem}
+For any function $f: [a,b] \to \mathbb{R}$, if $f$ is continuous, then $f$ is uniformly continuous. \textit{This should be obvious as if $f$ is say monotone we simply pick $\delta$ based on the largest interval}
+\end{theorem}
+
+\begin{proof}Now using contradiction again let's suppose that $f$ over a closed interval is continuous but not uniformly continuous. Then by negating uniform continuity we have that $\exists \epsilon > 0$ s.t. $\forall \delta > 0$ and $\exists x,y$ such that $|x-y|<\delta$ and $|f(x) - f(y)| > \epsilon$ Now let's set $x_{n},y_{n} \subseteq [a,b]$ and by Bolzano-Weierstrass we have that both $x_{n},y_{n}$ are convergent and thus let $\lim_{n \to \infty}x_{n} = x_{0}$. And let's suppose that $|x_{n} - y_{n}|\leq \frac{1}{n}$ Now this yields that both sequences have limit $x_{0}$ But then $|f(x_{0} - f_{0}| > \epsilon$ can't be true. 
+\end{proof}
+
+\begin{theorem}\textbf{Intermediate value theorem}
+\\
+
+For any function $f: [a,b] \to \mathbb{R}$, if $f$ is continuous, then $f$ takes the value between each max and min (aka. codomain for the interval) at least once. 
+\end{theorem}
+
+
+\begin{theorem}
+For any continuous function with closed interval domain, there is a fixed point that is some $x$ such that $f(x) = x$
+\end{theorem}
+
+\begin{proof}
+Set $g(x) = f(x) - x$ then at some point $g(x)$ will have an x-intercept(by intermediate value theorem) yielding $f(x) = x$
+\end{proof}
+\end{tcolorbox}
+
+And more theorems as always:
+
+\begin{theorem}
+If $f: ]a,b[ \to \mathbb{R}$ is strictly monotone and continuous then its range is an open interval.  
+\end{theorem}
+
+\begin{proof}
+This is not a proof, only a visual aid! Suppose that the image is a closed interval, then some $b$ in domain takes the max value $M$ in range, yet our function is strictly monotone and continuous hence some $b+\delta$ then has no value to take. 
+\end{proof}
+
+\begin{theorem}
+Let $f: E \to \mathbb{R}$ is a continuous function, then $f$ is strictly monotone iff. it is injective.  
+\end{theorem}
+
+\begin{theorem}
+If $f: E \to \mathbb{R}$ is continuous, strictly monotone and surjective then $f^{-1}$ is continuous.
+\end{theorem}
 
 
 
