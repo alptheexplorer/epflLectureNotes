@@ -1,7 +1,22 @@
-# Table of contents
-[week4]<!-- TOC -->autoauto- [Table of contents](#table-of-contents)auto    - [Week 4 <a name="week4"></a>](#week-4-a-nameweek4a)auto            - [Parametrized types](#parametrized-types)auto    - [Week 5 <a name="week5"></a>](#week-5-a-nameweek5a)auto    - [Extension point of the week (Unicode)](#extension-point-of-the-week-unicode)auto            - [Methods and defaults](#methods-and-defaults)auto            - [Why use methods?](#why-use-methods)auto                - [Method evaluation](#method-evaluation)auto    - [Week 7](#week-7)auto        - [Concepts in OOP](#concepts-in-oop)auto            - [Copy constructor](#copy-constructor)auto    - [Week 8](#week-8)auto        - [Introducing inheritance](#introducing-inheritance)autoauto<!-- /TOC -->
 
-## Week 4 <a name="week4"></a>
+- [1.1. Week 4 <a name="week4"></a>](#11-week-4-a-nameweek4a)
+    - [1.1.0.1. Parametrized types](#1101-parametrized-types)
+- [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
+- [1.3. Extension point of the week (Unicode)](#13-extension-point-of-the-week-unicode)
+    - [1.3.0.2. Methods and defaults](#1302-methods-and-defaults)
+    - [1.3.0.3. Why use methods?](#1303-why-use-methods)
+      - [1.3.0.3.1. Method evaluation](#13031-method-evaluation)
+- [1.4. Week 7](#14-week-7)
+  - [1.4.1. Concepts in OOP](#141-concepts-in-oop)
+    - [1.4.1.1. Copy constructor](#1411-copy-constructor)
+- [1.5. Week 8](#15-week-8)
+  - [1.5.1. Introducing inheritance](#151-introducing-inheritance)
+    - [1.5.1.1. Dynamic method dispatch aka. runtime polymorphism](#1511-dynamic-method-dispatch-aka-runtime-polymorphism)
+    - [1.5.1.2. Java packages:extra of the week](#1512-java-packagesextra-of-the-week)
+- [1.6. Week 9](#16-week-9)
+  - [Introducing polymorphism](#introducing-polymorphism)
+
+## 1.1. Week 4 <a name="week4"></a>
 
 Char is used to represent any character. 
 
@@ -114,7 +129,7 @@ ArrayList<int> t1 = new ArrayList<int>();
 .isEmpty();
 ```
 
-#### Parametrized types
+#### 1.1.0.1. Parametrized types
 
 It may have appeared why we declare an arraylist as 
 ```java
@@ -123,7 +138,7 @@ ArrayList<Int> test = new ArrayList<Int>();
 The reason for the passage of argument Int is that ArrayList is an example of a parametrized type, meaning it is able to accept a type as an argument **yet does not accept primitive data types such as int**.  This is useful because we can create new object that store methods specific to the type argument. 
 
 
-## Week 5 <a name="week5"></a>
+## 1.2. Week 5 <a name="week5"></a>
 
 We start with an important reminder:
 
@@ -137,7 +152,7 @@ System.out.println(tab.get(0) == tab.get(1)); //prints false
 System.out.println(tab.get(0).equals(tab.get(1))); // prints true
 ```
 
-## Extension point of the week (Unicode)
+## 1.3. Extension point of the week (Unicode)
 
 Firstly, unicode is not simply a 16-bit code system where each character takes 16 bits. 
 
@@ -152,7 +167,7 @@ This brings us to UTF-8. In UTF-8, every code point from 0-127 is stored as a si
 
 
 
-#### Methods and defaults
+#### 1.3.0.2. Methods and defaults
 
 To prevent unneccesary coding we use the concept of method overloading.
 
@@ -189,7 +204,7 @@ int sum(int ... a){
 
 ```
 
-#### Why use methods?
+#### 1.3.0.3. Why use methods?
 
 The point in using a method is simply to eliminate redundant code. Hence, we define a method as being a reusable piece of code. And here is some method jargon:
 
@@ -222,7 +237,7 @@ public static void main(String Args[]){
 
 We note that when a return type is not declared, a method defaults to void. In addition, **return must be the last invocation in a method** and similarly, the provocation of **return cannot be conditional**. 
 
-##### Method evaluation
+##### 1.3.0.3.1. Method evaluation
 
 For some method like 
 ``` java
@@ -250,9 +265,9 @@ public static void main(String Args[]){
 The above behaviour happens because when we call change(x), we are essentially making val = x meaning that val is a copy of the object x. Yet, for primitive data types, this is not the case. We have that both the copy val and x point to the same v.
 
 
-## Week 7 
+## 1.4. Week 7 
 
-### Concepts in OOP
+### 1.4.1. Concepts in OOP
 
 The main notion of OOP is encapsulation. The idea is to capture related attributes and methods under one common hood. 
 
@@ -289,7 +304,7 @@ class Test{
 
 In general, it is good practice to only make methods and attributes that are used by the client-side public. An example to this is the famous getters and setters. 
 
-#### Copy constructor 
+#### 1.4.1.1. Copy constructor 
 
 Suppose we want to define a constructor so that we can create a separate copy instance(this is because if we set two objects equal to other than they both point to the same object in memory.)
 
@@ -307,9 +322,9 @@ class test{
 }
 ```
 
-## Week 8
+## 1.5. Week 8
 
-### Introducing inheritance 
+### 1.5.1. Introducing inheritance 
 
 The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *protected* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. Hence a workaround is to use getters and setters defined in the parent class for access in subclasses. 
 
@@ -358,6 +373,79 @@ class Rectangle3D extends Rectangle {
 ```
 
 And yet another way to call the parent constructor is through *this(...)*
+
+
+#### 1.5.1.1. Dynamic method dispatch aka. runtime polymorphism
+
+Suppose we have:
+``` java
+
+class first{
+    void display(){
+        print("first")
+    }
+
+    ... main(...){
+        first ref;
+        ref = new second();
+        ref.display();
+    }
+}
+
+class second extends first{
+    void display2(){
+        print("second")
+    }
+}
+
+```
+
+Now according to runtime polymorphism we have that only the type of object is checked and not the type of its reference. Hence the display method of second class will be called. 
+
+Note that for runtime polymorphism, it is not the compiler that decides which method to call but the JVM.
+
+#### 1.5.1.2. Java packages:extra of the week 
+
+The idea of a package is to group classes with similar behaviour under the same package. For instance suppose we are building an RPG game, then we may create a package for all player classes, a package for GUI classes and so on. Packages also prevent naming conflicts. 
+
+Suppose we have a project relating to cartography then surely we will have a class called Map. Now the standard Java library also has a Map class hence we are sure to have a conflict. The offered solution is to place our Map class into the package Carto and use the statement:
+
+``` java
+import Carto.Map
+
+Map.show();
+```
+
+And whenever we are in the same package, we may simply omit the import statement of course not forgetting the package statement. To import totality of names in a class we use an asterisk(*):
+
+
+``` java
+import Carto.*
+
+Map.show();
+```
+
+## 1.6. Week 9
+
+### Introducing polymorphism 
+
+There are two types of polymorphism:
+1. polymorphism of methods
+2. polymorphism of variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
