@@ -20,6 +20,8 @@
   mathescape
 }
 
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 
 \theoremstyle{definition}
@@ -1035,6 +1037,7 @@ We define $p_{l}$ the exponentiation function as:
 
 $$ p_{l}(a,l) = \text{if} \ n\leq 0 \ \text{then} 1\ \text{else} \ a^{n\text{&}1}\cdot p_{l}(a,\floor{\frac{n}{2}})^{2}$$ where $a^{n\text{&}1} = \{0,1\}$ and is equal to 1 iff n is even. 
 
+\section{Counting (Week 9 -}
 \subsection{Lec 18. notes}
 
 Consider applications of counting principles. Suppose we create a password using characters and digits. In total we have 70 possibilities for each entry which follows from the \textbf{addition rule} as we may have upper case or lower case or digits or specials hence $26+26+10+8$ And now consider how many possible passwords we have of 12 entries. Using the product rule, we obtain $70^{12}$ And some more examples:
@@ -1046,7 +1049,7 @@ Consider applications of counting principles. Suppose we create a password using
     \item Begin with a digit or special character is $(10 + 8) \cdot 70^{11}$
 \end{enumerate}
 
-The last example follows from $|A\cup B| = |A| + |B| - |A\cap B|$ with $|A\cap B| = 0$ And now a slightly more complicated example. Consider the set of passwords that begin with a digit or end with a special character. Then $|A| = 10 \cdot 70^{11}$ and $|B| = 8 \cdot 70^{11}$ hence this gives $|A\cup B| = 10 \cdot 70^{11} + 8 \cdot 70^{11} - 10\cdot 8 \cdot70^{10}$ Also note that for $|A| \cup |B| \cup |C|$ we have that it equals: $|A| + |B| + |C| - |B\cup C| - |A\cup C| - |A\cup C| - |A\cup B \cup C|$
+The last example follows from $|A\cup B| = |A| + |B| - |A\cap B|$ with $|A\cap B| = 0$ And now a slightly more complicated example. Consider the set of passwords that begin with a digit or end with a special character. Then $|A| = 10 \cdot 70^{11}$ and $|B| = 8 \cdot 70^{11}$ hence this gives $|A\cup B| = 10 \cdot 70^{11} + 8 \cdot 70^{11} - 10\cdot 8 \cdot70^{10}$ Also note that for $|A| \cup |B| \cup |C|$ we have that it equals: $|A| + |B| + |C| - |B\cup C| - |A\cup C| - |A\cup C| + |A\cap B \cap C|$
 
 \textbf{Complementarity:} If we asked the number of passwords consisting of at least one digit, we could simply figure this using total number of passwords - number of passwords with no digits. More formally this is: $|A \cap B| = |A| - |A\cap B^{*}|$
 \\
@@ -1100,6 +1103,141 @@ For each traversal of length $n$, $n$ is added to $k$ and since for example loop
 \textbf{Division rule}: If there are $n$ total ways to do a procedure and $w$ of these procedures correspond to the same task $d$ then there are $\frac{n}{d}$ ways of doing the task. 
  
 \end{tcolorbox}
+
+\subsection{Lec 19. notes}
+We remind the following:
+\begin{itemize}
+    \item Permutation with replacement from $n$ to $k$ with $n\leq k$ is $k^{n}$
+    \item Permutation without replacement is $P(n,k) = \frac{n!}{(n-k)!}$
+    \item Combination without replacement is $C(n,k) = \frac{n!}{k!(n-k)!}$
+\end{itemize}
+
+And now some examples of poker handouts:
+\\
+
+\textbf{Four of a kind}(4 of same kind and one other)
+\\
+13 ways to select a kind and 48 left after selection hence 13 ways to select first and 48 for last hence in total $13\cdot 48$ ways. 
+
+
+\textbf{Full house}(3 and 2 of samekind)
+\\
+13 ways to select kind and $\binom{4}{3}$ to select suit and then again 12 ways to select kind and $\binom{4}{2}$ ways to select suit. Alternatively one might see this as follows; there are 52 ways to pick a first card which determines a kind. Then, the remaining 3 cards of the card are taken as the kind of three. With 48 cards remaining now, we have $\binom{3}{2}$ choices to make for the final card. Yet realizing that this situation is symetric we divide by 2 to obtain: $\frac{3}{2}\cdot48\cdot52$
+\\
+
+Another interesting problem is how many choices there are when traversing a grid of size $(m+1, n+1)$ where say we may only travel north or east. It turns out that this is the combination $\binom{n+m}{n}$ because with always $n+m$ steps to take, we are deciding $n$ many times whether to turn north or east.
+\\
+
+Now consider how many $n$ bit string there are with precisely $r$ many ones. This is equal to $\binom{n}{r}$ and from this one sees that $\sum_{r=0}^{n} = 2^k$ as the question we asked is equivalent how many possible subsets of an $n$ cardinality sets there are. 
+\\
+
+And now \textbf{Pascal's Identity}:
+\begin{theorem}
+$$ \binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}$$
+\textit{Proof follows from simple(based on who you are) algebra}
+\end{theorem}
+
+\begin{theorem}
+$$ r\binom{n}{r} = n\binom{n-1}{r-1}$$
+This theorem is obvious through the following combinatorial argument: we are selecting $r$ many committee members and appoint one of them as a chair. This yields $r\binom{n}{r}$ such ways. Similarly we first pick the chair and then pick committee members from $n-1$ members yielding $n\binom{n-1}{r-1}$
+\end{theorem}
+
+We left out earlier \textbf{combinations with replacement} and now come back to them. As it turns out the general formula for selecting $r$ items out of $n$ is:
+$$ C((r+(n-1),(n-1)) = \binom{n+r-1}{n-1}$$
+
+\begin{example}(\textbf{Stars and bars})
+A famous problem in elementary combinatorics is to ask how many distinct 3-tuples are there such that $x_{1} + x_{2} + x_{3} = 7$. This is easily resolved using the \textit{stars and bars analogy}. We model it as follows:
+
+$$ x x x x x x x ||$$ each time we move the $|$ slider to the right it adds a value to the corresponding $x_{i}$ for instance $x x x | x x | x x $ is the case where $x_{1} = 3, x_{2} = 2, x_{3} = 2$ Thus the total number of slider positions is $\binom{7 + 3 - 1}{2}$
+\\
+
+Now further motivating this example we may ask how many distinct integer $n$ tuples are there such that $x_{1} + x_{2} + x_{3} \leq 7$ The smart way to do this is to add a dummy variable $x_{4}$ and let $x_{1} + x_{2} + x_{3} + x_{4} = 7$ as the two are equivalent. Then the solution to the latter is $\binom{7 + 4 - 1}{3}$.
+\\
+
+And taking this even further what if we ask how many distinct integer $n$ tuples are there such that $x_{1} + x_{2} + x_{3} \leq 18$ and also that $x_{i} \geq i$. Well we make the problem easier by letting $y_{i} = x_{i} - i$ This works because if say $x_{2} = 2$ then $y_{2} = 4$ hence an equivalent but much simpler problem is:
+$$ y_{1} + 1 + y_{2} + 2 + y_{3} + 3 + y_{4} = 18 $$ which trivially solves to $\binom{12 + 4-1}{3}$
+\end{example}
+
+
+
+
+
+{\bf{Counting combinations with replacement}}\\
+\textcolor{gray}{We have} a set of $n$ distinct items, say $\{1,2,3,\ldots,n\}$, and we have to select $r$ of them with replacement (i.e., items may be selected multiple times) but we are not interested in the order in which the items are selected. Thus, with $r=6$, selecting $1,1,3,2,1,2$ counts as the same possibility as selecting $1,1,1,2,2,3$. Denoting by~$x_i$ the number of times that item $i$ is selected, we thus have $\sum_{i=1}^nx_i=r$. Given $n$ and~$r$ we want to find the number of solutions to that equation for non-negative integers~$x_i$.
+
+We solve this by fixing some $r>0$ and considering how we can find the number of solutions for increasing values of $n$. For $n=0$ we find that there is no way to select $r$ items. For $n=1$ there is just a single way to select $r$ items: just take $x_1=r$.
+For $n=2$, we note that once $x_1$ has been selected, the value for $x_2$ is fully determined. This is illustrated below, with in the first line a total of $r$ ones to the left of the separator ``$\,|$'' at the right indicating that $x_1=r$ and $x_2=0$. Now move the separator to the left: each time the separator $\,|$ moves a position to the left by jumping over a one, it changes the one into a two, so that $x_1$ decreases by one and $x_2$ increases by one. This continues until there is no one left for the separator to jump over: this means it is at the left of $r$ twos (which all used to be ones), indicating that $x_1=0$ and $x_2=r$:
+{\small{\begin{tabbing}
+\hspace*{50pt}\=1\=1\=$\ldots$\=1\=1\=1\=$\,|$: $\,\,\,x_1=r, x_2=0$\\
+\>1\>1\>$\ldots$\>1\>1\>$\,|$\>2: $\,\,\,x_1=r-1, x_2=1$\\
+\>1\>1\>$\ldots$\>1\>$\,|$\>2\>2: $\,\,\,x_1=r-2, x_2=2$\\
+\>1\>1\>$\ldots$\>$\,|$\>2\>2\>2: $\,\,\,x_1=r-3, x_2=3$\\
+\>\>\>$\ldots$\\
+\>1\>$\,|$\>$\ldots$\>2\>2\>2\>2: $\,\,\,x_1=1, x_2=r-1$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>2 \> 2   \>2: $\,\,\,x_1=0, x_2=r-1$
+\end{tabbing}}}
+\par\noindent
+Repeating the above with one additional separator $\,|$ at the far right does not change the varying $x_1$ and $x_2$ values, but indicates (for the same $r$-value) the potential presence of an additional variable $x_3$ which is so far just fixed at $x_3=0$ (because there is nothing to the right of the new rightmost separator):
+{\small{\begin{tabbing}
+\hspace*{50pt}\=1\=1\=$\ldots$\=1\=1\=1\=$\,|$\=$\,|$: $\,\,\,x_1=r, x_2=0, x_3=0$\\
+\>1\>1\>$\ldots$\>1\>1\>$\,|$\>2\>$\,|$: $\,\,\,x_1=r-1, x_2=1, x_3=0$\\
+\>1\>1\>$\ldots$\>1\>$\,|$\>2\>2\>$\,|$: $\,\,\,x_1=r-2, x_2=2, x_3=0$\\
+\>1\>1\>$\ldots$\>$\,|$\>2\>2\>2\>$\,|$: $\,\,\,x_1=r-3, x_2=3, x_3=0$\\
+\>\>\>$\ldots$\\
+\>1\>$\,|$\>$\ldots$\>2\>2\>2\>2\>$\,|$: $\,\,\,x_1=1, x_2=r-1, x_3=0$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>2 \> 2   \>2\>$\,|$: $\,\,\,x_1=0, x_2=r, x_3=0$
+\end{tabbing}}}
+\par\noindent
+In each line above we now let the rightmost separator move to the left, each time jumping over a two while changing it into a three and as far it can go until bumping into the separator to its left (i.e., until there is no two left):
+{\small{
+\begin{tabbing}
+\hspace*{50pt}\=1\=1\=$\ldots$\=1\=1\=1\=$\,|$\=$\,|$: $\,\,\,x_1=r, x_2=0, x_3=0$\\
+\>1\>1\>$\ldots$\>1\>1\>$\,|$\>2\>$\,|$: $\,\,\,x_1=r-1, x_2=1, x_3=0$\\
+\>1\>1\>$\ldots$\>1\>1\>$\,|$\>$\,|$\>3: $\,\,\,x_1=r-1, x_2=0, x_3=1$\\
+\>1\>1\>$\ldots$\>1\>$\,|$\>2\>2\>$\,|$: $\,\,\,x_1=r-2, x_2=2, x_3=0$\\
+\>1\>1\>$\ldots$\>1\>$\,|$\>2\>$\,|$\>3: $\,\,\,x_1=r-2, x_2=1, x_3=1$\\
+\>1\>1\>$\ldots$\>1\>$\,|$\>$\,|$\>3\>3: $\,\,\,x_1=r-2, x_2=0, x_3=2$\\
+\>1\>1\>$\ldots$\>$\,|$\>2\>2\>2\>$\,|$: $\,\,\,x_1=r-3, x_2=3, x_3=0$\\
+\>1\>1\>$\ldots$\>$\,|$\>2\>2\>$\,|$\>3: $\,\,\,x_1=r-3, x_2=2, x_3=1$\\
+\>1\>1\>$\ldots$\>$\,|$\>2\>$\,|$\>3\>3: $\,\,\,x_1=r-3, x_2=1, x_3=2$\\
+\>1\>1\>$\ldots$\>$\,|$\>$\,|$\>3\>3\>3: $\,\,\,x_1=r-3, x_2=0, x_3=3$\\
+\>\>\>$\ldots$\\
+\>1\>$\,|$\>$\ldots$\>2\>2\>2\>2\>$\,|$: $\,\,\,x_1=1, x_2=r-1, x_3=0$\\
+\>1\>$\,|$\>$\ldots$\>2\>2\>2\>$\,|$\>3: $\,\,\,x_1=1, x_2=r-2, x_3=1$\\
+\>1\>$\,|$\>$\ldots$\>2\>2\>$\,|$\>3\>3: $\,\,\,x_1=1, x_2=r-3, x_3=2$\\
+\>1\>$\,|$\>$\ldots$\>2\>$\,|$\>3\>3\>3: $\,\,\,x_1=1, x_2=r-4, x_3=3$\\
+\>1\>$\,|$\>$\ldots$\>$\,|$\>3\>3\>3\>3: $\,\,\,x_1=1, x_2=r-5, x_3=4$\\
+\>\>\>$\ldots$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>2 \> 2   \>2\>$\,|$: $\,\,\,x_1=0, x_2=r, x_3=0$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>2 \> 2   \>$\,|$\>3: $\,\,\,x_1=0, x_2=r-1, x_3=1$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>2 \>$\,|$\>3\>3: $\,\,\,x_1=0, x_2=r-2, x_3=2$\\
+\>$\,|$  \>2  \>$\ldots$  \>2  \>$\,|$\>3\>3\>3: $\,\,\,x_1=0, x_2=r-3, x_3=3$\\
+\>$\,|$  \>2  \>$\ldots$ \>$\,|$\>3\>3\>3\>3: $\,\,\,x_1=0, x_2=r-4, x_3=4$\\
+\>\>\>$\ldots$\\
+\>$\,|$  \>$\,|$  \>$\ldots$ \>3\>3\>3\>3\>3: $\,\,\,x_1=0, x_2=0, x_3=r$
+\end{tabbing}}}
+\par\noindent
+Thus by considering all ways that two separators can be positioned over $r+2$ positions we get all possible non-negative integers $x_1$, $x_2$, $x_3$ such that $\sum_{i=1}^rx_i=r$: the number of positions to the left of the leftmost separator is~$x_1$, the number of positions between the separators is $x_2$, and the number of positions to the right of the rightmost separator is~$x_3$.
+
+This generalizes in the obvious manner to $n=4$: add to each line an additional separator on a new rightmost position (and thus a new variable $x_4=0$), and then let the new separator move to the left as far as it can go until bumping into the formerly rightmost separator, while changing threes into fours and while keeping track of the increasing $x_4$-values and decreasing $x_3$-values.
+
+As a result we find that the number of $r$-combinations from $n$ with replacement (and thus the number of non-negative integer solutions to $\sum_{i=1}^nx_i= r$) equals $C(r+(n-1),(n-1))={n+r-1\choose n-1}$, namely the number of ways $n-1$ separators can be positioned over $r+n-1$ positions. It follows (after introducing a \emph{slack variable} $x_{n+1}$) that the number of non-negative integer solutions to $\sum_{i=1}^nx_i\le r$ \textcolor{gray}{equals} $n+r\choose n$.\\
+\par\noindent
+
+\begin{theorem}(Generalized pigeonhole principle)
+\\ 
+
+If $n$ objects are place in $k$ boxes, then there is at least one box containing $\ceil{\frac{n}{k}}$ objects. 
+\end{theorem}
+
+\begin{proof} Proof by contraposition
+\\
+
+Suppose none of the boxes contain more than $\ceil{\frac{n}{k}} - 1$ objects. Then we have that at most there are $k(\ceil{\frac{n}{k}} - 1)$ objects. Then:
+$$k(\ceil{\frac{n}{k}} - 1) < k(\frac{n}{k} + 1 - 1)$$
+\end{proof}
+
+
 
 
 
