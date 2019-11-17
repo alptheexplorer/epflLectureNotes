@@ -3,27 +3,27 @@
 - [1. Contents](#1-contents)
   - [1.1. Week 4 <a name="week4"></a>](#11-week-4-a-nameweek4a)
       - [1.1.0.1. Parametrized types](#1101-parametrized-types)
-      - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
-      - [1.3. Extension point of the week (Unicode)](#13-extension-point-of-the-week-unicode)
-      - [1.3.0.2. Methods and defaults](#1302-methods-and-defaults)
-      - [1.3.0.3. Why use methods?](#1303-why-use-methods)
-        - [1.3.0.3.1. Method evaluation](#13031-method-evaluation)
-  - [1.4. Week 7](#14-week-7)
-      - [1.4.1. Concepts in OOP](#141-concepts-in-oop)
-      - [1.4.1.1. Copy constructor](#1411-copy-constructor)
-  - [1.5. Week 8](#15-week-8)
-      - [1.5.1. Introducing inheritance](#151-introducing-inheritance)
-      - [1.5.1.1. Dynamic method dispatch aka. runtime polymorphism](#1511-dynamic-method-dispatch-aka-runtime-polymorphism)
-      - [1.5.1.2. Java packages:extra of the week](#1512-java-packagesextra-of-the-week)
-  - [1.6. Week 9](#16-week-9)
-      - [1.6.1. Introducing polymorphism](#161-introducing-polymorphism)
-      - [1.6.1.1. Polymorphism syntax](#1611-polymorphism-syntax)
-      - [1.6.1.2. Static vs. dynamic method dispatch](#1612-static-vs-dynamic-method-dispatch)
-      - [1.6.1.3. Bad OOP practice](#1613-bad-oop-practice)
-      - [1.6.1.4. Constructors and polymorphism](#1614-constructors-and-polymorphism)
-      - [1.6.1.5. Polymorphism jargon](#1615-polymorphism-jargon)
-      - [1.6.1.6. The global superclass *Object*](#1616-the-global-superclass-object)
-      - [1.6.1.7. Is-a and Has-a in Java](#1617-is-a-and-has-a-in-java)
+  - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
+      - [1.2.0.2. Extension point of the week (Unicode)](#1202-extension-point-of-the-week-unicode)
+      - [1.2.0.3. Methods and defaults](#1203-methods-and-defaults)
+      - [1.2.0.4. Why use methods?](#1204-why-use-methods)
+        - [1.2.0.4.1. Method evaluation](#12041-method-evaluation)
+  - [1.3. Week 7](#13-week-7)
+      - [1.3.0.5. Concepts in OOP](#1305-concepts-in-oop)
+      - [1.3.0.6. Copy constructor](#1306-copy-constructor)
+  - [1.4. Week 8](#14-week-8)
+      - [1.4.0.7. Introducing inheritance](#1407-introducing-inheritance)
+      - [1.4.0.8. Dynamic method dispatch aka. runtime polymorphism](#1408-dynamic-method-dispatch-aka-runtime-polymorphism)
+      - [1.4.0.9. Java packages:extra of the week](#1409-java-packagesextra-of-the-week)
+  - [1.5. Week 9](#15-week-9)
+      - [1.5.0.10. Introducing polymorphism](#15010-introducing-polymorphism)
+      - [1.5.0.11. Polymorphism syntax](#15011-polymorphism-syntax)
+      - [1.5.0.12. Static vs. dynamic method dispatch](#15012-static-vs-dynamic-method-dispatch)
+      - [1.5.0.13. Bad OOP practice](#15013-bad-oop-practice)
+      - [1.5.0.14. Constructors and polymorphism](#15014-constructors-and-polymorphism)
+      - [1.5.0.15. Polymorphism jargon](#15015-polymorphism-jargon)
+      - [1.5.0.16. The global superclass *Object*](#15016-the-global-superclass-object)
+      - [1.5.0.17. Is-a and Has-a in Java](#15017-is-a-and-has-a-in-java)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -147,7 +147,7 @@ ArrayList<Int> test = new ArrayList<Int>();
 The reason for the passage of argument Int is that ArrayList is an example of a parametrized type, meaning it is able to accept a type as an argument **yet does not accept primitive data types such as int**.  This is useful because we can create new object that store methods specific to the type argument. 
 
 
-#### 1.2. Week 5 <a name="week5"></a>
+## 1.2. Week 5 <a name="week5"></a>
 
 We start with an important reminder:
 
@@ -161,7 +161,7 @@ System.out.println(tab.get(0) == tab.get(1)); //prints false
 System.out.println(tab.get(0).equals(tab.get(1))); // prints true
 ```
 
-#### 1.3. Extension point of the week (Unicode)
+#### 1.2.0.2. Extension point of the week (Unicode)
 
 Firstly, unicode is not simply a 16-bit code system where each character takes 16 bits. 
 
@@ -176,7 +176,7 @@ This brings us to UTF-8. In UTF-8, every code point from 0-127 is stored as a si
 
 
 
-#### 1.3.0.2. Methods and defaults
+#### 1.2.0.3. Methods and defaults
 
 To prevent unneccesary coding we use the concept of method overloading.
 
@@ -213,7 +213,7 @@ int sum(int ... a){
 
 ```
 
-#### 1.3.0.3. Why use methods?
+#### 1.2.0.4. Why use methods?
 
 The point in using a method is simply to eliminate redundant code. Hence, we define a method as being a reusable piece of code. And here is some method jargon:
 
@@ -246,7 +246,7 @@ public static void main(String Args[]){
 
 We note that when a return type is not declared, a method defaults to void. In addition, **return must be the last invocation in a method** and similarly, the provocation of **return cannot be conditional**. 
 
-##### 1.3.0.3.1. Method evaluation
+##### 1.2.0.4.1. Method evaluation
 
 For some method like 
 ``` java
@@ -274,9 +274,9 @@ public static void main(String Args[]){
 The above behaviour happens because when we call change(x), we are essentially making val = x meaning that val is a copy of the object x. Yet, for primitive data types, this is not the case. We have that both the copy val and x point to the same v.
 
 
-## 1.4. Week 7 
+## 1.3. Week 7 
 
-#### 1.4.1. Concepts in OOP
+#### 1.3.0.5. Concepts in OOP
 
 The main notion of OOP is encapsulation. The idea is to capture related attributes and methods under one common hood. 
 
@@ -313,7 +313,7 @@ class Test{
 
 In general, it is good practice to only make methods and attributes that are used by the client-side public. An example to this is the famous getters and setters. 
 
-#### 1.4.1.1. Copy constructor 
+#### 1.3.0.6. Copy constructor 
 
 Suppose we want to define a constructor so that we can create a separate copy instance(this is because if we set two objects equal to other than they both point to the same object in memory.)
 
@@ -331,9 +331,9 @@ class test{
 }
 ```
 
-## 1.5. Week 8
+## 1.4. Week 8
 
-#### 1.5.1. Introducing inheritance 
+#### 1.4.0.7. Introducing inheritance 
 
 The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *protected* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. Hence a workaround is to use getters and setters defined in the parent class for access in subclasses. 
 
@@ -384,7 +384,7 @@ class Rectangle3D extends Rectangle {
 And yet another way to call the parent constructor is through *this(...)*
 
 
-#### 1.5.1.1. Dynamic method dispatch aka. runtime polymorphism
+#### 1.4.0.8. Dynamic method dispatch aka. runtime polymorphism
 
 Suppose we have:
 ``` java
@@ -413,7 +413,7 @@ Now according to runtime polymorphism we have that only the type of object is ch
 
 Note that for runtime polymorphism, it is not the compiler that decides which method to call but the JVM.
 
-#### 1.5.1.2. Java packages:extra of the week 
+#### 1.4.0.9. Java packages:extra of the week 
 
 The idea of a package is to group classes with similar behaviour under the same package. For instance suppose we are building an RPG game, then we may create a package for all player classes, a package for GUI classes and so on. Packages also prevent naming conflicts. 
 
@@ -434,15 +434,15 @@ import Carto.*
 Map.show();
 ```
 
-## 1.6. Week 9
+## 1.5. Week 9
 
-#### 1.6.1. Introducing polymorphism 
+#### 1.5.0.10. Introducing polymorphism 
 
 There are two types of polymorphism:
 1. polymorphism of methods
 2. polymorphism of variables
 
-#### 1.6.1.1. Polymorphism syntax
+#### 1.5.0.11. Polymorphism syntax
 
 Abstract methods are used when numerous subclasses share some common method with a different implementation for instance:
 
@@ -470,17 +470,17 @@ And bindings of *abstract* are:
 1. must exist(be defined) in all instantiable subclasses
 2. abstract classes can not be instantiated
 
-#### 1.6.1.2. Static vs. dynamic method dispatch 
+#### 1.5.0.12. Static vs. dynamic method dispatch 
 
 The most simple difference between the two is that the former corresponds to *method overriding(aka. same method name with different number of arguments)* and the former corresponds to *method overloading*. The latter as mentioned before is where polymorphism occurs at compile-time. That is the compiler checks the object type ignoring the reference type and executes method found in the object. We also note that only methods in java have dynamic dispatch, same doesn't apply to variables. We also add that java doesn't allow multiple dispatch that is polymorphism relative to method argument. Hence 
 
 
-#### 1.6.1.3. Bad OOP practice 
+#### 1.5.0.13. Bad OOP practice 
 
 Something to do and then slap yourself is using instanceof. That is, our child classes are always an instance of their parent classes hence will always validate the instanceof test. 
 
 
-#### 1.6.1.4. Constructors and polymorphism
+#### 1.5.0.14. Constructors and polymorphism
 
 ``` java
 
@@ -510,7 +510,7 @@ The above code prints 0 because the constructor of B calls the default construct
 > As a sidenote, although unrelated, the *override* annotation lets the compiler give an error in case the method to be overridden is mispelled. 
 
 
-#### 1.6.1.5. Polymorphism jargon
+#### 1.5.0.15. Polymorphism jargon
 
 > **Upcasting** Casting an object of type super-class to its subclass. This is always safe because a subclass can do everything that the parent class can do. 
 
@@ -530,7 +530,7 @@ B obj2 = (A)obj1;
 
 We note that casting of primitives in java is quite different than casting of reference types. Since primitives hold the actual value in memory, casting one primitive to another irreversibly changes the value. When casting reference types however, only the reference address is changed which has the effect of narrowing or extending methods but not destroying the previously referenced object. The crucial part is, whenever we upcast, we limit the number of callable methods however out of the any two common methods to the subclass and parent class, it is the subclass method that gets called because our object is still an instance of subclass. 
 
-#### 1.6.1.6. The global superclass *Object*
+#### 1.5.0.16. The global superclass *Object*
 
 Every class in java inherits the class object. Some useful methods of the object class are(noting that all these methods are static, hence can only call inside class):
 
@@ -542,9 +542,11 @@ Similarly every Java class also extends the Exception class for exception handli
 
 > As an aside for object comparison, it is advised to use the getClass method instead of the instanceof operator to prevent collisions caused by parent classes.
 
-#### 1.6.1.7. Is-a and Has-a in Java
+#### 1.5.0.17. Is-a and Has-a in Java
 
 The Is-a relationship is essentially inheritance. Every subclass is also an instance of the parent class. The Has-a relationship is when one instance of an object is stored inside another object. 
+
+
 
 
 
