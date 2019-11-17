@@ -1,22 +1,29 @@
 
-# Contents
-- [Contents](#contents)
+# 1. Contents
+- [1. Contents](#1-contents)
   - [1.1. Week 4 <a name="week4"></a>](#11-week-4-a-nameweek4a)
       - [1.1.0.1. Parametrized types](#1101-parametrized-types)
-  - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
-  - [1.3. Extension point of the week (Unicode)](#13-extension-point-of-the-week-unicode)
+      - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
+      - [1.3. Extension point of the week (Unicode)](#13-extension-point-of-the-week-unicode)
       - [1.3.0.2. Methods and defaults](#1302-methods-and-defaults)
       - [1.3.0.3. Why use methods?](#1303-why-use-methods)
         - [1.3.0.3.1. Method evaluation](#13031-method-evaluation)
   - [1.4. Week 7](#14-week-7)
-    - [1.4.1. Concepts in OOP](#141-concepts-in-oop)
+      - [1.4.1. Concepts in OOP](#141-concepts-in-oop)
       - [1.4.1.1. Copy constructor](#1411-copy-constructor)
   - [1.5. Week 8](#15-week-8)
-    - [1.5.1. Introducing inheritance](#151-introducing-inheritance)
+      - [1.5.1. Introducing inheritance](#151-introducing-inheritance)
       - [1.5.1.1. Dynamic method dispatch aka. runtime polymorphism](#1511-dynamic-method-dispatch-aka-runtime-polymorphism)
       - [1.5.1.2. Java packages:extra of the week](#1512-java-packagesextra-of-the-week)
   - [1.6. Week 9](#16-week-9)
-    - [Introducing polymorphism](#introducing-polymorphism)
+      - [1.6.1. Introducing polymorphism](#161-introducing-polymorphism)
+      - [1.6.1.1. Polymorphism syntax](#1611-polymorphism-syntax)
+      - [1.6.1.2. Static vs. dynamic method dispatch](#1612-static-vs-dynamic-method-dispatch)
+      - [1.6.1.3. Bad OOP practice](#1613-bad-oop-practice)
+      - [1.6.1.4. Constructors and polymorphism](#1614-constructors-and-polymorphism)
+      - [1.6.1.5. Polymorphism jargon](#1615-polymorphism-jargon)
+      - [1.6.1.6. The global superclass *Object*](#1616-the-global-superclass-object)
+      - [1.6.1.7. Is-a and Has-a in Java](#1617-is-a-and-has-a-in-java)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -140,7 +147,7 @@ ArrayList<Int> test = new ArrayList<Int>();
 The reason for the passage of argument Int is that ArrayList is an example of a parametrized type, meaning it is able to accept a type as an argument **yet does not accept primitive data types such as int**.  This is useful because we can create new object that store methods specific to the type argument. 
 
 
-## 1.2. Week 5 <a name="week5"></a>
+#### 1.2. Week 5 <a name="week5"></a>
 
 We start with an important reminder:
 
@@ -154,7 +161,7 @@ System.out.println(tab.get(0) == tab.get(1)); //prints false
 System.out.println(tab.get(0).equals(tab.get(1))); // prints true
 ```
 
-## 1.3. Extension point of the week (Unicode)
+#### 1.3. Extension point of the week (Unicode)
 
 Firstly, unicode is not simply a 16-bit code system where each character takes 16 bits. 
 
@@ -269,7 +276,7 @@ The above behaviour happens because when we call change(x), we are essentially m
 
 ## 1.4. Week 7 
 
-### 1.4.1. Concepts in OOP
+#### 1.4.1. Concepts in OOP
 
 The main notion of OOP is encapsulation. The idea is to capture related attributes and methods under one common hood. 
 
@@ -326,7 +333,7 @@ class test{
 
 ## 1.5. Week 8
 
-### 1.5.1. Introducing inheritance 
+#### 1.5.1. Introducing inheritance 
 
 The core idea is to define a tree of parent and children class where one child class can extend only one parent class at a time. Now the child class will inherit **variables, methods, type** of the parent class. A critical point is that if the parent class has private variables or methods, they are invisible in the child class. Yet a solution to overcome this is using the *protected* modifier. Yet note that this does not respect the notion of encapsulation since protected keyword gives access to variables in all classes found in the same package. Hence a workaround is to use getters and setters defined in the parent class for access in subclasses. 
 
@@ -429,11 +436,201 @@ Map.show();
 
 ## 1.6. Week 9
 
-### Introducing polymorphism 
+#### 1.6.1. Introducing polymorphism 
 
 There are two types of polymorphism:
 1. polymorphism of methods
 2. polymorphism of variables
+
+#### 1.6.1.1. Polymorphism syntax
+
+Abstract methods are used when numerous subclasses share some common method with a different implementation for instance:
+
+``` java
+
+abstract class Lift{
+    public abstract void performLift();
+
+}
+
+class Lifter1{
+    public performLift(){
+        ...out("I lifted 200kg");
+    }
+}
+
+class Lifter1{
+    public performLift(){
+        ...out("I lifted 100kg");
+    }
+}
+```
+
+And bindings of *abstract* are:
+1. must exist(be defined) in all instantiable subclasses
+2. abstract classes can not be instantiated
+
+#### 1.6.1.2. Static vs. dynamic method dispatch 
+
+The most simple difference between the two is that the former corresponds to *method overriding(aka. same method name with different number of arguments)* and the former corresponds to *method overloading*. The latter as mentioned before is where polymorphism occurs at compile-time. That is the compiler checks the object type ignoring the reference type and executes method found in the object. We also note that only methods in java have dynamic dispatch, same doesn't apply to variables. We also add that java doesn't allow multiple dispatch that is polymorphism relative to method argument. Hence 
+
+
+#### 1.6.1.3. Bad OOP practice 
+
+Something to do and then slap yourself is using instanceof. That is, our child classes are always an instance of their parent classes hence will always validate the instanceof test. 
+
+
+#### 1.6.1.4. Constructors and polymorphism
+
+``` java
+
+abstract class a{
+    public abstract void m();
+    public A{
+        m();
+    }
+}
+
+class B extends A{
+    private int b;
+    public B(){
+        b = 1;
+    }
+
+    public void m(){
+        ...print("b is" + b);
+    }
+}
+
+B b = new B();
+```
+
+The above code prints 0 because the constructor of B calls the default constructor of A which through method overriding calls m and b is uninitialized hence 0. 
+
+> As a sidenote, although unrelated, the *override* annotation lets the compiler give an error in case the method to be overridden is mispelled. 
+
+
+#### 1.6.1.5. Polymorphism jargon
+
+> **Upcasting** Casting an object of type super-class to its subclass. This is always safe because a subclass can do everything that the parent class can do. 
+
+> **Downcasting** Casting an object of type sub-class to superclass. This is done as:
+``` java
+class A{
+    ...
+}
+
+class B extends A{
+    ...
+}
+
+A obj1 = new B();
+B obj2 = (A)obj1;
+```
+
+We note that casting of primitives in java is quite different than casting of reference types. Since primitives hold the actual value in memory, casting one primitive to another irreversibly changes the value. When casting reference types however, only the reference address is changed which has the effect of narrowing or extending methods but not destroying the previously referenced object. The crucial part is, whenever we upcast, we limit the number of callable methods however out of the any two common methods to the subclass and parent class, it is the subclass method that gets called because our object is still an instance of subclass. 
+
+#### 1.6.1.6. The global superclass *Object*
+
+Every class in java inherits the class object. Some useful methods of the object class are(noting that all these methods are static, hence can only call inside class):
+
+1. toString()
+2. equals()
+3. clone()
+
+Similarly every Java class also extends the Exception class for exception handling.
+
+> As an aside for object comparison, it is advised to use the getClass method instead of the instanceof operator to prevent collisions caused by parent classes.
+
+#### 1.6.1.7. Is-a and Has-a in Java
+
+The Is-a relationship is essentially inheritance. Every subclass is also an instance of the parent class. The Has-a relationship is when one instance of an object is stored inside another object. 
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
