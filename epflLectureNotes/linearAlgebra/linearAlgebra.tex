@@ -934,7 +934,7 @@ Suppose that we have two bases $B_{i}$ and $C_{i}$ for some 2-dimensional $V$. A
 $$ [x]_{B} = [3b_{1} + b_{2}]_{C} = 3[b_{1}]_{C} + [b_{2}]_{C} $$ which simplifies to the matrix multiplication:
 
 $$ \begin{bmatrix}
-    [b_{1}]_{C} & [b_{2}]_{C}
+    (b_{1})_{c} & (b_{2})_{C} 
 \end{bmatrix}\begin{bmatrix}
     3\\
     1
@@ -1027,7 +1027,7 @@ Now in general, what follows about determining if a matrix has an eigenvector is
 
 \begin{property}
 Suppose that $Ax = \lambda x$ where $x\not = 0_{v}$ Then it must follow that:
-$$(A-\lambda I)x=0$$ has a nontrivial solution. Now since $A-\lambda I$ is a square matrix, we have that it will have a non-trivial solution $x$ iff. it's columns are linearly dependent. But note that this is equivalent to saying that $\det{A-\lambda I} = 0$ The fact the determinant is 0 iff. the matrix columns are \ld follows from the fact that the homogeneous equation of a square matrix in its echelon form will have at least one zero row to admit a nonzero solution and given that determinant of a triangular matrix is the product of entries in main diagonal we have that it will have determinant equal to zero. 
+$$(A-\lambda I)x=0$$ has a nontrivial solution. Now since $A-\lambda I$ is a square matrix, we have that it will have a non-trivial solution $x$ iff. it's columns are linearly dependent. But note that this is equivalent to saying that $\det{A-\lambda I} = 0$ The fact the determinant is 0 iff. the matrix columns are \ld \ follows from the fact that the homogeneous equation of a square matrix in its echelon form will have at least one zero row to admit a nonzero solution and given that determinant of a triangular matrix is the product of entries in main diagonal we have that it will have determinant equal to zero. 
 \end{property} 
 
 \begin{thm}
@@ -1170,13 +1170,112 @@ $$\begin{bmatrix}[c|c]
     I & A_{B}
 \end{bmatrix}$$
 
-In fact we can be even more formal. The matrix $A_B$ is nothing more that as input takes a coordinate vector in basis $B$ and applies transformation $A$ on it. We obtain that:
+In fact we can be even more formal. The matrix $A_B$ is nothing more than a matrix that takes as input a coordinate vector in basis $B$ and applies transformation $A$ on it. We obtain that:
 $$A_{B} = \underbrace{B^{-1}}_{\text{\makebox[0pt]{obtain coordinates of bases after transformation}}}AB$$
-
 \end{thm}
 
 
+\begin{tcolorbox}
+\textbf{Diagonilization, a useful computational tool}
+\\
 
+Now the first and foremost theorem of diagonilization is:
+\begin{thm}
+An $n\times n$ matrix $A$ is diagonilizable iff. it has $n$ linearly independent eigenvectors.
+\end{thm}
+
+\begin{proof}
+We claim that $AP = PD$. Now $$AP = A\begin{bmatrix}
+    v_{1} & \ldots & v_{n}
+\end{bmatrix}$$ and similarly $$PD = P\begin{bmatrix}
+    \lambda_{1} & 0 & \ldots & 0\\
+    \0 & \lambda_{2} &  \ldots & 0$ \\
+    \vdots & \ldots &  & \lambda_{n}\\
+\end{bmatrix}$$
+
+Now by vector equality we have that $Av_{i} = v_{i}\lambda_{i}$ Since now $P$ is an invertible matrix, we have that the $v_{i}$ are \li.
+\end{proof}
+\\
+
+Now to diagonalize a matrix(ofcourse if possible only), we first find all eigenvalues by solving the characteristic polynomial. After we find the bases for each eigenvalue. Finally, $P$ is constructed as the matrix where each column is a basis corresponding to a respective eigenvalue found in the column vectors of matrix $D$.
+\end{tcolorbox}
+
+
+\subsection{Orthogonality and inner products}
+
+\begin{definition}
+Let $u,v \in \Rn$ Then we define the inner product of $u$ and $v$ as the matrix multiplication $u^{T}v$ such that $$u^{T}v = \begin{bmatrix}
+    u_{1} \ldots u_{n}
+\end{bmatrix}\begin{bmatrix}
+    v_{1}\\
+    \vdots\\
+    v_{n}
+\end{bmatrix} = u_{1}v_{1} + \ldots + u_{n}v_{n}$$ 
+\end{definition}
+
+\begin{definition}
+The \textbf{norm} of a vector is defined in terms of inner product as $|v| = \sqrt{v\cdot v}$
+\end{definition}
+
+\begin{definition}
+Distance in $\Rn$ is described by:
+$$dist(u,v) = |u - v|$$
+\end{definition}
+
+\begin{definition}
+$u$ and $v$ are orthogonal if $u\cdot v = 0$
+\end{definition}
+
+\begin{definition}
+The orthogonal complement of some subspace $L$ is denoted $W^{\perp}$. It contains all vectors that are orthogonal to all vectors in $L$. 
+\end{definition}
+
+\begin{thm}$Row(A)^{\perp} = NulA$ and also $Col(A)^{\perp} = NulA^{T}$
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+For $Row(A)^{\perp} = NulA$, we have that every vector in $NulA$ has inner product $0$(aka. orthogonal) to every row of A. 
+\\
+
+For $Col(A)^{\perp} = NulA^{T}$ we use the fact that our above theorem is always true and given that $ColA = NulA^{T}$ we have $Col(A)^{\perp} = NulA^{T}$. 
+\end{proof}
+
+\begin{definition}
+A set of vectors is an orthogonal set if each vector in the set is orthogonal to every other vector. Similarly, a \textbf{orthogonal basis} is a basis which is also an orthogonal set. 
+\end{definition}
+
+\begin{thm}
+The usefulness of an orthogonal basis is in the fact that it is easy to find coordinates. We have that:
+$$c_{i} = \frac{v \cdot u_{i}}{u_{i} \cdot u_{i}}$$
+\end{thm}
+
+\begin{proof}
+$$v \cdot u_{i} = (c_{1}u_{1} + \ldots + c_{n}u_{n})u_{i} = c_{i}(u_{i}\cdotu_{i}$$
+\end{proof}
+
+\begin{definition}
+A set is orthonormal if it is an orthogonal set of unit vectors. 
+\end{definition}
+
+\begin{thm}
+An $m\times n$ matrix has orthogonal columns iff. $U^{T}U = I$
+\end{thm}
+
+And yet another useful theorem with its proof:
+\begin{thm}
+For $x,w \in \Rn$ and $A$ an $m\cross n$ matrix we have:
+$w \cdot (Ax) = x \cdot (A^{T}w)$
+\end{thm}
+
+\begin{proof}
+
+$$ w\cdot(Ax) = \underbrace{(Ax)\cdot w}_{\text{\makebox[0pt]{by commutativity of dot product}} $$
+$$ = (Ax)^{T}w = (x^{T}A^{T})w $$
+$$ = x \cdot (A^{T}w)$$
+
+
+\end{proof}
 
 
 

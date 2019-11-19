@@ -22,7 +22,8 @@ right  = 2.75cm]{geometry}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{prop}{[Proposition]}
 \newtheorem{definition}{Definition}
-\numberwithin{equation}{subsection}
+\newtheorem{question}{Question}
+\numberwithin{equation}{subsection}[section]
 
 \title{\textbf{Analysis 1 - Zsolt Patavflaki}}
 \author{Alp Ozen}
@@ -1124,6 +1125,54 @@ Let $f: E \to \mathbb{R}$ is a continuous function, then $f$ is strictly monoton
 If $f: E \to \mathbb{R}$ is continuous, strictly monotone and surjective then $f^{-1}$ is continuous.
 \end{theorem}
 
+\subsection{Differentiation}
+
+We get to the idea of a derivative by wanting to approximate it through a linear function. So suppose we write $f(x)$ as:
+
+$$f(x) = f(x_{0}) + a(x-x_{0}) + r_{x}$$ and we suppose that $\lim_{x \to x_{0}}\frac{r(x)}{x-x_{0}} = 0$ hence $a$ is the value of the gradient of $f(x)$ at $x_{0}$
+
+\begin{definition}
+A function is differentiable at $x_{0}$ if $\frac{f(x)-f(x_{0}}{x-x_{0}}$ admits a limit at $x_{0}$
+\end{definition}
+
+\begin{theorem}
+If $f$ is differentiable at $x_{0}$, then it is continuous at $x_{0}$. Proof to this follows from definition of the derivative. Also, the implication does not hold in reverse direction. A common example is $f(x) = |x|$ at 0. 
+\end{theorem}
+
+
+\begin{theorem}\textbf{Derivative of inverse function}
+Let $f$ be bijective continuous(meaning that f is strictly monotone(needed for inverse to exist)), then $f^{-1}$ exists and $(f^{-1})'(y_{0}) = \frac{1}{f'(x)} = \frac{1}{f'(f^{-1}(y_{0}))}$
+\end{theorem}
+
+\begin{tcolorbox}[drop shadow, title = (Sanity check question),lower separated=true]
+\begin{question} 
+$f$ is strictly monotone iff. it is injective. (True or false)
+\end{question}
+
+This is false, take $f(x) = \frac{1}{x}$ extended with $0$ at 0. This is injective but not strictly monotone. For statement to hold we need to add continuity as a condition. 
+\end{tcolorbox}
+
+\begin{theorem}
+The derivative rule for $x^{\frac{1}{b}$ is simply the same as if the power were some integer.
+\end{theorem}
+
+\begin{definition}
+$e^{x} = \sum_{k=0}^{\infty} \frac{x^{k}}{k!}$
+\end{definition}
+
+
+\begin{prop}
+The derivative of $e^{x}$ is itself as will be shown:
+
+$$ (e^{x})' = (\sum_{k=0}^{\infty} \frac{x^{k}}{k!})' = (1)' + (\sum_{k=1}^{\infty} \frac{x^{k}}{k!})' = (\sum_{k=0}^{\infty} \frac{(k)x^{k-1}}{(k)!}) = (\sum_{k=1}^{\infty}\frac{x^{k-1}}{(k-1)!}) = e^{x}$$
+\end{prop}
+
+\begin{theorem}
+It is quite easy to obtain derivatives of inverse trig functions using our earlier inverse derivation rule. 
+\\
+
+For $\arcsin{x}'$ we have that it equals $\frac{1}{\cos{\arcsin{x}}}$ and by trig identity simplifies to $\frac{1}{\sqrt{1-x^2}}$ Similarly for $\arccos{x}$ the formula is $-\frac{1}{\sqrt{1-x^2}}$ and for $arctan(x)$ we use the division rule to get $\frac{1}{1+x^{2}}$
+\end{theorem}
 
 
 
