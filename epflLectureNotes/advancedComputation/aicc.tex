@@ -1158,6 +1158,12 @@ And taking this even further what if we ask how many distinct integer $n$ tuples
 $$ y_{1} + 1 + y_{2} + 2 + y_{3} + 3 + y_{4} = 18 $$ which trivially solves to $\binom{12 + 4-1}{3}$
 \end{example}
 
+\begin{example}\textbf{(The hardest integral solutions problem)}
+
+Suppose we are asked $x_{1} + x_{2} + x_{3} \leq 12$ where $x_{i} \geq i \ \forall x = 1,2$ and $ 0 \leq x_{3} \leq 3$ Now using our previous method we obtain:
+$y_{1} + 1 + y_{2} + 2 + \underbrace{y_{3}}_{y_{3}=x_{3}} \leq 12 \equiv y_{1} + y_{2} + y_{3} \leq 9 $ Now we divide this into cases $y_{1} + y_{2} + y_{3} \leq k$ where $k=9,8,7$ and solve as shown before. 
+\end{example}
+
 
 
 
@@ -1228,6 +1234,9 @@ As a result we find that the number of $r$-combinations from $n$ with replacemen
 \\ 
 
 If $n$ objects are place in $k$ boxes, then there is at least one box containing $\ceil{\frac{n}{k}}$ objects. 
+\\
+
+\textit{An alternative to this says that if $n$ objects are put into $k$ boxes, then there is at least one box containing at most $\floor{\frac{n}{k}}$} many objects. 
 \end{theorem}
 
 \begin{proof} Proof by contraposition
@@ -1236,6 +1245,30 @@ If $n$ objects are place in $k$ boxes, then there is at least one box containing
 Suppose none of the boxes contain more than $\ceil{\frac{n}{k}} - 1$ objects. Then we have that at most there are $k(\ceil{\frac{n}{k}} - 1)$ objects. Then:
 $$k(\ceil{\frac{n}{k}} - 1) < k(\frac{n}{k} + 1 - 1)$$
 \end{proof}
+
+\begin{example}\textbf{Constructive example of the pigeonhole principle}
+\\
+
+We are given a set of $p$ desktops and $k$ printers with $p>k$. We want to find a wiring arrangement such that for any subset of desktops with less than or equal to $p$ desktops at hand, the desktops are able to print simultaneously. The question though is to do this most efficiently using least number of cables. 
+\\
+
+\textbf{Proposed solution}:
+\\
+Connect first $d-p$ desktops to first $p$ printers and connect each remaining desktop to each remaining printer resulting in $p + (d-p)p$ many cables. 
+\\
+
+\textbf{Proof of simultaneous printing}:
+\\
+If we take a subset with the first $k$ desktops we are done. Otherwise for a subset with first $z$ where $z<k$ desktops and remaining $k-z$ laptops the first $z$ go to first $z$ printers and the remaining since wired to each printer sequentially go to $z+1, \ldots, k$
+\\
+
+\textbf{Proof of optimality}:
+\\
+Now supposing we use at most $p + (d-p)p - 1$ cables, we have that there is a printer with at most $\floor{\frac{p + (d-p)p - 1}{p}} = d - p$ cables. Now to all at least $p$ desktops not connected to this printer, there are at most $p-1$ available printers. 
+
+\end{example}
+
+
 
 
 
