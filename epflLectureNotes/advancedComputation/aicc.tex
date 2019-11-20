@@ -1265,8 +1265,48 @@ If we take a subset with the first $k$ desktops we are done. Otherwise for a sub
 \textbf{Proof of optimality}:
 \\
 Now supposing we use at most $p + (d-p)p - 1$ cables, we have that there is a printer with at most $\floor{\frac{p + (d-p)p - 1}{p}} = d - p$ cables. Now to all at least $p$ desktops not connected to this printer, there are at most $p-1$ available printers. 
-
 \end{example}
+
+\subsection{Lec 20. notes}
+\begin{theorem}\textbf{Vandemonde's idendtity}
+\\
+
+$$\binom{m+n}{r} = \sum_{i=0}^{r}\binom{m}{r-i}\binom{n}{i}$$
+\end{theorem}
+
+\begin{proof}\textbf{A nice neat combinatorial proof for Mr.Vandemonde and his theorem}
+Now our goal is to reach a formula for $\binom{m+n}{r}$. Suppose we divide $m+n$ elements into two disjoint sets of size $m$ and $n$. Now we want to pick a total of $r$ elements with order being irrelevant. If we pick $k$ elements from set of size $n$, then we must pick $r-k$ from the latter. Hence one such pick results in $\binom{m}{r-k}\binom{n}{k}$ choices \textbf{for each selection} of $k$. That is, the total number of ways to pick $\binom{m+n}{r}$ is clearly $\sum_{i=0}^{r}\binom{m}{r-i}\binom{n}{i}$. 
+\end{proof}
+
+
+\begin{theorem}\textbf{Binomial theorem}
+$$(X+Y)^{z} = \sum_{r=0}^{z}\binom{z}{r}(X)^{z-r}(Y)^{r}$$
+\end{theorem}
+
+\begin{proof}\textbf{Combinatorial proof}
+The expansion of the product $(X+Y)^{z}$ contains terms where each time $X$ or $Y$ is picked. For instance if $z=8$ and we want to find in how many ways we may pick $X^{5}$ this is equivalent to picking 5 $X$ and 3 of $Y$ from each of $(X+Y)$. In total, order doesn't matter hence we have that the term $X^{5}Y^{3}$ is picked $\binom{8}{5}$ many times. 
+\end{proof}
+
+\begin{proof}\textbf{Inductive proof}
+Now we simplify the binomial theorem to the statement $(1+Z)^{n} = \sum_{i=0}^{n}\binom{n}{i}Z^{i}$ as if we take $Z=\frac{Y}{X}$ then $X^{n}\sum_{i=0}^{n}\binom{n}{i}Z^{i} = \sum_{i=0}^{n}\binom{n}{i}(X)^{n-i}(Y)^{i}$
+\\
+\textbf{Inductive hypothesis:} $(1+Z)^{k} = \sum_{r=0}^{k}\binom{k}{r}Z^{r}$
+\\
+\textbf{Need to show:}$(1+Z)^{k+1} = \sum_{r=0}^{k+1}\binom{k+1}{r}Z^{r}$
+\\
+
+\begin{align*}
+(1+Z)^{k+1} = (1+Z)(1+Z)^{k}\\
+= (1+Z)\sum_{r=0}^{k}\binom{k}{r}Z^{r}\\
+= \sum_{r=0}^{k}\binom{k}{r}Z^{r} + Z\sum_{r=0}^{k}\binom{k}{r}Z^{r}\\
+= \sum_{r=0}^{k}\binom{k}{r}Z^{r} + \sum_{r=0}^{k}\binom{k}{r}Z^{r+1}\\
+= \sum_{r=0}^{k}\binom{k}{r}Z^{r} + \sum_{L=1}^{k+1}\binom{k}{L-1}Z^{L} \ \text{letting $r-1=L$}\\
+= \sum_{\textcolor{red}{r=0}}^{k}\binom{k}{r}Z^{r} + \sum_{r=1}^{\textcolor{red}{k+1}}\binom{k}{r-1}Z^{r}\\
+= Z^{0} + \sum_{r=1}^{k}(\binom{k}{r} + \binom{k}{r-1}Z^{r}) + \binom{k}{(k+1)-1}Z^{k+1}\\
+= Z^{0} + \sum_{r=1}^{k}\binom{k+1}{r}Z^{r} + \binom{k+1}{k+1}Z^{k+1} = \sum_{r=0}^{k+1}\binom{k+1}{r}Z^{r}\\
+\end{align*}
+
+\end{proof}
 
 
 
