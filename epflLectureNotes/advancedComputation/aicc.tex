@@ -671,7 +671,7 @@ As it turns out, when we try enumerating members of A, we notice this is doable 
 \subsection{Lec 11. notes}
 We start with the \textbf{Halting problem} which states that given a computer program $P$ with input $I$ can we write a program that always determines whether $P(I)$ will terminate or not? As it turns out the answer is no.
 \begin{example*}
-Now let us define a program $A(P,x)$ that determines whether the program $P$ with input $x$ terminates. Now define $Q(x)$ as a program calling $A(x,x)$. Then $Q(P)$ runs $A(P,P)$ and $Q(P)$ will stop if $A(P,P)$ returns. Now consider $Q(Q)$. We have that $A(Q,Q)$ gets called. Well, if this returns no meaning $Q(Q)$ does not determinate, we get that $Q(Q)$ should terminate and vice versa. Hence, we get that such a program $A(x)$ can not exists. 
+Now let us define a program $A(P,x)$ that determines whether the program $P$ with input $x$ terminates. Now define $Q(x)$ as a program calling $A(x,x)$. Then $Q(P)$ runs $A(P,P)$ and $Q(P)$ will stop if $A(P,P)$ returns. Now consider $Q(Q)$. We have that $A(Q,Q)$ gets called. Well, if this returns no meaning $Q(Q)$ does not terminate, we get that $Q(Q)$ should terminate and vice versa. Hence, we get that such a program $A(x)$ can not exist. 
 \end{example*}
 
 \begin{definition}(Big $O$)
