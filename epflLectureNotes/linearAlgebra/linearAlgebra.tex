@@ -1204,7 +1204,7 @@ Now to diagonalize a matrix(ofcourse if possible only), we first find all eigenv
 \subsection{Orthogonality and inner products}
 
 \begin{definition}
-Let $u,v \in \Rn$ Then we define the inner product of $u$ and $v$ as the matrix multiplication $u^{T}v$ such that $$u^{T}v = \begin{bmatrix}
+Let $u,v \in \Rn$ Then we define the inner product of $u$ and $v$ as the matrix multiplication $u^{T}v$ such that $$ u \cdot v = u^{T}v = \begin{bmatrix}
     u_{1} \ldots u_{n}
 \end{bmatrix}\begin{bmatrix}
     v_{1}\\
@@ -1251,7 +1251,7 @@ $$c_{i} = \frac{v \cdot u_{i}}{u_{i} \cdot u_{i}}$$
 \end{thm}
 
 \begin{proof}
-$$v \cdot u_{i} = (c_{1}u_{1} + \ldots + c_{n}u_{n})u_{i} = c_{i}(u_{i}\cdotu_{i}$$
+$$v \cdot u_{i} = (c_{1}u_{1} + \ldots + c_{n}u_{n})u_{i} = c_{i}(u_{i}\cdot u_{i})$$
 \end{proof}
 
 \begin{definition}
@@ -1269,15 +1269,80 @@ $w \cdot (Ax) = x \cdot (A^{T}w)$
 \end{thm}
 
 \begin{proof}
+To see why this is true consider $U^{T}U$. Now this is equivalent to:
+
+$$ \begin{bmatrix}
+    \hdots u_{1} \hdots \\
+    \hdots u_{2} \hdots \\
+    \hdots u_{3} \hdots 
+\end{bmatrix}\begin{bmatrix}
+    u_{1} & u_{2} & u_{3}
+\end{bmatrix}$$ Therefore it should be obvious that only the product of vectors with same indices should be the same producing the identity matrix. 
+
+\end{proof}
+
+\begin{proof}
 
 $$ w\cdot(Ax) = \underbrace{(Ax)\cdot w}_{\text{\makebox[0pt]{by commutativity of dot product}} $$
 $$ = (Ax)^{T}w = (x^{T}A^{T})w $$
 $$ = x \cdot (A^{T}w)$$
-
-
 \end{proof}
 
+\begin{thm}
+For a matrix with ortohonormal columns we have:
+\begin{enumerate}
+    \item $|Ux| = |x|$
+    \item $(Ux)\cdot (Uy) = x\cdot y$
+    \item $(Ux) \cdot (Uy) = 0$ iff. $x\cdot y =0 $
+\end{enumerate}
+\end{thm}
 
+And now we come to a very useful theorem:
+
+\begin{thm}\textbf{Orthogonal decomposition theorem}
+\\
+
+Let $y \in \Rn$. Then $y = y^{'} + z$ where:
+$$ y^{'} = \frac{y \cdot u_{1}}{u_{1}\cdot u_{1}} + \ldots + \frac{y \cdot u_{p}}{u_{p} \cdot u_{p}}$$ with an orthogonal basis for $\{u_{1}, \ldots, u_{p}\}$ $W \leqslant \Rn$. And we also have that $z = y - y^{'}$
+\end{thm}
+
+\begin{proof}
+Define a basis $\{u_{1}, \ldots, u_{p}\}$ for $W$. We then have that $$ y^{'} = \frac{y\cdot u_{1}}{u_{1}\cdot u_{1}}u_{1}+ \ldots + \frac{y \cdot u_{p}}{u_{p} \cdot u_{p}}u_{p}$$ Now we want to show that $z \in W^{\perp}$ For this to be true, $z$ must be orthogonal to all the basis vectors $u_{i}$. Given that $z = y - y^{'}$ we have that:
+$$ (y-y^{'})\cdot u_{1} = y\cdot u_{1} - y^{'}u_{1} = y\cdot u_{1} - ( \frac{y\cdot u_{1}}{u_{1}\cdot u_{1}}u_{1}+ \ldots + \frac{y \cdot u_{p}}{u_{p} \cdot u_{p}}u_{p}) \cdot u_{1} = y\cdot u_{1} - y \cdot u_{1} = 0$$ By the very same argument, we have that $z$ is orthogonal to all the other $u_{i}$ hence we have that $z \in W^{\perp}$ 
+\\
+
+Finally we show uniqueness:
+
+Suppose that $y = y^{'} + z$ and also that $y = x^{'} + w$ Then we have that:
+$$ y^{'} + z = x^{'} + w $$ to further give: 
+
+$$ y^{'} - x^{'} = w - z$$ which implies that $v = y^{'} - x^{'} \in W,W^{\perp}$ which is only possible if $v = 0$. This implies that $y^{'} = x^{'}$ and also that $w = z$. 
+\end{proof}
+
+And now comes a theorem about measurement in $\Rn$.
+
+\begin{thm}
+We have that:
+
+$$|y-y^{'}| < |y - v| \ \text{for any $v$ distinct from $y^{'}$ and $y^{'}$ defined as $proj_{W}y$}$$
+\end{thm}
+
+\begin{proof}
+We have that:
+
+$$y-v = (y - y^{'})+(y^{'} - v)$$ and by the Pythagorean theorem we rather obviously have that:
+$$ |y-v| > |y - y^{'}|$$
+\end{proof}
+
+\begin{thm}
+Given that $U = \begin{bmatrix}
+    u_{1} & u_{2} & \ldots & u_{p}
+\end{bmatrix}$ and $U$ has orthonormal column vectors we have that:
+$$y^{'} = UU^{T}y$$
+\\
+
+The above is clear considering that when we have an orthanormal basis $y^{'} = (y \cdot u_{1})u_{1} + \ldots$ that the weights $y \cdot u_{i}$ are equivalent to $u_{i}^{T}y$ which is equivalent to $U^{T}y$
+\end{thm}
 
 
 
