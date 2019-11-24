@@ -1309,6 +1309,52 @@ Now we simplify the binomial theorem to the statement $(1+Z)^{n} = \sum_{i=0}^{n
 \end{proof}
 
 
+\subsection{Lec 21. notes}
+
+An unmentioned theorem about sequences is the following:
+
+\begin{theorem}
+Any sequence of $n^{2}+1$ distinct values contains an increasing or decreasing subsequence of length $n+1$.
+\end{theorem}
+
+\begin{definition}
+The classical definition of a probability is that given by Laplace. This assumes that every event is as likely to occur. For a sample space $P$, probability of some $E$ is $\frac{E}{P}$, namely the number of occurrences relative to the total number of occurrences.
+\end{definition}
+
+\begin{definition}
+Yet a better definition of probability is the probability distribution. For instance if we were flipping a biased coin, the classical definition would not work. The probability distribution assigns some $p(S)$ to each event such that:
+\begin{align*}
+    0 \leq p(S) \leq 1\\
+    \sum p(i) = 1
+\end{align*}
+\end{definition}
+
+\begin{definition}
+A \textbf{uniform distribution} is the case when over some sample space, for $s \in S$, we have that $p(s) = \frac{1}{|S|}$ Rolling a dice, flipping a coin are all uniform distributions. Yet the maximum of rolling two dice is not a uniform distribution. 
+\end{definition}
+
+And now we present what is known as Boole's inequality:
+\begin{theorem}
+$$p(\bigcup_{i=1}^{L}A_{i}) \leq p(\sum_{i=1}^{L}p(A_{i}))$$
+\end{theorem}
+
+\begin{definition}\textbf{Conditional probability}
+$$p(E|F) = \frac{p(E\cap F)}{p(F)}$$
+\end{definition}
+
+
+\begin{theorem}\textbf{Independence}
+We take a set of events to be mutually independent if: $$\Pi_{i=1}^{L}(p(i)) = \bigcap_{i=1}^{L}p(i)$$
+Note that while mutual independence implies pairwise independence, the latter doesn't apply. 
+\end{theorem}
+
+\begin{theorem}\textbf{Bayes' theorem and two formulations for it}
+The most common form of Bayes' theorem is:
+$$p(A|B) = \frac{p(B|A)p(A)}{p(B)}$$ but through a simple derivation we also have that: 
+
+$$ p(A|B) = \frac{p(B|A)p(A)}{p(B|A)p(A) + p(B|A^{'})p(A^{'})} $$
+\end{theorem}
+
 
 
 
