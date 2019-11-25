@@ -24,6 +24,15 @@
       - [1.5.0.15. Polymorphism jargon](#15015-polymorphism-jargon)
       - [1.5.0.16. The global superclass *Object*](#15016-the-global-superclass-object)
       - [1.5.0.17. Is-a and Has-a in Java](#15017-is-a-and-has-a-in-java)
+  - [1.6. Week 10](#16-week-10)
+      - [1.6.0.18. Static modifier](#16018-static-modifier)
+      - [1.6.0.19. Accessing static methods](#16019-accessing-static-methods)
+      - [1.6.0.20. Restrictions on static methods](#16020-restrictions-on-static-methods)
+      - [Making sense of System.out.println](#making-sense-of-systemoutprintln)
+      - [Boxing, auto-boxing and unboxing](#boxing-auto-boxing-and-unboxing)
+      - [Interfaces](#interfaces)
+      - [Enumerations](#enumerations)
+      - [Why declare a reference variable of type interface](#why-declare-a-reference-variable-of-type-interface)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -545,6 +554,133 @@ Similarly every Java class also extends the Exception class for exception handli
 #### 1.5.0.17. Is-a and Has-a in Java
 
 The Is-a relationship is essentially inheritance. Every subclass is also an instance of the parent class. The Has-a relationship is when one instance of an object is stored inside another object. 
+
+
+## 1.6. Week 10
+
+#### 1.6.0.18. Static modifier
+Declaring some variable as static means its value is the same amongst all instances. This also means that the variable is some reference to the same zone in memory amongst all instances.
+
+Declaring a method as static, the method may be called without instantiating an object. 
+
+> And here are properties of static variables:
+> 1. must be declared outside of method scope
+> 2. visible everywhere inside a class
+> 3. inherited by subclasses
+
+And so why might one use static? 
+> Good way of having a common value represented amongst objects.
+
+And the best way to declare a constant in java is:
+
+``` java
+final static double PI = 3.14;
+```
+
+#### 1.6.0.19. Accessing static methods 
+Here is what is right and what is wrong to do:
+
+``` java
+class A{
+    void m1(){
+        ...
+    }
+
+    static void m2(){
+        ...
+    }
+}
+
+class B{
+    main(){
+        A v = new A();
+        v.m1(); // OK
+        v.m2(); // OK
+        A.m1(); // not OK
+        A.m2(); // OK
+    }
+}
+```
+
+#### 1.6.0.20. Restrictions on static methods 
+In general, a static method should never have to call an instance variable or instance method. This is because the compiler is never sure that the *this* object exists upon execution. 
+
+Similarly, whenever a class has only static methods and classes, it is completely unnecessary to instantiate an object. 
+
+
+#### Making sense of System.out.println
+
+*System* is a predefined class in java. *Out* is a static variable defined inside System and println is a method of out. 
+
+#### Boxing, auto-boxing and unboxing 
+
+Consider the below:
+``` java
+
+main(){
+    int i = 5;
+    Integer ii = new Integer(5); // Boxing
+    Integer jj = i; // Auto-boxing
+    int j = jj.intValue(); // Unboxing
+}
+```
+
+#### Interfaces
+An interface is used as a 'contract' where every object that *implements* an interface must declare the methods found in an interface.
+
+Every object of type interface must be a class implementing the interface. 
+
+We have that a class may extend only one class yet implement multiple interfaces. 
+
+>Contents of interface:
+> 1. final static variable 
+> 2. abstract method
+
+A novelty of Java 8 is that interfaces may also have default methods. Default methods simply also provide the implementation of the method. The need for this is that it removes the burden of having to define a method in a class implementing the interface. It is also possible to override a default method inside an interface extending another interface. 
+
+It is likely that a conflict will occur when some parent class implements one interface and the child another containing two different implementations of a default method. To ensure that this code is compiled, the class must resolve this conflict. 
+
+Finally, we note that an interface models a 'has-a' relationship. 
+
+#### Enumerations
+An enum is simply a list of constants. We may for instance use an enum to model keyboard movements in a game:
+
+``` java
+enum Keyboard{
+    LEFT,RIGHT,UP,DOWN; 
+}
+```
+
+And a more elaborate usage of enum:
+
+``` java
+enum Mobile{
+    APPLE(90), SAMSUNG, HTC; //enum variables are by default final static 
+
+    int price; 
+
+    Mobile(){
+        this.price = 80;
+        print("i was called"); // will get called 3 times. 
+    }
+
+    Mobile(int price){
+        this.price = price; // constructs apple with 90. 
+    }
+}
+``` 
+
+We note that for an enum, the *.values* method returns an array with each variable at the ordered index. 
+
+#### Why declare a reference variable of type interface
+
+This is very common practice. For instance it is far better to say *List l1 = new ArrayList();* than to say *ArrayList l1 = new ArrayList();* 
+
+
+
+
+
+
 
 
 
