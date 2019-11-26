@@ -28,11 +28,14 @@
       - [1.6.0.18. Static modifier](#16018-static-modifier)
       - [1.6.0.19. Accessing static methods](#16019-accessing-static-methods)
       - [1.6.0.20. Restrictions on static methods](#16020-restrictions-on-static-methods)
-      - [Making sense of System.out.println](#making-sense-of-systemoutprintln)
-      - [Boxing, auto-boxing and unboxing](#boxing-auto-boxing-and-unboxing)
-      - [Interfaces](#interfaces)
-      - [Enumerations](#enumerations)
-      - [Why declare a reference variable of type interface](#why-declare-a-reference-variable-of-type-interface)
+      - [1.6.0.21. Making sense of System.out.println](#16021-making-sense-of-systemoutprintln)
+      - [1.6.0.22. Boxing, auto-boxing and unboxing](#16022-boxing-auto-boxing-and-unboxing)
+      - [1.6.0.23. Interfaces](#16023-interfaces)
+      - [1.6.0.24. Enumerations](#16024-enumerations)
+      - [1.6.0.25. Why declare a reference variable of type interface](#16025-why-declare-a-reference-variable-of-type-interface)
+  - [1.7. Week 11](#17-week-11)
+      - [Nested classes](#nested-classes)
+      - [Flaws of encapsulation](#flaws-of-encapsulation)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -608,11 +611,11 @@ In general, a static method should never have to call an instance variable or in
 Similarly, whenever a class has only static methods and classes, it is completely unnecessary to instantiate an object. 
 
 
-#### Making sense of System.out.println
+#### 1.6.0.21. Making sense of System.out.println
 
 *System* is a predefined class in java. *Out* is a static variable defined inside System and println is a method of out. 
 
-#### Boxing, auto-boxing and unboxing 
+#### 1.6.0.22. Boxing, auto-boxing and unboxing 
 
 Consider the below:
 ``` java
@@ -625,7 +628,7 @@ main(){
 }
 ```
 
-#### Interfaces
+#### 1.6.0.23. Interfaces
 An interface is used as a 'contract' where every object that *implements* an interface must declare the methods found in an interface.
 
 Every object of type interface must be a class implementing the interface. 
@@ -642,7 +645,7 @@ It is likely that a conflict will occur when some parent class implements one in
 
 Finally, we note that an interface models a 'has-a' relationship. 
 
-#### Enumerations
+#### 1.6.0.24. Enumerations
 An enum is simply a list of constants. We may for instance use an enum to model keyboard movements in a game:
 
 ``` java
@@ -672,9 +675,88 @@ enum Mobile{
 
 We note that for an enum, the *.values* method returns an array with each variable at the ordered index. 
 
-#### Why declare a reference variable of type interface
+#### 1.6.0.25. Why declare a reference variable of type interface
 
 This is very common practice. For instance it is far better to say *List l1 = new ArrayList();* than to say *ArrayList l1 = new ArrayList();* 
+
+
+## 1.7. Week 11
+
+#### Nested classes 
+The general way about declaring a nested class is:
+
+``` java
+public class A{
+    private class B{
+        ...
+        // noting that B has access to all in A and A has access to all in B. 
+    }
+}
+
+```
+
+Similarly access to method follows as:
+
+``` java
+public class A{
+
+    void display(){
+        ...
+    }
+    private class B{
+        void display(){
+            ...
+        }
+    }
+
+    void main(){
+        A.this.display(); //will call A's display
+        this.display(); //will call B's display
+    }
+}
+```
+
+We note that if an inner class is declared as static, it will have access to only static members of the outer class.
+
+
+#### Flaws of encapsulation
+
+An object is said to be mutable if it has any public method that let it modify its content. To prevent such flaws, one might define getters that return a copy of the object. When returning a copy of an object via a getter, one must be very careful to create new object, that is:
+
+``` java
+class A{
+    public getTime(){
+        public int timecopy;
+        return timecopy = this.actualTime; // this is wrong!!!
+        return timecopy = new time(actualTime) // this is right!!!
+    }
+}
+
+```
+
+Here is how we define a copy constructor as used above:
+
+``` java 
+class A {
+
+    public A(A obj){
+        this.p1 = obj.p1; 
+        this.p2 = obj.p2; 
+        ...
+    }
+}
+```
+
+> However we add the subtle note that the copy constructor is not polymorphic. That is suppose we have a parent class *A* and its child *B* with both copy constructors of their own. Now we say something like:
+
+``` java
+A copyB = new B(B); 
+```
+That is we try to create a copy of some upcasted object and have copyB refer to it. This will produce an error as copyB is declared of type A hence will not have access to the copy constructor B. Similarly we may use the copy constructor of A but then it will not be a copy of B we create. 
+
+
+
+
 
 
 
