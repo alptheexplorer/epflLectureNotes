@@ -1355,6 +1355,29 @@ $$p(A|B) = \frac{p(B|A)p(A)}{p(B)}$$ but through a simple derivation we also hav
 $$ p(A|B) = \frac{p(B|A)p(A)}{p(B|A)p(A) + p(B|A^{'})p(A^{'})} $$
 \end{theorem}
 
+\subsection{Lec 22. notes}
+
+We may use polynomials to represent outcomes of a certain event. Suppose we are rolling a die. We let tails be represented by $X^{0}$ and heads by $X^{1}$ then $(1+X)^{n} = \sum_{i=0}^{n}\binom{n}{i}1\cdot X^{n}$ 
+\\
+
+Similarly, if we wrote $(X + hdots + X^{6})^{2}$ the coefficients of the expansion would tell us in how many ways we can achieve sums of rolling a die twice. Given this, we get the more general form for the possible sums when rolling a die $n$ many times is obtained from first principles as follows:
+\\
+for the $n = 1$ case we have: 
+$X + \hdots + X^{6} = X(1 + \hdots + X^{5}) = X \frac{X^{6}-1}{X-1}$ which means that for the general $n$ case we have $X^{n} \frac{(X^{6}-1)^{n}}{(X-1)^{n}}$
+\\
+
+Now a very crucial point is to realize the essence of a random variable which is neither variable nor random. It simply is a real-valued mapping $f: E \to \mathbb{R}$ And another subtlety is that $p(s) \not= p(X = x)$. The former is simply the probability of some $s \in E$ happening whereas the latter defined as:
+$$p(X = x) = \sum_{\{s: s\in E: X(s) = x}p(s)\}$$ The simplest example is when flipping two dice we have that $P(X = 1) = P(TT) + P(HH)$
+
+\begin{definition}\textbf{Expected value}
+We define $E(x)$ as:
+$$E(x) = \sum_{s\in E} p(s)X(s) = \sum_{x\in X(s)} xp(X=x) $$
+where $X(s)$ is the random variable. 
+\\
+
+And we have that the excpected value of $n$ independent Bernoulli trials is $np$
+\end{definition}
+
 
 
 
