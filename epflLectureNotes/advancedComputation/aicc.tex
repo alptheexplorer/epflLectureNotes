@@ -1378,11 +1378,74 @@ where $X(s)$ is the random variable.
 And we have that the excpected value of $n$ independent Bernoulli trials is $np$
 \end{definition}
 
+\subsection{Lec 23. notes}
+
+Suppose we roll an $n$ sided dice twice and define a random distribution $Y(i,j) = max(i,j)$ now we ask, what is $E(Y)$ Well realizing that $E(Y) = \sum_{s\in S} p(s)Y(s)$ we get the following:
+
+\begin{eqnarray*}
+E(Y)&=&\frac{\max(1,1)}{n^2}+\frac{\max(1,2)}{n^2}+\frac{\max(1,3)}{n^2}+\ldots+\frac{\max(1,n)}{n^2}+\\
+&&\frac{\max(2,1)}{n^2}+\frac{\max(2,2)}{n^2}+\frac{\max(2,3)}{n^2}+\ldots+\frac{\max(2,n)}{n^2}+\\
+&&\frac{\max(3,1)}{n^2}+\frac{\max(3,2)}{n^2}+\frac{\max(3,3)}{n^2}+\ldots+\frac{\max(3,n)}{n^2}+\\
+&&\qquad\vdots\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\vdots\qquad\\
+&&\frac{\max(n,1)}{n^2}+\frac{\max(n,2)}{n^2}+\frac{\max(n,3)}{n^2}+\ldots+\frac{\max(n,n)}{n^2}\\
+&=&\frac1{n^2}+\frac{\color{blue}{2}}{n^2}+\frac{\color{magenta}{3}}{n^2}+\ldots+\frac{{\color{red}{n}}}{n^2}+\\
+&&\frac{\color{blue}{2}}{n^2}+\frac{\color{blue}{2}}{n^2}+\frac{\color{magenta}{3}}{n^2}+\ldots+\frac{{\color{red}{n}}}{n^2}+\\
+&&\frac{\color{magenta}{3}}{n^2}+\frac{\color{magenta}{3}}{n^2}+\frac{\color{magenta}{3}}{n^2}+\ldots+\frac{{\color{red}{n}}}{n^2}+\\
+&&\qquad\vdots\qquad\qquad\qquad\qquad\vdots\qquad\\
+&&\frac{{\color{red}{n}}}{n^2}+\frac{{\color{red}{n}}}{n^2}+\frac{{\color{red}{n}}}{n^2}+\ldots+\frac{{\color{red}{n}}}{n^2}.
+\end{eqnarray*}
+
+This shows that each $\frac{i}{n^{2}}$ occurs $2i - 1$ many times hence we get:
+$$E(Y)=\sum_{i=1}^n\frac{i(2i-1)}{n^2}$$
+
+And using our earlier knowledge of summations we have:
+\begin{eqnarray*}
+\sum_{i=1}^ni(2i-1)&=&\big(2 \sum_{i=1}^ni^2\big)-\big(\sum_{i=1}^ni\big)\\
+&=&2\frac{n(n+1)(2n+1)}6-\frac{n(n+1)}2\\
+&=&n(n+1)\big(\frac{2n+1}3-\frac12\big)\\
+&=&\frac{n(n+1)(4n-1)}6.
+\end{eqnarray*}
+It follows that:
+$$E(Y)=\frac{(n+1)(4n-1)}{6n}$$
 
 
+\begin{remark}
+We note that $E(X)$ is a linear map. Namely $E(ax+b) = aE(x) + E(b)$
+\end{remark}
 
+\begin{theorem}\textbf{Markov's inequality}
+We ask what is the probability that some random variable deviates by a factor of $M$ from $E(x)$. Markov answers this as:
+$$P(X \geq M \cdot E(X)) \leq \frac{1}{M}$$
+\end{theorem}
 
+\begin{definition}\textbf{Variance}
+$$Var(x) = \sum_{s\in S} (X(s) - E(x))^{2}p(s)$$
+which is also:
+$$E((x(s) - E(x))^{2})$$
+and simplifies to:
+$$E(X^{2}) - E(X)^{2}$$
+\end{definition}
 
+{\bf Chebyshev's inequality} Let $\delta$ be some positive real number and let $\Delta$ be the event $\{s\in S: |X(s)-E(X)|\ge\delta\}$ that a random variable $X$ deviates at least~$\delta$ from its expected value~$E(X)$.
+Because $V(X)=\sum_{s\in S}(X(s)-E(X))^2p(s)$ can be written as
+$$V(X)=\sum_{s\in \Delta}(X(s)-E(X))^2p(s) + \sum_{s\in S\setminus\Delta}(X(s)-E(X))^2p(s)$$
+and the second sum is non-negative, it follows that
+$$V(X)\ge\sum_{s\in \Delta}(X(s)-E(X))^2p(s).$$
+But $s\in \Delta$ implies that $|X(s)-E(X)|\ge\delta$ and thus that $(X(s)-E(X))^2\ge\delta^2$, so that
+$$V(X)\ge\delta^2\sum_{s\in \Delta}p(s)=\delta^2p(\Delta).$$
+It follows that
+$$p(\Delta)\le V(X)/\delta^2$$
+and thus that
+$$p(|X(s)-E(X)|\ge\delta)\le V(X)/\delta^2.$$
+This is Chebyshev's inequality.
+With $\delta =\sigma(X)= \sqrt{V(X)}$ it becomes (if $V(X)\ne 0$)$$p\big(|X(s)-E(X)|\ge\sigma(X)\big)\le 1,$$which is not saying much except that deviating by $\sigma(X)$ from $E(X)$ is something that should be considered to be ``standard'':
+Chebyshev's inequality provides no useful upper bound on the probability to be $\sigma(X)$ away from $E(X)$.
+On the other hand, Chebyshev's inequality also tells us that being ``two (or four) standard deviations away from the expected value'' (take $\delta=2\sigma(X)$ (or $\delta=4\sigma(X)$)) has a probability of at most $25\%(=\frac14)$ (or $6.25\%(=\frac1{16}$)), which may be useful.
+\\
+
+\textbf{Summary} In short, Markov tells us that the probability of being $M$ away from the mean is $\frac{1}{M}$ and Chebyshev tells us that the probability of deviating by a factor of $K$ from $\sigma(x)$ is $\frac{1}{K}$ 
+
+We now note that variance is additive only if $E(x)$ is multiplicative. And we have that $E(x)$ is multiplicative iff. the random variables are. That is $P( X = x \land X = y) = P(X=x)P(X = y)$
 
 
 
