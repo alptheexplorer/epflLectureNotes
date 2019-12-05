@@ -36,6 +36,16 @@
   - [1.7. Week 11](#17-week-11)
       - [Nested classes](#nested-classes)
       - [Flaws of encapsulation](#flaws-of-encapsulation)
+  - [Week 11](#week-11)
+        - [Exception handling](#exception-handling)
+      - [Throwable class](#throwable-class)
+    - [Child classes of Throwable](#child-classes-of-throwable)
+      - [The exception handling mechanism](#the-exception-handling-mechanism)
+    - [Using 'finally'](#using-finally)
+      - [Checked and unchecked errors](#checked-and-unchecked-errors)
+      - [Self defined exceptions](#self-defined-exceptions)
+    - [Syntax of throws](#syntax-of-throws)
+    - [Assertions](#assertions)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -753,6 +763,120 @@ class A {
 A copyB = new B(B); 
 ```
 That is we try to create a copy of some upcasted object and have copyB refer to it. This will produce an error as copyB is declared of type A hence will not have access to the copy constructor B. Similarly we may use the copy constructor of A but then it will not be a copy of B we create. 
+
+
+## Week 11
+
+##### Exception handling 
+The goal of exception handling is to prevent runtime errors that may surpass the compilation stage. Here is the syntax:
+
+``` java
+throw // indicates error
+try // indicates that a block may possibly fail at runtime
+catch // intercept errors
+finally // indicates what to do after error handling
+```
+The idea is that throw will return an exception object for instance 'new Exception("there was an error")'
+
+
+#### Throwable class
+Throwable is the elementary error class, its constructors being:
+
+``` java
+public Throwable()
+public Throwable(String message)
+```
+
+### Child classes of Throwable
+> Error
+> Exception
+> RuntimeException
+
+#### The exception handling mechanism
+
+The most general form is this:
+
+``` java
+try{
+    k = i/j
+}
+catch(Exception e){
+    ...print(e)
+}
+```
+
+The above works because the try block creates an error which is caught by the most general exception type 'Exception'. 
+
+
+### Using 'finally'
+
+We may choose to use 'finally' which will run the piece of code inside a 'finally' block after the exception launched by try has ended. This code runs regardless of the outcome of the try/catch block. Here's an example:
+
+``` java
+    public static void main (String[] args) {
+        try {
+            //this is called the 
+        Integer a = Integer.valueOf(args[0]);
+        int b = a.intValue();
+        int c = 100/b;
+        System.out.println("Inverse * 100 = " + c);
+        }
+        catch (NumberFormatException e1) {
+        System.out.println("Il faut un nombre entier!");
+        }
+        catch (ArithmeticException e2) {
+        System.out.println ("Parti vers l’infini!");
+        }
+        finally {
+        System.out.println("on passe par le bloc final");
+        }
+}
+``` 
+
+#### Checked and unchecked errors
+Checked errors are those that are exceptional cases a program may run into. We mark these as suspicious and as best practice put them inside a try/catch block. For instance the following is an unchecked exception:
+
+``` java
+public class DivideByZero {
+    int dividerOfZeros(int notZero) {
+        return notZero / 0;
+    }
+    public static void main(String[] args) {
+        DivideByZero dbz = new DivideByZero();
+        dbz.dividerOfZeros(10);
+    }
+}
+```
+
+#### Self defined exceptions
+
+We may define our own exception in which case it must extend the Exception class. In addition, if we want our try block to include self-defined exceptions as below, we use *throw*. 
+
+``` java
+try{
+    int i = 1
+    int j = 2;
+    if(i+j < 5){
+        throw(new OutOfBounds); 
+    }
+}
+catch(Exception e){
+    ...print(e); 
+}
+```
+
+### Syntax of throws 
+
+We must use *throws* whenever a method throws an exception without treating it, but wherever this method is called, it must be treated.
+
+### Assertions
+
+Only use this for debugging purposes. 
+
+
+
+
+
 
 
 
