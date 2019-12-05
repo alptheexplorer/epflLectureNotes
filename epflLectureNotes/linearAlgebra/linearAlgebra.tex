@@ -26,6 +26,10 @@ right  = 2.75cm]{geometry}
   \array{#1}}
 \makeatother
 
+\newcommand{\tens}[1]{%
+  \mathbin{\mathop{\otimes}\limits_{#1}}%
+}
+
 \newtheorem{thm}{Theorem}[subsection]
 \newtheorem{property}{Property}
 \newtheorem{cor}{Corollary}[subsection]
@@ -1344,6 +1348,112 @@ $$y^{'} = UU^{T}y$$
 The above is clear considering that when we have an orthanormal basis $y^{'} = (y \cdot u_{1})u_{1} + \ldots$ that the weights $y \cdot u_{i}$ are equivalent to $u_{i}^{T}y$ which is equivalent to $U^{T}y$
 \end{thm}
 
+\begin{thm}
+For a subspace $W$ of $\Rn$ we have that:
+$$dim(W) + dim(W^{\perp}) = n$$
+\end{thm}
+
+\begin{proof}
+Put the basis for $W$ and $W^{\perp}$ into one set. Now this is an orthogonal set which implies \li. Similarly, we have that every $y \in \Rn$ can be written as a linear combination of the elements in this set. Hence we are done.
+\end{proof}
+
+\begin{thm}\textbf{Uniqueness and existence theorem}
+For some $Ax=b$ we have that the equality has a solution iff. $b\cdot y = 0 \ \forall y \in Nul(A^{T})$
+\end{thm}
+
+\begin{proof}
+Firstly we have that $\Rn = \underbrace{W}_{\text{\makebox[0pt]{Col(A)}}} \bigoplus W^{\perp}$ and also that $b = y^{'} + z$ Now for $Ax=b$ to have a solution, we need that $b \in W$ this is only possible if $z = 0$ which implies that $\forall z \in Nul(A^{T})$ we have $b \cdot z = 0$ 
+\end{proof}
+
+
+\clearpage
+\section{Factorizations and applications}
+\begin{tcolorbox}\textbf{Gram-Schmidt}
+We find an orthonormal basis for any vector space as follows:
+
+Let $x_{i}$ form a basis. Now define:
+\begin{align*}
+    v_{1} = x_{1}\\
+    v_{2} = x_{2} - \frac{x_{2}\cdot v_{1}}{v_{1}^2}v_{1}\\
+    \ \vdots
+\end{align*}
+
+That is, the $v_{i}$ we find this way form an orthonormal basis. 
+\\
+
+\textbf{QR factorisation}
+\begin{thm}
+If $A$ is an $m\cross n$ matrix with \li \ columns we have that $A = QR$ where columns of $Q$ are an ortahonormal basis for $Col(A)$ and $R$ is upper triangular. 
+\end{thm}
+
+\begin{proof}
+Now we have that $X =  A = \begin{bmatrix}
+    x_{1} & \hdots & x_{n}
+\end{bmatrix}$ Let $U = \begin{bmatrix}
+    u_{1} & \hdots & u_{n}
+\end{bmatrix}$ be the matrix with each column being an orthonormal vector.  Now by rewriting Gram-Schmidt we have that each $x_{i}$ is a linear combination of the $v_{i}$. Hence the matrix $R$ is the matrix simply containing these weights and we are done. 
+\end{proof}
+\end{tcolorbox}
+
+\begin{definition}\textbf{Least squares problem}
+When we try to estimate say a plot for some experiment data, the most natural approach is to minimize the distance between our chosen trendline and outlier experiment points. This generally leads to an equation of the form $b - Ax$ where our goal is to minimize this difference. For instance a polynomial estimation of degree 2 leaves us with:
+$$ b - (a_{0} + a_{1}x^{1} + a_{2}x^{2}) = b - \begin{bmatrix}
+    x^{0} & x^{1} & x^{2}
+\end{bmatrix}\begin{bmatrix}
+    a_{0}\\
+    a_{1}\\
+    a_{2}
+\end{bmatrix}$$
+
+Thus we have that a least squares solution is:
+
+$$ |b - Ax^{'}| \leq |b - Ax| \ \forall x \in \Rn$$
+\end{definition}
+
+\begin{thm}\textbf{The general solution to the least squares problem}
+This turns out to be the projection of the vector $b$ onto the columns space of $A$. Given that $b = b^{'} + z$ we have that $b - b^{'}$ is orthogonal to the column space of $A$ which implies $A^{T}(b-Ax) = 0$ Thus we conclude that the least square solution must always satisfy:
+$$A^{T}b = A^{T}Ax$$
+\end{thm}
+
+Thus the general way to find a least squares solution is to solve for $x$ by finding $(A^{T}A)^{-1}A^{T}b$. Yet we note that this is only the case if $A^{T}A$ is invertible which happens when \textbf{the columns of $A^{T}A}$ are invertible.}
+\\ 
+
+Finally, if our $A$ happens to have linearly independent columns then the least squares solution to $Ax = b$ is even easier to find. We have that $A = QR$ and given that for orthanormal matrices $Q^{T} = Q^{-1}$ we get:
+$$ x^{'} = R^{-1}Q^{T}b$$
+
+\begin{thm}
+If $A$ is a symmetric matrix, then any two eigenvectors from a different eigenspace are orthagonal. 
+We omit the proof but the idea is to consider $\lambda_{1}v_{1}\cdot v_{2}$ get that it is equal to  $\lambda_{2}v_{1}\cdot v_{2}$ and conclude.
+
+\textbf{By the same idea we know that $A$ and $A^{T}$ have the same eigenvalues and we obtain that any two eigenvectors from a different eigenspace are orthogonal.}
+\end{thm}
+
+\begin{thm}
+A square matrix $A$ is orthogonally diagonilizable that is $P$ being an orthogonal matrix iff. $A$ is symetric.
+\end{thm}
+
+\begin{remark}\textbf{Matrix multiplication can be viewed as a series of outer products}
+We define an outer product as:
+$$ x\tens{} y = xy^{T}$$
+\end{remark}
+
+\begin{tcolorbox}
+\textbf{A useful tool: Spectral decomposition}
+\\
+
+Given our above theorem, we have that if $A$ is square and symetric, then it is orthogonally diagonilizable. So let $A = PDP^{-1}$. Taking $P$ to be an orthanormal matrix we obtain $A = PDP^{T}$ Now this simplifies to:
+$$\begin{bmatrix}
+    u_{1} & \hdots & u_{n}
+\end{bmatrix}\begin{bmatrix}
+    \lambda_{1} & \hdots
+\end{bmatrix} \begin{bmatrix}
+    u_{1}^{T}\\
+    \vdots \\
+    u_{n}^{T}
+\end{bmatrix}$$
+to finally give:
+$$A = \lambda_{1}u_{1}u_{1}^{T} + \hdots + \lambda_{n}u_{n}u_{n}^{T} = \sum_{i=1}^{n}\lambda_{i}u_{i} \tens{} u_{i}$$
+\end{tcolorbox}
 
 
 

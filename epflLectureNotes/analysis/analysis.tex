@@ -23,7 +23,7 @@ right  = 2.75cm]{geometry}
 \newtheorem{prop}{[Proposition]}
 \newtheorem{definition}{Definition}
 \newtheorem{question}{Question}
-\numberwithin{equation}{subsection}[section]
+
 
 \title{\textbf{Analysis 1 - Zsolt Patavflaki}}
 \author{Alp Ozen}
@@ -1173,6 +1173,157 @@ It is quite easy to obtain derivatives of inverse trig functions using our earli
 
 For $\arcsin{x}'$ we have that it equals $\frac{1}{\cos{\arcsin{x}}}$ and by trig identity simplifies to $\frac{1}{\sqrt{1-x^2}}$ Similarly for $\arccos{x}$ the formula is $-\frac{1}{\sqrt{1-x^2}}$ and for $arctan(x)$ we use the division rule to get $\frac{1}{1+x^{2}}$
 \end{theorem}
+
+\begin{theorem} \textbf{Rolle's theorem}
+\\
+If $f:[a,b] \to \R$ is continuous,differentiable(this is very crucial!) and $f(a) = f(b)$ then we have that $\exists c \in [a,b]$ such that $f^{\prime}(c) = 0$ 
+\\
+
+We do not prove this as visually it is easy to see. 
+\end{theorem}
+
+\begin{theorem}
+\textbf{Mean value theorem}
+\\
+Let $f:[a,b] \to \R$ be continuous and differentiable, then there $\exists c \in [a,b]$ such that $f^{\prime}(c) = \frac{f(b)-f(a)}{b-a}$. That is to say, there must exists a point whose derivative is equal to the average slope between $a$ and $b$. 
+\end{theorem}
+
+\begin{theorem}\textbf{Warnings about monotone functions}
+Let $f$ be continuous and differentiable then:
+\begin{enumerate}
+    \item $f$ is increasing iff. $f^{\prime}(x) \geq 0$
+    \item if $f^{\prime}(x) > 0$ then $f$ is strictly increasing but the other way doesn't apply! 
+\end{enumerate}
+\end{theorem}
+
+
+\begin{example}
+Consider when $\sin(x) + ax$ is always monotone. This happens iff. $\cos(x) + a$ is always greater or less than 0.
+\end{example}
+
+\begin{definition}\textbf{Hyperbolic functions}
+\begin{align*}
+    \sinh{x} = \frac{e^{x} - e^{-x}}{2}\\
+    \cosh{x} = \frac{e^{x} + e^{-x}}{2}\\
+    \tanh{x} = \frac{\sinh{x}}{\cosh{x}}
+\end{align*}
+\end{definition}
+
+\begin{definition}\textbf{Powers and exponentials}
+\begin{align*}
+    a^{x} = e^{x\ln{a}}\\
+\end{align*}
+\end{definition}
+
+And now we have L'Hopital's rule:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{epflLectureNotes/analysis/figures/lhopital.JPG}
+    \caption{L'hopitals rule}
+    \label{fig:my_label}
+\end{figure}
+
+In short L'Hopital's rule is used to find limits of functions of the form $\frac{0}{0}$ or $\frac{\infty}{\infty}$. It tells us that we find the limit of $\frac{f^{\prime}(x)}{g^{\prime}(x)}$ and this should also then give the limit of the initial function. 
+
+\begin{theorem}\textbf{Taylor expansion}
+We define the n-th order expansion of $f$ around $a$ as:
+$$f(x) = a_{0} + a_{1}(x-a) + \hdots + a_{n}(x-a)^{n} + \epsilon(x)(x-a)^{n}$$ where $\epsilon(x)$ converges to 0 at $a$. 
+\end{theorem}
+
+Similarly, we define:
+
+\begin{theorem}
+For some $f \in C^{n}$ we say that the n-th order approximation of $f$ is:
+$$\sum_{i=0}^{n}\frac{f^{i}(a)}{j!}(x-a)^j$$
+
+As a corollary, we have that the coefficients are unique. 
+\end{theorem}
+
+By our above definition, we ensure that our approximation has the same derivative at the chosen $a$ upto nth degree allowing for the best approximation. 
+
+\begin{tcolorbox}\textbf{Intuition for L'Hopital}
+The intuition of L'Hopital's rule is that if we graph our two functions $f$ and $g$ separately for which both approach either $0$ or $\infty$ then the limit of $\frac{f}{g}$ is precisely the slope evaluated at that point. 
+\end{tcolorbox}
+
+\begin{theorem}\textbf{Test for inflection point and local max/min and inflection point}
+\\
+
+We have that $f$ has a local max or min at $a$ if $n\geq 2$ is even and:
+$$f^{2}(a) = \hdots = f^{n-1}(a) = 0 \ f^{n} < 0 (\text{local max.}) \ f^{n} > 0 (\text{local min.})$$
+
+We have that $f$ has an inflection point at $a$ if $n \geq 3$ is odd and:
+$$f^{2}(a) = \hdots = f^{n-1}(a) = 0 \ f^{n} \not = 0 $$
+\end{theorem}
+
+\begin{definition}\textbf{Convexity and concavity}
+\\
+
+We define the two as follows:
+
+$f$ is convex if $\forall a,b \in I$ and $\lambda \in [0,1]$ $f(\lambda a + (1-\lambda)b) \leq \lambda f(a) + (1- \lambda)f(b)$
+\\
+
+$f$ is concave if $\forall a,b \in I$ and $\lambda \in [0,1]$ $f(\lambda a + (1-\lambda)b) \geq \lambda f(a) + (1- \lambda)f(b)$
+
+
+\end{definition}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{epflLectureNotes/analysis/figures/convex.png}
+    \caption{Convexity shown}
+    \label{}
+\end{figure}
+
+
+
+\begin{theorem}
+$f$ is convex iff. $f^{'}$ is increasing. Similarly, if $f$ is twice differentiable, then $f$ is convex iff. $f^{''} \geq 0$. 
+\end{theorem}
+
+\begin{definition}
+A function is $k-Lipschitzs$ if $k > 0$ we have $|f(x) - f(y)| \leq k|x-y|$. Note that being $k-Lipschitz$ implies uniform continunity. 
+\end{definition}
+
+\begin{remark}\textbf{Algorithm to find fixed point}
+We define the sequence $x_{n}$ as $x_{n+1} := f(x_{n})$ then we have that the fixed point $c$ is:
+$$c = \lim_{n \to \infty} x_{n}$$
+\end{remark}
+
+\begin{definition}\textbf{Asymptotes}
+\\
+
+Vertical asymptote: $\lim_{x \to c^{\pm}} f(x) = \pm \infty$
+\\
+Horizontal asymptote: $\lim_{x \to \pm \infty} f(x) = \pm c$
+\end{definition}
+
+\subsection{Integration}
+
+We derive the notion of integration(aka. area under sum) from \textit{Darboux Sums}.
+Let $S_{\sigma}$ be defined as:
+
+$$ S_{\sigma} = \sum_{i=1}^{n}M_{i}(x_{i} - x_{i-1}}) \ , M_{i} = sup_{x \in [x_{i-1},x_{i}]}f(x)$$
+
+And define $s_{\sigma}$ as:
+
+$$ s_{\sigma} = \sum_{i=1}^{n}m_{i}(x_{i} - x_{i-1}}) \ , m_{i} = inf_{x \in [x_{i-1},x_{i}]}f(x)$$
+
+\begin{definition}
+We define an upper Darboux sum as:
+$$S = Inf\{ \ S_{\sigma} | \sigma \text{a partition of} \ [a,b] \ \}$$
+and a lower Darboux sum as:
+$$s = Sup\{ \ s_{\sigma} | \sigma \text{a partition of} \ [a,b] \ \}$$
+\end{definition}
+
+\begin{definition}
+Hence we define $f$ as being integrable if:
+$$ S = s$$
+\end{definition}
+
+
 
 
 
