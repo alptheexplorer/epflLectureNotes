@@ -1438,7 +1438,7 @@ $$p(\Delta)\le V(X)/\delta^2$$
 and thus that
 $$p(|X(s)-E(X)|\ge\delta)\le V(X)/\delta^2.$$
 This is Chebyshev's inequality.
-With $\delta =\sigma(X)= \sqrt{V(X)}$ it becomes (if $V(X)\ne 0$)$$p\big(|X(s)-E(X)|\ge\sigma(X)\big)\le 1,$$which is not saying much except that deviating by $\sigma(X)$ from $E(X)$ is something that should be considered to be ``standard'':
+With $\delta =\sigma(X)= \sqrt{V(X)}$ it becomes (if $V(X)\ne 0$)$$p\big(|X(s)-E(X)|\geq M\sigma(X)\big)\leq \frac{1}{M^{2}}$$which is not saying much except that deviating by $\sigma(X)$ from $E(X)$ is something that should be considered to be ``standard'':
 Chebyshev's inequality provides no useful upper bound on the probability to be $\sigma(X)$ away from $E(X)$.
 On the other hand, Chebyshev's inequality also tells us that being ``two (or four) standard deviations away from the expected value'' (take $\delta=2\sigma(X)$ (or $\delta=4\sigma(X)$)) has a probability of at most $25\%(=\frac14)$ (or $6.25\%(=\frac1{16}$)), which may be useful.
 \\
@@ -1447,8 +1447,24 @@ On the other hand, Chebyshev's inequality also tells us that being ``two (or fou
 
 We now note that variance is additive only if $E(x)$ is multiplicative. And we have that $E(x)$ is multiplicative iff. the random variables are. That is $P( X = x \land X = y) = P(X=x)P(X = y)$
 
+\subsection{Lec 24. notes}
+\begin{definition}
+$X(s)$ is \textbf{geometrically distributed} iff. $P(X = k) = q^{k-1}p$
+\end{definition}
 
+\begin{remark}
+For a geometric distribution we have:
+\begin{align*}
+    E(x) = \frac{1}{p}\\
+    V(x) = \frac{q}{p^{2}}
+\end{align*}
+\end{remark}
 
+\begin{example}\textbf{An instructive example and its generalization}
+Suppose we want to generate $n$ random numbers from rolling a 6-sided die. Suppose our $n=79$. Well we define our random number by:
+$$s = 36(i-1) + 6(j-1) + (z-1)$$
+where the $i,j,z$ come from our 3 dice rolls. Now this will generate the set $\{0,1, \hdots, 215\}$ and our needed $79$ numbers fit perfectly into $215$ twice. Thus we say that if $s \in \{0,\hdots,157\}$ then $s \bmod{79}$ otherwise roll again. We notice that this is a geometric distribution as say we roll 4 times only if the first 3 results have failed. Thus our $p$ (aka. chance for success) is $\frac{158}{216}$ meaning that we expect $3 \cdot \frac{216}{158}$ rolls in general to obtain our random number. We note that with this method the probability of obtaining any $i$ in the range $n$ is uniformly distributed. 
+\end{example}
 
 
 
