@@ -1463,10 +1463,64 @@ For a geometric distribution we have:
 \begin{example}\textbf{An instructive example and its generalization}
 Suppose we want to generate $n$ random numbers from rolling a 6-sided die. Suppose our $n=79$. Well we define our random number by:
 $$s = 36(i-1) + 6(j-1) + (z-1)$$
-where the $i,j,z$ come from our 3 dice rolls. Now this will generate the set $\{0,1, \hdots, 215\}$ and our needed $79$ numbers fit perfectly into $215$ twice. Thus we say that if $s \in \{0,\hdots,157\}$ then $s \bmod{79}$ otherwise roll again. We notice that this is a geometric distribution as say we roll 4 times only if the first 3 results have failed. Thus our $p$ (aka. chance for success) is $\frac{158}{216}$ meaning that we expect $3 \cdot \frac{216}{158}$ rolls in general to obtain our random number. We note that with this method the probability of obtaining any $i$ in the range $n$ is uniformly distributed. 
+where the $i,j,z$ come from our 3 dice rolls. Now this will generate the set $\{0,1, \hdots, 215\}$ and our needed $79$ numbers fit perfectly into $215$ twice. Thus we say that if $s \in \{0,\hdots,157\}$ then $s \bmod{79}$ otherwise roll again. We notice that this is a geometric distribution as say we roll 4 times only if the first 3 results have failed. Thus our $p$ (aka. chance for success) is $\frac{158}{216}$ meaning that we expect $3 \cdot \frac{216}{158}$ rolls in general to obtain our random number. We note that with this method the probability of obtaining any $i$ in the range $n$ is uniformly distributed. Note that we use the fact that $E(x)$ for a geometric distribution is:
+$$E(x) = \frac{1}{p \ \text{being probability of success}}$$
 \end{example}
 
+\subsection{Lec 25. notes}
 
+\textbf{Birthday paradox applied}
+\\
+
+\textcolor{gray}{Directly} finding $p_k$, the probability that after $k$ experiments at least one element has been drawn at least twice, is not hard (but traditionally avoided in descriptions of the birthday paradox in favor or the more accessible complementary approach; refer to Section 7.2 of the book or the footnote below).
+As seen above $p_1=0$. For $k>1$ one argues that there are two disjoint possibilities, the probabilities of which can thus be added: either a duplicate has been drawn already as a result of the first $k-1$ drawings (with probability $p_{k-1}$), or no duplicate has been been drawn (with probability $1-p_{k-1}$; thus $k-1$ distinct elements have already been drawn) and there is a chance of $\frac{k-1}n$ to get a duplicate by drawing one of the $k-1$ distinct elements drawn earlier. This leads to\footnote{The complementary probability $q_k=1-p_k$, that after $k$ experiments not a single duplicate element has been drawn, satisfies $q_1=\frac{n}n=1$ and $q_k=q_{k-1}\frac{n-k+1}{n}$ for $k>0$. It follows that $q_k=\prod_{i=0}^{k-1}\frac{n-i}{n}$, from which the pattern observed in the $p_k$-values follows in a similar manner. That the formulas given for $p_k$ and $q_k$ add up to 1 can be proved using induction.}
+\begin{eqnarray*}
+p_2&=&p_1+(1-p_1)\textstyle\frac{1}n=0+(1-0)\frac1n=\frac{\color{red}{1}}n\\
+p_3&=&p_2+(1-p_2)\textstyle\frac{2}n=\frac1n+(1-\frac1n)\frac2n=\frac{\color{red}{3}}n-\frac2{n^2}\\
+p_4&=&p_3+(1-p_3)\textstyle\frac{3}n=\frac3n-\frac2{n^2}+(1-\frac3n+\frac2{n^2})\frac3n=\frac{\color{red}{6}}n-\frac{11}{n^2}+\frac6{n^3}\\
+p_5&=&p_4+(1-p_4)\textstyle\frac{4}n=\frac6n-\frac{11}{n^2}+\ldots+(1-\frac6n+\ldots)\frac4n=\frac{\color{red}{10}}n-\frac{35}{n^2}+\ldots\\
+p_6&=&p_5+(1-p_5)\textstyle\frac{5}n=\frac{10}n-\frac{35}{n^2}+\ldots+(1-\frac{10}n+\ldots)\frac5n=\frac{\color{red}{15}}n-\frac{85}{n^2}+\ldots\\
+\vdots&&\vdots\\
+p_k&=&p_{k-1}+(1-p_{k-1})\textstyle\frac{k-1}n=\frac{\sum_{i=1}^{k-2}i}n-\ldots+(1-\frac{\sum_{i=1}^{k-2}i}n+\ldots)\frac{k-1}n=\frac{\color{red}{k(k-1)}}{{\color{red}{2}}n}-{\color{blue}{\frac{O(k^3)}{n^2}+\ldots}}\\
+\vdots&&\vdots\
+\end{eqnarray*}
+The (red) pattern that emerges is that the collision probability behaves like $\frac{\sum_{i=1}^{k-1}i}{n}=\frac{k(k-1)}{2n}$, except for lower order terms (not) shown in blue.
+With more care (and more calculus than we want to deal with in this course) the above argument can be massaged into a proof that for the lower range of $k$-values the lower order terms do not affect the first term too much (the blue term is a first indication) and that if the number of drawings reaches $\sqrt n$, the collision probability approaches 40\% (and surpassed 50\% at $1.2\sqrt n$).
+
+The (counterintuitive) upshot is that it suffices to have just 23 students in a class to get a probability of more than 50\% that two students have the same birthday.
+The difference between 23 and the more ``intuitive'' $\frac{366}2=183$ is just an order of magnitude,
+and as far as I know the wrong intuition for this example has not led to major disasters \textcolor{gray}{yet}.
+
+
+\textcolor{gray}{Given} some recurrence relation (plus initial conditions) that defines a sequence
+$a_0$, $a_1$, $\ldots$, $a_n$, $\ldots$ of real numbers, suppose one wants to find a closed formula for $a_n$.
+What often works is the following approach:
+\begin{itemize}
+\item interpret the sequence $a_n$ as the coefficients of the power series expansion
+$\sum_{i=0}^\infty a_ix^i$ of some function~$A(x)$;
+\item use the recurrence relation to derive an alternative expression for~$A(x)$; and
+\item figure out the power series expansion for this alternative expression, the $n$-th coefficient of which must then be equal to~$a_n$.
+\end{itemize} For the last step the whole page of power series expansions given in the book may be useful;
+no need to learn them by heart, though you should know the common ones such as $\frac1{1-x}=\sum_{k=0}^\infty x^k$
+and $\frac1{(1-x)^2}=\sum_{k=0}^\infty (k+1)x^k$.
+Note that the formulas given in the book allow simple generalizations such as
+$\frac1{(a-bx)^2}=\frac1{a^2}\sum_{k=0}^\infty (k+1)(\frac{b}{a}x)^k$.\\
+\par\noindent
+{\bf Simple example of the staircase one stair at a time}
+As an example of a recurrence relation that is trivial to solve, let $a_0=1$ and $a_i=a_{i-1}$ for $i>0$ as above:
+we will use a generating function to show the obvious fact that $\forall n\,\, a_n=1$.
+
+From $a_i=a_{i-1}$ for $i>0$ it follows, rather obviously, that $a_ix^i=a_{i-1}x^i$ for any $i>0$
+and variable $x$, so that
+$$\sum_{i=1}^\infty a_ix^i=\sum_{i=1}^\infty a_{i-1}x^i.$$
+With $A(x)=\sum_{i=0}^\infty a_ix^i = a_0+\sum_{i=1}^\infty a_ix^i$ and $a_0=1$, the left hand side $\sum_{i=1}^\infty a_ix^i$ of the displayed equation becomes $A(x)-1$.
+The right hand side $\sum_{i=1}^\infty a_{i-1}x^i$ equals $x\sum_{i=1}^\infty a_{i-1}x^{i-1}$ and becomes, after a simple shift in the summation variable,
+$x\sum_{i=0}^\infty a_{i}x^{i}$ which equals $xA(x)$. We conclude that 
+$$A(x)-1=xA(x)$$so that $$A(x)=\frac1{1-x}.$$
+Because $\frac1{1-x}=\sum_{k=0}^\infty x^k$, we find
+that$$\sum_{i=0}^\infty a_ix^i=A(x)=\frac1{1-x}=\sum_{i=0}^\infty x^i$$and thus that $a_i=1$ for $i\ge 0$.
+So we have shown \textcolor{gray}{that} $\forall n\,\, a_n=1$.\\
+\par\noindent
 
 
 

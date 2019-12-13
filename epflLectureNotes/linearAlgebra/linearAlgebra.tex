@@ -1422,6 +1422,7 @@ Finally, if our $A$ happens to have linearly independent columns then the least 
 $$ x^{'} = R^{-1}Q^{T}b$$
 
 \begin{thm}
+\label{ort}
 If $A$ is a symmetric matrix, then any two eigenvectors from a different eigenspace are orthagonal. 
 We omit the proof but the idea is to consider $\lambda_{1}v_{1}\cdot v_{2}$ get that it is equal to  $\lambda_{2}v_{1}\cdot v_{2}$ and conclude.
 
@@ -1455,7 +1456,93 @@ to finally give:
 $$A = \lambda_{1}u_{1}u_{1}^{T} + \hdots + \lambda_{n}u_{n}u_{n}^{T} = \sum_{i=1}^{n}\lambda_{i}u_{i} \tens{} u_{i}$$
 \end{tcolorbox}
 
+\begin{definition} \textbf{Quadratic form}
+\\
+A quadratic form is a function that maps $\Rn$ to $\mathbb{R}$ and is of form $Q(x) = x^{T}Ax$ where $A$ is a square symetric matrix. For instance if $A = \begin{bmatrix}
+    4 & 3\\
+    3 & 2
+\end{bmatrix}$ then $Q(x) = 4x^{2} + 6xy + 2y^{2}$ 
+\end{definition}
 
+We may also introduce the change of variable $x = Py$ where we represent our vector in $\Rn$ relative to some other basis in columns of $P$ and $y$ the coordinate vector in this basis. Then we have:
+\begin{align*}
+    x^{T}Ax\\
+    (Py)^{T}APy\\
+    y^{T}(P^{T}AP)y
+\end{align*}
+Now since A is a symetric matrix, by \ref{ort} we have that there is a diagonal matrix $D = P^{T}AP$ hence $x^{T}Ax = y^{T}Dy$ meaning that our quadratic form may be expressed without a cross product term. 
+
+
+\begin{thm}\textbf{Principal axis theorem}
+Our above result is now formalized to state that every quadratic form has a change of variable $x = Py$ such that $x^{T}Ax = y^{T}Dy$ where the second term has no cross product terms in it. Note that to find a principal axis, because we know that $A$ is symetric, it has an orthogonal diagonilazation hence we find out $D$ which is the matrix with eigenvalues as column entries. Then $P$ which is the principal axis is simply the matrix with eigenvectors corresponding the each eigenvalue. 
+\end{thm}
+
+
+\begin{definition}
+Q(x) is positive definite if $>0$ negative definite of $<0$ and indefinite if both for $x \in \Rn$
+\end{definition}
+
+\begin{thm}
+$Q(x)$ is positive definite iff. all eigenvalues of $A$ are positive (resp. definite). This is clear given that:
+
+$$x^{T}Ax = y^{T}Dy = \lambda y_{1}^{2} + \ldots $$
+\end{thm}
+
+
+\begin{definition}\textbf{Constrained optimization}
+Suppose we want to find a maximum value to the quadratic form $Q(x) = 9x^2 + 4y^2 + 3x^3$ with the constraint that our solution is a unit vector that is with $X = \begin{bmatrix}
+    x \\
+    y \\
+    z
+\end{bmatrix}$ and $|X^{T}X| = 1$. Since:
+$$  9x^2 + 4y^2 + 3x^3 \leq 9(x + y + z) = 9$$ and since $Q(x) = 9$ has a solution, 9 is our maximum. 
+\end{definition}
+
+
+\begin{thm}
+\label{eigenvalthm}
+Let $A$ be a symmetric matrix and define:
+$$ m = min\{x^{T}Ax: |x| = 1\} \ M = max\{x^{T}Ax: |x| = 1\}$$
+Then we have that $m$ is the smallest eigenvalue of $A$ and $M$ the largest eigenvalue of $A$. 
+\\
+
+With eigenvalues $a \geq b \geq c$ as eigenvalues, the idea of the proof is to consider that $|x| = |y|$ then write out $y^{T}Dy = ay_{1}^{2} + by_{2}^{2} + cy_{3}^{2} \leq  ay_{1}^{2} + ay_{1}^{2} + ay_{1}^{2} = a(|y|) = a$ hence $M \leq a$ but clearly with $y = \begin{bmatrix}
+    1\\
+    0\\
+    0
+\end{bmatrix}$ hence $a = M$
+\end{thm}
+
+\begin{thm} In the previous case, our only constraint was that $|x| = 1$ namely that $x^{T}x=1$. Now if we add also that $x^{T}u_{1}=0$ meaning that the first component of $x$ is 0. Then it follows that the maximum possible value with this constraint is the second largest eigenvalue. Clearly than if we also add $x^{T}u_{2}=0$ the largest value becomes the third eigenvalue and so on. 
+\end{thm}
+
+\begin{thm}
+$A^{T}A$ is symmetric. 
+\end{thm}
+
+\begin{thm}
+In our previous case, we had that $A$ was symmetric hence finding a maximum was easy because we could always find a principal axis $P$ that led to $x^{T}Ax = y^{T}Dy$ making it easy to find a maximum. Now however, we consider the case where $A$ is not symmetric and we still want to find a maximum. Ie. such a mapping is the matrix that maps the unit sphere to some ellipse. We notice that the maximum of $|Ax|$ also maximises $|Ax|^{2}$ which is much easier to study as  $|Ax|^{2} = (Ax)^{T}(Ax) = x^{T}A^{T}Ax$ and fortunately, $A^{T}A$ is always square which means we can apply \ref{eigenvalthm} and know that the greatest eigenvalue $\lambda_{i}$ is the greatest value of $|Ax|^{2} = x^{T}A^{T}Ax$. Thus we obtain that the greatest value of a non-symmetric $Ax$ is given by $\sqrt{\lambda}$ and the $x$ satisfying this value, that is the element in the domain is any eigenvector $v_{i}$ with eigenvalue $\lambda_{i}$ Hence, we say that a \textbf{singular value} of $A$ is $|Av_{i}|$
+\end{thm}
+
+
+\begin{thm}
+Suppose that for $A$ of dimension $m \cross n$, $v_{1}, \hdots, v_{n}$ is an orthogonal basis for $\Rn$ where each $v_{i}$ is an eigenvector of $\lambda_{i}$ where the $\lambda_{i}$ are eigenvalues of $A^{T}A$. Now, when $A$ has $r$ non-zero singular values, that is $r$ times next maxima, we have that $\{Av_{1}, \hdots, Av_{r}\}$ are a basis for $Col(A)$ and that $rank A = r$.
+\end{thm}
+
+\begin{thm}\textbf{Singular value decomposition}
+When we have an $m\cross n$ matrix $A$ with rank $r$, we may write it as $U\Sigma V^{T}$ where $\Sigma$ is the diagonal matrix with $r$ many eigenvalues of $A$ in decreasing order. By considering $A^{T}A = V\Sigma^{T}\Sigma V^{T}$, we see that the entries of $\Sigma$ are also singular values of $A$.  
+\end{thm}
+
+\begin{remark}
+Here is how we proceed to find the unique singular value decomposition.
+
+\begin{enumerate}
+    \item Find non-zero eigenvalue of $A^{T}A$.
+    \item Construct $\Sigma$ diagonally from these eigenvalues not forgetting to take square-root!
+    \item Construct each column of $V^{T}$ as eigenvectors corresponding to columns of $\Sigma$
+    \item Finally, columns of $U$ are $Av_{i}$ and we are done!
+\end{enumerate}
+\end{remark}
 
 
 
