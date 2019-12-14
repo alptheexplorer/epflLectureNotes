@@ -1037,7 +1037,7 @@ We define $p_{l}$ the exponentiation function as:
 
 $$ p_{l}(a,l) = \text{if} \ n\leq 0 \ \text{then} 1\ \text{else} \ a^{n\text{&}1}\cdot p_{l}(a,\floor{\frac{n}{2}})^{2}$$ where $a^{n\text{&}1} = \{0,1\}$ and is equal to 1 iff n is even. 
 
-\section{Counting (Week 9 -}
+\section{Counting and relations (Week 9 - Week 14)}
 \subsection{Lec 18. notes}
 
 Consider applications of counting principles. Suppose we create a password using characters and digits. In total we have 70 possibilities for each entry which follows from the \textbf{addition rule} as we may have upper case or lower case or digits or specials hence $26+26+10+8$ And now consider how many possible passwords we have of 12 entries. Using the product rule, we obtain $70^{12}$ And some more examples:
@@ -1521,6 +1521,25 @@ Because $\frac1{1-x}=\sum_{k=0}^\infty x^k$, we find
 that$$\sum_{i=0}^\infty a_ix^i=A(x)=\frac1{1-x}=\sum_{i=0}^\infty x^i$$and thus that $a_i=1$ for $i\ge 0$.
 So we have shown \textcolor{gray}{that} $\forall n\,\, a_n=1$.\\
 \par\noindent
+
+\subsection{Lec 26. notes}
+Here is the key idea of solving recursive sequences using generating functions:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{epflLectureNotes/advancedComputation/figures/genfunc.JPG}
+    \caption{Solving recursion!}
+\end{figure}
+
+Note that the way to derive the following series is in reverse. We take the closed expression and compute a Maclaurin series for it.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 1.15]{epflLectureNotes/advancedComputation/figures/powseries.JPG}
+    \caption{A set of useful power series expansions}
+    \label{fig:my_label}
+\end{figure}
+
 
 
 
