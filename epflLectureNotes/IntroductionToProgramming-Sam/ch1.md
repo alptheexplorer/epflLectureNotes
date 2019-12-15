@@ -1,9 +1,9 @@
 
 # 1. Contents
 - [1. Contents](#1-contents)
-  - [1.1. Week 4 <a name="week4"></a>](#11-week-4-a-nameweek4a)
+  - [1.1. Week 4 ](#11-week-4)
       - [1.1.0.1. Parametrized types](#1101-parametrized-types)
-  - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)
+  - [1.2. Week 5 ](#12-week-5)
       - [1.2.0.2. Extension point of the week (Unicode)](#1202-extension-point-of-the-week-unicode)
       - [1.2.0.3. Methods and defaults](#1203-methods-and-defaults)
       - [1.2.0.4. Why use methods?](#1204-why-use-methods)
@@ -22,7 +22,7 @@
       - [1.5.0.13. Bad OOP practice](#15013-bad-oop-practice)
       - [1.5.0.14. Constructors and polymorphism](#15014-constructors-and-polymorphism)
       - [1.5.0.15. Polymorphism jargon](#15015-polymorphism-jargon)
-      - [1.5.0.16. The global superclass *Object*](#15016-the-global-superclass-object)
+      - [1.5.0.16. The global superclass Object](#15016-the-global-superclass-object)
       - [1.5.0.17. Is-a and Has-a in Java](#15017-is-a-and-has-a-in-java)
   - [1.6. Week 10](#16-week-10)
       - [1.6.0.18. Static modifier](#16018-static-modifier)
@@ -46,6 +46,7 @@
       - [Self defined exceptions](#self-defined-exceptions)
     - [Syntax of throws](#syntax-of-throws)
     - [Assertions](#assertions)
+    - [Some clarifications for the exam](#some-clarifications-for-the-exam)
 
 ## 1.1. Week 4 <a name="week4"></a>
 
@@ -78,7 +79,7 @@ char c = s.charAt(0);
 String s = "hello world"
 // this compares the adress of v1 with that of v2
 v1 == v2
-```
+```<!-- TOC -->autoauto- [1. Contents](#1-contents)auto    - [1.1. Week 4 <a name="week4"></a>](#11-week-4-a-nameweek4a)auto            - [1.1.0.1. Parametrized types](#1101-parametrized-types)auto    - [1.2. Week 5 <a name="week5"></a>](#12-week-5-a-nameweek5a)auto            - [1.2.0.2. Extension point of the week (Unicode)](#1202-extension-point-of-the-week-unicode)auto            - [1.2.0.3. Methods and defaults](#1203-methods-and-defaults)auto            - [1.2.0.4. Why use methods?](#1204-why-use-methods)auto                - [1.2.0.4.1. Method evaluation](#12041-method-evaluation)auto    - [1.3. Week 7](#13-week-7)auto            - [1.3.0.5. Concepts in OOP](#1305-concepts-in-oop)auto            - [1.3.0.6. Copy constructor](#1306-copy-constructor)auto    - [1.4. Week 8](#14-week-8)auto            - [1.4.0.7. Introducing inheritance](#1407-introducing-inheritance)auto            - [1.4.0.8. Dynamic method dispatch aka. runtime polymorphism](#1408-dynamic-method-dispatch-aka-runtime-polymorphism)auto            - [1.4.0.9. Java packages:extra of the week](#1409-java-packagesextra-of-the-week)auto    - [1.5. Week 9](#15-week-9)auto            - [1.5.0.10. Introducing polymorphism](#15010-introducing-polymorphism)auto            - [1.5.0.11. Polymorphism syntax](#15011-polymorphism-syntax)auto            - [1.5.0.12. Static vs. dynamic method dispatch](#15012-static-vs-dynamic-method-dispatch)auto            - [1.5.0.13. Bad OOP practice](#15013-bad-oop-practice)auto            - [1.5.0.14. Constructors and polymorphism](#15014-constructors-and-polymorphism)auto            - [1.5.0.15. Polymorphism jargon](#15015-polymorphism-jargon)auto            - [1.5.0.16. The global superclass *Object*](#15016-the-global-superclass-object)auto            - [1.5.0.17. Is-a and Has-a in Java](#15017-is-a-and-has-a-in-java)auto    - [1.6. Week 10](#16-week-10)auto            - [1.6.0.18. Static modifier](#16018-static-modifier)auto            - [1.6.0.19. Accessing static methods](#16019-accessing-static-methods)auto            - [1.6.0.20. Restrictions on static methods](#16020-restrictions-on-static-methods)auto            - [1.6.0.21. Making sense of System.out.println](#16021-making-sense-of-systemoutprintln)auto            - [1.6.0.22. Boxing, auto-boxing and unboxing](#16022-boxing-auto-boxing-and-unboxing)auto            - [1.6.0.23. Interfaces](#16023-interfaces)auto            - [1.6.0.24. Enumerations](#16024-enumerations)auto            - [1.6.0.25. Why declare a reference variable of type interface](#16025-why-declare-a-reference-variable-of-type-interface)auto    - [1.7. Week 11](#17-week-11)auto            - [Nested classes](#nested-classes)auto            - [Flaws of encapsulation](#flaws-of-encapsulation)auto    - [Week 11](#week-11)auto                - [Exception handling](#exception-handling)auto            - [Throwable class](#throwable-class)auto        - [Child classes of Throwable](#child-classes-of-throwable)auto            - [The exception handling mechanism](#the-exception-handling-mechanism)auto        - [Using 'finally'](#using-finally)auto            - [Checked and unchecked errors](#checked-and-unchecked-errors)auto            - [Self defined exceptions](#self-defined-exceptions)auto        - [Syntax of throws](#syntax-of-throws)auto        - [Assertions](#assertions)autoauto<!-- /TOC -->
 
 **Arraylist and Array data types**
 
@@ -872,6 +873,26 @@ We must use *throws* whenever a method throws an exception without treating it, 
 ### Assertions
 
 Only use this for debugging purposes. 
+
+### Some clarifications for the exam
+
+> Primitive wrapper classes in java are immutable see below example:
+``` java
+Integer i = new Integer(12);
+i = i + 1;
+print(i);
+/*
+Due to pass by value and i being immutable, following happens:
+Unbox i to an int value
+Add 1 to that value
+Box the result into another Integer object
+Assign the resulting Integer to i (thus changing what object i references)
+*/
+```
+
+> Java is always **pass by value**. This means that the JVM will always pass in a copy of whatever object. The subtlety that confuses everyone is that for primitive types or wrappers, the copy taken is the actual value whereas for objects, the copy is a copy of the address. Hence in general, an object will end up actually being changed whereas a primitive(also Wrappers) will not be. The crucial difference is, the method body will create copies of whatever is passed which means the changes stay local(hence we can't really define a swap method in java), and only reason that changes will be seen on actual objects is because the copy that is being passed is the actual address. This video clears it all up: https://www.youtube.com/watch?v=Sqekax0W3JI
+
+
 
 
 
