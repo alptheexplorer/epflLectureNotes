@@ -19,10 +19,13 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 *Physics course has been omitted*
 
 ```diff
-+ this text is highlighted in green
-- this text is highlighted in red
++ semester one is complete
 ```
 
+2. [ SemesterTwo-2020](#sm2)
+
+<a name="sm2"></a>
+## SemesterTwo-2020
 
 
 
