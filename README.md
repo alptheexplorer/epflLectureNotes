@@ -5,6 +5,7 @@
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
 
 1. [ SemesterOne-2019](#sm1)
+2. [ SemesterTwo-2020](#sm2)
 
 <a name="sm1"></a>
 ## SemesterOne-2019
@@ -22,7 +23,6 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 + semester one is complete
 ```
 
-2. [ SemesterTwo-2020](#sm2)
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
