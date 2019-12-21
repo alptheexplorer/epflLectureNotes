@@ -18,7 +18,11 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 *Physics course has been omitted*
 
-<span style="color:red">some *blue* text</span>.
+```diff
++ this text is highlighted in green
+- this text is highlighted in red
+```
+
 
 
 
