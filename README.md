@@ -12,6 +12,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 <a name="sm1"></a>
 ## How I take them 
 I will soon release a video on how I take these notes. Meanwhile tune in to my YouTube channel:
+<img src="extraFigures/epfl.png" align="right" width="100">
 https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?view_as=subscriber
 
 
