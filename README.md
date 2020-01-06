@@ -11,10 +11,9 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 <a name="sm1"></a>
 ## How I take them 
-I will soon release a video on how I take these notes. Meanwhile tune in to my YouTube channel:
-<img src="extraFigures/youtube.png" align="right" width="100">
-[link text itself] (https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?view_as=subscriber)
-
+I will soon release a video on how I take these notes. Meanwhile tune into my YouTube channel for programming and fitness content:
+[link text itself] (https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?)
+<img src="extraFigures/youtube.png" align="right" width="70">
 
 <a name="sm1"></a>
 ## SemesterOne-2019
