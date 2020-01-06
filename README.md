@@ -11,7 +11,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 <a name="inf"></a>
 ## How I take them 
 I will soon release a video on how I take these notes. Meanwhile tune into my YouTube channel for programming and fitness content at:
-<img src="extraFigures/youtube.png" align="right" width="70">
+<img src="extraFigures/youtube.png" align="right" width="40">
 [the afterSchoolLifterClub](https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?)
 
 
