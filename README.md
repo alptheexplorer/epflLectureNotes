@@ -38,7 +38,7 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 
 
-**Please note that I am a broke college student who likes to vlog and am saving up to buy a decent camera. Your donations, no matter how small will be helpful:)**
+**(If you appreciate this sort of open source content, buy me a coffee but only if you genuinely just feel like it)**
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
