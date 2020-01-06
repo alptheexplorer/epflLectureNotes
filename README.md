@@ -13,7 +13,7 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 ## How I take them 
 I will soon release a video on how I take these notes. Meanwhile tune in to my YouTube channel:
 <img src="extraFigures/youtube.png" align="right" width="100">
-[link text itself]: https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?view_as=subscriber
+[link text itself]: (https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?view_as=subscriber)
 
 
 <a name="sm1"></a>
