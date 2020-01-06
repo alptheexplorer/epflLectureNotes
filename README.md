@@ -1,7 +1,6 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
 # Welcome to the universe of my lecture notes
-
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
 
 1. [How I take them](#inf)
@@ -11,9 +10,10 @@ My lecture/textbook notes that I am using for my Computer Science study at EPFL.
 
 <a name="inf"></a>
 ## How I take them 
-I will soon release a video on how I take these notes. Meanwhile tune into my YouTube channel for programming and fitness content:
-> [the afterSchoolLifterClub](https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?)
+I will soon release a video on how I take these notes. Meanwhile tune into my YouTube channel for programming and fitness content at:
 <img src="extraFigures/youtube.png" align="right" width="70">
+[the afterSchoolLifterClub](https://www.youtube.com/channel/UCvj0KUI42b8qSxpwbhGaRvw?)
+
 
 <a name="sm1"></a>
 ## SemesterOne-2019
