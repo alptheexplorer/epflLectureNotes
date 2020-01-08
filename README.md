@@ -25,7 +25,7 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 > Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/ch1.md)
 
-*Physics course has been omitted*
+*Physics course has been omitted because noone likes physics*
 
 ```diff
 + semester one is complete
