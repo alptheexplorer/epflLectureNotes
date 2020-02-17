@@ -17,13 +17,13 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 <a name="sm1"></a>
 ## SemesterOne-2019
-> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/linearAlgebra/linearAlgebra.pdf)
+> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
 
-> Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/advancedComputation/aicc.pdf)
+> Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
 
-> Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/analysis/analysis.pdf)
+> Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)
 
-> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/IntroductionToProgramming-Sam/ch1.md)
+> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/IntroductionToProgramming-Sam/ch1.md)
 
 *Physics course has been omitted because noone likes physics*
 
@@ -34,9 +34,9 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
-> Practice of OOP
+> Practice of OOP 
 
-> Analysis 2
+> Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysisTwo.pdf)
 
 > Digital Systems design
 
