@@ -36,7 +36,7 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 ## SemesterTwo-2020
 > Practice of OOP 
 
-> Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysisTwo.pdf)
+> Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
 > Digital Systems design
 
