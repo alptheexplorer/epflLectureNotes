@@ -1539,7 +1539,7 @@ Here is how we proceed to find the unique singular value decomposition.
 \begin{enumerate}
     \item Find non-zero eigenvalue of $A^{T}A$.
     \item Construct $\Sigma$ diagonally from these eigenvalues not forgetting to take square-root!
-    \item Construct each column of $V^{T}$ as eigenvectors corresponding to columns of $\Sigma$
+    \item Construct each column of $V^{T}$ as eigenvectors corresponding to columns of $\Sigma$ where each eigenvector has as eigenvalue the square of singular values of $A$.
     \item Finally, columns of $U$ are $Av_{i}$ and we are done!
 \end{enumerate}
 \end{remark}
