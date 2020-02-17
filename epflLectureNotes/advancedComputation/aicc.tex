@@ -1539,6 +1539,38 @@ Note that the way to derive the following series is in reverse. We take the clos
     \caption{A set of useful power series expansions}
     \label{fig:my_label}
 \end{figure}
+\clearpage
+
+And here is a useful question:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.6]{epflLectureNotes/advancedComputation/figures/prob.JPG}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection{Lec 27. notes}
+
+\begin{definition}\textbf{Unstable matching}
+A matching is unstable if there are \textbf{two} matchings that prefer each other over their current matching. One such matching does not suffice! Also a stable matching is \textbf{not} unique. 
+\end{definition}
+
+\begin{theorem}\textbf{Gale-Shapley using med-school analogy}
+\begin{verbatim}
+while(|M|<k) do:
+    let h be an unpaired hospital.
+        h will propose to first student s on L_{h}.
+          if s is unpaired:
+             M+= (x,s)
+            else if:
+                if h precedes some h2 on L_{s}, replace (h2,s) with (h,s) 
+                and remove y from L_{h2}
+            else:
+                remove s from L_{h}
+\end{verbatim}
+
+\end{theorem}
 
 
 
