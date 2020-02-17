@@ -24,6 +24,12 @@ right  = 2.75cm]{geometry}
 \newtheorem{definition}{Definition}
 \newtheorem{question}{Question}
 
+\newcommand{\interior}[1]{%
+  {\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rm}{\mathbb{R}^m}
+\newcommand{\R}{\mathbb{R}}
 
 \title{\textbf{Analysis 2 - Thomas Mountford}}
 \author{Alp Ozen}
@@ -39,11 +45,61 @@ right  = 2.75cm]{geometry}
 \clearpage
 
 
+\section{Reviewing \Rn }
+
+Let's recall that $\Rn$ is a Euclidean vector space. We define a scalar product on $\Rn$ as follows:
+
+\begin{definition}
+\begin{equation*}
+    < \cdot, \cdot > : \Rn \times \Rn \to \mathbb{R}
+\end{equation*}
 
 
+\begin{enumerate}
+    \item $<x,x> \geq 0$
+    \item $<x,y> = <y,x>$
+    \item $<ax + by, z> = a<x,z> + b<y,z>$
+\end{enumerate}
 
+\end{definition}
 
+\subsection{Introducing topological properties on \Rn}
+A \textit{norm} is defined as function that maps some real vector space $E$ to $\mathbb{R}$ and satisfies:
 
+\begin{align*}
+    1) \ |x| \geq 0 \ \forall x \in E, \ |x| = 0 \iff x = 0\\
+    2) \ |\lambda \cdot x| = |\lambda| \cdot |x| \\
+    3) \ |x+y| \leq |x| + |y|
+\end{align*}
+
+In our intuitive understanding of $\Rn$ we are actually thinking about the Euclidian space $\Rn$ equipped with the Euclidian norm.
+
+\begin{definition}\textbf{Euclidian norm}
+$$|x|_{2} = \sqrt{<x,x>} = (\sum^{n}_{i}x^{2}_{k} )^{\frac{1}{2}} $$
+\end{definition}
+
+And from this naturally follows the definition of Euclidian distance:
+\begin{definition}
+$$d(x,y) = |x-y|$$
+\end{definition}
+
+We note that $d$ satisfies the same 3 properties as the norm. Thus, the couple \textbf{$(E,d)$} is called a metric space. 
+\\
+
+And now more definitions:
+
+\begin{definition} \textbf{Open sets}
+\begin{enumerate}
+    \\
+    
+    \item \textbf{Open ball} $ B(a,r) := \{x \in \Rn : d(x,a) < r\}$
+    \item \textbf{Open subset} Some subset $S \subset \Rn$ is open if $\forall x \in \Rn, \ \exists \epsilon > 0 \ B(x,\epsilon) \subset S$
+    \item \textbf{Closed subset} Some $S$ is closed if $\Rn - S$ is open, note that the empty set and $\Rn$ are both open and closed. 
+    \item \textbf{The interior and boundary of a set} $a$ is in the interior of $S$ if $\exists \epsilon > 0 \ B(a,\epsilon) \subset S$ and $b$ is in the boundary of a set $S$ if any $B(a, \epsilon)$ contains points from both $S$ and $\Rn - S$. The set of all interior points is denoted $\interior(S)$ and set of all boundary points is denoted $\partial S$
+    \item \textbf{Closure of a set} $a$ is a closure of $S$ if for any $B(a,\epsilon)$ we have $B(a, \epsilon) \cap S \not = \emptyset$ 
+\end{enumerate}
+
+\end{definition}
 
 
 \end{document} 
