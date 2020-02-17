@@ -34,7 +34,13 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
-> When the bloody 2020 exams end, this section will come to fruition :)
+> Practice of OOP
+
+> Analysis 2
+
+> Digital Systems design
+
+> Advanced information and computation
 
 
 
