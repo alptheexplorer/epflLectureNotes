@@ -45,7 +45,7 @@ right  = 2.75cm]{geometry}
 \clearpage
 
 
-\section{Reviewing \Rn }
+\section{Notions on \Rn }
 
 Let's recall that $\Rn$ is a Euclidean vector space. We define a scalar product on $\Rn$ as follows:
 
@@ -100,6 +100,38 @@ And now more definitions:
 \end{enumerate}
 
 \end{definition}
+
+\begin{definition}\textbf{Topology}
+
+A Topology exists whenever the following are satisfied:
+
+$$\text{For a given} \ M \subset \Rn \text{we define} \ O \subset P(M) $$
+\begin{enumerate}
+    \item $\emptyset \in O \ , M \in O $
+    \item $U \in O, V \in O \rightarrow U \cap V \in O$
+    \item $U_{\alpha} \in O \rightarrow \bigcup_{\alpha} U_{\alpha} \in O$
+\end{enumerate}
+
+\end{definition}
+
+
+\begin{definition}\textbf{Closure of a set}
+A point $a \in \Rn$ is a closure point of $S$ if for any $B(a,\epsilon)$ we have:
+$$B(a,\epsilon) \cap S \not = \emptyset$$
+The set of all closure points called the closure of $S$ is denoted $\bar{S}$
+\end{definition}
+
+\begin{theorem}
+Important results on closures and boundaries
+\begin{align*}
+    \interior{S} \subset S \subset \bar{S}\\
+    \bar{S} = \interior{S} \cup \partial S\\
+    S \ \text{is open iff} \ S = \interior{S}\\
+    S \ \text{is closed iff} \ S = \bar{S}\\
+\end{align*}
+    
+\end{theorem}
+
 
 
 \end{document} 
