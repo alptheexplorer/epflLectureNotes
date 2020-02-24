@@ -34,7 +34,8 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
-> Practice of OOP 
+> Practice of OOP [Latets JAVA notes]
+(https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md)
 
 > Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
