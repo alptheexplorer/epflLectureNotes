@@ -132,10 +132,46 @@ Important results on closures and boundaries
     
 \end{theorem}
 
-\begin{definition}
+\begin{definition} \textbf{Sequence in \Rn}
+\\
+
+$f : \mathbb{N} \to \Rn$ such that:
+$$x_{k} = f(k) \in \Rn \forall k \in \mathbb{N}$$
 
 \end{definition}
 
 
+\begin{definition} \textbf{Convergence}
+\\
+
+The definition of convergence in $\Rn$ is very similar to its counterpart in $\mathbb{R}$. We say that $x_{k}$ converges to $x$ iff:
+
+$$ \forall \epsilon > 0 \ \exists N_{\epsilon} \ \forall k \geq N_{\epsilon} \ d_{2}(x_{k},x}) < \epsilon$$
+\end{definition}
+
+
+\begin{definition} \textbf{Complete spaces aka. Banach spaces}
+\\
+A space is called complete if every Cauchy sequence in this space converges to a limit. Some example of complete spaces are $\mathbb{R}, \Rn$
+\end{definition}
+
+We restate the axioms of a \textbf{Norm} and of a \textbf{Metric}. The subtle difference between the two is that a norm can only be applied to some vector space whereas a metric is applicable to other spaces.
+\begin{remark} \textbf{Axioms of norm and metric}
+\\
+\textbf{Norm:}
+\begin{enumerate}
+    \item $||x|| \geq 0$
+    \item $ ||\lambda x|| = |\lambda| ||x||$
+    \item $||x+y|| \leq ||x|| + ||y||$
+\end{enumerate}
+\end{remark}
+\\
+
+\textbf{Metric:}
+\begin{enumerate}
+    \item $d(x,y) \geq 0$
+    \item $d(x,y) = d(y,x)$
+    \item $d(x,y) \leq d(x,z) + d(z,y)$
+\end{enumerate}
 
 \end{document} 
