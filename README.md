@@ -41,8 +41,8 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 > Digital Systems design
 
-> Advanced information and computation
-
+> Advanced information and computation [Latest AICC notes]
+(https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
 
 
 
