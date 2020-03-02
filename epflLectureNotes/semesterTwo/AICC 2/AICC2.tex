@@ -44,8 +44,54 @@ right  = 2.75cm]{geometry}
 \tableofcontents
 \clearpage
 
-\section{Week 1}
+\section{Week 2}
 
+We begin by defining \textbf{entropy} as Shannon put it:
+
+\begin{definition}\textbf{Entropy}
+
+Note that this definition assumes base $2$ aka. binary.
+$$ H(s) = - \sum_{s \in A} p(s)\log_{2}p(s) \ \text{A being our alpahabet aka. sample space}$$
+and thus an equivalent definition is:
+$$ H(s) = E[-\log_{2}p(s)]$$
+And similarly, Shannon defines information as:
+$$-\log_{2}p(s)$$
+\end{definition}
+
+For a random distribution we get:
+
+\begin{example}
+$$\forall x \in A \ p(x) = \frac{1}{|A|}, \ -\log_{2}p(s) = \log_{2}|A|$$
+Hence the entropy function $H(s) = E[\log_{2}|A|]} = \underbrace{\log_{2}|A|}_{\text{do the algebra}}$
+\end{example}
+
+And now we present the \textbf{information theory inequality}
+
+\begin{definition}\textbf{IT inequality}
+$$ \log_{b}r \leq (r-1)\log_{b}(e)$$
+\end{definition}
+
+\begin{proof}
+Given that $$\ln(r) \leq (r-1)$$ and that $$ ln(r) = \frac{\log_{b}(r)}{\log_{b}(e)}$$ we are done.
+\end{proof}
+
+And now we present the Entropy bound theorem:
+\begin{theorem}
+$$S \in A \ 0 \leq H(S) \leq \log|A|$$ 
+\end{theorem}
+
+\begin{proof}
+We only show the RHS as the LHS is more or less trivial. 
+Our goal is to show:
+
+\begin{align*}
+    \text{need to reach} H(s) - \log|A| \leq 0 \\
+    E[-\log p(s)] - \log |A|\\
+    = E[\log \frac{1}{p(s)|A|}]\\
+    = \sum_{s\in A}p(s)(\log \frac{1}{p(s)|A|})\\
+    \leq \underbrace{log(e)\sum[\frac{1}{|A|} - p(s)]}_{\text{using IT ineq.}} = 0
+\end{align*}
+\end{proof}
 
 
 

@@ -34,15 +34,14 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
-> Practice of OOP 
+
+> Practice of OOP [Latest Java notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md)
 
 > Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
 > Digital Systems design
 
-> Advanced information and computation
-
-
+> AICC 2 [Latest AICC2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
 
 
 **(If you appreciate this sort of open source content, buy me a coffee but only if you genuinely just feel like it)**
