@@ -45,8 +45,9 @@ right  = 2.75cm]{geometry}
 \clearpage
 
 
-\section{Notions on \Rn }
+\section{Notions on \Rn}
 
+\subsection{Introducing topological properties on \Rn}
 Let's recall that $\Rn$ is a Euclidean vector space. We define a scalar product on $\Rn$ as follows:
 
 \begin{definition}
@@ -63,7 +64,7 @@ Let's recall that $\Rn$ is a Euclidean vector space. We define a scalar product 
 
 \end{definition}
 
-\subsection{Introducing topological properties on \Rn}
+
 A \textit{norm} is defined as function that maps some real vector space $E$ to $\mathbb{R}$ and satisfies:
 
 \begin{align*}
@@ -119,6 +120,8 @@ $$\text{For a given} \ M \subset \Rn \text{we define} \ O \subset P(M) $$
 A point $a \in \Rn$ is a closure point of $S$ if for any $B(a,\epsilon)$ we have:
 $$B(a,\epsilon) \cap S \not = \emptyset$$
 The set of all closure points called the closure of $S$ is denoted $\bar{S}$
+
+$$\bar{S} = S \cup \partial S$$
 \end{definition}
 
 \begin{theorem}
@@ -173,5 +176,48 @@ We restate the axioms of a \textbf{Norm} and of a \textbf{Metric}. The subtle di
     \item $d(x,y) = d(y,x)$
     \item $d(x,y) \leq d(x,z) + d(z,y)$
 \end{enumerate}
+
+\subsection{Difficult problems and notes from week 2}
+We note that any open set is equal to its interior. 
+
+\begin{example}
+Consider the set defined as $ T = \{(x,y) \in \mathbb{R}^{2} | 1 < x^{2} + 4y^{2} < 4 \}$
+We observe the following about this set:
+
+\begin{align*}
+     \interior{T} = T \\
+     \partial{T} = \{(x,y) \in \mathbb{R}^{2} | 1 = x^{2} + 4y^{2} \text{or} \ x^{2} + 4y^{2} = 4 \}
+\end{align*}
+\end{example}
+
+\begin{remark}
+Rather interestingly, the rational numbers are neither closed nor open because both the irrationals are dense as well as the rationals being dense which was proved in analysis 1. We have the following properties for $\mathbb{Q}$
+
+$$ \partial \mathbb{Q} = \bar{\mathbb{Q}} = \R$$
+\end{remark}
+
+\begin{definition}
+If $x_{k}$ is in a bounded closed set $D$ then $\exists$ a convergent subsequence with limit in $D$.
+\end{definition}
+
+\begin{definition} \textbf{Continuity open ball definition}
+\\
+$\forall a \in \Rn$ we have $\forall \epsilon > 0$ $\exists \delta > 0 $ such that $f(B(a,\delta)) \subset B(f(a), \epsilon)$
+\end{definition}
+
+\begin{definition} \textbf{Continuity open set definition}
+\\
+Let $f: \Rn \to \Rm$ Then $f$ is continuous on $\Rn$ iff. for all $ O \subset \Rm$ where $O$ is open, we have $f^{-1}(O)$ open in $\Rn$
+\end{definition}
+
+\begin{proof}
+\\
+\textbf{(only if part)}
+Let $f$ be continuous, we want to show that whenever $O$ is open, $f^{-1}(O)$ is also open. Now take $f^{-1}(O)$. Let $p \in f^{-1}(O)$. Then $f(p) \in O$ Now we have that $O$ is open hence $\exists \epsilon > 0$ s.t. $B(f(p),\epsilon) \subset O$ Now because $f$ is continuous at $p$ we have that $\exists \delta > 0$ s.t. $\underbrace{f(B(p, \delta)) \subseteq B(f(p), \epsilon)}_{\text{applying open ball cont.}} \subseteq O$ This further shows that $B(p, \delta) \subseteq f^{-1}(O)$ which shows that $f$ is open in $S$.
+\\
+
+\textbf{(if part)}
+Now suppose that for all open sets $O \in \Rm$ we have $f^{-1}(V)$ are open in $S$. To show that $f$ is continuous, we must show $f$ is continuous on all $p \in S$. Let $p \in S$ s.t. $y = f(p)$. Then $\forall \epsilon > 0$ $B(y,\epsilon)$ is open. By assumption then, $f^{-1}(B(f(p), \epsilon))$ is open in $S$. Now, $f(p) \in B(f(p), \epsilon)$ we have $p \in f^{-1}(B(f(p), \epsilon))$ is open in $S$, $\exists \delta > 0$ s.t. $B(p, \delta) \subseteq f^{-1}(B(f(p), \epsilon))$ and applying $f$ to both sides we get our result. 
+\end{proof}
 
 \end{document} 
