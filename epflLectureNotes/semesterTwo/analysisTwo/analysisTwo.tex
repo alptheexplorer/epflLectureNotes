@@ -7,6 +7,16 @@
 \usepackage{amsthm}
 \usepackage{empheq}
 \usepackage{xcolor}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{empheq}
+\usepackage{xcolor}
+\usepackage{float}
 \usepackage{float}
 \usepackage[
 top    = 2.50cm,
@@ -119,7 +129,7 @@ $$\text{For a given} \ M \subset \Rn \text{we define} \ O \subset P(M) $$
 \begin{definition}\textbf{Closure of a set}
 A point $a \in \Rn$ is a closure point of $S$ if for any $B(a,\epsilon)$ we have:
 $$B(a,\epsilon) \cap S \not = \emptyset$$
-The set of all closure points called the closure of $S$ is denoted $\bar{S}$
+The set of all closure points called the closure of $S$ is denoted $\bar{S}$ noting that this only holds in $\Rn$
 
 $$\bar{S} = S \cup \partial S$$
 \end{definition}
@@ -220,4 +230,138 @@ Let $f$ be continuous, we want to show that whenever $O$ is open, $f^{-1}(O)$ is
 Now suppose that for all open sets $O \in \Rm$ we have $f^{-1}(V)$ are open in $S$. To show that $f$ is continuous, we must show $f$ is continuous on all $p \in S$. Let $p \in S$ s.t. $y = f(p)$. Then $\forall \epsilon > 0$ $B(y,\epsilon)$ is open. By assumption then, $f^{-1}(B(f(p), \epsilon))$ is open in $S$. Now, $f(p) \in B(f(p), \epsilon)$ we have $p \in f^{-1}(B(f(p), \epsilon))$ is open in $S$, $\exists \delta > 0$ s.t. $B(p, \delta) \subseteq f^{-1}(B(f(p), \epsilon))$ and applying $f$ to both sides we get our result. 
 \end{proof}
 
+\subsection{More norms on \Rn}
+Consider the non-usual norms $|x|_{1} := \sum |x|$ and $|x|_{\infty} = max |x_{k}|$. A super interesting result is that all norms on $\Rn$ are equivalent. 
+
+\begin{definition}
+Two norms $|\cdot|$ and $||\cdot||$ are \textbf{equivalent} if $\exists C_{1}, C_{2} > 0$ such that $\forall x \in E \ :$
+
+$$C_{1}|x| \leq ||x|| \leq C_{2}|\cdot|$$
+\end{definition}
+
+\begin{theorem}
+Any two norms on $\Rn$ are equivalent. 
+\end{theorem}
+
+We do not prove this theorem but consider the visual below for why it is true. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.4]{src/normEQ.JPG}
+    \caption{Norm equivalence}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection{Curves in \Rn}
+\begin{definition}\textbf{Curve}
+A curve is a function $f: I \to \Rn$ denoted as:
+$$f = \begin{bmatrix}
+f_{1}\\
+\vdots \\
+f_{n}
+\end{bmatrix}$$
+\end{definition}
+
+A good example of a curve is the speed of a particle in mechanics. It takes only one input $t$ and has a different function defined for each coordinate. Another example is the graph $G_{f} = \begin{bmatrix}
+x\\
+f(X)
+\end{bmatrix}$ of any function from $I \to \mathbb{R^{2}}$
+Another curve is a helix defined as:
+\begin{definition}\textbf{Helix}
+$$f(t) = \begin{bmatrix}
+r\cos{t}\\
+r\sin{t}\\
+ct
+\end{bmatrix}$$
+\end{definition}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{src/helix.JPG}
+    \caption{Helix}
+    \label{fig:my_label}
+\end{figure}
+
+
+\begin{definition}\textbf{Arc-length of a curve}
+Given a curve is rectifiable(each segment tends to 0 and sum of segments tend to $L>0$ we define
+$$ L = \int_{b}^{a}|f^{\prime}(t)|_{2}dt$$
+\end{definition}
+
+Now the above formula is taught at high school level as:
+$$ L = \int_{b}^{a}f^{\prime}\sqrt{1 + \frac{dx}{dy}^{2}} dx$$ which is simply the application of our definition to $\mathbb{R}^{2}$
+
+\subsection{Real-valued functions in \Rn}
+
+\begin{definition}\textbf{Real valued function}
+$f: D \to \mathbb{R}$ such that $D \subset \Rn$
+\end{definition}
+
+The graph $G_{f}$ of a real valued function is the set $G_{f} = \{ \begin{bmatrix} x\\
+f(x)
+\end{bmatrix} | | x \in D\} \subset \mathbb{R}^{n+1}$
+
+Hence where a curve is map from one dimension to $n$ dimensions, a real-valued function is a map from $n$ dimensions to 1 dimension. 
+
+
+
+\subsection{Partial derivatives}
+
+\begin{definition}
+$f:\Rn \to \mathbb{R}$ is partially differentiable with respect to variable $x_{k}$ if:
+$$\frac{\partial f}{\partial x_{k}}(a) = \lim \frac{f(a+he_{k}) - f(a)}{h}$$ exists. To calculate the partial derivative at $x_{k}$ we simply let all $x_{i}$ be constants. 
+\end{definition}
+
+\begin{definition}\textbf{Gradient}
+The gradient of $f$ is defined as:
+
+$$ \nabla f(x) = \begin{bmatrix}
+\frac{\partial f}{\partial x_{1}}(a)\\
+\vdots\\
+\frac{\partial f}{\partial x_{n}}(a)
+\end{bmatrix} = \sum_{k=1}^{n} D_{k}f(x)e_{k}$$
+
+\end{definition}
+
+\begin{example}
+Let $f(x) = |x|_{2}$ Then we have that $\frac{\partial f}{\partial x_{k}}(a) = \frac{x_{k}}{r}$
+\end{example}
+
+Now we come to a more complicated example: 
+
+\begin{example}
+$$f(x,y) = \[ \begin{cases}  
+      \frac{xy}{x^{2} + y^{2}} (x,y) \not = 0\\
+      0 (x,y) = 0
+   \end{cases}
+\]$$
+
+In this case, we have that although the partial derivative exists its existance does not imply continuity. The partial derivative itself must be continuous to imply continuity. 
+\end{example}
+
+
+
+\begin{definition}\textbf{Continuity in \Rn}
+\\
+
+We say that $f: \Rn \to \mathbb{R}$ is continuous at $a \in \Rn$ if $\forall \epsilon > 0 \ \exists \delta > 0$ such that $|x-a|_{2} < \delta \rightarrow |f(x) - f(a)|_{2} < \epsilon$
+\end{definition}
+
+The problem with the above definition is that we may approach say $(0,0)$ from infinite number of ways(easily seen considering a cartesian plane). This was not the case in $\mathbb{R^{1}}$ because we could approach 0 from the left or the right. Hence to prove that a limit exists by using cases is impossible, we need to instead use the epsilon-delta definition. 
+
+
+\begin{definition}
+We define $C^{1}(U)$ as the set of functions $f: U\subset \Rn \to R$ such that $f$ has $n$ partial derivatives each continuous. 
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
 \end{document} 
+
