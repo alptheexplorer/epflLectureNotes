@@ -335,7 +335,7 @@ $$f(x,y) = \[ \begin{cases}
    \end{cases}
 \]$$
 
-In this case, we have that although the partial derivative exists its existance does not imply continuity. The partial derivative itself must be continuous to imply continuity. 
+In this case, we have that although the partial derivative exists its existence does not imply continuity. The partial derivative itself must be continuous to imply continuity. 
 \end{example}
 
 
@@ -353,12 +353,34 @@ The problem with the above definition is that we may approach say $(0,0)$ from i
 We define $C^{1}(U)$ as the set of functions $f: U\subset \Rn \to R$ such that $f$ has $n$ partial derivatives each continuous. 
 \end{definition}
 
+\begin{definition}\textbf{Contour graphs}
+When we are presented with a real-valued function of multiple variables, we may either represent it via its graph, that is map it to $\mathbb{R}^{m+1}$ or instead draw its contour lines that is we let the function equal some value $c \in \mathbb{R}$ and plot all the points in $\mathbb{R^{m}}$ that take this value.
 
+\end{definition}
 
+And now we define the total differential. 
 
+\begin{definition}\textbf{Total differential}
+$$dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy$$
+\end{definition}
 
+Well when might the total differential ever be useful? Here's a simple example.
 
+\begin{example}
+Let's define $z = \sqrt{x^{2} + y^{2}}$ Now suppose we want to evaluate the function at $(x=3.92, y=4.01)$ Then we may simply evaluate the function at $(x=4, y=4)$ and using the total differential find the change in z and subtract it from our initial result. 
+\end{example}
 
+\begin{definition}\textbf{Bilinear form}
+We may think of a bilinear form as a linear map that accepts 2 arguments instead of one and linearity holds for both arguments. 
+
+$$B: V\cross V \to F$$
+\begin{align*}
+    B(v_{1}+v_{2},w) = B(v_{1},w) + B(v_{2},w)\\
+    B(fv,w) = fB(v,w)\\
+    B(v,w_{1} + w_{2}) = B(v,w_{1}) + B(v,w_{2})\\
+    B(v,fw) = fB(v,w)
+\end{align*}
+\end{definition}
 
 
 

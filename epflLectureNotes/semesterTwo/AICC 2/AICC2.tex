@@ -174,6 +174,8 @@ A similar result now is the chain rule of conditional entropy.
 $$H(S_{1},S_{2},\ldots,S_{n}) = H(S_{1}) + H(S_{2}|S_{1}) + \ldots + H(S_{n}|S_{1},\ldots,S_{n-1})$$
 \end{theorem}
 
+To clarify the notation used above, when we write $P_{X_{1}}, \ldots, X_{n}(x_{1},\ldots, x_{n})$ we interpret each comma as an intersection$\cap$
+
 And we now introduce what it means for a source to be \textbf{regular}
 
 \begin{definition}\textbf{Regular source}
@@ -202,6 +204,38 @@ $$H(X|Y) \leq H(X)$$
     \leq 0
 \end{align*}
 \end{proof}
+
+\subsection{Week 4}
+
+We begin by making an important distinction in the definition of conditional entropy.
+
+\begin{definition}\textbf{Conditional entropy given $Y=y$}
+\\
+We define this as:
+$$H(X|Y=y) = - \sum_{x \in (\cdot | y)} P(x|y)\log P(x|y)$$
+\end{definition}
+
+Given this definition, the more general definition of conditional entropy is:
+
+\begin{definition}
+$$H(X|Y) = - \sum P(y)H(X|Y=y) $$
+\end{definition}
+
+And we now introduce a \textbf{stationary source}
+
+\begin{definition}\textbf{Stationary source}
+\\
+A source is stationary if $\forall n,k$ the blocks $S_{1}, \ldots, S_{n}$ and $S_{n+1}, \ldots, S_{k}$ have the same statistic that is:
+\begin{align*}
+    P_{s_{1}} = P_{s_{i}}
+\end{align*}
+
+\end{definition}
+
+
+\begin{theorem}
+All stationary sources are regular. 
+\end{theorem}
 
 
 \section{Useful links}
