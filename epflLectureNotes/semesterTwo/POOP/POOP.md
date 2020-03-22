@@ -311,4 +311,101 @@ x.equals(y) $\Rightarrow$ x.hashCode() == y.hashCode()
 </tbody>
 </table>
 
-### Dictionary aka. Associative map 
+## Week 4
+
+### Streams in Java
+We focus on input/output of document rather than the same process through the console. 
+
+#### What really is a file
+A file is a collection of bytes that carry information. A file also has metadata representing things like date,name,etc. 
+
+There are two types of files:
+- text files
+- binary files(image,sound)
+
+#### InputStream as an abstract class in java.io
+
+``` java
+abstract public class InputStream {
+  int read();
+
+  int readNBytes(byte[] b, int o, int l);
+  byte[] readNBytes(int l);
+  byte[] readAllBytes();
+
+  long transferTo(OutputStream o);
+
+  long skip(long n);
+  int available();
+
+  boolean markSupported();
+  void mark(int l);
+  void reset();
+
+  void close();
+}
+```
+
+
+#### Creating a stream
+
+``` java
+InputStream s = new FileInputStream("file.bin");
+```
+
+We may instead do 
+``` java
+InputStream s = new BufferedInputStream(new FileInputStream("file.bin"));
+```
+for a quicker read. 
+
+#### OutputStream
+
+``` java
+abstract public class OutputStream {
+  void write(int b);
+  void write(byte[] b);
+  void write(byte[] b, int o, int l);
+
+  void flush();
+
+  void close();
+}
+``` 
+
+The hierarchy of subclasses in OutputStream is very similar to the hierarchy of subclasses in InputStream.
+
+All the input stream classes we have described have an equivalent in the output stream world. For example, to the FileInputStream class corresponds the FileOutputStream class, and so on. These classes corresponding directly to others already examined will no longer be examined here.
+
+The PrintStream class adds to the OutputStream class print, println and printf methods allowing to write textual representations of Java data in the stream. The streams representing "standard output" and "standard error", stored respectively in the static attributes out and err of the System class, are of the PrintStream type.
+
+#### Pay attention when using close
+
+Executing the below code:
+
+``` java
+InputStream s = new FileInputStream(…);
+System.out.println(s.available());
+s.close();
+``` 
+it becomes possible that the close method may never be called as available may lead to an exception. Instead we must use a try-catch block.
+
+``` java
+InputStream s = new FileInputStream(…);
+try {
+  System.out.println(s.available());
+} finally {
+  s.close();
+}
+```
+
+Even better then this, we may use the **try-with resource** syntax offered by java as below:
+
+``` java
+try( InputStream s = new FileInputStream(...)){
+  System.out.println(s.available());
+}
+``` 
+which doesn't require a call to close. 
+
+
