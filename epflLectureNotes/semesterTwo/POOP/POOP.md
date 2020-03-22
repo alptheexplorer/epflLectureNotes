@@ -346,7 +346,6 @@ abstract public class InputStream {
 }
 ```
 
-
 #### Creating a stream
 
 ``` java
@@ -358,6 +357,16 @@ We may instead do
 InputStream s = new BufferedInputStream(new FileInputStream("file.bin"));
 ```
 for a quicker read. 
+
+### Reading a file
+`int read()`: reads and returns the next byte as a value between 0 and 255 inclusive, or -1 if the end of the stream has been reached
+
+`int readNBytes(byte[] b, int o, int l)`: reads at most l bytes from the stream, places them in array b from position o and returns the number of bytes read; this number is less than l only if the end of the stream has been reached during reading
+
+`byte[] readNBytes(int l)`: similar to the previous method, but the bytes read are placed in a new array of good size, which is returned
+
+`byte[] readAllBytes()`: reads all the remaining bytes in the stream and places them in an array of good size, which is returned
+
 
 #### OutputStream
 
@@ -408,4 +417,17 @@ try( InputStream s = new FileInputStream(...)){
 ``` 
 which doesn't require a call to close. 
 
+#### Some practical examples
 
+##### Counting the frequency of each letter in a .txt file
+``` java
+private static int[] byteFrequencies(String fileName) throws IOException {
+        try (InputStream stream = new FileInputStream(fileName)) {
+            int[] freq = new int[256];
+            int b;
+            while ((b = stream.read()) != -1)
+                freq[b] += 1;
+            return freq;
+        }
+    }
+``` 
