@@ -382,6 +382,138 @@ $$B: V\cross V \to F$$
 \end{align*}
 \end{definition}
 
+We now define differentiability using the total differential. 
+
+\begin{definition}
+A function $f$ is said to be differentiable in $a \in U \subset \Rn$ if $\grad f(a)$ exists and:
+
+$$\lim_{h \to 0} \frac{f(a+h) - f(a) - \underbrace{<f(a),h>}_{\text{total differential}}}{h} = 0$$
+\end{definition}
+
+The above definition assures that the total change in $f$ over some variable $h$ occurs quicker than the change in h. 
+
+
+Similarly, we define directional derivatives.
+
+\begin{definition}
+For some $f:U\subset \Rn \to \mathbb{R}$ the directional derivative at $a$ with respect to $v \in U$ is:
+$$D_{v}f(a) = \lim_{t \to 0}\frac{f(a+tv)-f(a)}{t}$$
+\end{definition}
+
+Now some non-implications to pay attention to.
+
+\begin{remark} \text{Non-implications}
+\\
+\begin{itemize}
+    \item If all directional derivatives at $a$ exist, it does not mean that $f$ is differentiable at $a$.
+    \item Directional derivatives with respect to $v$ are not neccesarily equal to $<\grad f,v>$ this is only true when $f$ is differentiable at $a$.  
+\end{itemize}
+\end{remark}
+
+\begin{definition} \textbf{Notation for higher order derivatives}
+We notate a derivative of order 3 with respect to x,y,x in respective order as:
+$$D_{x,y}f(x)$$
+\end{definition}
+
+\begin{definition} \textbf{Tangent hyperplane equation}
+For some $f:U\subset \Rn \to \mathbb{R}$ we define the tangent hyperplane at some point $a \in U$ as:
+$$f(\bar{x}) = f(a) + <\grad f(a), h>$$
+\end{definition}
+
+\begin{definition}\textbf{Generalized chain rule}
+Let $k$ be a curve from $\mathbb{R} \to \Rn$ and $f$ a function from $\Rn \to \mathbb{R}$ such that:
+\\
+1. k is differentiable at $t_{0} \in \mathbb{R}$
+\\
+2. f is differentiable at $k(t_{0})$
+
+Then we have that:
+$$(fok)(t_{0})^{\prime} = <\grad f(k(t_{0})), k^{\prime}(t_{0}>$$
+\end{definition}
+
+\begin{proof}
+We briefly prove the above theorem here.
+
+First let's note the following:
+The fact that $k$ is differentiable at $t_{0}$ means that 
+$$k(t_{0}+h) - k(t_{0}) = k^{\prime}(t_{0})h + o(|h|) $$ From this it follows that the LHS is also $O(|h|)$ hence if some $s(h)$ is little o of the LHS, it is definitely little of the RHS. Now we have:
+\begin{align*}
+    f(k(t_{0}+h) - k(t_{0})) - f(k_{0}) - <\grad f(k(t_{0}),k(t_{0}+h) - k(t_{0})> + o(|k(t_{0}+h) - k(t_{0})|) = 0\\
+     f(k(t_{0}+h) - k(t_{0})) - f(k_{0}) = h<\grad f(k(t_{0}),k^{\prime}(t_{0})> + o(|h|)
+\end{align*}
+\end{proof}
+
+Now we define higher order derivatives. 
+\begin{definition}
+A partial derivative of second order is written as:
+$$\frac{\partial^{2}f}{\partial x_{j} \partial x_{i}} \equiv D_{ji}f = \lim_{h\to 0}\frac{\frac{\partial f}{\partial x_{i}}(\bar{a} + he_{j}) - \frac{\partial f}{\partial x_{i}}(\bar{a})}{h} $$
+\end{definition}
+
+An interesting result is that the order of partial differentiation does not matter.
+\begin{theorem}
+If $f \in C^{m}(U)$ then $\forall r \leq m$ we have that:
+$$D_{j_{1},\ldots, j_{r}} = D_{i_{1},\ldots, i_{r}} $$ where the $i$ are a permutation of the $j$
+\end{theorem}
+
+Now we introduce the hessian. 
+
+\begin{definition}\textbf{Hessian of a matrix}
+$$ Hess_{f}(x) = 
+\begin{bmatrix}
+ D_{11} & \ldots & D_{1n}\\
+ \vdots & \ddots & \vdots\\
+ D_{n1} & \ldots & D_{nn}
+\end{bmatrix}
+$$
+\end{definition}
+
+An important result about the hessian is the below. 
+
+\begin{theorem}
+$$f(\bar{x}+\bar{h}) = f(\bar{x}) + <\grad f(\bar{x}),\bar{h}> + \frac{1}{2} \bar{h}^{T} Hess(\bar{x})$$
+\end{theorem}
+
+\subsection{Vector Fields}
+
+\begin{definition}\textbf{Vector field}
+A vector field is simply a function from $\mathbb{R}^{n} \to \Rm$
+\end{definition}
+
+How might we imagine the partial derivative of a vector field?
+
+\begin{definition}
+Some $v: U \to \Rm$ is partially differentiable at $\bar{a} \in U$ if:
+$$D_{j}v_{i}(a) = \frac{\partial v_{i}}{\partial x_{j}}(a) \equiv \lim_{h \to 0} \frac{v_{i}(a+he_{j}-v_{i}(a)}{h} \ \text{exists}$$
+\end{definition}
+
+Thus the natural analogue of the Hessian now called the Jacobian of a vector space is:
+\begin{definition}\textbf{Jacobian}
+$$ J_{f}(x) = 
+\begin{bmatrix}
+ D_{1}v_{1} & \ldots & D_{n}v_{1}\\
+ \vdots & \ddots & \vdots\\
+ D_{1}v_{n} & \ldots & D_{n}v_{n}
+\end{bmatrix}
+$$
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
