@@ -205,7 +205,7 @@ $$H(X|Y) \leq H(X)$$
 \end{align*}
 \end{proof}
 
-\subsection{Week 4}
+\section{Week 4}
 
 We begin by making an important distinction in the definition of conditional entropy.
 
@@ -236,6 +236,79 @@ A source is stationary if $\forall n,k$ the blocks $S_{1}, \ldots, S_{n}$ and $S
 \begin{theorem}
 All stationary sources are regular. 
 \end{theorem}
+
+And now we come to another intuitive result:
+\begin{theorem}
+$$H^{*}(S) = \lim_{N\to \infty}\frac{H(S^{n})}{n}$$
+\end{theorem}
+
+The intuition for this result is that the entropy rate is inversely proportional to how much information we have. That is the more variables we know, the more we reduce entropy. 
+
+We now consider an instructive example
+\begin{example}
+Suppose we are given two machines $M_{1}$ and $M_{2}$ that produce 3 bits. $M_{1}$ produces any number between 0 and 7 with equal chance and $M_{2}$ produces a number in range 0 to 3 with equal chance. We ask then, what is the probability distribution of the sequence $s_{1}\ldots s_{n}$
+
+Well noticing that this is equal to finding 
+
+$$ P(S_{1}\ldots S_{n})=P(S_{1}\ldots S_{n}|S_{0})P(S_{0}) = P(S_{1}\ldots S_{n}|S_{0})P(S_{0} = M_{1}) + P(S_{1}\ldots S_{n}|S_{0})P(S_{0} = M_{2})$$
+
+We obtain:
+$$P(S_{1}\ldots S_{n}) = \[   \left\{
+\begin{array}{ll}
+     \frac{1}{8^{n}}\frac{1}{2} + \frac{1}{4^{n}}\frac{1}{2} \text{if} s_{1}\ldots s_{n} \in \{0,\ldots,3\}^{n}\\
+     \frac{1}{8^{n}}\frac{1}{2}
+\end{array} 
+\right. \]$$
+\end{example}
+
+\section{Week 5}
+This week, we introduce cryptography. 
+We begin by listing the most common attack methods.
+
+\begin{itemize}
+    \item \textbf{Chosen-plaintext attack}: The attacker is able to obtain a ciphertext for any arbitrary plaintext. Thus to obtain the key, one might encode every single letter. 
+    \item \textbf{Known-plaintext attack}: Attacker has access to both ciphertext and plaintext.
+    \item \textbf{Ciphertext-only attack}: Attacker has access to a set of ciphertexts. A possible attack method is to use a frequency analysis. 
+\end{itemize}
+
+We now introduce the vigenere cipher.
+\begin{definition}\textbf{Vigenere's cipher}
+Vigenere cipher makes use of the Caesar cipher. Suppose we are given a 7 letter plaintext. The sender chooses another keyword of 7 letters. This we call the key. Then encryption is done using the lookup table below.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.6]{src/vigenere.png}
+    \caption{Lookup table}
+    \label{fig:my_label}
+\end{figure}
+
+As an example suppose our plaintext is "hello", an example key is "abcde". Thus the encrypted word would become "hffos"
+\end{definition}
+
+Now we introduce a very strong type of secrecy. 
+
+\begin{definition}\textbf{Perfect secrecy}
+A cryptosystem has perfect secrecy if the plaintext and ciphertext are statistically independent. 
+\end{definition}
+
+Given this perfect secrecy implies:
+\begin{theorem}
+H(T) \leq H(K)
+\end{theorem}
+
+And now we present an instructive example on how one would try to crack vigenere given we have the ciphertext and a portion of the plaintext.
+
+\clearpage
+
+\begin{example}\textbf{Cracking Vigenere}
+\begin{figure}[H]
+    \centering
+    \includegraphics{src/vig.JPG}
+
+    \label{fig:my_label}
+\end{figure}
+\end{example}
+
 
 
 \section{Useful links}
