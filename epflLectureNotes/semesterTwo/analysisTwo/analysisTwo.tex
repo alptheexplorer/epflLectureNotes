@@ -467,12 +467,19 @@ $$ Hess_{f}(x) =
 $$
 \end{definition}
 
-An important result about the hessian is the below. 
+Using the hessian, we define the second order taylor approximaion of a multivariable functions as below.
 
 \begin{theorem}
-$$f(\bar{x}+\bar{h}) = f(\bar{x}) + <\grad f(\bar{x}),\bar{h}> + \frac{1}{2} \bar{h}^{T} Hess(\bar{x})$$
+$$f(\bar{x}+\bar{h}) = f(\bar{x}) + <\grad f(\bar{x}),\bar{h}> + \frac{1}{2} \bar{h}^{T} Hess(\bar{x})h$$
 \end{theorem}
 
+Intuition for the above theorem is easy. Just remember that the $\frac{1}{2}$ comes from the fact that it is a taylor expansion (analogue in 1-d is $f(x) = f(a) + f^{\prime}(a)(x-a) + \frac{1}{2} f^{\prime\prime}(x-a)^2$)
+
+
+\begin{theorem}
+Whenever we have a product, the following holds:
+$$\grad(fg) = \grad fg + \grad gf$$
+\end{theorem}
 \subsection{Vector Fields}
 
 \begin{definition}\textbf{Vector field}
@@ -483,10 +490,10 @@ How might we imagine the partial derivative of a vector field?
 
 \begin{definition}
 Some $v: U \to \Rm$ is partially differentiable at $\bar{a} \in U$ if:
-$$D_{j}v_{i}(a) = \frac{\partial v_{i}}{\partial x_{j}}(a) \equiv \lim_{h \to 0} \frac{v_{i}(a+he_{j}-v_{i}(a)}{h} \ \text{exists}$$
+$$D_{j}v_{i}(a) = \frac{\partial v_{i}}{\partial x_{j}}(a) \equiv \lim_{h \to 0} \frac{v_{i}(a+he_{j})-v_{i}(a)}{h} \ \text{exists}$$
 \end{definition}
 
-Thus the natural analogue of the Hessian now called the Jacobian of a vector space is:
+Thus the natural analogue of the Hessian now called the Jacobian of a vector space is(though the Jacobian lists partial derivatives of the first order:
 \begin{definition}\textbf{Jacobian}
 $$ J_{f}(x) = 
 \begin{bmatrix}
@@ -497,9 +504,62 @@ $$ J_{f}(x) =
 $$
 \end{definition}
 
+Given this definition of the Jacobian, we define differentiability at some point $a \in U \subset \Rn$ as:
+
+\begin{definition} \textbf{Differentiability}
+Some $v: U \to \Rm$ is differentiable at $a \in U$ if there exists a linear map $J_{f}$ such that
+
+$$\lim_{h \to 0} \frac{v(a+h) - v(a) - J_{f}(h)}{||h||} = 0$$
+
+\end{definition}
+
+Now the same concept of $C^{1}(\mathbb{R})$ is applicable to vector fields. Some vector field $v$ is of class $C^{1}(U}$ if all partial derivatives $D_{j}v_{i}: U \to \mathbb{R}$ exist and are continuous in $U.
+
+And now we ask what the Jacobian might be for the composition of two vector spaces?
+
+\begin{theorem}
+The composition rule is exactly like the chain rule in single variable calculus. For some $v:\Rn \to \Rm$ and some $w: \Rm \to \Rn$ we have
+
+$$J_{w \ o \ v}(x) = J_{w}(v(x))J_{v}(x)$$
+\\
+Hence an intuitive way to calculate the $i,j$ position element of $J_{w \ o \ v}(x)$ is to calculate:
+    $$ \frac{\partial w_{i}(v(x))}{\partial x_{j}} = \sum_{k=1}^{n} \frac{\partial v_{k}}{\partial x_{j}}(x) \frac{\partial w_{i}}{\partial v_{k}}v(x)}$$
+\end{theorem}
+
+Let's build a better intuition for the Jacobian matrix. It's columns are simply partial derivatives of $v(x)$ with respect to $x_{i}$. Our conversely, the rows of the Jacobian are the gradient of $ith$ row of the function. Hence we have with i fixed a constant:
+
+$$J_{W}(x)_{i,j} = \grad f(x)_{i}^{T}$$
 
 
+\subsection{Implicit function theorem}
 
+Consider the real-valued function $f(x,y) = x^{2} + e^{y} - 1$ Now our goal is to determine the level set $N_{f}(0)$. Hence we write $x^{2} + e^{y} - 1 = 0$ and now our goal is to find $y$ as a function of $x$. Well as it turns out $y = g(x) = \ln{1-x^{2}}$. Now $g^{\prime}(x) = \frac{-2x}{1-x^2}$ which also happens to be $g^{\prime}(x) = \frac{-D_{1}f(x,g(x))}{D_{2}f(x,g(x))}$ Hence for some $U \subset \mathbb{R^{2}}$ we state the following:
+
+\begin{theorem}
+Let $f: U \to \mathbb{R}$ be of class $C^{1}$(ie. continuous partial derivatives) such that $f(a,b) = 0$ and also $D_{2}f(a,b) \not = 0$ Then $\exists B(a,\epsilon)$ and a unique function $g: B(a,\epsilon) \to \mathbb{R}$ such that:
+\\
+1. graph of $g$ is in $U$
+\\
+2. $g(a) = b$
+\\
+3. $f(x,g(x)) =0$
+\\
+4. $g^{\prime}(x) = \frac{-D_{1}f(x,g(x))}{D_{2}f(x,g(x))}$
+\end{theorem}
+
+We may now also generalize to higher dimension:
+
+\begin{theorem} \textbf{Implicit function theorem}
+Let $F \in C^{1}$ such that $f(\bar{x},y)=0$ and $\frac{\partial F}{\partial y} \not=0$ Then there exists a unique $y = f(\bar{x})$ such that
+\\
+1. graph of $f$ is in $U$
+\\
+2. $f(\bar{x}) = y$
+\\
+3. $f(\bar{x},y) =0$
+\\
+4. $\frac{\partial f}{\partial x_{i}} = \frac{ - \frac{\partial F}{\partial x_{i}}}{\frac{  \partial F}{\partial y}}$
+\end{theorem}
 
 
 

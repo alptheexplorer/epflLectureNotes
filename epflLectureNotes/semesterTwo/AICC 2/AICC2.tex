@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{empheq}
 \usepackage{hyperref}
+\usepackage{listings}
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{xparse}
@@ -24,6 +25,7 @@ right  = 2.75cm]{geometry}
 
 \newtheorem{remark}{Remark}[section]
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{prop}{[Proposition]}
 \newtheorem{definition}{Definition}
 \newtheorem{question}{Question}
@@ -308,6 +310,194 @@ And now we present an instructive example on how one would try to crack vigenere
     \label{fig:my_label}
 \end{figure}
 \end{example}
+
+We know present a method used to verify the correctness of data sent.
+\begin{example}
+Suppose we want to send an IBAN number over the net. It is possible that for some reason, during transmission, two digits of the credit card get flipped. We need a system to verify the correctness of information sent. Here's how we proceed:
+\begin{itemize}
+    \item concatenate 00 to the end of the IBAN number.
+    \item mod out by 97, fix this as $a$.
+    \item now our key $k$ is found as $98-a=k$
+    \item concatenate $k$ to the end of the IBAN number removing the 00 and now send it to the recipient
+    \item receiver mods out by 97, if result is congruent to 1, success.
+\end{itemize}
+
+Here is why this works:
+Given $x \equiv a \mod{97}$
+\begin{align*}
+    x^{\prime} \equiv x + (98 - a) \mod{97}\\
+    x^{\prime} \equiv x + 98 - x \mod{97}\\
+    x^{\prime} \equiv 98 \mod{97} \equiv 1 \mod{97}\\
+\end{align*}
+
+Yet another proof is to show the following implication:
+$$100n_{97} - 100\Tilde{n}_{97} \equiv 0_{97} \implies a=b \text{where a,b are changed digits}$$
+
+Now our above equality simplifies to:
+
+$$10^{k+1}a+10^{k}b - 10^{k+1}b - 10^{k}a = 10^{k}(9a-9b)$$
+Now since all expressions in the above equations have an inverse as we are in base 97, we get:
+$$ (a-b)_{97} \equiv 0_{97}$$
+which is only the case if $a=b$
+\end{example}
+
+A neat modulo trick is presented below.
+
+\begin{theorem}
+For some number $a = d_{n}\ldots d_{1}$ in base 10 we have that:
+$$a \bmod{11} = \sum_{i}^{k}10^{i}d_{i} \bmod{11} = \underbrace{\sum_{i}^{k}-1^{i}d_{i}}_{10\equiv-1\bmod{11}} \bmod{11}$$
+\end{theorem}
+
+\section{Week 6}
+
+We present some definitions and theorems which we later use to define certain structures in $\mathbb{R}$.
+
+\begin{definition}\textbf{Ring}
+A ring is a triple $(R,\alpha,\mu)$ such that the following hold:
+\\
+
+$R,\alpha$ known as the 'addition' on $R$ is an abelian group 
+\\
+
+$R, \mu$ is both associative and right-left distributive over addition
+\\
+
+If it is also the case that $R/{e_{\alpha}}$ is an abelian group, our ring is called a \textit{commutative ring with unity}
+
+\end{definition}
+\\
+
+\begin{theorem}
+The inverse of an element under any binary relation is unique.
+\end{theorem}
+
+\begin{proof}
+Let $ab = e$ and also $ac=e$. Then $abb=acb$ which simplifies to $eb=ec=b=c$
+\end{proof}
+
+\begin{theorem}
+Within $\mathbb{Z} / m\mathbb{Z}$ the following theorems are equivalent:
+\\
+
+$\forall a \in \mathbb{Z}, \exists a^{-1}$
+\\
+
+$f:\forall a \in \mathbb{Z} \to \forall a \in \mathbb{Z}$ is a bijection
+\\
+
+$ax=b$ has a unique solution 
+
+\end{theorem}
+
+\begin{theorem}
+Some $[a]_{m}$ has a multiplicative inverse iff $gcd(a,m)=1$
+\end{theorem}
+
+Given the above, something that easily follows is:
+
+\begin{theorem}
+If $p$ is prime, then all $a \in \mathbb{Z}/p\mathbb{Z}$ have a multiplicative inverse 
+\end{theorem}
+
+\begin{remark}\textbf{Useful facts about the gcd}
+$$gcd(a,b) = gcd(b,a-kb)=gcd(\pm a, \pm b)$$
+\end{remark}
+
+We now present the Euclidian algorithm used to find $gcd(a,b)$ in pseudocode and explain why it works.
+
+
+\begin{lstlisting}
+if(a<b) return:
+gcd(b,a);
+else if(b=0) return:
+a;
+else return:
+gcd(b,a\% b);
+\end{lstlisting}
+
+\begin{theorem}\textbf{Bezout's theorem}
+$$gcd(a,b) = au + bv \ a,b \in \mathbb{Z}$$
+\end{theorem}
+
+We now ask given the above theorem, how we may find the $u$ and $v$. Well let's take an example:
+\begin{example}
+Find the $u,v$ for $gcd(56,15)$.
+By normal Euclidian algorithm, it turns out that $gcd(56,15) = 1$ Our steps in finding this are:
+\begin{align*}
+    56 = 15(3) + 11\\
+    15 = 11(1) + 4\\
+    11 = 4(2) + 3\\
+    4 = 3(1) + 1\\
+    3 = 1(3) + 0
+\end{align*}
+
+Now notice how we from the above already have:
+$$56 - 15(3) = 11 \ 4 - 3(1)=1$$
+Hence all that's left to do now is make $4 - 3(1)=1$ top and work our way down.
+\begin{align*}
+    4 - 3(1) = 1\\
+    4 -  11 + 4(2)\\
+    4(3) - 11\\
+    (15 - 11(1))3 - 11\\
+    15(3) - 11(4)\\
+    15(3) - (56-15(3))4\\
+    (-4)56 + (12)15 
+\end{align*}
+
+\end{example}
+
+\begin{lemma}
+$$gcd(a,m) = 1 \iff \ \exists u,v \ 1 = au + mv$$
+\end{lemma}
+
+
+
+
+We now explore some notation relating to modular classes:
+\begin{itemize}
+    \item $[a]_{m} :=$ congruence class $\bmod{m}$
+    \item $\mathbb{Z} / m\mathbb{Z} :=$ all congruence classes $\bmod{m}$
+    \item The structure $<\mathbb{R} / m\mathbb{Z}, + , \cdot>$ is an abelian ring 
+    \item By $\mathbb{Z} / m\mathbb{Z}^{*}$ we denote the set where an inverse exists. 
+\end{itemize}
+
+\begin{definition}\textbf{Totient function}
+ $\phi (x): \mathbb{Z} \to \mathbb{N}$ computes the number of integers that are relatively prime to $x$.
+\end{definition}
+
+\begin{lemma}
+When $p$ is prime, $\phi(p) = p-1$
+\end{lemma}
+
+\begin{remark}
+The cardinality of $\mathbb{Z} / m\mathbb{Z}^{*}$ is $\phi(m)$
+\end{remark}
+
+\begin{remark}
+$$\phi (p^{k}) = p^{k} - p^{k-1}$$ for some prime $p$
+\end{remark}
+
+Yet another super useful result that appears in RSA encryption is the following:
+\begin{remark}
+Let $p$ and $q$ be prime numbers, we ask what is $\phi (pq)$
+$$\phi (pq) = pq - (p + q -1) = (p-1)(q-1) = \phi (p) \phi (q)$$
+which follows from the fact that the numbers relatively prime to $pq$ are:
+$$ \[   \left\{
+\begin{array}{ll}
+     p,2p,\ldots, qp\\
+     q,2q,\ldots,(p-1)q
+\end{array} 
+\right. \]$$
+\end{remark}
+
+Finally we define perhaps one of the most fundemental mathematical structures, that is an isomorphism.
+
+\begin{definition}\textbf{Isomorpishm}
+\\
+
+ Let $(H_{1},\cdot_{1})$ and $(H_{2},\cdot_{2})$ be two structures. An isomorphism $\phi$ from $H_{1}$ to $H_{2}$ is bijection such that:
+ $$\forall a,b \in H_{1} \ \phi(a\cdot_{1} b) = \phi(a)\cdot_{2} \phi(b)$$
+\end{definition}
 
 
 
