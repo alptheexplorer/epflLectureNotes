@@ -41,7 +41,7 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 
 > Digital Systems design
 
-> AICC 2 [Latest AICC2 notes] (https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
+> AICC 2 [Latest AICC2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
 
 
 **(If you appreciate this sort of open source content, buy me a coffee but only if you genuinely just feel like it)**
