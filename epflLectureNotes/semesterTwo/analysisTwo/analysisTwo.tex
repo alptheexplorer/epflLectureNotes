@@ -387,7 +387,7 @@ We now define differentiability using the total differential.
 \begin{definition}
 A function $f$ is said to be differentiable in $a \in U \subset \Rn$ if $\grad f(a)$ exists and:
 
-$$\lim_{h \to 0} \frac{f(a+h) - f(a) - \underbrace{<f(a),h>}_{\text{total differential}}}{h} = 0$$
+$$\lim_{h \to 0} \frac{f(a+h) - f(a) - \underbrace{<\grad f(a),h>}_{\text{total differential}}}{h} = 0$$
 \end{definition}
 
 The above definition assures that the total change in $f$ over some variable $h$ occurs quicker than the change in h. 
@@ -531,6 +531,11 @@ Let's build a better intuition for the Jacobian matrix. It's columns are simply 
 $$J_{W}(x)_{i,j} = \grad f(x)_{i}^{T}$$
 
 
+\subsection{Extrema}
+For some critical point $a$, we have that $\grad f(a) = 0$. This means that locally our function when approximated at second order becomes:
+
+$$f(x) = f(a) + (x-a)^{T}Hess f(a)(x-a)$$. Now if all eigenvalues of $Hess f(a)$ are positive then no matter which direction we go, well have that $a$ is a minimum. Similarly, if all eigenvalues of $Hess f(a)$ are negative, then $a$ is a minimum. Finally, if some are negative and some positive, we have a saddle point. To stress why this is true, just realize that an eigenvalue is defined as (in this case: $Hess f(a) = \lambda a$
+
 \subsection{Implicit function theorem}
 
 Consider the real-valued function $f(x,y) = x^{2} + e^{y} - 1$ Now our goal is to determine the level set $N_{f}(0)$. Hence we write $x^{2} + e^{y} - 1 = 0$ and now our goal is to find $y$ as a function of $x$. Well as it turns out $y = g(x) = \ln{1-x^{2}}$. Now $g^{\prime}(x) = \frac{-2x}{1-x^2}$ which also happens to be $g^{\prime}(x) = \frac{-D_{1}f(x,g(x))}{D_{2}f(x,g(x))}$ Hence for some $U \subset \mathbb{R^{2}}$ we state the following:
@@ -561,17 +566,58 @@ Let $F \in C^{1}$ such that $f(\bar{x},y)=0$ and $\frac{\partial F}{\partial y} 
 4. $\frac{\partial f}{\partial x_{i}} = \frac{ - \frac{\partial F}{\partial x_{i}}}{\frac{  \partial F}{\partial y}}$
 \end{theorem}
 
+In simpler words, the partial of $g(x)$ relative to the $jth$ variable is the partial of $F$ relative to the $jth$ variable divided by the partial of $F$ relative to $y$. 
+\\
+
+Now let's put our above theorem to use. Let the level surface $F(x_{1},\ldots, x_{n}) = 0$ contain $\bar{a}$ and let $\frac{\partial F}{\partial x_{n}}(\bar{a}) \not = 0$ Hence we may write:
+$$x_{n} = g(x_{1},\ldots,x_{n-1})$$ Hence locally, the surface $F$ is like the $n-1$ dimensional function $g$. Thus we may write:
+
+$$x_{n}-a_{n} = \sum_{j=1}^{n-1} \frac{\partial g}{\partial x_{j}} (a_{1},\ldots, a_{n-1})(x_{j}-a_{j})$$ But given our earlier theorem this simplifies to:
+$$\sum_{j=1}^{n} D_{j}F(\bar{a})(x_{j}-a_{j}) = 0 $$
+
+Before ending this chapter, I'd like to make a remark about gradients. For a multivariable function, our intuition of a gradient from 1-d no longer holds. Now we define a gradient as a linear map from $\Rn \to \mathbb{R}$ as $D_{F,p}(\langle a,b \rangle) = [ \dfrac{\partial F}{\partial x} \dfrac{\partial F}{\partial y}] \begin{bmatrix}a \\\\ b\end{bmatrix}$. Now suppose we are at some point $a$ on the level surface. Then by definition the tanget direction vector $h$ will be the vector such that $D_{F,p}(h) = 0$. Using the linear map form this is equivalent to saying $\langle \dfrac{\partial F}{\partial x} \dfrac{\partial F}{\partial y} \rangle \cdot \langle h_{1}, h_{2}\rangle = 0$ which is equivalent to saying that the gradient at some point is perpendicular to that level surface.
+
+Finally we also note that whenever some vector field is invertible, the derivative of the inverse field is equal to the inverse of the Jaacobian. Finally we also make an important distinction below:
+
+\begin{definition} \textbf{Local vs global invertibility}
+Local invertible means invertible on the linear approximation which is the Jacobian, globally invertible means the inverse in the traditional sense.
+\end{definition}
 
 
 
+\subsection{Optimization}
+We now define critical points and extrema for multivariable functions.
+\begin{definition}\textbf{Extrema}
+\begin{itemize}
+    \item $a \in U$ is a local extremum of $f$ if $\exists \  \delta $ such that $f(a) \geq f(x) \forall x \in B(a,\delta)$
+    \item $a \in U$ is a critical point of $f$ if $\grad f(a) = 0$
+\end{itemize}
+
+\end{definition}
+
+We now naturally ask how we go about finding a min/max given a constraint on our variables or the domain we can consider. For instance consider the graphic below:
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{src/lagIntuition.JPG}
+    \label{fig:my_label}
+\end{figure}
+We have limited our $x,y$ for some two variable $f$ to equal $0$. We then ask, with this constraint, at which $x,y$ does $f$ attain a maximum or a minimum. This is solved by lagrange multipliers
+
+\begin{theorem}
+Let $h,f U \to \mathbb{R}$ be of class $C^{1}$ and let $M = \{x\in U|f(x)=0\}$ Now let $a \in M$ and let $a$ be such that $h(a)$ is a local extremum. Then $\exists \lambda:$
+$$\grad h(a) + \lambda \grad f(a) = 0$$
+
+\end{theorem}
 
 
+\subsection{Multiple integrals}
 
+Define a function $$g(y) = \int_{a}^{b} f(x,y)dx$$ Now if $f$ is continuous and its partial derivatives are continuous, $f$ is $C^{1}(I)$ and we have:
+$$g^{\prime}(y) = \int_{a}^{b} \frac{\partial f(x,y)}{\partial y}dx$$ Using this property, our goal is to perform integrating through differentiation. Thus we have that over a fixed finite interval, if $g$ is continuous, the integral is continuous. Similarly if $g$ is continously differentiable, then the integral is continuously differentiable. 
 
-
-
-
-
+\begin{example}
+Suppose we want to evaluate $\int_{0}^{b}x^{2}\cos{x}dx$. We define $g(y) = \int_{0}^{b}\cos{xy}dx$ Now by our above theorem we have $g^{\prime} = - \int_{0}^{b}x \sin{xy} dx$ and $g^{\prime\prime} = - \int_{0}^{b}x^{2} \cos{xy} dx$. And now $-g^{\prime\prime}(1) = \int_{0}^{b}x^{2} \cos{x} dx $ Now we may simply evaluate the integral by evaluating $g$ and differentiating twice. 
+\end{example}
 
 
 
