@@ -30,6 +30,7 @@ right  = 2.75cm]{geometry}
 \newtheorem{definition}{Definition}
 \newtheorem{question}{Question}
 
+
 \newcommand{\interior}[1]{%
   {\kern0pt#1}^{\mathrm{o}}%
 }
@@ -393,6 +394,7 @@ $ax=b$ has a unique solution
 Some $[a]_{m}$ has a multiplicative inverse iff $gcd(a,m)=1$
 \end{theorem}
 
+
 Given the above, something that easily follows is:
 
 \begin{theorem}
@@ -498,6 +500,82 @@ Finally we define perhaps one of the most fundemental mathematical structures, t
  Let $(H_{1},\cdot_{1})$ and $(H_{2},\cdot_{2})$ be two structures. An isomorphism $\phi$ from $H_{1}$ to $H_{2}$ is bijection such that:
  $$\forall a,b \in H_{1} \ \phi(a\cdot_{1} b) = \phi(a)\cdot_{2} \phi(b)$$
 \end{definition}
+
+Now isomorphisms are useful because we know that if $(H_{1},\star})$ is an abelian group and there exists an isomorphism from to $(H_{2},\star_{2}})$, then so is $$(H_{2},\star_{2}})$ an abelian group. 
+\\
+
+Now perhaps a mind blowing isomorphism is between the structures $([0, + \infty] \cdot)$ and $(\mathbb{R},+)$ The isomorphism between the two is simply any mapping $f(x) = \log_{b}(x)$
+
+Now we present a theorem about finite groups:
+
+\begin{theorem}
+Let $G$ be a finite group. Then $\forall a \in G$, $\exists k \in \mathbb{Z_{+}}$ such that $a^{k} = e$
+\end{theorem}
+
+\begin{proof}
+Now since $G$ is a finite group, we have that for some $i < j$ , $a^{i} = a^{j}$. Now
+$a^{-i}a^{i} = a^{-i}a^{j} = a^{j-i} = a^{k}$
+\end{proof}
+
+And now a theorem about the order of elements in a group. 
+
+\begin{theorem}
+Two sets are isomorphic iff. they have the same order set. 
+\end{theorem}
+
+And now a grand result from the early developments of group theory.
+
+\begin{theorem}\textbf{Lagrange's theorem}
+Let $G$ be a finite abelian group of cardinality $n$. Then the order of each elements of $G$ divides $n$. 
+\end{theorem}
+
+\begin{proof}
+Let $H \leqslant G$. Now the cosets of $H$ form a partition of $G$ as the coset is an equivalence relation. Also note that $H$ as a subgroup is of the form $\{a,a^{2},\ldots,a^{k}\}$ where $k$ is the order of $a$. Hence we have that $|H| = k$. Now we have that $G$ is a partition of equivalence classes all of size $k$ that is to say:
+
+$$ n = kq \ \text{q being number of equivalence classes}$$
+\end{proof}
+
+We now present a corollary of Lagrange's theorem that will prove useful when studying RSA.
+
+\begin{cor}\textbf{Euler's theorem}
+\\
+
+Let $m > 1$. $\forall a \in (\mathbb{Z} / mZ^{*})$ we have:
+ $$a^{\phi(m)} = [1]_{m}$$
+\end{cor}
+
+Now a result following Euler's theorem is that if we apply the same reasoning to some $(\mathbb{Z} / pZ^{*})$ where $p$ is prime then $\phi(p) = p-1$ hence $a^{p-1} = e$ and $a^p = a$
+
+\begin{theorem}\textbf{Chinese remainder theorem}
+Let $m_{1},m_{2}$ be co-prime integers. We define a mapping $\phi: Z/m_{1}m_{2}^{*} \to  Z/m_{1} \cross Z/m_{2} $ Then it is the case the the mapping is a bijection and an isomoprhism with respect to $+$ and $\cdot$, where $\phi:(a)_{m_{1}m_{2}} \to (a)_{m_{1}}(a)_{m_{2}}$
+\end{theorem}
+
+Let us now expand on our understanding of groups. 
+
+\begin{definition}\textbf{Cyclic group}
+A group $G$ where $\exists g \in G$ such that $\forall h \in G, \exists i \in \mathbb{Z} \ h = g^{i}$ is called a cyclic group. 
+\end{definition}
+
+It turns out that all cyclic groups of the same order are isomorphic. As a quick sketch of proof, consider that we define a map as $\psi(a^{i})=b^{i}$. Then simply observe that 
+
+$$\psi(ab) = \psi(g^{i}g^{j}) = \psi(g^{i+j})=h^{i+j}=\psi(a)\psi(b)$$
+
+A concrete example of an isomorphism between groups is the map from $(\mathbb{Z}/m\mathbb{Z},+) \to (G,\star)$ where $G$ is cyclic. We define it as $[i]_{n} \to b^{i}$ $n$ being the order of $G$
+
+
+\section{Week 7}
+We now consider what's called the discrete exponent problem. Suppose we have a finite group $G,\star$ of size $N$ with generator $g$. We are asked to find the $\alpha$ such that $h = g^{\alpha}$. Doing this the bruteforce way would be to construct all elements $g^{i}$ with $i\leq \alpha$ at the cost of $\alpha - 1$ which is $O(n)$. But we can do better. We pick some $k$ and compute all $g^{k}$. We also then compute $bg^{-i}$. Now we suppose some common element such that $g^{n} \equiv hg^{-mi} \bmod{n}$ Then we have that $a^{mi+n} = h$ which solves the problem. This will take us $O(\frac{N}{B})$ steps.
+\\
+
+We are now ready to present the RSA encryption scheme.
+\begin{definition}\textbf{RSA scheme}
+Let $K_{pr} = \{d,m\}$ be the private key and $K_{p} = \{e,m\}$ our public key. Upon Bob wanting to send Alice a message, Alice sends $K_{p}$ to Bob which Bob uses the encrpyt his message and send the ciphertext back to Alice. But before, to come up with $e,m$ Alice must pick to large primes $p$ and $q$ and $m$ must a multiple of $p-1$ and $q-1$. We may do this either by taking $lcm(p-1,q-1)$ or by taking $\phi(pq)$
+\end{definition}
+
+
+
+
+
 
 
 
