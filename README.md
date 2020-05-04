@@ -53,7 +53,7 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
 
-[current-shield]: https://img.shields.io/badge/Semester_Two-red.svg
+[current-shield]: https://img.shields.io/badge/Current_Semester:Two-Green.svg
 [current-url]: https://github.com/alptheexplorer/epflLectureNotes#sm2
 
 
