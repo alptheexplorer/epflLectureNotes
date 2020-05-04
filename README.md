@@ -1,7 +1,7 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
 ![badge](https://img.shields.io/badge/Coming_soon:_project_files_alongside_lecture_notes-red.svg)
-[![Issues][issues-shield]][issues-url]
+[![Issues][current-shield]][current-url]
 
 
 # Welcome to the universe of my lecture notes
