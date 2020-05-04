@@ -1,6 +1,8 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
 ![badge](https://img.shields.io/badge/Coming_soon:_project_files_alongside_lecture_notes-red.svg)
+[![Issues][issues-shield]][issues-url]
+
 
 # Welcome to the universe of my lecture notes
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
@@ -51,6 +53,8 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
 
+[current-shield]: https://img.shields.io/badge/Semester_Two-red.svg
+[current-url]: https://github.com/alptheexplorer/epflLectureNotes#sm2
 
 
 
