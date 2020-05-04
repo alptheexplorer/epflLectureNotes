@@ -1,5 +1,7 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
+![badge](https://img.shields.io/badge/Coming_soon:_project_files_alongside_lecture_notes-red.svg)
+
 # Welcome to the universe of my lecture notes
 My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
 
