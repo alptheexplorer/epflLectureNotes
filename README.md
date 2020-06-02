@@ -4,8 +4,8 @@
 [![Issues][current-shield]][current-url]
 
 
-# Welcome to the universe of my lecture notes
-My lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below:
+# Computer Science as I learn it!
+These are my lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below (may I remind you that these notes are mainly summaries and you will need more material to succeed at the exams in EPFL):
 
 1. [How I take them](#inf)
 2. [ SemesterOne-2019](#sm1)
