@@ -10,6 +10,7 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 1. [How I take them](#inf)
 2. [ SemesterOne-2019](#sm1)
 3. [ SemesterTwo-2020](#sm2)
+4. [ A collection of useful links I've gathered over time](#useful)
 
 
 <a name="inf"></a>
@@ -46,6 +47,11 @@ I will soon release a video on how I take these notes. Meanwhile tune into my Yo
 > Digital Systems design
 
 > AICC 2 [Latest AICC2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
+
+
+<a name="useful"></a>
+## A collection of useful links I've gathered over time
+[Missing semester of CS by MIT](https://missing.csail.mit.edu/)
 
 
 **(If you appreciate this sort of open source content, buy me a coffee but only if you genuinely just feel like it)**
