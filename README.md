@@ -44,7 +44,7 @@ And a vlog:
 ## SemesterTwo-2020
 
 > Practice of OOP [Latest Java notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
-![badge]https://img.shields.io/badge/lecture_notes-blue.svg
+![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
 
 > Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
