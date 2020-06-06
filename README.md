@@ -25,6 +25,7 @@ And a vlog:
 
 <a name="sm1"></a>
 ## SemesterOne-2019
+![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
 > Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
 
 > Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
