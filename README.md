@@ -42,15 +42,14 @@ And a vlog:
 
 <a name="sm2"></a>
 ## SemesterTwo-2020
-
-> ![badge](https://img.shields.io/badge/lecture_note-blue.svg) Practice of OOP [Latest Java notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
+![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
+> Practice of OOP [Latest Java notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
 
 > Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
-> Digital Systems design
-
 > AICC 2 [Latest AICC2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
 
+![badge](https://img.shields.io/badge/projects-green.svg)
 
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
