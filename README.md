@@ -51,7 +51,7 @@ And a vlog:
 
 ![badge](https://img.shields.io/badge/projects-green.svg)
 > Practice of OOP [RIGEL project]
-https://github.com/alptheexplorer/RIGEL
+(https://github.com/alptheexplorer/RIGEL)
 
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
