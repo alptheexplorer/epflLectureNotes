@@ -48,7 +48,6 @@ right  = 2.75cm]{geometry}
 \begin{document}
 
 \maketitle
-\tableofcontents
 \clearpage
 
 \section{Week 2}
@@ -569,13 +568,106 @@ We now consider what's called the discrete exponent problem. Suppose we have a f
 
 We are now ready to present the RSA encryption scheme.
 \begin{definition}\textbf{RSA scheme}
-Let $K_{pr} = \{d,m\}$ be the private key and $K_{p} = \{e,m\}$ our public key. Upon Bob wanting to send Alice a message, Alice sends $K_{p}$ to Bob which Bob uses the encrpyt his message and send the ciphertext back to Alice. But before, to come up with $e,m$ Alice must pick to large primes $p$ and $q$ and $m$ must a multiple of $p-1$ and $q-1$. We may do this either by taking $lcm(p-1,q-1)$ or by taking $\phi(pq)$
+Let $K_{pr} = \{d,m\}$ be the private key and $K_{p} = \{e,m\}$ our public key. Upon Bob wanting to send Alice a message, Alice sends $K_{p}$ to Bob which Bob uses the encrpyt his message and send the ciphertext back to Alice. But before, to come up with $e,m$ Alice must pick to large primes $p$ and $q$ and $m$ must a multiple of $p-1$ and $q-1$. We may do this either by taking $lcm(p-1,q-1)$ or by taking $\phi(pq)$. Now here is how we derive the rest of the scheme:
+We start of with Euler's theorem which states for $m,n$ are coprime:
+$$m^{\phi(n)} \equiv 1 \bmod{n}$$
+Now what suits are need is a relation of the form:
+$$m^{k\phi(n) + 1} \equiv m \bmod{n}$$
+Hence we have that:
+$$ed = k\phi(n)+1$$
+Now the reason finding a $d$ that satisfies this is equivalent to finding an integer(guaranteed to exist through Bezout because we selected $e$ coprime to $\phi(n)$) that satisfies:
+$$d = \frac{k\phi(n)+1}{e}$$
+But for someone who doesn't know our $p$ and $q$ this is extremely hard since they must factor $n$ into two primes to calculate $\phi(n)$. 
 \end{definition}
 
 
+\section{Week 8 onwards}
+We now move our focus to the physical transmission of data through channels. We have two types of channels: \textbf{error channels} and \textbf{erasure channels}. Erasures can occur for instance due to destructive interference or some networking error. Now let's introduce some terminology. A \textbf{code block} is some $C \subseteq A^{n}$. The \textbf{code rate} is defined as $\frac{k}{n}$ with $k = \log_{|A|}{|C|}$. The question at this stage is, what is the most efficient way to choose an optimal code correcting encoding. We define the \textbf{Hamming distance} between two source codes as:
+$$d(x,y) = |\{i \in \{1,\ldots,n\} \ x_{i} \not = y_{i} \}|$$
+Hence the minimal distance is that between some $x,y \in C$ such that $d(x,y)$ is minimum. To develop intuition for this, a minimum Hamming distance implies the maximum number of errors we can detect. If for instance some encoding has a minimum distance of $4$, then we can detect an error of size 3 but not of 5. Thus the larger the distance, the better. Now two theorems.
 
+\begin{theorem}
+An encoding is able to correct an erasure if an only if its weight is $p < d_{min}$
+\end{theorem}
 
+\begin{theorem}
+An encoding is able to correct an error if and only if its weight is $p < \frac{d_{min}}{2}$
+\end{theorem}
 
+We now ask how many searches do we need in general to determine $d_{min}$ for some encoding. Taking the brute-force approach we have that for the first code we do $m-1$ for the second $m-2$... checks which means our search is $O(\frac{m^{2}-m}{2})$. 
+\\
+
+Another question to be asked is, for our code block what properties would we like? First of all, $d_{min}$ should be as large as possible to allow for maximum error correction. Similarly, $n(\text{length of code block})$ should be as small as possible for minimal data storage. Finally, $|C|$ should be as large as possible because then each code block will be carrying maximal information. In answer to this, we have the Singleton bound theorem which states:
+
+\begin{theorem}
+For some code block $C$ of length $n$ and $k = \log_{|A|}{|C|}$ we have:
+$$d_{min}(C) - 1 \leq n- k$$
+\end{theorem}
+\\
+
+At this stage to further our discussion of how we determine $d_{min}$ with a complexity better than a quadratic one we must introduce some algebraic structures. 
+
+\begin{definition} \textbf{Field}
+\\
+A field is a triplet $(K, + , \cdot)$ with the following property:
+$$ (K, +) \ \text{and} \ (K/\{0\}, \cdot) \ \text{are abelian groups}$$
+Some examples of non-finite fields are:
+$$((\mathbb{R}, \mathbb{Q}, \mathbb{C}), +, \cdot)$$
+\end{definition}
+
+\begin{definition} \textbf{Vector space}
+\\
+
+\end{definition}
+
+Our first theorem about fields states the following:
+
+\begin{theorem}
+The order of $1(\text{multiplicative identity})$ with respect to $+$ is a prime number. This specific order is known as the characteristic of a field.
+\end{theorem}
+
+\begin{proof}
+Suppose that the order of $1$ is $m$ and $m$ is not prime letting $m = ab$. Then we have:
+
+$$\underbrace{1 + \hdots + 1}_{m} = 0$$
+$$\underbrace{(1 + \hdots + 1)}_{a} \underbrace{(1 + \hdots + 1)}_{b} = 0$$
+Now we have that either $a$ or $b$ must be $0$. But this then implies that $m = 0$ and $m$ is supposed to be a smallest non-zero integer. Hence we have a contradiction. 
+
+Now, in analogue to groups, two fields are said to be the 'same' if there is an isomorphism between two fields. Namely a bijective map that respects both of $(+,\cdot)$. 
+\end{proof}
+
+\begin{theorem}
+\begin{enumerate}
+    \item The cardinality of a finite field is an integer power of its characteristic.
+    \item All finite fields of the same cardinality are isomorphic.  
+    \item For every prime $p$ and positive integer $m$, there exists a finite field of cardinality $p^{m}$
+\end{enumerate}
+\end{theorem}
+
+Thus we have that for each $p,m$ there exists exactly one field of cardinality $p^{m}$. Otherwise said, all finite fields of cardinality $p^{m}$ are isomorphic to each other. To introduce some notation, a field of cardinality  $p^{m}$ is denoted $\mathbb{F}_{p^{m}}$ or $\mathbb{GF}(p^{m})$
+
+\begin{example}
+$$F_{2} = (\mathbb{Z}/2\mathbb{Z}, +, \cdot)$$
+$$F_{3} = (\mathbb{Z}/3\mathbb{Z}, +, \cdot)$$
+\end{example}
+
+But we quickly realize that we can't further state that $F_{4} = (\mathbb{Z}/4\mathbb{Z}, +, \cdot)$ since $2$ would not have a multiplicative inverse. So let's construct $F_{4}$, it looks like the below: 
+
+$$\vbox{\tabskip0.5em\offinterlineskip
+    \halign{\strut$#$\hfil\ \tabskip1em\vrule&&$#$\hfil\cr
+    +   & 0   & 1   & a & b     \cr
+    \noalign{\hrule}\vrule height 12pt width 0pt
+    0   & 0   & 1   & a & b    \cr
+    1   & 1   & 0&  b  & a    \cr
+    a & a & b   & 0  & 1    \cr
+    b   & b   & a   & 1   & 0   
+  
+}}$$
+
+The way we constructed the above is as follows:
+\begin{itemize}
+    \item We know the characteristic is $2$ so along the right diagonal all entries are 0. 
+\end{itemize}
 
 
 
