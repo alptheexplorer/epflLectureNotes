@@ -56,9 +56,11 @@ And a vlog:
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
 ![badge](https://img.shields.io/badge/general_stuff-orange.svg)
+
 [Missing semester of CS by MIT](https://missing.csail.mit.edu/)
 
 ![badge](https://img.shields.io/badge/software_engineering_related-green.svg)
+
 [Gleb Bahmutov's blog](https://glebbahmutov.com/)
 
 
