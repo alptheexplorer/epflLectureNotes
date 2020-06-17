@@ -64,6 +64,8 @@ And a vlog:
 [Gleb Bahmutov's blog](https://glebbahmutov.com/)
 
 
+
+## Hope you've found this repo useful!
 **(If you appreciate this sort of open source content, buy me a coffee but only if you genuinely just feel like it)**
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
