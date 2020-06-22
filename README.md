@@ -1,7 +1,7 @@
 <img src="extraFigures/epfl.png" align="right" width="100">
 
 ![badge](https://img.shields.io/badge/Coming_soon:sample_exam_pdfs-red.svg)
-![badge](https://img.shields.io/badge/Recently added:_project_files-green.svg)
+![badge](https://img.shields.io/badge/Recently_added:_project_files-green.svg)
 [![Issues][current-shield]][current-url]
 
 
