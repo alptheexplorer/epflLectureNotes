@@ -43,7 +43,7 @@ right  = 2.75cm]{geometry}
 
 \title{\textbf{Analysis 2 - Thomas Mountford}}
 \author{Alp Ozen}
-\date{Spring 2019}
+\date{Spring 2020}
 \newtheorem{example}{Example}[section]
 \newtheorem{axiom}{Axiom}
 \newtheorem{cor}{Corollary}
@@ -457,7 +457,7 @@ $$D_{j_{1},\ldots, j_{r}} = D_{i_{1},\ldots, i_{r}} $$ where the $i$ are a permu
 
 Now we introduce the hessian. 
 
-\begin{definition}\textbf{Hessian of a matrix}
+\begin{definition}\textbf{Hessian matrix}
 $$ Hess_{f}(x) = 
 \begin{bmatrix}
  D_{11} & \ldots & D_{1n}\\
@@ -493,7 +493,7 @@ Some $v: U \to \Rm$ is partially differentiable at $\bar{a} \in U$ if:
 $$D_{j}v_{i}(a) = \frac{\partial v_{i}}{\partial x_{j}}(a) \equiv \lim_{h \to 0} \frac{v_{i}(a+he_{j})-v_{i}(a)}{h} \ \text{exists}$$
 \end{definition}
 
-Thus the natural analogue of the Hessian now called the Jacobian of a vector space is(though the Jacobian lists partial derivatives of the first order:
+We introduce the Jacobian matrix as follows:
 \begin{definition}\textbf{Jacobian}
 $$ J_{f}(x) = 
 \begin{bmatrix}
@@ -526,7 +526,7 @@ Hence an intuitive way to calculate the $i,j$ position element of $J_{w \ o \ v}
     $$ \frac{\partial w_{i}(v(x))}{\partial x_{j}} = \sum_{k=1}^{n} \frac{\partial v_{k}}{\partial x_{j}}(x) \frac{\partial w_{i}}{\partial v_{k}}v(x)}$$
 \end{theorem}
 
-Let's build a better intuition for the Jacobian matrix. It's columns are simply partial derivatives of $v(x)$ with respect to $x_{i}$. Our conversely, the rows of the Jacobian are the gradient of $ith$ row of the function. Hence we have with i fixed a constant:
+Let's build a better intuition for the Jacobian matrix. It's columns are simply partial derivatives of $v(x)$ with respect to $x_{i}$. Or conversely, the rows of the Jacobian are the gradient of $ith$ row of the function. Hence we have with i fixed a constant:
 
 $$J_{W}(x)_{i,j} = \grad f(x)_{i}^{T}$$
 
@@ -534,7 +534,7 @@ $$J_{W}(x)_{i,j} = \grad f(x)_{i}^{T}$$
 \subsection{Extrema}
 For some critical point $a$, we have that $\grad f(a) = 0$. This means that locally our function when approximated at second order becomes:
 
-$$f(x) = f(a) + (x-a)^{T}Hess f(a)(x-a)$$. Now if all eigenvalues of $Hess f(a)$ are positive then no matter which direction we go, well have that $a$ is a minimum. Similarly, if all eigenvalues of $Hess f(a)$ are negative, then $a$ is a minimum. Finally, if some are negative and some positive, we have a saddle point. To stress why this is true, just realize that an eigenvalue is defined as (in this case: $Hess f(a) = \lambda a$
+$$f(x) = f(a) + (x-a)^{T}Hess f(a)(x-a)$$. Now if all eigenvalues of $Hess f(a)$ are positive then no matter which direction we go, well have that $a$ is a minimum. Similarly, if all eigenvalues of $Hess f(a)$ are negative, then $a$ is a minimum. Finally, if some are negative and some positive, we have a saddle point. To stress why this is true, just realize that an eigenvalue is defined as $Hess f(a) = \lambda a$
 
 \subsection{Implicit function theorem}
 
@@ -555,13 +555,13 @@ Let $f: U \to \mathbb{R}$ be of class $C^{1}$(ie. continuous partial derivatives
 We may now also generalize to higher dimension:
 
 \begin{theorem} \textbf{Implicit function theorem}
-Let $F \in C^{1}$ such that $f(\bar{x},y)=0$ and $\frac{\partial F}{\partial y} \not=0$ Then there exists a unique $y = f(\bar{x})$ such that
+Let $F \in C^{1}$ such that $F(\bar{x},y)=0$ and $\frac{\partial F}{\partial y} \not=0$ Then there exists a unique $y = f(\bar{x})$ such that
 \\
 1. graph of $f$ is in $U$
 \\
 2. $f(\bar{x}) = y$
 \\
-3. $f(\bar{x},y) =0$
+3. $F(\bar{x},y) =0$
 \\
 4. $\frac{\partial f}{\partial x_{i}} = \frac{ - \frac{\partial F}{\partial x_{i}}}{\frac{  \partial F}{\partial y}}$
 \end{theorem}
@@ -589,11 +589,30 @@ Local invertible means invertible on the linear approximation which is the Jacob
 We now define critical points and extrema for multivariable functions.
 \begin{definition}\textbf{Extrema}
 \begin{itemize}
-    \item $a \in U$ is a local extremum of $f$ if $\exists \  \delta $ such that $f(a) \geq f(x) \forall x \in B(a,\delta)$
-    \item $a \in U$ is a critical point of $f$ if $\grad f(a) = 0$
+    \item $a \in U$ is a local extremum of $f$ if $\exists \  \delta $ such that $f(a) \geq \text{or} \leq f(x) \forall x \in B(a,\delta)$
+    \item $a \in U$ is a critical/stationary point of $f$ if $\grad f(a) = 0$
+    \item $a \in U$ is a saddle point if $\grad f(a) = 0$ but $a$ is not a local extremum
 \end{itemize}
 
 \end{definition}
+\\
+
+Some practical points an engineer must remember about extrema are that the Hessian is extremely useful in analyzing extrema, that is:
+
+\begin{itemize}
+    \item If we have a critical point and also the eigenvalues of the Hessian are positive-definite, than $f$ admits a local minimum(resp. local max when negative-definite)
+    \item If we have a critical point and the eigenvalues of the Hessian are mixed, than we have a saddle point. 
+\end{itemize}
+
+Yet another test for local max./min. and saddle point is the following:\textcolor{red}{taken from stackOverflow answer of user/169780}
+\\
+
+$det(Hf(a))=0$ means that there is a zero eigenvalue and so the test fails.
+\\
+$det(Hf(a))<0$ means that both eigenvalues have different sign, so we have a saddle point at a.
+\\
+$det(Hf(a))>0$ means that both eigenvalues have the same sign: either both positive or both negative, and we must use the trace to decide which it is. In fact, rather than use the trace, it actually suffices to just use the top left entry $\frac{\partial^2 f}{\partial x^2} (a)$ of $Hf(a)$ to decide, by Sylvester's criterion. In other words, $\frac{\partial^2 f}{\partial x^2}(a) > 0$ means both eigenvalues are positive (local min at a a), whereas $\frac{\partial^2 f}{\partial x^2} (a) < 0$ means both eigenvalues are negative (local max at a).
+\\
 
 We now naturally ask how we go about finding a min/max given a constraint on our variables or the domain we can consider. For instance consider the graphic below:
 \begin{figure}[H]
@@ -604,7 +623,7 @@ We now naturally ask how we go about finding a min/max given a constraint on our
 We have limited our $x,y$ for some two variable $f$ to equal $0$. We then ask, with this constraint, at which $x,y$ does $f$ attain a maximum or a minimum. This is solved by lagrange multipliers
 
 \begin{theorem}
-Let $h,f U \to \mathbb{R}$ be of class $C^{1}$ and let $M = \{x\in U|f(x)=0\}$ Now let $a \in M$ and let $a$ be such that $h(a)$ is a local extremum. Then $\exists \lambda:$
+Let $h,f: U \to \mathbb{R}$ be of class $C^{1}$ and let $M = \{x\in U|f(x)=0\}$ Now let $a \in M$ and let $a$ be such that $h(a)$ is a local extremum. Then $\exists \lambda:$
 $$\grad h(a) + \lambda \grad f(a) = 0$$
 
 \end{theorem}
@@ -618,6 +637,37 @@ $$g^{\prime}(y) = \int_{a}^{b} \frac{\partial f(x,y)}{\partial y}dx$$ Using this
 \begin{example}
 Suppose we want to evaluate $\int_{0}^{b}x^{2}\cos{x}dx$. We define $g(y) = \int_{0}^{b}\cos{xy}dx$ Now by our above theorem we have $g^{\prime} = - \int_{0}^{b}x \sin{xy} dx$ and $g^{\prime\prime} = - \int_{0}^{b}x^{2} \cos{xy} dx$. And now $-g^{\prime\prime}(1) = \int_{0}^{b}x^{2} \cos{x} dx $ Now we may simply evaluate the integral by evaluating $g$ and differentiating twice. 
 \end{example}
+\\
+
+A critical result is \textbf{Fubini's theorem}:
+
+\begin{theorem}\textbf{Fubini's theorem}
+Let $f:D \to \mathbb{R}$ How may we then define the following double integral $$\int{\int_{D}f(x,y) dxdy}$$
+
+As it turns out, if we have some:
+
+$$g(x) = \int_{a}^{b} f(x,y) dx \  h(x) = \int_{d}^{c} f(x,y) dy $$ 
+with $D = [a,b] \cross [c,d]$ then it holds that:
+$$\int{\int_{D}f(x,y) dxdy} = \int_{c}^{d} g(y)dy = \int_{a}^{b} h(y)dx$$
+
+\end{theorem}
+
+\subsection{Change of variables}
+Let's first of all present the change of variables formula for 2-d:
+
+\begin{theorem}\textbf{Change of variables in 2-d}
+\\
+
+$$ \int \int_{R} f(x,y)dydx = \int \int_{G} f(g(u,v),h(u,v)) J(u,v)dudv $$
+
+where $J(u,v)$ known as the Jacobian is:
+
+$$J(u,v) = \det{\begin{bmatrix}
+ \frac{\partial x}{\partial u} & \frac{\partial y}{\partial u}\\
+ \frac{\partial x}{\partial v} & \frac{\partial x}{\partial v}
+\end{bmatrix}}$$
+
+\end{theorem}
 
 
 

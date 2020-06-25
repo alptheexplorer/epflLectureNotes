@@ -617,7 +617,18 @@ $$((\mathbb{R}, \mathbb{Q}, \mathbb{C}), +, \cdot)$$
 
 \begin{definition} \textbf{Vector space}
 \\
-
+A non-empty set $V$ is a vector space over a field $F$ if:
+\begin{enumerate}
+    \item There exists a binary operation $+$ where $\forall a,b \in V$, $a+b \in V$
+    \item There is a mixed operation called scalar multiplication $(\cdot)$ where $\forall c \in F$ and $\forall v \in V$ we have $c\cdot v \in V$
+    \item and the below hold:
+    \begin{itemize}
+        \item $(V,+)$ is a commutative group 
+        \item associativity: $(ab)v = a(bv)$
+        \item identity: $1v = v$
+        \item scalar multiplication is right,left distributive over addition 
+    \end{itemize}
+\end{enumerate}
 \end{definition}
 
 Our first theorem about fields states the following:
@@ -668,8 +679,52 @@ The way we constructed the above is as follows:
 \begin{itemize}
     \item We know the characteristic is $2$ so along the right diagonal all entries are 0. 
 \end{itemize}
+\\
+
+Similarly, we can also construct the multiplication table which looks as follows:
+ $$\vbox{\tabskip0.5em\offinterlineskip
+    \halign{\strut$#$\hfil\ \tabskip1em\vrule&&$#$\hfil\cr
+    \cdot   & 0   & 1   & a & b     \cr
+    \noalign{\hrule}\vrule height 12pt width 0pt
+    0   & 0   & 0   & 0 & 0    \cr
+    1   & 0   & 1&  a  & b    \cr
+    a & 0 & a   & b  & 1    \cr
+    b   & 0   & b   & 1   & a   
+  
+}}$$
+\\
+
+It is now time to use our understanding of vector spaces and fields to build so-called \textit{linear codes}.
+
+\begin{definition}\textbf{Linear code}
+A code $C \subseteq \mathbb{F}^{n}$ is linear $C$ is a subspace of $\mathbb{F}^{n}$. Given this definition of $C$ as a subspace, we add the note that the cardinality of $C$ is precisely $|F|^{k}$ for the reason that $k$ is our dimension hence we have $k$ many choices to make out of $|F|$ many possibilities.
+\end{definition}
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics{src/lin1.JPG}
+    \caption{Example of a linear code}
+\end{figure}
+
+\begin{theorem}
+If $V$ is an $n$ dimensional vector space over some finite field $F$, then $V$ is finite and $card(V) = card(K)^{n}$
+\end{theorem}
+
+Using the above theorem, we have a means to check if a code $C$ is a linear code over $F_{p^{m}}$. We simply verify that $card(C) \not = p^{mk}$. 
+\\
+
+We now present a theorem about minimal distance. Defining \textbf{Hamming weight} denoted $\omega(\vec{x}) = d(\vec{0},\vec{x})$ we have that:
+
+$$d_{min}(C) = \min_{\vec{x} \in C,  \vec{x} \not = \vec{0}}}{\omega{(\vec{x})}}$$
+\\
+
+We now come to discuss \textit{generator matrices}. A generator matrix has as it rows the basis vectors for some code $C$. Clearly bases are not unique hence we can have more than one generator matrix, but precisely how many? To see this, let $(\vec{c_{1}}, \ldots, \vec{c_{k}})$ be a basis. How many choices of $\vec{c_{1}}$ are there? Well given that $|F| = q$ we have $q^{k}-1$ choices where we subtract a one to account for the zero vector. Then for $\vec{c_{2}}$ we have $q^{k}-q$ many choices. This time we subtract $q$ because there are $q$ many scalar multiples of $\vec{c_{1}}$ that we must exclude. Hence the total number of generator matrices for a code $C$ turns out to be: $(q^{k}-1)(q^{k}-q)\ldots(q^{k}-q^{k-1})$.
+\\
+We say that a generator matrix is in \textit{systematic form} if it is of form:
+$$G_{s} = [\underbrace{I_{k}}_{kxk}, \underbrace{P}_{kxn-k}]$$
+Another way to view a systematic generator matrix is to say that it is in \textit{reduced echelon form}. The advantage of a systematic generator matrix is that our encoding mapping is as follows:
+$$\vec{u} \in \mathbb{F}^{k} \to \vec{c} = (\vec{u}, \vec{u}P)$$ which means that the first $k$ entries of the output vector correspond exactly to our information bits hence inverting the encoding function(which a decoder does) is as simple as reading the first $k$ entries of the codeword. 
 
 \section{Useful links}
 Amazing YouTube playlist: \hyperlink{ https://www.youtube.com/playlist?list=PLE125425EC837021F}{YT Information Theory playlist}
