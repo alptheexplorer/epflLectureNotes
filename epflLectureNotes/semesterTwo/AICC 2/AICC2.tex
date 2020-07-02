@@ -581,7 +581,7 @@ But for someone who doesn't know our $p$ and $q$ this is extremely hard since th
 \end{definition}
 
 
-\section{Week 8 onwards}
+\section{Week 8-12}
 We now move our focus to the physical transmission of data through channels. We have two types of channels: \textbf{error channels} and \textbf{erasure channels}. Erasures can occur for instance due to destructive interference or some networking error. Now let's introduce some terminology. A \textbf{code block} is some $C \subseteq A^{n}$. The \textbf{code rate} is defined as $\frac{k}{n}$ with $k = \log_{|A|}{|C|}$. The question at this stage is, what is the most efficient way to choose an optimal code correcting encoding. We define the \textbf{Hamming distance} between two source codes as:
 $$d(x,y) = |\{i \in \{1,\ldots,n\} \ x_{i} \not = y_{i} \}|$$
 Hence the minimal distance is that between some $x,y \in C$ such that $d(x,y)$ is minimum. To develop intuition for this, a minimum Hamming distance implies the maximum number of errors we can detect. If for instance some encoding has a minimum distance of $4$, then we can detect an error of size 3 but not of 5. Thus the larger the distance, the better. Now two theorems.
@@ -725,6 +725,91 @@ We say that a generator matrix is in \textit{systematic form} if it is of form:
 $$G_{s} = [\underbrace{I_{k}}_{kxk}, \underbrace{P}_{kxn-k}]$$
 Another way to view a systematic generator matrix is to say that it is in \textit{reduced echelon form}. The advantage of a systematic generator matrix is that our encoding mapping is as follows:
 $$\vec{u} \in \mathbb{F}^{k} \to \vec{c} = (\vec{u}, \vec{u}P)$$ which means that the first $k$ entries of the output vector correspond exactly to our information bits hence inverting the encoding function(which a decoder does) is as simple as reading the first $k$ entries of the codeword. 
+
+We now define a parity check matrix as: $[ -P^{T} | I ]$
+
+\begin{theorem}
+Let $C \subseteq \mathbb{F}^{n}$ be a linear code and $H$ a parity check matrix. Then $d_min$ is the smallest number of linearly dependent columns of $H$. 
+\end{theorem}
+
+
+\section{Week 13}
+The main aim of this week is to describe a decoder for some linear code that is able to decide if someoutput vector $\vec{y}$ is a codeword. To do this, we use the fact that each codeword is a linear combination of the basis vectors which gives us a set of linear equation. Hence we formulate this to say that some $\vec{y}$ is a codeword iff $\vec{y}H^{T} = \vec{0}$ where $H$ is called a parity check matrix. Now because our code is linear, suppose that the original message $\vec{x}$ becomes mutated by some $\vec{e}$. Now by definition we have $\vec{x}H^{T} = \vec{0}$. This means that $(\vec{e} + \vec{x})H^{T} = \vec{y}H^{T} = \vec{e}H^{T}$. Hence to recover the original message, we store the \textit{syndrome} of each code (ofcourse provided it is non-zero) in a look-up table. Using this idea, we construct the so-called \textbf{Standard-array decomposition}. To construct this, we use the notion of a coset from group theory. For some group $G$ a coset is defined as:
+$$ a \thicksim b \equiv \exists h \in H \leqslant G \ b = h \star a$$ Thus when we pick a subgroup of $G$ this defines an equivalence relation where the equivalence classes are called cosets. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{src/coset.JPG}
+    \label{fig:my_label}
+\end{figure}
+
+Now as we see from the figure, the subgroup is formed by our Code $C$. Then each row will have the same syndrome because we are adding the same error. Now a \textbf{coset leader} is one element from each row ie. coset that represents the syndrome. We choose the entry with the smallest weight because it is the most plausible error. Now let's see a real example:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{src/cosres.JPG}
+    \label{fig:my_label}
+\end{figure}
+
+Given that the decoder has the output $\vec{y}$ and the syndrome for each error vector it is trivial to correct the error. Now it is impractical to decode by constructing the whole coset table. Instead we do the following:
+
+\begin{enumerate}
+    \item Precompute all coset leaders and the corresponding syndrome
+    \item Find the syndrome of the received $\vec{y}$
+    \item Using our lookup table, we find the coset leader $\vec{t_{i}}$ for the found syndrome
+    \item Finally, the decoded message is $\vec{x} = \vec{y} - \vec{t_{i}}$
+\end{enumerate}
+\section{Week 14}
+We end the course with a discussion of Reed-Solomon codes. Here is how we generate a Reed-Solomon encoding:
+
+\begin{enumerate}
+    \item We choose an alphabet as a finite field $\mathbb{K}$ with cardinality $\geq$ $n$.
+    \item We choose $n$ elements from the field $\mathbb{K}$ denoted $a_{1},\ldots,a_{n}$
+    \item We list all sequences from $K^{k}$ where $k$ denote the codeword size. In total we would have $k^{|K|}$ many sequences. 
+    \item The idea now is, we define a mapping through a polynomial from $K^{k} \to K^{n}$. The mapping is rule is defined as $y_{1} + y_{2}x^{1} \ldots + y_{k}x^{k}$ where $y_{k} = u_{k}$ and the output which is of dimension $n$ has its $ith$ given by the polynomial evaluated at $a_{i}$.
+\end{enumerate}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.6]{src/rsfig.JPG}
+    \label{fig:my_label}
+\end{figure}
+
+With this we come to the end of the course, the notes are by no means exhaustive, they are merely meant to be a summary! We finally list some useful facts to aid with performance in the final exam :)
+
+
+\section{Useful facts by week}
+
+\subsection{Week 11}
+
+
+\subsection{Week 12}
+\begin{itemize}
+    \item For a finite field, the order of $1$ with respect to $+$ is called the \textbf{characteristic}
+    \item The characteristic is a prime number
+    \item All finite fields have cardinality $p^{m}$ with $p$ being the characteristic
+    \item All finite fields of same cardinality are isomorphic
+    \item For every $p^{m}$ there exists a finite field of cardinality $p^{m}$
+    \item $\mathbb{Z}/k\mathbb{Z}$ is a field only if $k$ is prime
+\end{itemize}
+
+
+\subsection{Week 13}
+
+\begin{itemize}
+    \item For some $G = [I_{K} | P]$ we have $H = [-P^{T}|I_{n-k}]$
+    \item Let $H$ be a parity-check matrix, then the minimum distance of a code $C$ is the least integer $d$ such that there are $d$ linearly dependent columns of $H$.
+\end{itemize}
+
+\subsection{Week 14}
+\begin{itemize}
+    \item A Reed-Solomon code with design parameters is a linear code with $d_{min} = n - k + 1$
+    \item \textbf{Singleton bound:} Let $C$ be a code with alphabet length $q$, minimum distance $d$ and block length $n$ then $|C| \leq q^{n-d+1}$
+    \item A parity check matrix is $(n-k) \times n$ for the reason that $n$ is the codeword size and $k$ the dimension meaning we have $n-k$ linear equations with $n$ many variables.
+\end{itemize}
+
+
 
 \section{Useful links}
 Amazing YouTube playlist: \hyperlink{ https://www.youtube.com/playlist?list=PLE125425EC837021F}{YT Information Theory playlist}
