@@ -568,7 +568,7 @@ We now consider what's called the discrete exponent problem. Suppose we have a f
 
 We are now ready to present the RSA encryption scheme.
 \begin{definition}\textbf{RSA scheme}
-Let $K_{pr} = \{d,m\}$ be the private key and $K_{p} = \{e,m\}$ our public key. Upon Bob wanting to send Alice a message, Alice sends $K_{p}$ to Bob which Bob uses the encrpyt his message and send the ciphertext back to Alice. But before, to come up with $e,m$ Alice must pick to large primes $p$ and $q$ and $m$ must a multiple of $p-1$ and $q-1$. We may do this either by taking $lcm(p-1,q-1)$ or by taking $\phi(pq)$. Now here is how we derive the rest of the scheme:
+Let $K_{pr} = \{d,m\}$ be the private key and $K_{p} = \{e,m\}$ our public key. Upon Bob wanting to send Alice a message, Alice sends $K_{p}$ to Bob which Bob uses to encrpyt his message and send the ciphertext back to Alice. But before, to come up with $e,m$ Alice must pick to large primes $p$ and $q$ and $m$ must a multiple of $p-1$ and $q-1$. We may do this either by taking $lcm(p-1,q-1)$ or by taking $\phi(pq)$. Now here is how we derive the rest of the scheme:
 We start of with Euler's theorem which states for $m,n$ are coprime:
 $$m^{\phi(n)} \equiv 1 \bmod{n}$$
 Now what suits are need is a relation of the form:
@@ -781,10 +781,55 @@ With this we come to the end of the course, the notes are by no means exhaustive
 
 \section{Useful facts by week}
 
-\subsection{Week 11}
+\subsection{Week 2 (Source coding)}
+\begin{itemize}
+    \item The code is uniquely decodable $\implies$ code satisfies KI(Kraft inequality)
+    \item Codewords satisfy KI $\implies$ There exists a prefix-free code with those codeword lengths
+    \item All codewords have the same length $\implies$ The code is prefix free
+    \item $C$ is with prefix $\not \implies$ $C$ is not uniquely decodable
+    \item $C$ does not satisfy KI $\implies$ $C$ is with prefix 
+    \item We can always replace a uniquely decodable code with a prefix free code of the same length 
+\end{itemize}
+
+\subsection{Week 6 (Intro to cryptography)}
+\begin{itemize}
+    \item \textbf{Perfect secrecy:} holds when plaintext $T$ and cyphertext $C$ are statistically independent, that is $P(T|C) = P(T)$ or better said $P(T\cap C) = P(T)$
+    \item \textbf{One-time pad:} For a message in binary of size $k$, choose some $t \in \{0,1\}^{k}$ and perform $c = t + k$. Note that the one-time pad achieves perfect secrecy. 
+    \item Perfect secrecy implies $H(t) \leq H(k)$
+\end{itemize}
 
 
-\subsection{Week 12}
+\subsection{Week 8 (Modular arithmetic)}
+\begin{itemize}
+    \item $[a]_{m}$ in $\mathbb{Z}/m\mathbb{Z}$ has a solution only if $gcd(m,a)=1$
+    \item \textbf{Bezout :} $gcd(a,b) = au + bv$
+\end{itemize}
+
+\subsection{Week 9 (Groups)}
+\begin{itemize}
+    \item Cartesian product of abelian groups is also abelian 
+    \item \textbf{Lagrange's theorem:} Let $G$ be an abelian group of cardinality $n$. Then the order of each element divides $n$. 
+\end{itemize}
+
+\subsection{Week 10 (Encryption)}
+\begin{itemize}
+    \item \textbf{Chinese Remainder Theorem}: For $m_{1},m_{2}$ relatively prime, we have that $\phi: \mathbb{Z}/m_{1}m_{2} \to \mathbb{Z}/m_{1} \times \mathbb{Z}/m_{2} $ is an isomorphism
+    \item Let $p$ and $q$ be primes and $k$ a multiple of $(p-1)$ and $(q-1)$. Then for every integer $a$ and $l$ we have $[a]_{pq}^{lk+1} = [a]_{pq}$
+    \item \textbf{RSA scheme:} Receiver generates $m,e,d \xrightarrow{}$ encoder which receives $K_{p} = (m,e)$ encrypts message $msg$ as $msg^{e} \bmod{m} \xrightarrow{}$  Decoder does $msg^{ed} \bmod{m}$
+\end{itemize}
+
+\subsection{Week 11 (Error and erasure channels)}
+\begin{itemize}
+    \item A codeword is an element of $A^{n}$
+    \item Channel encoding maps information bits of size $n$ to a vector of size $k > n$
+    \item $k = \log_{|A|}|C|$ and the rate is $\frac{k}{n}$
+    \item An MDS recorder detects an erasure of size $m < d_{min}$
+    \item An MDS recorder detects an error of size $m < \frac{d_{min}}{2}$
+    \item We need $\frac{M^{2} - M}{2}$ many checks to determine $d_{min}$ via brute-force.
+\end{itemize}
+
+
+\subsection{Week 12 (Finite fields and vector spaces)}
 \begin{itemize}
     \item For a finite field, the order of $1$ with respect to $+$ is called the \textbf{characteristic}
     \item The characteristic is a prime number
@@ -795,18 +840,20 @@ With this we come to the end of the course, the notes are by no means exhaustive
 \end{itemize}
 
 
-\subsection{Week 13}
+\subsection{Week 13 (Linear Codes and Channel correction)}
 
 \begin{itemize}
     \item For some $G = [I_{K} | P]$ we have $H = [-P^{T}|I_{n-k}]$
     \item Let $H$ be a parity-check matrix, then the minimum distance of a code $C$ is the least integer $d$ such that there are $d$ linearly dependent columns of $H$.
 \end{itemize}
 
-\subsection{Week 14}
+\subsection{Week 14 (Linear codes: Reed-Solomon)}
 \begin{itemize}
     \item A Reed-Solomon code with design parameters is a linear code with $d_{min} = n - k + 1$
     \item \textbf{Singleton bound:} Let $C$ be a code with alphabet length $q$, minimum distance $d$ and block length $n$ then $|C| \leq q^{n-d+1}$
     \item A parity check matrix is $(n-k) \times n$ for the reason that $n$ is the codeword size and $k$ the dimension meaning we have $n-k$ linear equations with $n$ many variables.
+    \item For a Reed-Solomon code, the $a_{i}$ must be distinct. 
+    \item A Reed-Solomon code fullfills the Singleton bound with equality, that is $d_min - 1 = n -k$
 \end{itemize}
 
 
