@@ -14,15 +14,6 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 4. [ A collection of useful links I've gathered over time](#useful)
 
 
-<a name="inf"></a>
-## My vision
-If you want to find out more about me, check out my YouTube channel. I produce fitness content and do some coding live streams on the occasional times I feel like it. I will also be very glad to hear about your suggestions or new ideas. My vision for the long-run is to somehow tie in my passion for fitness and computer science together but I still don't know how haha :) 
-<img src="extraFigures/youtube.png" align="right" width="40">
-So here's a coding stream:
-[My first time live coding](https://www.youtube.com/watch?v=JcAwaJKBcWw)
-And a vlog:
-[2020 WINTER VLOG](https://www.youtube.com/watch?v=sX2bj2aMadM&t=80s)
-
 
 <a name="sm1"></a>
 ## SemesterOne-2019
