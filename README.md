@@ -59,7 +59,7 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
 
-[current-shield]: https://img.shields.io/badge/Current_Semester:Two-Green.svg
+[current-shield]: https://img.shields.io/badge/Current_Semester:Three-Orange.svg
 [current-url]: https://github.com/alptheexplorer/epflLectureNotes#sm2
 
 
