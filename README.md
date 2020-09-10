@@ -8,10 +8,11 @@
 # Computer Science as I learn it!
 These are my lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. For your convience I have added the direct links below (may I remind you that these notes are mainly summaries and you will need more material to succeed at the exams in EPFL):
 
-1. [How I take them](#inf)
-2. [ SemesterOne-2019](#sm1)
-3. [ SemesterTwo-2020](#sm2)
-4. [ A collection of useful links I've gathered over time](#useful)
+
+1. [ SemesterOne-2019](#sm1)
+2. [ SemesterTwo-2020](#sm2)
+2. [ SemesterThree-2020](#sm3)
+3. [ A collection of useful links I've gathered over time](#useful)
 
 
 
@@ -44,6 +45,10 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 
 ![badge](https://img.shields.io/badge/projects-green.svg)
 > Practice of OOP [RIGEL project](https://github.com/alptheexplorer/RIGEL)
+
+
+<a name="sm3"></a>
+## SemesterThree-2020
 
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
