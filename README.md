@@ -46,6 +46,9 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 ![badge](https://img.shields.io/badge/projects-green.svg)
 > Practice of OOP [RIGEL project](https://github.com/alptheexplorer/RIGEL)
 
+```diff
++ semester two is complete
+```
 
 <a name="sm3"></a>
 ## SemesterThree-2020
