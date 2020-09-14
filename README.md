@@ -14,7 +14,10 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 2. [ SemesterThree-2020](#sm3)
 3. [ A collection of useful links I've gathered over time](#useful)
 
-<span style="color:red; font-family:Georgia; text-align:center; font-size:2em;">The goal of the Women’s Enterprise Action Loan Fund, (WEALF): helping women business owners become financially self-sufficient.</span>
+<span style="color:red; font-family:Georgia; text-align:center; font-size:2em;">1. [ SemesterOne-2019](#sm1)
+2. [ SemesterTwo-2020](#sm2)
+2. [ SemesterThree-2020](#sm3)
+3. [ A collection of useful links I've gathered over time](#useful)</span>
 
 <a name="sm1"></a>
 ## SemesterOne-2019
