@@ -19,9 +19,9 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 <a name="sm1"></a>
 ## SemesterOne-2019
 ![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> Linear Algebra: [Latest linear algebra notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
+> [Linear algebra](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
 
-> Advanced information and computation: [Latest aicc notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
+> [Avanced information and computation](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
 
 > Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)
 
