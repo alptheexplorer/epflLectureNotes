@@ -21,11 +21,11 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 ![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
 > [Linear algebra](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
 
-> [Avanced information and computation](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
+> [Advanced information and computation 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
 
-> Analysis 1:  [Latest analysis notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)
+> [Analysis 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)
 
-> Programming in Java:  [Latest programming notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/IntroductionToProgramming-Sam/ch1.md)
+> [Intro to programming(JAVA)](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/IntroductionToProgramming-Sam/ch1.md)
 
 *Physics course has been omitted because noone likes physics*
 
@@ -37,14 +37,14 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 <a name="sm2"></a>
 ## SemesterTwo-2020
 ![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> Practice of OOP [Latest Java notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
+> [Practice of OOP in JAVA](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
 
-> Analysis 2 [Latest analysis 2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
+> [Analysis 2](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
 
-> AICC 2 [Latest AICC2 notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
+> [Advanced information and computation 2](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
 
 ![badge](https://img.shields.io/badge/projects-green.svg)
-> Practice of OOP [RIGEL project](https://github.com/alptheexplorer/RIGEL)
+> [OOP project](https://github.com/alptheexplorer/RIGEL)
 
 ```diff
 + semester two is complete
@@ -53,7 +53,7 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 <a name="sm3"></a>
 ## SemesterThree-2020
 ![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> Computer Architecture 1 [Latest compArch notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md) 
+> [Computer Architecture 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md) 
 
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
