@@ -52,6 +52,8 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 
 <a name="sm3"></a>
 ## SemesterThree-2020
+![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
+> Computer Architecture 1 [Latest compArch notes](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md) 
 
 <a name="useful"></a>
 ## A collection of useful links I've gathered over time
