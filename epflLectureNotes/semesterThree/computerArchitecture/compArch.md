@@ -5,4 +5,4 @@
 ### Datapath 
 The datapath consists of components capable of performing *arithmetic/logic* operations as well as components that *hold data*. 
 
-[title](src/w1.1.png)
+<img src="src/w1.1.png" width="500" >
