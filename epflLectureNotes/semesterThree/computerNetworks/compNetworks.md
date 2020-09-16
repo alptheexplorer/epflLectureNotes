@@ -9,5 +9,6 @@ Hence the telephone line will carry data and telephone signals simultaneously wi
 The alternative to DSL is *cable internet access* which uses the existing television service cable. Fiber optics will connect the cable head end to end users through fiber optics but generally the cable head end to the internet connection is done through coaxial cables hence the system being called a *HFC(hybrid fiber coax)*
 <img src="src/w1.2.png" width="500" >
 Yet another alternative is *FTTH(fiber to the home*. Each home has an optical network terminator that is connected to the neighbourhood splitter from which the connection to the central office happens through one shared fiber optic. 
+<img src="src/w1.3.png" width="500" >
 
 
