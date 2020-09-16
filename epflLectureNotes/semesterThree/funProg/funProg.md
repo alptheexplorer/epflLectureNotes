@@ -55,6 +55,5 @@ first(1,loop)
 .
 .
 ```
-
-
+Scala normally uses CBV. But if the type of a function parameter starts with a right arrow it will use CBN. 
 
