@@ -37,3 +37,27 @@ architecture test of tb_adder_combinatorial is
 begin
 end architecture test;
 ```
+
+We must now instantiate the DUT(Design under test) as follows:
+
+```vhdl 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity tb_adder_combinatorial is
+end tb_adder_combinatorial;
+architecture test of tb_adder_combinatorial is
+-- adder_combinatorial GENERICS
+constant N_BITS : positive range 2 to positive'right := 4;
+-- adder_combinatorial PORTS
+signal OP1 : std_logic_vector(N_BITS - 1 downto 0);
+signal OP2 : std_logic_vector(N_BITS - 1 downto 0);
+signal SUM : std_logic_vector(N_BITS downto 0);
+begin
+dut : entity work.adder_combinatorial
+generic map(N_BITS => N_BITS)
+port map(OP1 => OP1,
+OP2 => OP2,
+SUM => SUM);
+end architecture test;
+```
