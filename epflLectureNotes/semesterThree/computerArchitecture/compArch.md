@@ -23,6 +23,17 @@ The goal of this adder is to test a combinational and a sequential adder. Our te
   --vhdl 
     ---adder_combinatorial.vhd
     ---adder_sequential.vhd
-    
-  
+```
+
+Our testbench files will not compile since they are empty. So we fill them up in the rawest form possible 
+
+```vhdl 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity tb_adder_combinatorial is
+end tb_adder_combinatorial;
+architecture test of tb_adder_combinatorial is
+begin
+end architecture test;
 ```
