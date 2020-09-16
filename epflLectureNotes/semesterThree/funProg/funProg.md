@@ -55,5 +55,11 @@ first(1,loop)
 .
 .
 ```
-Scala normally uses CBV. But if the type of a function parameter starts with a right arrow it will use CBN. 
+Scala normally uses CBV. But if the type of a function parameter starts with a right arrow it will use CBN. To demonstrate this, we define the and function making sure its second argument is call by name:
+
+```scala
+def and(x: Boolean, y: => Boolean): Boolean =
+if x then y else false 
+```
+
 
