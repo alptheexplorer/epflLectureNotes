@@ -25,3 +25,7 @@ square(3) + square(2+2)
 9 + 4*4
 25
 ```
+
+The advantage of call-by-value is that every function argument is evaluted only once. In the second snippet, we see how 2+2 is evaluated twice. However, call-by-name has the advantage that a function argument is not evaluated if a parameter is unused in the evaluation of the function body. 
+
+
