@@ -59,6 +59,9 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 
 > [Functional programming | Scala](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md) 
 
+> [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md) 
+
+
 
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
