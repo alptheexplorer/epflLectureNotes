@@ -113,4 +113,6 @@ end process simulation;
 end architecture test;
 ```
 
+We may want the simulation to run on modelSim for as long as needed. To do this, we insert the `run -all` command and add an indefinite `wait` statement to the end of our process. 
+
 
