@@ -41,5 +41,20 @@ test(3+4,8)
 3*8 + 4*8
 ```
 
+We can also have that a program will terminate under CBN but not under CBV and vice versa. For instance:
+
+```scala
+def first(x: Int, y: Int) = x
+first(1,loop)
+//CBN
+1
+//CBV
+first(1,loop)
+.
+.
+.
+.
+```
+
 
 
