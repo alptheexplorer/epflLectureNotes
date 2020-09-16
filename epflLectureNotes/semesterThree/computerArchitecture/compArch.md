@@ -11,6 +11,7 @@ Let's take a simple example, the ALU(*Arithmetic Logic Unit*) will take an input
 
 
 ## Lab 1: VHDL testbenching 
+**link for school hosted vm: https://support.epfl.ch/epfl?id=epfl_kb_article_view&sys_kb_id=eff9d6aedb4b978cef64731b8c9619b3** 
 
 The goal of this adder is to test a combinational and a sequential adder. Our template folder structure is as follows:
 
