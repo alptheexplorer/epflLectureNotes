@@ -54,6 +54,7 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 ![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
 > [Computer Architecture 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md) 
 
+> [Algorithms](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/Algorithms/alg.pdf) 
 
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
