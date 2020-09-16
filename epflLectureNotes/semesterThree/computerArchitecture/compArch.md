@@ -65,7 +65,7 @@ end architecture test;
 We must now feed inputs to the DUT as:
 Supply OP1 and OP2 then verify SUM
 
-The best way to realize this is a process inside our testbench architecture. Since we want to delay our inputs, we also declare a TIME_DELTA constant that will change the value of OP1 an OP2. 
+The best way to realize this is a process inside our testbench architecture. Since we want to delay our inputs, we also declare a TIME_DELTA constant that will change the value of OP1 an OP2. We achieve the delay through the **wait for** statement. 
 
 ```vhdl 
 library ieee;
@@ -112,4 +112,5 @@ wait for TIME_DELTA;
 end process simulation;
 end architecture test;
 ```
+
 
