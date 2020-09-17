@@ -19,5 +19,11 @@ The internet infrastructre is owned by ISP(Internet service provider). However, 
 In packet switching, the router waits for the whole packet of information to arrive and only then will it proceed to the transmission to the destination. Another difference is that the information may be sent immediately even if all the transimission capacity is taken, the information will simply get queued. In contrast, circuit switching which for isntance telecommunication networks use, first ensures the availability of a line and only then may the transmission occur. This is akin to how one is assured to find a place at a restaurant that requires reservations vs one that does not require nor accept any.  
 
 ### Network of networks 
-
 The first step into connecting to the internet starts with having an access ISP. 
+--to complete
+
+### Toolset of unix commands
+```shell 
+ifconfig
+
+```
