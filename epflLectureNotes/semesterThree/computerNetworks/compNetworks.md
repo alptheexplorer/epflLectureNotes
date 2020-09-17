@@ -1,6 +1,7 @@
 # Computer Networks 
 
-## What is the internet?
+## The internet
+### What comprises the internet? 
 The internet is comprised of: 
 1. **end system**: this being everything that sends or receives data 
 2. **access networks**: A common access network is *DSL(Digital subscriber line)*. The DSL uses a customers preexisting phoneline. 
@@ -11,4 +12,6 @@ The alternative to DSL is *cable internet access* which uses the existing televi
 Yet another alternative is *FTTH(fiber to the home*. Each home has an optical network terminator that is connected to the neighbourhood splitter from which the connection to the central office happens through one shared fiber optic. 
 <img src="src/w1.3.png" width="500" >
 
+### Who owns the infrastructure?
+The internet infrastructre is owned by ISP(Internet service provider). However, there isn`t one global company that dominates the market. 
 
