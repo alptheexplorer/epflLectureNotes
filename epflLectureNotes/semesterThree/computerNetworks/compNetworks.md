@@ -15,3 +15,6 @@ Yet another alternative is *FTTH(fiber to the home*. Each home has an optical ne
 ### Who owns the infrastructure?
 The internet infrastructre is owned by ISP(Internet service provider). However, there isn`t one global company that dominates the market. 
 
+### Circuit vs packet switching 
+In packet switching, the router waits for the whole packet of information to arrive and only then will it proceed to the transmission to the destination. Another difference is that the information may be sent immediately even if all the transimission capacity is taken, the information will simply get queued. In contrast, circuit switching which for isntance telecommunication networks use, first ensures the availability of a line and only then may the transmission occur. This is akin to how one is assured to find a place at a restaurant that requires reservations vs one that does not require nor accept any.  
+
