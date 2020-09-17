@@ -23,7 +23,14 @@ The first step into connecting to the internet starts with having an access ISP.
 --to complete
 
 ### Toolset of unix commands
-```shell 
+```bash
+// to list computer`s network interfaces 
 ifconfig
+// to map DNS names to an IP adress
+host >target<
+// to check if target is reachable 
+ping >target<
+// to list all routers between computer and target 
+traceroute >target<
 
 ```
