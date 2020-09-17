@@ -32,5 +32,8 @@ host >target<
 ping >target<
 // to list all routers between computer and target 
 traceroute >target<
+// establish a secure communication channel between computer and a remote one 
+ssh >DNS or IP< 
+
 
 ```
