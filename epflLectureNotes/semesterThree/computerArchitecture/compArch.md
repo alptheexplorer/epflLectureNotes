@@ -213,4 +213,41 @@ A smart observation shows that using the least significant bit of the binary dec
 
 <img src="src/w2.3.png" width="500" >
 
- 
+## Inside the memory cell
+
+Each memory cell is essentially a transistor. It is the different arrangement of transistors that lead to different memory types such as *SRAM* and *DRAM*. 
+
+**SRAM**
+
+- content will last as long as power is on
+- basic cell is similar to flip flop 
+- high power consumption and expensive build
+- used in register files, buffer, cache 
+
+**DRAM**
+
+- needs regular refresh to prevent data loss
+- basic cell is a capacitor and switch 
+- low power consumption, cheap build, slow 
+
+Here is the typical SRAM interface: 
+
+<img src="src/w2.4.png" width="500" >
+
+A typical SRAM read cycle is as follows:
+
+1. Put valid adress on adress bus
+2. Select given memory chip which means CS goes to 0 once adress has been selected
+3. Wait for data to appear 
+4. Deselect the memory which means CS becomes 1 again 
+
+<img src="src/w2.5.png" width="500" >
+
+Similarly, a write cycle looks like:
+
+
+
+<img src="src/w2.6.png" width="500" >
+
+## Instruction Set Architecture aka. a theortical view of the CPU
+
