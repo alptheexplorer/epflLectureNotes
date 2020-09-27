@@ -50,7 +50,7 @@ The core network evaluation metrics are:
 
 Generally one considers *packet delay* for small messages, and *average throughput* for bulk transfers. 
 
-**transmission delay = packet size / link transmission rate **
+**transmission delay = packet size / link transmission rate**
 
 **propagation delay = link length / link propagation speed**
 
