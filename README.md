@@ -57,6 +57,16 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 > [Algorithms](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/Algorithms/alg.pdf) 
 
 
+> [Functional programming | Scala](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md) 
+
+> [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md) 
+
+![badge](https://img.shields.io/badge/projects-green.svg)
+
+> [Functional programming psets](https://github.com/alptheexplorer/functionalProgramming) 
+
+
+
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
 

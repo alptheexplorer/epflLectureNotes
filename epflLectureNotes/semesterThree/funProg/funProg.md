@@ -61,3 +61,56 @@ Scala normally uses CBV. But if the type of a function parameter starts with a r
 def and(x: Boolean, y: => Boolean): Boolean =
 if x then y else false 
 ```
+
+
+## Week 2
+
+### Higher order and anonymous functions
+
+A higher order function is a function that takes another function as argument. Here is an example: 
+
+Suppose we want to take the sum of all integers between some lower bound *a* and an upper bound *b*. We may recursively define
+
+```scala
+def sumInts(x:Int, y:Int):Int = 
+	if (x > y) 0
+	else x + sumInts(x+1,y)
+```
+
+We could also define the same but for cubes 
+
+```scala
+def sumCubes(x:Int, y:Int):Int = 
+	if (x > y) 0
+	else cube(x) + sumCubes(x+1,y)
+```
+
+However we could make the code more generic and define a general sum function that takes as first argument a function, namely the rule to apply and this way if we also wanted to define some ` sumFactorial` we could simply use the `sum` function. Consider
+
+```scala
+def sum(f: Int -> Int, a:Int, b:Int):Int = 
+	if a > b then 0 
+	else f(a) + sum(f, a+1, b)
+```
+
+Then we could easily define 
+
+``` scala
+def id(x: Int):Int = x
+def sumInts(a: Int, b: Int):Int = sum(id, a, b)
+```
+
+Now notice how we tediously had to define an `id` function. Instead we may define `id` anonymously, it would then look like
+
+``` scala
+(x:Int) -> x 
+```
+
+and then define `sumInts` as 
+
+``` scala
+def sumInts(a: Int, b: Int):Int = sum((x:Int) -> x, a, b)
+```
+
+Anonymous functions are *syntatic sugar*, that is they make life nicer, but not really essential since we can always go the tedious def way. 
+

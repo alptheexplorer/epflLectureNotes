@@ -175,4 +175,79 @@ end architecture test;
 
 
 
+# Week 2: Memory and ISA(Instruction Set Architecture)
+
+## Architecture of the memory
+
+The best way to visualize memory is to see it as a 2D array of stored bits. Each row of bits corresponds to an *adress* and each *adress* stores a word. The 3 essential units we use to create a memory are:
+
+- binary decoder
+- MUX
+- memory cells
+
+
+
+As we can see below, N bits are sent into to the binary decoder to select the address. 
+
+<img src="src/w2.1.png" width="500" >
+
+However things aren't that simple. What really is the best way to organize our array of cells. Do we maximize the amount of adresses or word capacity? Well given that we will be transmitting signals to each row and column, and given that both of these signals have some sort of delay due to physics, we need the most optimal design. Let's model this delay(linear) as:
+
+x = k*#Columns
+
+y = k*#Rows
+
+Thus the total delay which is x+y = k(#Rows + #Columns). The way to minimize this delay is to find the least sum given that the product of Columns and Rows is constant. It turns out that this is minimal when Rows=Columns, hence why our 2D array is as close to a square as possible. 
+
+
+
+Now given this design, it is smarter to have one adjacent adresses. In fact this is the only way we can achieve that square design.
+
+
+
+<img src="src/w2.2.png" width="500" >
+
+A smart observation shows that using the least significant bit of the binary decoder output, we can already decide if we are looking at the left or right column for even adresses are all have 0 in their LSB. We then use the remaining 3 bits which ranges from 0 to 7 to decide on the row. Hence the complete architecture will look as:
+
+
+
+<img src="src/w2.3.png" width="500" >
+
+## Inside the memory cell
+
+Each memory cell is essentially a transistor. It is the different arrangement of transistors that lead to different memory types such as *SRAM* and *DRAM*. 
+
+**SRAM**
+
+- content will last as long as power is on
+- basic cell is similar to flip flop 
+- high power consumption and expensive build
+- used in register files, buffer, cache 
+
+**DRAM**
+
+- needs regular refresh to prevent data loss
+- basic cell is a capacitor and switch 
+- low power consumption, cheap build, slow 
+
+Here is the typical SRAM interface: 
+
+<img src="src/w2.4.png" width="500" >
+
+A typical SRAM read cycle is as follows:
+
+1. Put valid adress on adress bus
+2. Select given memory chip which means CS goes to 0 once adress has been selected
+3. Wait for data to appear 
+4. Deselect the memory which means CS becomes 1 again 
+
+<img src="src/w2.5.png" width="500" >
+
+Similarly, a write cycle looks like:
+
+
+
+<img src="src/w2.6.png" width="500" >
+
+## Instruction Set Architecture aka. a theortical view of the CPU
 
