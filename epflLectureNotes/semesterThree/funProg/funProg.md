@@ -63,7 +63,6 @@ if x then y else false
 ```
 
 
-
 ## Week 2
 
 ### Higher order and anonymous functions
@@ -114,3 +113,4 @@ def sumInts(a: Int, b: Int):Int = sum((x:Int) -> x, a, b)
 ```
 
 Anonymous functions are *syntatic sugar*, that is they make life nicer, but not really essential since we can always go the tedious def way. 
+
