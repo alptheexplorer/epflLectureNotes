@@ -63,7 +63,6 @@ if x then y else false
 ```
 
 
-
 ## Week 2
 
 ### Higher order and anonymous functions
@@ -115,6 +114,7 @@ def sumInts(a: Int, b: Int):Int = sum((x:Int) -> x, a, b)
 
 Anonymous functions are *syntatic sugar*, that is they make life nicer, but not really essential since we can always go the tedious def way. 
 
+<<<<<<< HEAD
 ### Currying
 
 The idea behind currying(named after Haskell Curry) is that we are able to desribe a function that takes multiple arguments as a composition of functions that all take one argument. The point of currying is that it takes a function and provides a new function with the parameter applied. For instance, we apply currying to find the product of the square of numbers in a given range as follows:
@@ -150,3 +150,5 @@ def addRational(r:Rational, s:Rational): Rational=
 
 
 
+=======
+>>>>>>> 9faf34b66b8903cda1f05be13da49bbff86460ca
