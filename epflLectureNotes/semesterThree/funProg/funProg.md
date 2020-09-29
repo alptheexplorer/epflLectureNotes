@@ -114,3 +114,39 @@ def sumInts(a: Int, b: Int):Int = sum((x:Int) -> x, a, b)
 ```
 
 Anonymous functions are *syntatic sugar*, that is they make life nicer, but not really essential since we can always go the tedious def way. 
+
+### Currying
+
+The idea behind currying(named after Haskell Curry) is that we are able to desribe a function that takes multiple arguments as a composition of functions that all take one argument. The point of currying is that it takes a function and provides a new function with the parameter applied. For instance, we apply currying to find the product of the square of numbers in a given range as follows:
+
+```scala
+def product(f: Int => Int)(a:Int, b:Int): Int = 
+	if a > b then 1 else f(a) * product(f)(a+1,b)
+
+// function call
+product(x => x*x)(1,5)
+/**
+will print 14400 = 4*9*16*25
+*/
+```
+
+### Functions and Data
+
+Suppose we want to define a *rational* type, we would say:
+
+``` scala
+class Rational(x:Int, y:Int): Rational
+	def numer = x
+	def denom = y 
+```
+
+ And we would add methods to our class as follows:
+
+```scala
+def addRational(r:Rational, s:Rational): Rational=
+	Rational (
+  r.numer*s.denom+s.numer*r.denom, r.denom*s.denom)
+```
+
+
+

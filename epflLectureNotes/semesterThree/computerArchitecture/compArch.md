@@ -249,5 +249,168 @@ Similarly, a write cycle looks like:
 
 <img src="src/w2.6.png" width="500" >
 
-## Instruction Set Architecture aka. a theortical view of the CPU
+## Week 3: MIPS ISA(Instruction set architecture)
+
+The 5 components of an ISA are:
+
+- Instruction classes
+- Registers
+- Memory
+- Instruction encoding
+- Addressing modes 
+
+### Instruction classes
+
+The available instruction classes in MIPS are:
+
+- operations on data
+- data transfer
+- control flow instructions
+- pseudo instructions 
+
+**Data operation** class:
+
+<img src="src/w3.1.png" width="500" >
+
+
+
+As we see, the instructions all start with a *pneumonic* to aid us in understanding the purpose of the function. 
+
+**Data transfer** class:
+
+<img src="src/w3.2.png" width="500" >
+
+**Control flow** class:
+
+<img src="src/w3.3.png" width="500" >
+
+**Pseudo instructions** class:
+
+<img src="src/w3.4.png" width="500" >
+
+### MIPS registers
+
+Most machines nowadays use general purpose registers. Registers are *faster* than memory  which results in faster program execution and they *improve code density* because they are named with fewer bits than addresses(that is encoding each register name is shorther than encoding memory locations).
+
+MIPS register file contains 32 registers, numbered from $0 to $31 with certain registers having special functionality ie $0 is hardwired to zero and $31 used for function return address. All registers are 32-bit wide. 
+
+​				<img src="src/w3.5.png" width="500" > 
+
+Any real program will have more variables than there are registers. Registers thus get reused or variables must get spilled to memory which is taken care of by the compiler. 
+
+*Some examples*
+
+``` assembly
+# store 77 at t1
+addi $t1, $zero, 77
+```
+
+The reason we add zero is that there is no command to directly store 77, hence we must use addition by zero.
+
+``` assembly
+add $t3, $t1, $t2 #t1-t2
+sub $t3, $t1, $t2 #t2-t1
+```
+
+Some bitwise operations
+
+``` assembly
+and $t4, $t1, $t2 # 0100 1101 & 0011 0111 = 0000 0101
+```
+
+### MIPS memory organization
+
+Memory is organized in bytes with 32 bit long adresses. Now one address corresponds to one byte. The memory instructions are `lb` to load one byte and `sb` to store one byte to memory. 
+
+In modern architectures, more than one address can be loaded, it is common to load words which corresponds to 4 bytes. After every 4 addresses, there exists a transition boundary. Now when accessing a word, the two last bits of the address are ignored because they are redundant: 
+
+<img src="src/w3.6.png" width="500" >
+
+When storing a value in memory, the value is stored in either big or little endian, crucially MIPS can be configured to either of the two. In big-endian, the LSB is placed at the last adress position.  
+
+``` assembly
+lb $t1, 1($zero) # loads byte from adress 0001 to t1
+```
+
+The above syntax generically is ` lb <register>, <offset><base>`. 
+
+### Instruction encoding
+
+**R-type** : format of arithmetic instructions
+
+`opcode <register_destination><first_register_source_operand><second_register_source_operand>` 
+
+<img src="src/w3.7.png" width="500" >
+
+Example line:
+
+``` assembly
+slt $t2, $a0, $t1 # set on less than to destination t2 
+```
+
+Op field: 0x00
+
+Function code:0x2A
+
+$t2(corresponds to register 10): 0x0A
+
+$a0(register 4): 0x04
+
+$t1(register 9): 0x09
+
+which using the R-type format concatenates to **0x0089502A**. 
+
+
+
+**I-type**: used by instructions for transfer from and to memory, program flow, arithmetic operaions with immediate argument 
+
+``` assembly
+opcode <register destination><register source operand><adress or immediate value>
+```
+
+**J-type**: 
+
+``` assembly
+opcode <target>
+```
+
+!note that target is calculated as: 
+
+PC(31 downto 28) & IR(25 downtown 0) & 0b00 -- pc being program counter 
+
+### Adressing modes
+
+They define how instructions access data, there are 5 in MIPS:
+
+- Register
+- Immediate
+- PC-relative
+- Pseudo-direct
+- Base
+
+**Register mode**: 
+
+<img src="src/w3.8.png" width="500" >
+
+This is the simplest example of an adressing mode since it involves the same register. The idea is, the control logic and register file take as input the encoded R-type instruction, the control logic must process the right signals instructing the ALU to perform the subtraction and read from the register file values A and B. 
+
+**Immediate adressing mode**: 
+
+<img src="src/w3.9.png" width="500" >
+
+The difference hee is that the ALU reads one value immediately from the instruction code, that is the last 16 LSB's. Yet we must transform this to a 32 bit for the ALU to work with it. 
+
+**PC-relative adressing mode**:
+
+<img src="src/w3.10.png" width="500" >
+
+Reason for shifting by two is so that last two bits of label end with 0. 
+
+**Pseudo-direct adressing mode**:
+
+<img src="src/w3.11.png" width="500" >
+
+**Base adressing mode**:
+
+<img src="src/w3.12.png" width="500" >
 
