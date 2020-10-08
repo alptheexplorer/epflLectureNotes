@@ -286,3 +286,5 @@ def insert(x: Int, xs: List[Int]): List[Int] = xs match
 
 **Enums**
 
+$4+4 = \sum_{n=i}$
+

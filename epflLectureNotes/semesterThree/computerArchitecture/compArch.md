@@ -414,3 +414,77 @@ Reason for shifting by two is so that last two bits of label end with 0.
 
 <img src="src/w3.12.png" width="500" >
 
+
+
+## Week 4 : MIPS control flow 
+
+Programs are seldom sequential sequences of instructions. That is, we need to:
+
+- repeat part of a program
+- execute different pieces of code depending on an intermediate result 
+
+Thus, to change the program flow, ISAs provide instructions for:
+
+- jumping
+- branching
+- calling functions
+- returning functions 
+
+**Jump instructions**
+
+1. Jump
+2. Jump register
+3. Jump and link 
+
+Here is how MIPS handles a function call:
+
+<img src="src/w4.1.png" width="500" >
+
+Here's an example in assembly:
+
+``` assembly
+# y = f(x_1,x_2,x_3) = x_1 + x_2 + x_3 
+
+addi $a1 $zero, 77
+addi $a2, $zero, 55
+addi $a3, $zero, 33
+
+# transfer control to the function 
+jal add3reg
+
+j program_end 
+
+add3reg:
+	add $v1, $a1, $a2
+	add $v1, $v1, $a3
+	jr $ra 
+	
+program_end:
+	li $v0, 10
+	syscall 
+```
+
+So here's a brief description of the above:
+
+- $ra register is overwrriten by register PC. 
+- PC takes the address corresponding to the label add3reg 
+- $v1 stores final sum 
+- the line `jr $ra` will get us back to the program counter since earlier on we assigned `$ra ` to PC. Thus the program counter jumps to the next line which is `j program_end`. 
+
+**Stack**
+
+If a function requires more resources than temporary registers available, or say it has nested function calls, registers will not be sufficient. It will then use a special region of memory called a stack. 
+
+Stack is an array of bytes. It has a lowest and a highest address. 
+
+In MIPS, the stack pointer($sp, corresponds to register $29) is by convention used for keeping the smallest memory address address such that:
+
+- any address smaller than addr is considered garbage
+- any address higher or equal than addresses is considered valid 
+
+
+
+
+
+
+
