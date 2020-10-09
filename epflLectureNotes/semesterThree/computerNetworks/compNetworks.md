@@ -115,3 +115,46 @@ There are certain possible attack methods that might occur during a connection b
 - Impersonation: pretends to be Alice and extract information from Bob
 - Denial of service: send loads of junk to Bob to disrupt communication between Alice and Bob 
 - Malware: bad software on both sides 
+
+
+
+## Application layer
+
+### Network interface
+
+Consists of an interface between an end-system and the network:
+
+- piece of hardware or software that receives packets 
+- network card on pc is a network interface
+
+### DNS name
+
+- identifies a network interface
+- also called *hostname*, since an end system is also called a host 
+
+### URL
+
+- identifies a web object: for instance www.epfl.ch/index.html 
+- identifies a format: DNS name + file name --> www.epfl.ch is the network interface, index.html is the file 
+
+ ### Process
+
+- piece of code that runs in application layer
+- reachable at IP address + port number: 128.178.50.12 - 80(port number)
+- port 80 is universally reserved for web server processes 
+
+### Summary of a web request 
+
+1. enter URL into web-client: (http://....)
+2. web client extracts DNS name 
+3. DNS is translated to IP adress
+4. web-server process name is formed 
+
+
+
+### Translating a DNS to an IP address
+
+
+
+![image-20201009151503888](/Users/Alp/Library/Application Support/typora-user-images/image-20201009151503888.png)
+
