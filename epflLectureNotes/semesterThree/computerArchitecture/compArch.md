@@ -482,9 +482,39 @@ In MIPS, the stack pointer($sp, corresponds to register $29) is by convention us
 - any address smaller than addr is considered garbage
 - any address higher or equal than addresses is considered valid 
 
+**Main operations of the stack**
+
+- placing an element on the next free address in stack(PUSH)
+- removing an element from the last occupied address in stack(POP)
+
+Stack is a **last in, first out** data structure, the last element pushed is the first element that pops out. 
+
+<img src="src/w4.2.png" width="500" >
+
+**Push and pop in MIPS assembly**
+
+``` assembly
+## PUSH
+##lower stack pointer by 4 since stack grows towards low addresses 
+addi $sp, $sp, -4 
+sw $s3, 0($sp)
+
+## POP
+##load from the memory at address in $sp, then increment $sp
+lw $s3,0($sp)
+addi $sp, $sp, 4
+```
 
 
 
+### Caller and callee | Calling conventions 
+
+<img src="src/w4.3.png" width="500" >
+
+An important convention to follow is:
+
+- some registers must not be permanently modified by the callee. (known as callee-saved)
+- other registers are allowed to be permanently modified by the callee(caller-saved)
 
 
 

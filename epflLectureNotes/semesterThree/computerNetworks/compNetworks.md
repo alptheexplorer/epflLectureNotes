@@ -1,4 +1,4 @@
-# Computer Networks 
+
 
 ## The internet
 ### What comprises the internet? 
@@ -154,7 +154,94 @@ Consists of an interface between an end-system and the network:
 
 ### Translating a DNS to an IP address
 
+<img src="src/w4.1.png" width="500" >
 
+A DNS server is essentially a database that maps a bunch of DNS names to IP addresses. Now we naturally ask whether we could have one single DNS  server that serves the whole internet? This approach is not possible because it is not *scalable*. Instead we have a hierarchy of DNS servers:
 
-![image-20201009151503888](/Users/Alp/Library/Application Support/typora-user-images/image-20201009151503888.png)
+- root server
+- TLD(top-level domain) server (ie. .com, .org, .ch)
+- authoritative server
+
+In this hierarchy, each level server is able to reach its children servers. 
+
+Now we said that DNS servers are distributed but how exactly does that work?
+
+- every DNS client knows at least one local DNS server(physically close)
+- one way that the root DNS server can get the IP address is through recursion: it asks the root server which asks the TLD server and so forth:
+
+<img src="src/w4.2.png" width="500" >
+
+- the other approach is the iterative request method, the DNS server asks the root which returns the IP address of the TLD server and so forth: 
+
+  <img src="src/w4.3.png" width="500" >
+
+ ### DNS caching 
+
+To be quicker and more efficient, DNS servers cache the responses they receive. To avoid stale data, each cached address comes with an expiration date. 
+
+### DNS attacks
+
+- (Impersonation attack) If Persa knows that the client has asked for some IP address and is able to send a response quicker than the DNS server, this will lead to a malicious connection established and the client will simply ignore the response of the DNS server: 
+
+<img src="src/w.4.4.png" width="500" >
+
+- (Denial of service) Denis could launch a denial of service attack to all servers in the DNS hierarchy: 
+
+<img src="src/w4.5.png" width="500" >
+
+- (Trashing) Trish could launch an attack to affect the performance of the DNS server by sending request for a lot of unpopular websites such as `X.com` eventually leading to the cache becoming full and losing data of more popular websites. 
+
+<img src="src/w4.6.png" width="500" >
+
+### File distribution 
+
+We saw two architectures for file distribution:
+
+- Client-server: time increases linearly with the number of clients
+- Peer-to-peer: time increases sub-linearly with number of peers 
+
+Hence peer-to-peer scales better than client-server 
+
+### Example: Peer-to-peer vs client-server
+
+Let's take an example. Suppose Alice wants to share a file with 3 other friends:
+
+<img src="src/w4.7.png" width="500" >
+
+Now let's first take the **client-server** case:
+
+The file distribution time(D_cs) is as below: 
+
+<img src="src/w4.8.png" width="500" >
+
+### Retrieving content from a P2P file distribution system
+
+Content is a set of data files, stored in a peer. Each content has a **metadata** file which stores:
+
+- file identity
+- location information
+
+To retrieve content:
+
+- learn metadata file ID
+- find metadata file location
+- get metadata file
+- find data file location
+- get data files 
+
+### Finding metadatafile location 
+
+- Tracker: end-system that knows locations of the files: IP addresses of peers that store each file 
+- Distributed hash table: distributed system that knows locations of the files 
+- both can be seen as blackboxes that as input take file ID and output IPs of peers that have the file 
+
+### Getting metadata file
+
+- is either on a web server
+- or stored on a peer which means we learn its ID from a web server and location from a tracker or DHT 
+
+### P2P DHT
+
+- peers partition filespace(ie. each peer owns certain file IDs)
+- to say a peer owns a file ID does not mean it stores it, it simply means that it knows where it is 
 
