@@ -14,8 +14,17 @@ I initially took notes for semesters one and two in latex, using markdown only f
 
 ## Courses taken
 1. [ SemesterOne-2019](#sm1)
+| Code   | Name                                   |
+|--------|----------------------------------------|
+| CS-101 | Advanced information and computation I |
+|        |                                        |
+|        |                                        |
+
+
 2. [ SemesterTwo-2020](#sm2)
 2. [ SemesterThree-2020](#sm3)
+
+
 
 
 <a name="sm1"></a>
