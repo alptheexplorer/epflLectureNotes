@@ -9,7 +9,7 @@
 These are my lecture/textbook notes that I am using for my Computer Science study at EPFL. I try to update them weekly and you should find a compiled pdf under each section. 
 
 ## How I take them? 
-I initially took notes for semesters one and two in latex, using markdown only for programming courses. But I recently discovered (https://pandoc.org/) which allows for latex inside markdown and this has been my new goto. I also use this shell script to do an automatic conversion: 
+I initially took notes for semesters one and two in latex, using markdown only for programming courses. But I recently discovered [pandoc](https://pandoc.org/) which allows for latex inside markdown and this has been my new goto. I also use this shell script to do an automatic conversion: 
 
 
 ## Contents
