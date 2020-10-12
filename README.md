@@ -12,74 +12,25 @@ These are my lecture/textbook notes that I am using for my Computer Science stud
 I initially took notes for semesters one and two in latex, using markdown only for programming courses. But I recently discovered [pandoc](https://pandoc.org/) which allows for latex inside markdown and this has been my new goto. I also use [this](https://github.com/alptheexplorer/epflLectureNotes/blob/master/produce.sh) shell script to do an automatic compilation from latex-flavored markdown to pdf. 
 
 
-## Courses taken
-1. [ SemesterOne-2019](#sm1)
-| Code   | Name                                   |
-|--------|----------------------------------------|
-| CS-101 | Advanced information and computation I |
-|        |                                        |
-|        |                                        |
-
-
-2. [ SemesterTwo-2020](#sm2)
-2. [ SemesterThree-2020](#sm3)
-
-
-
-
-<a name="sm1"></a>
-## SemesterOne-2019
-![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> [Linear algebra](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)
-
-> [Advanced information and computation 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf)
-
-> [Analysis 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)
-
-> [Intro to programming(JAVA)](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/IntroductionToProgramming-Sam/ch1.md)
-
-*Physics course has been omitted because noone likes physics*
-
-```diff
-+ semester one is complete
-```
-
-
-<a name="sm2"></a>
-## SemesterTwo-2020
-![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> [Practice of OOP in JAVA](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md) 
-
-> [Analysis 2](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)
-
-> [Advanced information and computation 2](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)
-
-![badge](https://img.shields.io/badge/projects-green.svg)
-> [OOP project](https://github.com/alptheexplorer/RIGEL)
-
-```diff
-+ semester two is complete
-```
-
-<a name="sm3"></a>
-## SemesterThree-2020
-![badge](https://img.shields.io/badge/lecture_notes-blue.svg)
-> [Computer Architecture 1](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md) 
-
-> [Algorithms](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/Algorithms/alg.pdf) 
-
-
-> [Functional programming | Scala](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md) 
-
-> [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md) 
-
-> [Numerical methods for visual computing and ML](https://github.com/alptheexplorer) 
-
-![badge](https://img.shields.io/badge/projects-green.svg)
-
-> [Functional programming psets](https://github.com/alptheexplorer/functionalProgramming) 
-
-
+## The notes
+| Code     | Name                                                                                                                                                               | Semester | Project(if made)                                          |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------|
+| CS-101   | [Advanced information and computation I](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf) | 1        |                                                           |
+| MATH-111 | [Linear algebra](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/linearAlgebra/linearAlgebra.pdf)                      | 1        |                                                           |
+| MATH-101 | [Analysis I](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/analysis/analysis.pdf)                                    | 1        |                                                           |
+| PHYS-101 | General physics I                                                                                                                                                  | 1        |                                                           |
+| CS-107   | [Intro to programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/IntroductionToProgramming-Sam/ch1.md)           | 1        |                                                           |
+| CS-108   | [Practice of OOP in JAVA](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/POOP/POOP.md)                                | 2        | [astronomy app] (https://github.com/alptheexplorer/RIGEL) |
+| COM-102  | [Advanced information and computation II](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/AICC%202/AICC2.pdf)          | 2        |                                                           |
+| MATH-106 | [Analysis II](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterTwo/analysisTwo/analysis2.pdf)                               | 2        |                                                           |
+| CS-173   | Digital system design                                                                                                                                              | 2        |                                                           |
+| MATH-203 | Analysis III                                                                                                                                                       | 3        |                                                           |
+| CS-328   | Numerical methods for visual computing and ML                                                                                                                      | 3        |                                                           |
+| CS-250   | [Algorithms](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/Algorithms/alg.pdf)                                     | 3        |                                                           |
+| CS-208   | [Computer architecture I](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md)          | 3        |                                                           |
+| COM-208  | [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md)                | 3        |                                                           |
+| PHYS-114 | General Physics II                                                                                                                                                 | 3        |                                                           |
+| CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                           |
 
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
 
