@@ -31,7 +31,10 @@ I initially took notes for semesters one and two in latex, using markdown only f
 | COM-208  | [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md)                | 3        |                                                          |
 | PHYS-114 | General Physics II                                                                                                                                                 | 3        |                                                          |
 | CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                          |
-<a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="230" align="right" ></a>
+
+**Only the clickable courses are available**
+
+<a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="150" align="right" ></a>
 
 
 [current-shield]: https://img.shields.io/badge/Current_Semester:Three-Orange.svg
