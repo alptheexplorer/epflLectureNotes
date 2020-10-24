@@ -118,6 +118,10 @@ There are certain possible attack methods that might occur during a connection b
 
 
 
+
+
+
+
 ## Application layer
 
 ### Network interface
@@ -244,4 +248,13 @@ To retrieve content:
 
 - peers partition filespace(ie. each peer owns certain file IDs)
 - to say a peer owns a file ID does not mean it stores it, it simply means that it knows where it is 
+
+### Summary of the Application layer
+
+| **Web page** | Consists of objects, an object is a file(ie. HTML) that contains references to other files |
+| :----------: | ------------------------------------------------------------ |
+|    **Us**    | sdfsddfsf                                                    |
+|              |                                                              |
+|              |                                                              |
+|              |                                                              |
 
