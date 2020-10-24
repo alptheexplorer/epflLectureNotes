@@ -29,7 +29,7 @@ I initially took notes for semesters one and two in latex, using markdown only f
 | CS-250   | [Algorithms](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/Algorithms/alg.pdf)                                     | 3        |                                                          |
 | CS-208   | [Computer architecture I](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerArchitecture/compArch.md)          | 3        |                                                          |
 | COM-208  | [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md)                | 3        |                                                          |
-| PHYS-114 | General Physics II                                                                                                                                                 | 3        |                                                          |
+| PHYS-114 | [General Physics II](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/physicsTwo/physics2.pdf)                                                                                                                                                 | 3        |                                                          |
 | CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                          |
 
 **Only the clickable courses are available**
