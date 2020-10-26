@@ -284,7 +284,139 @@ def insert(x: Int, xs: List[Int]): List[Int] = xs match
 		if x < y then x :: xs else y :: insert(x,ys) //if x < y then we make x the first element else former header stays 
 ```
 
-**Enums**
+## Week 5 
 
-$4+4 = \sum_{n=i}$
+**Important list methods**
+
+`flatten`:
+
+``` scala
+def flatten(xs:Any): List[Any] = xs match 
+	case Nil => Nil
+	case y :: ys => flatten(y) ++ flatten(ys)
+	case _=> xs :: Nil 
+```
+
+`reverse`:
+
+``` scala
+def reverse: List[T] = xs match 
+	case Nil => Nil
+	case y :: ys => ys.reverse ++ List(y)
+```
+
+`removeAt`: 
+
+``` scala
+def removeAt[T](n: Int, xs: List[T]): List[T] = xs match 
+case Nil => Nil
+case y :: ys => if(n == 0) then ys else y :: removeAt(n-1,ys)
+```
+
+`last`:
+
+``` scala
+def last[T](xs: List[T]): T = xs match 
+	case List() => throw Error("last of empty")
+	case List(x) => x
+	case y :: ys => last(ys)
+```
+
+`++`:
+
+``` scala
+def ++ (ys: List[T]): List[T] = xs match 
+	case Nil => ys
+	case x :: xs1 => x :: (xs1 ++ ys) 
+```
+
+`sum`:
+
+``` scala
+// sums elements of a list
+def sum(xs: List[Int]): Int = xs match 
+	case Nil => 0
+	case y::ys => y + sum(ys)
+```
+
+yet a quicker way to write `sum`:
+
+``` scala
+def sum(xs: List[Int]) = (0 :: xs).reduceLeft(_ + _)
+```
+
+`reduceRight` is implemented as: 
+
+``` scala
+def reduceRight(op:(T,T)=>T):T = this match 
+	case Nil => throw IllegalOperationException("Nil.reduceRight")
+	case x :: Nil => x
+	case x :: xs => op(x, xs.reduceRight(op))
+```
+
+and similarly, implementing `reverse` using `foldLeft`:
+
+```scala
+def reverse[T](xs: List[T]): List[T] = 
+	xs.foldLeft(List[T]())((xs,x) => x :: xs)
+```
+
+**Higher order functions**: allow programmers to write generic functions that implement patterns such as transforming, retrieving and combining elements of a list or other data structures. 
+
+## Week 6
+
+**Collections**
+
+Lists are linear, that is access to the first element is much faster than access to the middle or end of a list. But Scala library also defines `vector` which provides more evenly balanced access. 
+
+Vectors support the same operations as lists with exception of `::` which is replaced by `+:` or `:+` 
+
+**Important sequence operations**
+
+<img src="src/w6.1.png" width="500" >
+
+Example of using `sum`:
+
+``` scala
+def scalarProduct(xs: Vector[Double], ys:Vector[Double]): Double = xs.zip(ys).map(_ * _).sum 
+```
+
+**High-level method for primality test**
+
+ ``` scala
+def isPrime(n: Int): Boolean = (2 until n).forall(n % _ ! = 0)
+// very elegant code, which is why functional rules :)
+ ```
+
+A useful law for sequence operators is `xs.flatMap(f) = xs.map(f).flatten`
+
+**For expressions**
+
+To obtain names of persons over age 20, we use for expression syntax as 
+
+```scala
+for p <- persons if p.age > 20 yield p.name
+```
+
+This would be the same as writing
+
+``` scala
+persons.filter(p => p.age > 20).map(p => p.name)
+```
+
+We would use for-expression syntax to write a function that determines all pairs of numbers 1<j<i<n where i+j are prime:
+
+``` scala
+for
+	i <- 1 until n
+	j <- 1 until i 
+	if isPrime(i+j)
+	yield(i,j)
+```
+
+Hence we may now also rewrite `scalarProduct`
+
+```scala
+def scalarProduct(xs: List[Double], ys: List[Double]) : Double = (for(x,y) <- xs.zip(ys) yield x*y).sum 
+```
 
