@@ -420,3 +420,64 @@ Hence we may now also rewrite `scalarProduct`
 def scalarProduct(xs: List[Double], ys: List[Double]) : Double = (for(x,y) <- xs.zip(ys) yield x*y).sum 
 ```
 
+**Option type** 
+
+Defined as 
+
+``` scala
+case class Some[+A](value: A) extends Option[A]
+
+object None extends Option[Nothing]
+```
+
+An option can be decomposed as: 
+
+``` scala
+def showCapital(country: String) = capitalOfCountry.get(country) match 
+	case Some(capital) => capital
+	case None => "missing data"
+```
+
+**Updating maps**
+
+1. `m+(k->v)` map takes key `k` to value `v` and is otherwise `m` 
+2. `m++kvs` map `m` updated via `+` with all key/value pairs in `kvs` 
+3. method `orderBy` orders a collection using the parameter function
+4. `groupBy` partitions a collection into a map of collections according to a discriminator function f 
+
+**Designing polynomials**
+
+The idea is that we see every coefficient as a value field in a map. Where for instance (0 -> 2) means the 0th coefficient is 2. 
+
+When instantiating a polynomial, it is super inconvenient to have to write Polynom(Map(1 -> 2, ...)) is there perhaps an easier way? 
+
+We use a *repeated parameter*:
+
+```scala
+def Polynom(bindings: (Int, Double)*) = 
+	Polynom(bindings.toMap.withDefaultValue(0))
+```
+
+Let's now design a version of `+` on Polynom using `foldLeft` 
+
+``` scala
+def + (other: Polynom):Polynom = 
+	Polynom(other.terms.foldLeft(terms)(addterm))
+```
+
+Finally, we remark that all collection types share a common set of methods:
+
+`map`, `flatMap`, `filter`, `foldLeft`, `foldRight` 
+
+Recalling the idealized implementation of `flatMap`: 
+
+```scala
+def flatMap[U](f: T => List[U]): List[U] = xs match 
+	case x :: xs1 => f(x) ++ xs1.flatMap1(f)
+	case Nil => Nil 
+```
+
+
+
+## Week 7 
+
