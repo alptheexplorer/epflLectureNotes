@@ -481,3 +481,62 @@ def flatMap[U](f: T => List[U]): List[U] = xs match
 
 ## Week 7 
 
+**Translation of for**
+
+**Rule 1:** 
+
+The expression 
+
+``` scala
+for x <- e1 yield e2
+```
+
+is translated to 
+
+``` scala
+e1.map(x=>e2)
+```
+
+Similarly
+
+**Rule 2:**
+
+``` scala
+for x <- e1 if f; s yield e2
+```
+
+gets translated to 
+
+``` scala
+for x <- e1.withFilter(x=>f); s yield e2
+```
+
+And 
+
+**Rule 3:**
+
+``` scala
+for x <- e1; y <- e2; s yield e3 
+```
+
+gets translated to 
+
+``` scala
+e1.flatMap(x=>for y <- e2; s yield e3)
+```
+
+So an exercise, translate the following `for` loop into a higher-order function
+
+``` scala
+for b <- books; a <- b.authors if a.startsWith("Bird") yield b.title 
+```
+
+Looking at the above 3 rules, we use in order a combination of rule 3, then 2 and then 1 to get:
+
+``` scala
+books.flatMap(b=>b.authors.withFilter(a=>a.startsWith("Bird")).map(a=>b.title))
+```
+
+**Functional random generators**
+
+How do we get random values for datatypes such as booleans, strings, lists and so on? 
