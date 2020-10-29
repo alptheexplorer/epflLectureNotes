@@ -84,6 +84,58 @@ $$ V = \frac{\sigma}{2 \pi \epsilon_{0}}(\sqrt{a^{2} + b^{2} -a})$$
 
 Now we let $b$ go to infinity, well shouldnt the potential then go to infinity? The problem with this approach is that when $b$ goes to infinity, it will almost start touching our object which is a problem. 
 
+And here is how potential varies for a positive and negative charge:
+
+<img src="src/w3.3.png" width="500" >
+
+**Obtaining E-field from V**
+
+$$\vec E (\vec r) = - \nabla V(x,y,z)$$
+
+Finding force from E-field:
+$$\vec F = Q \vec E = Q(V_{B}-V_{A})$$
+
+## Week 4
+
+<img src="src/w3.4.png" width="500" >
+
+We introduce the **Electronvolt** which is energy of $e^{-1}$ passing $1V$ of potential difference. 
+
+Now let's analyse the kinematics of a charged particle in an electric field:
+
+<img src="src/w3.5.png" width="500" >
+
+A more interesting case is a charged particle entering an electric field at an angle for which we have the following result 
+
+<img src="src/w3.6.png" width="500" >
+
+**Electric dipole**
+
+An electric dipole is a two-point charge with opposite charges such that $\sum Q = 0$ We have that $+q$ and $-q$ are at a distance $a$. An $ideal$ dipole is one where $a$ is small compared to other distances. 
+
+The *dipole moment* is $\vec p = q \vec a$. Now a natural question to ask is, what is $v_{p}$ due to $+q$ and how does it compare to $v_{p}$ due to $-q$ given there is a path difference. 
+<img src="src/w3.7.png" width="500">
+
+We have:
+
+$$v_{q} = \frac{q}{4 \pi \epsilon_{0}r}$$ and also
+
+$$v_{-q} = -v_{q} - d v_{q}$$
+
+Thus the net $v_{p}$ at the point $p$ becomes $v_{q} + v_{-q} = -d v_{q} $ where $-d v_{q}$ is the distance over which potential has changed multiplied by the rate of change which is
+
+$$ -d v_{q} = -a \frac{\partial \frac{q}{4 \pi \epsilon_{0}r}}{\partial x}$$
+
+Taking everything not depending on $x$ outside we obtain 
+
+$$v_{p} = - \frac{q}{4 \pi \epsilon_{0}} \frac{\partial \frac{1}{r}}{\partial x} = \frac{q}{4 \pi \epsilon_{0}} \frac{\partial r}{\partial x}$$
+
+
+
+
+
+
+
 
 
 
