@@ -128,9 +128,34 @@ $$ -d v_{q} = -a \frac{\partial \frac{q}{4 \pi \epsilon_{0}r}}{\partial x}$$
 
 Taking everything not depending on $x$ outside we obtain 
 
-$$v_{p} = - \frac{q}{4 \pi \epsilon_{0}} \frac{\partial \frac{1}{r}}{\partial x} = \frac{q}{4 \pi \epsilon_{0}} \frac{\partial r}{\partial x}$$
+$$v_{p} = - \frac{q}{4 \pi \epsilon_{0}} \frac{\partial \frac{1}{r}}{\partial x} = \frac{q}{4 \pi \epsilon_{0}} \frac{\partial r}{\partial x} $$ which simplifies to 
+
+$$ \frac{qa \cos{\theta}}{4 \pi \epsilon_{0} r^{2}}$$
+
+Which in terms of the dipole moment becomes 
+
+$$ \frac{\vec p \cdot\vec r}{4 \pi \epsilon_{0} r^{2}}$$
+
+The last formula gives the *potential of a dipole* 
+
+The electric field of a dipole then looks like
+
+<img src="src/w3.8.png" width="500">
+
+where
+
+$$|E_{\theta}| = \frac{p\sin{\theta}}{4 \pi \epsilon_{0}r^{3}}$$
+
+$$|E_{r}| = \frac{2p\cos{\theta}}{4 \pi \epsilon_{0}r^{3}}$$
+
+Ofcourse the total electric field is the vector sum of the above two expressions. 
+
+<img src="src/w4.1.png" width="500">
 
 
+**Multipoles**
+
+<img src="src/w4.2.png" width="500">
 
 
 
