@@ -1,9 +1,17 @@
-# GENERAL PHYSICS 2
+<!-- vscode-markdown-toc -->
+* 1. [Week 3](#Week3)
+	* 1.1. [Electric field distribution on surfaces](#Electricfielddistributiononsurfaces)
 
-## Week 3 
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># GENERAL PHYSICS 2
+
+##  1. <a name='Week3'></a>Week 3 
 
 
-### Electric field distribution on surfaces 
+###  1.1. <a name='Electricfielddistributiononsurfaces'></a>Electric field distribution on surfaces 
 
 Granted that an electric field is simply 
 
@@ -64,7 +72,17 @@ Using the integral definition of $V_{p}$ we have that for a point charge
 
 $$V_{P} = \int_{\infty}^{P} - \frac{Q\vec r \cdot d\vec L}{4 \pi \epsilon_{0}r^{2}}$$
 
+Similarly, the potential of a collection of point charges is
 
+$$V = \frac{1}{4 \pi \epsilon_{0}} \sum_{i} \frac{Q_{i}}{r_{i}}$$
+
+**Electric potential around uniform charged disk**
+
+Returning to the disk from earlier on, the expression for potential becomes 
+
+$$ V = \frac{\sigma}{2 \pi \epsilon_{0}}(\sqrt{a^{2} + b^{2} -a})$$
+
+Now we let $b$ go to infinity, well shouldnt the potential then go to infinity? The problem with this approach is that when $b$ goes to infinity, it will almost start touching our object which is a problem. 
 
 
 
