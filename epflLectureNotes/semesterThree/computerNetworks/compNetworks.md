@@ -249,12 +249,87 @@ To retrieve content:
 - peers partition filespace(ie. each peer owns certain file IDs)
 - to say a peer owns a file ID does not mean it stores it, it simply means that it knows where it is 
 
-### Summary of the Application layer
+## Transport layer 
 
-| **Web page** | Consists of objects, an object is a file(ie. HTML) that contains references to other files |
-| :----------: | ------------------------------------------------------------ |
-|    **Us**    | sdfsddfsf                                                    |
-|              |                                                              |
-|              |                                                              |
-|              |                                                              |
+The transport layer is sandwiched between the application layer and the network layer. 
+
+Here is what the transport-layer header looks like:
+
+<img src="src/w5.1.png" width="500" >
+
+And some new terminology, that is **datagram** and **segment**. Every segment is included inside a datagram. 
+
+<img src="src/w5.2.png" width="500" >
+
+### UDP 
+
+**Sending side**
+- Transport layer asks application layer to create a process(called a socket). 
+- application layer binds socket to a IP adress and a port number 
+- process is ready to send a message
+- transport layer puts together a packet which is essentially the **segment** mentioned earlier on 
+- when the process is done, transport layer will delete the socket 
+
+### TCP 
+- the first couple steps are the same as UDP, that is a socket is create and bound to an IP adress and a port 
+
+A TCP socket has:
+- listening & connection sockets 
+- each connection socket has a unique(local IP,local port, remote IP, remote port) tuple 
+- a process must use a different TCP connection socket per remote process 
+
+Thus at the heart of TCP is the notion of **process-to-process** communication whereby we have:
+
+- Multiplexing: 
+  -- upon receiving a new message from a process, create new packets 
+  -- identify the correct IP address and port 
+
+
+- Demultiplexing: 
+  -- many processes running in app layer
+  -- upon receiving a new packet from the network, identify the correct dest. process  
+
+### Reliable data delivery 
+
+Data delivery becomes unreliable because the network layer may potentially drop data. Thus the transport layer must compensate for this.
+
+<img src="src/w5.3.png" width="500" >
+
+To determine if data was corrupted, we use a checksum which is:
+
+- redundant information, ie. binary sum of all data bytes 
+
+- sender adds checksum C to each segment 
+
+- the checksum is used to communicate acknowledgments between the two sides:
+
+<img src="src/w5.4.png" width="500" >
+
+- the acknowledgment is a piece of **feedback** from the receiver to the sender which is added to every segment 
+
+
+Now consider what happens when the *ack* itself is corrupted. 
+
+- every segment sent by alice gets assigned a sequence number
+
+- each time alice sends something, a timer is started which will timeout if it doesn't receive an ack in due time, it will then send the data again 
+
+<img src="src/w5.5.png" width="500" >
+
+So let's summarize the basic elements of reliable data transmission:
+- checksum: detects data corruption
+- ACK, retransmission, SEQ: overcome data corruption
+- Timeout, ACK, retransmission, SEQ: overcome data loss 
+
+### Pipelining 
+Now here is a little inefficieny in our system. When Alice's transport layer sends a message, it remains in idle state for a long time until it receives the ack. The time of it being busy is expressed by the sender/channel utilization ratio. 
+
+<img src="src/w5.6.png" width="500">
+
+A way to make this more efficient is by sending multiple segments without waiting for an ack. Each time she receives an ack, she advances the window and sends the next patch of segments. The **window size** is the maximum number of unacknowledged segments Alice has sent. 
+
+### Data loss in pipelining 
+
+
+
 
