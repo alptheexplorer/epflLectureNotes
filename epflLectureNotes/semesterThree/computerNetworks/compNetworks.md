@@ -330,6 +330,15 @@ A way to make this more efficient is by sending multiple segments without waitin
 
 ### Data loss in pipelining 
 
+Go-back-N model: 
+<img src="src/w5.7.png" width="500">
+
+Selective repeat model: 
+
+<img src="src/w5.8.png" width="500">
+
+
+
 
 
 
