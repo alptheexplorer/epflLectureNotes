@@ -337,8 +337,66 @@ Selective repeat model:
 
 <img src="src/w5.8.png" width="500">
 
+Note that TCP is a mix of Go-back-N and SR since it uses cumulative ACKs but retransmits 1 segment. 
+
+## More details on transport layer protocols 
+
+**UDP** provides checksums to detect for corruption 
+
+Process running on Alice's side called `rdt_send()` is called.  This puts data into a segment and will call `udt_send()`. This will travel to Bob where `rdt_rcv()` gets called. Then Bob's transport extracts the data using `deliver_data()`. The only extra layer of security that UDP adds is a check for corruption. 
+
+Meanwhile, TCP will add `checksum`, `ACKs`, `SEQs`, `timeouts`, `retransmissions` at the cost of being slower. 
+
+**TCP** (seqs and acks)
+
+Here is a sample TCP process: 
+
+<img src="src/w6.1.png" width="500">
+
+We define **SEQ** as number of the first data byte, and **ACK** is the number of the next data byte. 
+
+<img src="src/w6.2.png" width="500">
+
+ In the above we see that Bob replies with an ACK 5 because  he has received 4 bits from Alice and is waiting now for the 5th bit. 
+
+Some simple facts about TCP:
+
+- TCP connection may carry bidirectional data
+- A segment may or may not carry data
+- There exists a maximum segment size 
+
+**TCP timeouts and retransmits**
+
+ TCP timeouts are purely emprical, in that they rely on times that simply are known to work.  
+
+Now here's a little problem: 
+
+<img src="src/w6.3.png" width="500">
+
+What ACK number must Bob respond with after receiving SEQ2 but having failed to receive SEQ1? Since ACKs are cumulative, Bob responds with ACK1.  Receiving a bunch of duplicate ACKs, Alice will perfrom a *fast retransmit*.
+
+Thus in TCP, we have 2 types of retransmission triggers:
+
+- Timeout: retransmission of oldest unacknowledged segment
+- 3 duplicate ACKs: fast retransmit of oldest unacknowledged segment 
+
+**Connection setup and teardown**
+
+ When Alice wants to communicate with Bob, her side opens a connection socket, and Bob's side opens a listening socket. A connection setup request is a *segment* form `SYN|SEQ x|ACK -` . Once the listening socket accepts the request, it will create a connection socket on Bob's side. Then both sides create a send and receive buffer. 
+
+A connection setup follows a **3 way handshake** wherein:
+
+- TCP client: end-system initiating handshake
+- TCP server: other end-system 
+- First 2 segments always carry SYN flag which is a 1-bit field in TCP header 
+
+**TCP connection attack**
 
 
 
 
+
+ 
+
+ 
 
