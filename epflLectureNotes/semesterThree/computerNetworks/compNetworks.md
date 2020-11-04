@@ -392,11 +392,42 @@ A connection setup follows a **3 way handshake** wherein:
 
 **TCP connection attack**
 
+When Jack knows that Alice is requesting a file from Bob, he may send a segment identical to what Bob would send in which case Alice would ignore what she receives from Bob. So how do we prevent this? When Alice and Bob set up the connection, they must choose random sequence numbers that are hard to guess. 
 
+**SYN flooding**
 
+When Alice tries to establish a connection with Bob, Bob will keep all previous requests in a buffer. Thus, Denis may send a lot of incomplete connection requests to flood Bob's connection buffer. Here's how we prevent this: 
 
+<img src="src/w6.4.png" width="500">
 
- 
+When Bob sends a hadh of some secrete to Alice and Alice returns this hash+1 as an ACK, Bob will know it had agreed to connect with Alice before. 
 
- 
+**Flow control**
+
+Bob communicates to Alice how much he can receive. 
+
+<img src="src/w6.5.png" width="500">
+
+**Congestion control**
+
+Here the goal is to not overwhelm the network. The **congestion window** is the number of unacknowledged bytes that the sender can transmit without creating congestion. Alice will send data at a rate *R* with round trip time *RTT* . We define the **bandwith delay product** as *R x RTT* which is the maximum amount of data Alice can transmit before receiving an ACK which is **equal** to the maximum congestion window size. 
+
+**Self-clocking**
+
+Alice will send more data if she observes she can and slow down if she times out:
+
+<img src="src/w6.6.png" width="500">
+
+**Window size algorithm**
+
+- exp: Alice will double the number of unacknowledged bytes sent(denoted N aka. **MSS**), which will by definition double the congestion window 
+- linear: Imagine Alice tries with N=400 and has a timeout. Observing that SEQ 300 onwards have failed, she will then set *ssthresh* to 200. She now sets N=100 and then to N=200. Now previously, we had a timeout at N=200 so it makes more sense to increase N by 50 to 250. 
+
+**Tahoe algorithm**
+
+Tahoe uses a combination of exponential and linear increase:
+
+- Set window to 1 MSS, increase exponentially
+- On timeout, reste window to 1 MSS, set sstresh to last window/2
+- On reaching sstresh, transition to linear increase 
 
