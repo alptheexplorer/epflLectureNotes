@@ -34,8 +34,6 @@ ping >target<
 traceroute >target<
 // establish a secure communication channel between computer and a remote one 
 ssh >DNS or IP< 
-
-
 ```
 
 ## Evaluating a network 
@@ -493,3 +491,28 @@ And more challenging case with a lot of corruption in the ACK:
 
 <img src="src/6.21.png" width="500">
 
+**Selective repeat vs. go back N | When to choose one over the other**
+
+- SR is expected to achieve higher sender utilization and throughput than GBN when there are few, independent segment losses.
+
+- GBN is expected to achieve higher sender utilization and throughput than SR when there is bursty loss on the reverse channel (many ACKs get lost back to back).
+
+And here is a question that sheds more light on what features we need given the type of our channel: 
+
+<img src="src/6.22.png" width="500">
+
+##  Notes from HW 1
+
+Remembering some key terms:
+
+- **Transmission delay**: amount of time to push all N bits into the link 
+
+- **Propagation delay**: amount of time to move 1 bit from one end of the link to the other 
+
+- **Average throughput**: data size/transfer time
+
+- We would solve the below question remembering that the average throughput is the smallest transmission rate across all links.
+
+  <img src="src/6.23.png" width="500">
+
+  
