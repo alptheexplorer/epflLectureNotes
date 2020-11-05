@@ -487,3 +487,9 @@ Hence the case with parallel connections leads generally to a lower download tim
 
 <img src="src/6.17.png" width="500">
 
+And more challenging case with a lot of corruption in the ACK: 
+
+<img src="src/6.20.png" width="500">
+
+<img src="src/6.21.png" width="500">
+
