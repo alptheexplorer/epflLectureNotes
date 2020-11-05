@@ -505,9 +505,11 @@ And here is a question that sheds more light on what features we need given the 
 
 Remembering some key terms:
 
-- **Transmission delay**: amount of time to push all N bits into the link 
+- **Transmission delay**: amount of time to push all N bits into the link = **packet size / link transmission rate** 
 
-- **Propagation delay**: amount of time to move 1 bit from one end of the link to the other 
+- **Propagation delay**: amount of time to move 1 bit from one end of the link to the other = **link length / link propagation speed** 
+
+- **Packet delay = transmission delay + propagation delay + queuing delay**  
 
 - **Average throughput**: data size/transfer time
 
@@ -515,4 +517,9 @@ Remembering some key terms:
 
   <img src="src/6.23.png" width="500">
 
+  - Let's now build some intuition for packet delay diagrams and properly see how the transmission delay, propagation delay and queuing delay: 
+
+    <img src="src/6.25.png" width="500">
+
   
+
