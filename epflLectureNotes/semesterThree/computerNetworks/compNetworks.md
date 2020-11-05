@@ -535,3 +535,17 @@ The two models differ by the d_{proc} delay.
 
 <img src="src/6.27.png" width="500">
 
+### Midterm paper review
+
+**2019**
+
+<img src="src/6.28.png" width="500">
+
+We must remember that each end system listens at a given port number based on the service provided. 
+
+RTT definition: **Round Trip Time** (RTT) is the length **time** it takes for a data packet to be sent to a destination plus the **time** it takes for an acknowledgment of that packet to be received back at the origin.
+
+<img src="src/6.29.png" width="500">
+
+<img src="src/6.30.png" width="500">
+
