@@ -511,6 +511,8 @@ Remembering some key terms:
 
 - **Packet delay = transmission delay + propagation delay + queuing delay**  
 
+- **Bandwith delay product**: R * d_{prop} (intuition: max number of bits that can be transmitted on link at any time)
+
 - **Average throughput**: data size/transfer time
 
 - We would solve the below question remembering that the average throughput is the smallest transmission rate across all links.
@@ -519,7 +521,17 @@ Remembering some key terms:
 
   - Let's now build some intuition for packet delay diagrams and properly see how the transmission delay, propagation delay and queuing delay: 
 
+    **Store and forward model**
+
     <img src="src/6.25.png" width="500">
 
-  
+  **Circuit switching**
+
+  <img src="src/6.26.png" width="500">
+
+The two models differ by the d_{proc} delay. 
+
+**Store forward with multiple switches and multiple back to back packets, what happens?**
+
+<img src="src/6.27.png" width="500">
 
