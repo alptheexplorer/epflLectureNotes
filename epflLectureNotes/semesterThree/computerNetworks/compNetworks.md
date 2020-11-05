@@ -431,3 +431,59 @@ Tahoe uses a combination of exponential and linear increase:
 - On timeout, reste window to 1 MSS, set sstresh to last window/2
 - On reaching sstresh, transition to linear increase 
 
+## Preparation notes for midterm 
+
+### Notes from HW2
+
+**Important points on application layer**
+
+- The DNS servers that together implement the DNS distributed database store **resource records (RRs)**, including RRs that provide hostname-to-IP address mappings. An **RR** is a 4 tuple of shape `(Name, Value, Type, TTL)`:
+
+  -  If *Type=A*, then *Name* is a hostname and *Value* is the IP address for the hostname. Thus, a Type A record provides the standard hostname-to-IP address mapping. As an example, (***relay1.bar.foo.com***, 145.37.93.126, A)* is a Type A record.
+
+  -  If *Type=NS*, then *Name* is a domain (such as **foo.com**) and *Value* is the hostname of an authoritative DNS server that knows how to obtain the IP addresses for hosts in the domain. This record is used to route DNS queries further along in the query chain. As an example, *(***foo.com***,* **dns.foo.com***, NS)* is a Type NS record.
+
+  -  If *Type=CNAME*, then *Value* is a canonical hostname for the alias hostname *Name*. This record can provide querying hosts the canonical name for a hostname. As an example, *(***foo.com***,* **relay1.bar.foo.com***, CNAME)* is a CNAME record.If *Type=MX*, then *Value* is the canonical name of a mail server that has an alias hostname *Name*.
+
+    As an example, *(***foo.com***,* **mail.bar.foo.com***, MX)* is an MX record. MX records allow the hostnames of mail servers to have simple aliases. Note that by using the MX record, a company can have the same aliased name for its mail server and for one of its other servers (such as its Web server). To obtain the canonical name for the mail server, a DNS client would query for an MX
+
+Here is a summary of a chain of DNS and HTTP protocol requests:
+
+<img src="src/w6.9.png" width="500">
+
+<img src="src/w6.10.png" width="500">
+
+<img src="src/w6.11.png" width="500">
+
+You are an ordinary user (not a network/system administrator), and your computer is inside the EPFL network. All computers in this network use the same local DNS server.
+
+Can you find out whether a given external URL, e.g., www.mit.edu, was recently accessed by another EPFL user?
+
+**Answer**:  Yes, we can use dig to query that website in the local DNS server. For example, dig example.com will return the query time for finding example.com. If example.com was just accessed a couple of seconds ago, an entry for example.com is cached in the DNS cache of the university’s DNS server, so the query time is negligible (almost 0 msec). Otherwise, the query time is large.
+
+More on retrival times:
+
+<img src="src/w6.13.png" width="500">
+
+<img src="src/w6.12.png" width="500">
+
+
+
+<img src="src/w6.14.png" width="500">
+
+Hence the case with parallel connections leads generally to a lower download time. 
+
+
+
+## Notes from HW3
+
+<img src="src/6.19.png" width="500">
+
+<img src="src/6.16.png" width="500">
+
+
+
+<img src="src/6.18.png" width="500">
+
+<img src="src/6.17.png" width="500">
+
