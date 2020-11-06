@@ -577,3 +577,12 @@ And some intuition:
 
 <img src="src/6.36.png" width="500">
 
+**2018**
+
+Typical transport layer problem: 
+
+Point to highlight here is that *UDP* is used for DNS requests whereas *TCP* is used for HTTP requests. 
+
+<img src="src/6.38.png" width="500">
+
+<img src="src/6.37.png" width="500">
