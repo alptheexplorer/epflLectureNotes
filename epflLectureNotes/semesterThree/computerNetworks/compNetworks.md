@@ -549,3 +549,31 @@ RTT definition: **Round Trip Time** (RTT) is the length **time** it takes for a 
 
 <img src="src/6.30.png" width="500">
 
+- When there is network congestion, packet losses become frequent. In such a case, an SR process is more efficient since GBN will retrasnmit all unacknowledged segments. 
+
+- Transmission delay over CS vs P2P distribution:
+
+  **Delay over CS exam question**: max{F/u_{a}, F/d_{b}}, u_{a}= upload Alice, d{b}= download Bob
+
+<img src="src/6.31.png" width="750">
+
+**Delay over CS and P2P formulae**: 
+
+Case 1: 1 Client over CS
+
+<img src="src/6.32.png" width="500">
+
+Case 2: Multiple clients over CS
+
+<img src="src/6.33.png" width="500">
+
+Case 3: General formula
+
+<img src="src/6.34.png" width="500">
+
+And some intuition: 
+
+<img src="src/6.35.png" width="500">
+
+<img src="src/6.36.png" width="500">
+
