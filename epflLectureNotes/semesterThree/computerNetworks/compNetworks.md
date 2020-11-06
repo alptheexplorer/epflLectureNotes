@@ -586,3 +586,18 @@ Point to highlight here is that *UDP* is used for DNS requests whereas *TCP* is 
 <img src="src/6.38.png" width="500">
 
 <img src="src/6.37.png" width="500">
+
+Example DOS attack to direct to a fake website:
+
+Question: Mallory knows that Bob is about to access a new page, http://www.efgh.com/index.html, and wants to make him access a fake page from her machine instead.Can she do this? If no, explain why. If yes, explain in which scenario she can do it and how. Recall that EPFL machines implement a special security measure.
+
+*She can, in the scenario where nobody has accessed www.efgh.com before the attack, such that the proxy web server has not cached www.efgh.com’s correct IP address. Mallory can guess when the proxy web server sends a DNS request for www.efgh.com’s IP address and send a fake DNS response, i.e., impersonate the local DNS server.To circumvent the security measure, she needs to prevent the local DNS server from responding to the proxy web server’s DNS request. She can do this by launching a denial-of-service attack against the local DNS server, e.g., flooding the link to the DNS server with enough traffic to cause congestion, such that the proxy web server’s DNS request is either dropped or significantly delayed.*
+
+Typical transmission problem:
+
+<img src="src/6.39.png" width="500">
+
+<img src="src/6.40.png" width="500">
+
+<img src="src/6.41.png" width="500">
+
