@@ -516,5 +516,25 @@ An important convention to follow is:
 - some registers must not be permanently modified by the callee. (known as callee-saved)
 - other registers are allowed to be permanently modified by the callee(caller-saved)
 
+## Week 5 : Computer arithmetic
+
+**Unsigned**
+
+<img src="src/w5.5.png" width="500" >
+
+**Sign and magnitude**
+
+<img src="src/w5.4.png" width="500" >
+
+**Two's complement**
+
+<img src="src/w5.2.png" width="500" >
+
+**Biased**
+
+<img src="src/w5.1.png" width="500" >
+
+
+
 
 
