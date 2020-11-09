@@ -516,7 +516,7 @@ An important convention to follow is:
 - some registers must not be permanently modified by the callee. (known as callee-saved)
 - other registers are allowed to be permanently modified by the callee(caller-saved)
 
-## Week 5 : Computer arithmetic
+## Week 5: Computer arithmetic
 
 **Unsigned**
 
@@ -535,6 +535,66 @@ An important convention to follow is:
 <img src="src/w5.1.png" width="500" >
 
 
+
+**Overflow in MIPS**
+
+Difference between `add` and `addu` is not in the functionality. Add will check for overflow and stop execution in case, whereas addu will not, and overflow must be handles in assembly code. 
+
+**Negating(finding the additive inverse) a value in MIPS**
+
+3 ways to do this using the property that in 2's complement we have -A = not(A) + 1:
+
+``` assembly
+# 1:
+not $a0, $a0
+addi $a0, $a0, 1
+
+# 2:
+neg $a0, $a0
+
+# 3:
+sub $a0, $zero, $a0 
+```
+
+
+
+## Week 6: Floating point numbers
+
+**Fixed point representation**
+
+<img src="src/w6.1.png" width="500" >
+
+**Floating point numbers**
+
+<img src="src/w6.2.png" width="500" >
+
+**Benefit of floating point**
+
+<img src="src/w6.3.png" width="500" >
+
+**Some defects of the FP**
+
+Notice that associativity of addition no longer holds. 
+
+**Hidden bit and fraction**
+
+<img src="src/w6.4.png" width="500" >
+
+**IEEE 754 FP standard**
+
+<img src="src/w6.5.png" width="500" >
+
+<img src="src/w6.6.png" width="500" >
+
+**Some single-precision conversion examples**
+
+<img src="src/w6.7.png" width="500" >
+
+**add/sub in FP**
+
+<img src="src/w6.8.png" width="500" >
+
+## Week 8: Palindrome in assembly 
 
 
 
