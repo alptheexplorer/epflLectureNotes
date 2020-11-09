@@ -13,6 +13,7 @@ I initially took notes for semesters one and two in latex, using markdown only f
 
 
 ## The notes
+
 | Code     | Name                                                                                                                                                               | Semester | Project(if made)                                         |
 |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------------------------------------------------------|
 | CS-101   | [Advanced information and computation I](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterOne/advancedComputation/aicc.pdf) | 1        |                                                          |
@@ -33,7 +34,7 @@ I initially took notes for semesters one and two in latex, using markdown only f
 | CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                          |
 
 **Only the clickable courses are available**
-
+***PS: I apologize if not everything is up to date on time. EPFL has a veryyyy busy curriculum and trying to keep a healthy social life and staying physically fit sometimes makes it hard to stay up to date with everything(wink wink, the redundant physics courses we have every semester just to make life harder).***
 <a href="https://www.buymeacoffee.com/MGcsKPtYI" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="150" align="right" ></a>
 
 
