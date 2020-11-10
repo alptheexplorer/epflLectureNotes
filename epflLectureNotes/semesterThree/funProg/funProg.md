@@ -2,6 +2,10 @@
 
 ## Week 1
 
+****
+
+
+
 ### Evaluation strategies: **call by name** vs **call by value**
 
 Suppose we have a program in scala that runs `sumOfSquares(3, 2+2)`. The call-by-value model would produce:
@@ -62,8 +66,11 @@ def and(x: Boolean, y: => Boolean): Boolean =
 if x then y else false 
 ```
 
-
 ## Week 2
+
+****
+
+
 
 ### Higher order and anonymous functions
 
@@ -150,6 +157,10 @@ def addRational(r:Rational, s:Rational): Rational=
 
 ## Week 3
 
+****
+
+
+
 ### Classes and polymorphism 
 
 **Abstract classes** contain members which are missing an implementation, no direct instances can be created. 
@@ -222,6 +233,10 @@ class Nil[T] extends List[T]:
 
 ## Week 4
 
+****
+
+
+
 Our objective this week is to find a general and convenient way to access heterogeneous data in a class hierarchy. We will use **pattern matching** for this feat. 
 
 **Case classes** 
@@ -285,6 +300,10 @@ def insert(x: Int, xs: List[Int]): List[Int] = xs match
 ```
 
 ## Week 5 
+
+****
+
+
 
 **Important list methods**
 
@@ -364,6 +383,10 @@ def reverse[T](xs: List[T]): List[T] =
 **Higher order functions**: allow programmers to write generic functions that implement patterns such as transforming, retrieving and combining elements of a list or other data structures. 
 
 ## Week 6
+
+****
+
+
 
 **Collections**
 
@@ -479,7 +502,9 @@ def flatMap[U](f: T => List[U]): List[U] = xs match
 
 
 
-## Week 7 
+## Week 7
+
+
 
 **Translation of for**
 
@@ -540,3 +565,64 @@ books.flatMap(b=>b.authors.withFilter(a=>a.startsWith("Bird")).map(a=>b.title))
 **Functional random generators**
 
 How do we get random values for datatypes such as booleans, strings, lists and so on? 
+
+## Week 8
+
+****
+
+**Structural induction on trees**
+
+To prove P(t) for all trees t of a certain type:
+
+- show that P(l) holds for all leaves l
+- show that for all nodes t with subtrees s1,...,sn, P(s1)and...andP(s2) implies P(t)
+
+**Delayed evaluation**
+
+Avoid computing elements of a sequence until they are needed for the evaluation result. As an example, consider:
+
+`(1000 to 10000).filter(isPrime)(1)`
+
+It is highly inefficient to find all prime numbers in the given range and we risk not finding the second prime number(since we are looking for the first 2 in the range), so we must use lazy evaluation. 
+
+`(1 to 1000).to(LazyList)`
+
+will turn collection into a lazy list. 
+
+The above example would become:
+
+`LazyList.range(1000,10000).filter(isPrime)(1)`
+
+``` scala
+x :: xs //will produce a list
+```
+
+``` scala
+x #:: xs //will produce a lazy list
+```
+
+Another example: 
+
+```scala
+lazyRange(1,10).take(3).toList//prints 1,2,3
+```
+
+**Lazy evaluation**
+
+Consider:
+
+```scala
+def expr = 
+	val x = {print("x");1}
+	lazy val y = {print("y");2}
+	def z = {print("z");3}
+	z+y+x+z+y+x
+expr
+```
+
+The output of the above call is
+
+```scala
+xzyz // y does not get printed again because it is lazy and already evaluated
+```
+
