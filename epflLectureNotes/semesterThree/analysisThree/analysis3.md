@@ -14,11 +14,11 @@
 
 $$\nabla f(x) = (\frac{\partial f}{\partial x_{1}}, ...)$$
 
-**Divergence**: For $\Omega$ open, $f: \Omega \to \mathbb{R}^{n}$ is defined as: 
+**Divergence**: For $\Omega$ open, $F: \Omega \to \mathbb{R}^{n}$ is defined as: 
 
 $$div F(x) = (\nabla \cdot F)(x) = \frac{ \partial F_{1}}{\partial x_{1}} + ... \ + \frac{ \partial F_{n}}{\partial x_{n}} $$ 
 
-**Rotational**: Let $F: \Omega \to \mathbb{R}^{n}$ 
+**Rotational(better known as curl)**: Let $F: \Omega \to \mathbb{R}^{n}$ 
 
 if $n=2$ then: 
 
@@ -44,6 +44,10 @@ If $\Delta f = 0$ then $f$ is harmonic.
 1. $div \ grad f = \Delta f$
 2. for $n=2$, $rot \ grad f = 0$
 3. for $n=3$, $rot \ grad f = \vec0$
+
+**Some more intuition**
+
+
 
 
 ##  2. <a name='Week23:LineintegralsGreenstheorem'></a>Week 2/3: Line integrals, Greens theorem 
@@ -127,7 +131,34 @@ These are the steps we will follow:
 
 1. Verify that $rot F = 0$ if yes then move to step 2
 2. Verify that $\Omega$ is convex if yes then we are done, otherwise step 3
-3. 
+3. (most problems in exam take us to this step) Integrate $f(x,y,z) = \int F_{1}(t,y,z)dt + \alpha(y,z)$ and try to ajust $\alpha$ such that $\nabla f = F$ and goal is to find some $f$ which is the antiderivative of $F$. If we can't find such an $f$, our goal is to find some curve $l$ along which $\int Fdl \not = 0$ which naturally implies that $F$ can not be a potential. *Note that stating that because we can't find such a curve l with $\int Fdl \not = 0$ is never a valid reason to state F derives a potential*
+
+## Week 4: Green's theorem 
+
+**Boundary**
+Recall the boundary of some set $S$ is $\partial S = \{x \in \mathbb{R}^{n} | \forall \epsilon > 0 \ B_{\epsilon}(x) \cap S \not = 0 \land B_{\epsilon}(x) \cap S^{c} \not = 0\}$
+
+ **Green's theorem**
+ $$\int_{C} F \cdot dr = \int_{C} Pdx + Qdy = \int \int_{D}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dxdy$$ in terms of the curl we would say:
+
+ $$\int \int _{D} rot F(x,y)dxdy = \int F \cdot dl $$
+
+
+ **Corollary to Green**
+ Let $\Omega$ be a simple regular curve. Let $F = (-y,x)$ and $G_{1} = (0,x)$ and $G_{2} = (-y,0)$ then: 
+ $$\text{area}(\Omega) = \frac{1}{2}\int_{\partial \Omega} F \cdot dl = \int_{\partial \Omega} G_{1} \cdot dl = \int_{\partial \Omega} G_{1} \cdot dl$$
+
+**Exterior normal**
+For some simple regular curve $\Omega$, $v_{x_{0}}$ is a normal unit exterior if:
+1. $|v_{x_{0}}| = 1$
+2. for some parametrisation $\lambda$ of $\Omega$ with $\lambda(t_{0}|t_{0} \in [a,b])$ we have $<\lambda^{\prime}(t_{0}), v_{x_{0}}> = 0$
+3. $\exists \epsilon_{0} $ such that $\forall 0 < \epsilon < \epsilon_{0}$, $x_{0} + \epsilon v_{x_{0}} \not \in \Omega$
+
+**Theorem**
+let $\lambda: [a,b] \to \mathbb{R}^{2}$ be a parametrisation of the boundary of $\Omega$ leaving the domain on the right. Then:
+
+$$v_{\lambda} = \frac{1}{|\lambda^{\prime}|(\lambda_{2}^{\prime},- \lambda_{1}^{\prime})}$$
+
 
 
 
