@@ -1,7 +1,3 @@
-
-
-
-
 ## The internet
 ### What comprises the internet? 
 The internet is comprised of: 
@@ -694,4 +690,18 @@ This will reduce the forwarding table size because end-systems in the same range
 - all its end-systems and incident routers have IP addresses from the same IP prefix 
 
 <img src="src/7.6.png" width="500">
+
+**IP NAT**
+
+Since we are slowly running out of IP address capacity with increasing size of devices connecting to the net, we need a solution such as IPv6. But as an alternative, *Network address translation* allows a single device, such as a [router](https://computer.howstuffworks.com/router.htm), to act as an agent between the Internet (or "public network") and a local (or "private") network. This means that only a single, unique IP address is required to represent an entire group of computers.(taken from howStuffWorks)
+
+**How a NAT router maps to the correct device**
+
+When some device inside the NAT sends data, the below state is created 
+
+<img src="src/7.7.png" width="500">
+
+**Issues with NAT**
+
+- It is a complex setup when an end-system outside of the  subnet wants to communicate with an inner end system since its IP is ambigious. 
 
