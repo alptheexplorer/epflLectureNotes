@@ -705,3 +705,30 @@ When some device inside the NAT sends data, the below state is created
 
 - It is a complex setup when an end-system outside of the  subnet wants to communicate with an inner end system since its IP is ambigious. 
 
+**Summary of IP forwarding**
+
+<img src="src/7.8.png" width="500">
+
+**Least cost path routing**
+
+Imagine trying to reach the IP 8.0.0.1. Every router in the world has in its forwarding table an output link that specifies the output link to reach this IP.
+
+<img src="src/7.9.png" width="500">
+
+Imagine a set of first-hop routers(those routers located at the edge of a subnet) 
+
+<img src="src/8.0.png" width="500">
+
+The problem is, each router knowns how to access routers in its own subnet, but how will u know how to access z and vice versa? Well, for that we need a routing protocol. Imagine just a bunch of networks as below, we define a cost between networks as the sum of the delay for a roundtrip. 
+
+<img src="src/8.1.png" width="500">
+
+Now let's study the Dijkstra algorithm to find the least cost path. Here are the steps along with visuals:
+
+- For some router u, we create a table of all destinations
+
+- It first considers whether it can reach the routers and adds a cost, if there is an intermediate step, then for the time it can't reach that router 
+
+  <img src="src/8.2.png" width="500">
+
+- Then finally, for every router it can not directly reach, it considers whether intermidiary routers can help it reach it and always adds the router that lowers the cost. 
