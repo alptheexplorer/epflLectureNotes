@@ -158,9 +158,31 @@ Ofcourse the total electric field is the vector sum of the above two expressions
 <img src="src/w4.2.png" width="500">
 
 
+**Gauss' law**
+*Flux* is defined as $\sigma = \vec E \cdot d \vec A$, positive when field lines go inward and negative when they go outward. The total flux is thus $\int_{A} \vec E \cdot d \vec A$
+
+*Flux around a spherical surface*
+
+<img src="src/w4.3.png" width="500">
+
+*Gauss' law*: The flux of E-field over any closed surface is equal to the total enclosed charge over $\epsilon_{0}$ that is:
+
+$$\sum _{i} \frac{Q_{i}}{\epsilon_{0}}$$
+
+A consqeuence of Gauss' law is that no E-field can exist inside a hollow conductor due to electrostatic shielding. 
+
+*Gauss' divergence theorem*
+
+$\nabla \cdot \vec E = \frac{p}{\epsilon_{0}}$ note that this presents the same idea as Gauss' law. 
+
+## Week 5 
+
+Let's begin with a summary from last week:
+<img src="src/w5.1.png" width="500">
 
 
-
-
+**Using Gauss' law to find E-fields**
+Here is an example on how we would find the E-field around a uniformly charged spehere using Gauss: 
+<img src="src/w5.2.png" width="500">
 
 

@@ -1,5 +1,7 @@
 
 
+
+
 ## The internet
 ### What comprises the internet? 
 The internet is comprised of: 
@@ -600,4 +602,96 @@ Typical transmission problem:
 <img src="src/6.40.png" width="500">
 
 <img src="src/6.41.png" width="500">
+
+
+
+## Network layer
+
+**Basic functions**
+
+- forwarding
+- routing 
+
+**Two types**
+
+- virtual circuit networks
+- datagram networks 
+
+A *router* is known as a network layer switch. The router stores some mapping that links each header value it receives to some output link:
+
+<img src="src/7.1.png" width="500">
+
+**Forwarding**
+
+- Is a local process that takes place at a router and determines output link for each packet 
+
+**Routing algorithms**
+
+Option 1: (routing table computed by one central router that knows all others)
+
+<img src="src/7.2.png" width="500">
+
+Option 2: (routing table found collaboratively by all routers)
+
+<img src="src/7.3.png" width="500">
+
+**Forwarding**: determines output link for each packet
+
+**Routing**: populates forwarding tables 
+
+**Network layer types**
+
+- virtual-circuit:
+  - uses connection switching, guarantees performance 
+
+- datagram network 
+
+**Connection&State**
+
+To say that a set of entities have established a connection, it means that they keep a certain state about each other which they can use to synchronize with each other. 
+
+**Problems with state in the network layer**
+
+A problem with the virtual circuit approach is that a router in the middle of the internet would require large amounts of memory to store state about all its communications. Another issue is security, an attacker can setup multiple routers and flood the forwarding table of the router. 
+
+**Datagrams**
+
+- uses packet-switching, that is no network-layer connection
+- appropriate for best-effort service(the network does not provide any guarantee that data is delivered or that delivery meets any quality of **service**)
+
+Each router maps a certain range of IP addresses to an output link. 
+
+<img src="src/7.4.png" width="500">
+
+The mapping may be done by extracting the common binary form of the given range. 
+
+<img src="src/7.5.png" width="500">
+
+**Why IP addresses must be location dependent**
+
+This will reduce the forwarding table size because end-systems in the same range can map to the same prefix. So we have that:
+
+- address proximity implies location proximity 
+
+**IP address format**
+
+- number from 0 to 2^32 -1 
+
+- we present in dot format, ie:
+
+  ​	1101111 00000001 ......
+
+  ​	becomes
+
+  ​	223.1.1.1
+
+- IP prefix: range of IP addresses represented by mask, covers all IP addresses whose M MSB's are the same, ie: 223.1.1.*(the prefix)
+
+**IP subnet**
+
+- is assigned an IP prefix 
+- is a contiguous network area that does not contain any routers 
+- all its end-systems and incident routers have IP addresses from the same IP prefix 
+
+<img src="src/7.6.png" width="500">
 

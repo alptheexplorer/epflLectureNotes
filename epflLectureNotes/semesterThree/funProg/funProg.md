@@ -626,3 +626,21 @@ The output of the above call is
 xzyz // y does not get printed again because it is lazy and already evaluated
 ```
 
+## Week 9
+
+****
+
+**Stateful objects**
+
+An object whose state depends on its history is called a stateful object. To implement state, we use `var` . That is, objects with state are represented by objects that have some variable members. 
+
+**Operational equivalence**
+
+`x` and `y` are operationally equivalent if no possible test can distinguish between them .
+
+**whileDo**
+
+`whileDo(condition)(command)`
+
+In scala, variables are enough to model imperative programs, but what about control statements like loops? Well we can purely model them using functions. 
+
