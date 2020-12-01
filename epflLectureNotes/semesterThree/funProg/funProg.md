@@ -644,3 +644,55 @@ An object whose state depends on its history is called a stateful object. To imp
 
 In scala, variables are enough to model imperative programs, but what about control statements like loops? Well we can purely model them using functions. 
 
+## Week 10
+
+*****
+
+**Imperative event handling: observer pattern**
+
+Our goal is to explore functional reactive programming which can be used to improve on the imperative view of the observer pattern. 
+
+**FRP**
+
+Aggregates an event sequence into a signal:
+
+- value that changes over time 
+- represented as a function from time to value domain 
+- define new signals in terms of existing ones 
+
+<img src="src/w10.png" width="500" >
+
+Here's the main difference, the classical imperative approach would just return a bool if we wanted to check whether the cursor is inside some rectangle whereas the FP approach returns a functional that at any time can be queried and has variable result. 
+
+<img src="src/w10.1.png" width="500" >
+
+*Signal vars* are quite similar to mutable variables. 
+
+<img src="src/w10.2.png" width="500" >
+
+We must be careful to not think in the imperative way, for example 
+
+```
+v = v + 1
+```
+
+makes sense imperatively but
+
+```
+s() = s() + 1 
+```
+
+doesn't make sense because a signal can not be larger than itself at all points. 
+
+Here's a fix to the above using the bankaccount example, instead of writing:
+
+<img src="src/w10.3.png" width="500" >
+
+we write:
+
+<img src="src/w10.4.png" width="500" >
+
+**Dependency maintenance in observer pattern**
+
+<img src="src/w10.5.png" width="500" >
+
