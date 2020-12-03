@@ -1,4 +1,4 @@
-# Computer Architecture 
+Computer Architecture 
 
 ## Week 1: Simple general processor
 
@@ -594,7 +594,79 @@ Notice that associativity of addition no longer holds.
 
 <img src="src/w6.8.png" width="500" >
 
-## Week 8: Palindrome in assembly 
+## Week 9: Cache 
+
+Let's begin with a reminder on SRAM and DRAM;
+
+<img src="src/9.0.png" width="500" >
+
+<img src="src/9.1.png" width="500" >
+
+There are two important criteria when deciding where to store instructions and data:
+
+<img src="src/9.2.png" width="500" >
+
+**Essential constraints on allocation policy**
+
+- Must be invisible to the programmer
+- Must be extremely simple and fast 
+
+**Basic cache design**
+
+<img src="src/9.4.png" width="500" >
+
+- Cache only holds part of a program, generally i will hold most recently accessed data/instructions. 
+- Cache is divided into units called cache blocks
+- Each cache block has extra bits, called cache tag, which hold the main memory address of the data that is currently in the cache block 
+
+A crucial point is that **cache is on the path between processor and main memory**. 
+
+**Hits and misses**
+
+- When data is found, it is a hit, otherwise it is a miss
+- Hit rate is the number of hits over total number of cache accesses, and same applies for miss rate
+
+**HIT**
+
+<img src="src/9.5.png" width="500" >
+
+**MISS**
+
+<img src="src/9.6.png" width="500" >
+
+Let's now explore the 4 methods of writing to cache:
+
+**Write-through cache**
+
+<img src="src/9.7.png" width="500" >
+
+**Write-Back Cache**
+
+<img src="src/9.8.png" width="500" >
+
+**Write allocate**
+
+<img src="src/9.9.png" width="500" >
+
+**Write no-allocate**
+
+<img src="src/9.10.png" width="500" >
 
 
+
+**Eviction policy**
+
+- When there is no space for new data, we must overwrrite an existing line. This is called eviction or replacement. 
+- LRU(Overwrites cache line which has not been accessed for longest period of time)
+- Randomly overwritte 
+
+**Cache type 1: Fully associative cache**
+
+Associative == indicates number of cache lines where one word of data can be placed, hence *fully associative* means a word can go in whichever line of cache
+
+The fully associative cache architecture
+
+<img src="src/9.11.png" width="500" >
+
+As we compare if incoming tag is contained in the container tags, the final oring result determines if we have a hit or a miss. 
 
