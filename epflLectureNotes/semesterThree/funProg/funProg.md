@@ -696,3 +696,24 @@ we write:
 
 <img src="src/w10.5.png" width="500" >
 
+**Exploring interpreters**
+
+A program is represented using an expression tree, known as an Abstract Syntax Tree(AST). Our goal is to see how the interpreter is implemented which traverses the AST to produce a result. Here is how we wish to grow the interpreter: 
+
+<img src="src/w10.6.png" width="500" >
+
+Printing:
+
+<img src="src/w10.8.png" width="500" >
+
+Now how may we extend our evaluator to work with say the absolute value? Two options:
+
+- add a case to interpreter
+- transform(desugar) trees to reduce them to previous cases 
+
+Desugared AbsVal: 
+
+<img src="src/w10.9.png" width="500" >
+
+
+
