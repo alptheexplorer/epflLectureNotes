@@ -711,6 +711,8 @@ When some device inside the NAT sends data, the below state is created
 
 **Least cost path routing**
 
+*Using Dijkstra*
+
 Imagine trying to reach the IP 8.0.0.1. Every router in the world has in its forwarding table an output link that specifies the output link to reach this IP.
 
 <img src="src/7.9.png" width="500">
@@ -732,3 +734,76 @@ Now let's study the Dijkstra algorithm to find the least cost path. Here are the
   <img src="src/8.2.png" width="500">
 
 - Then finally, for every router it can not directly reach, it considers whether intermidiary routers can help it reach it and always adds the router that lowers the cost. 
+
+**Link-state vs. distance-vector**
+
+<img src="src/8.4.png" width="500">
+
+**Network security**
+
+Some security properties:
+
+- Confidentiality: only sender and receiever understand contents of message 
+- Authenticity: message is from whom it claims to be 
+- Integrity: message was not changed along the way 
+
+## Link Layer
+
+Here is how it compares to the network layer:
+
+- the network layer takes each packet from one of of network to the other end, whereas the link layers takes each packet from one end of one link to the other end or better said:
+  	- link layer takes packet from one end of one physical link to the other end
+  	- network layer takes packet from one end of IP subnet to the other end 
+
+<img src="src/8.5.png" width="500">
+
+<img src="src/8.6.png" width="500">
+
+Some link layer services:
+
+- Error detection;
+  - receiver detects and drops corrupted packets
+  - relies on checksums 
+- Reliable data delivery 
+  - sender/reciever detect corruption and loss and try to recover 
+  - relies on checksums, ACKs, retransmits 
+  - only for error-prone links
+- Medium access control(MAC)
+  - sendder manages access to shared medium 
+  - listens for ongoing transmissions
+  - backs off and retries later 
+
+**Ethernet**
+
+*Addressing*
+
+ <img src="src/8.7.png" width="500">
+
+MAC address properties:
+
+- 48 bit number:
+  - each byte is in hexa
+- Flat:
+  - not hierarchical like IP
+  - not location dependent 
+
+*Forwarding*
+
+<img src="src/8.8.png" width="500">
+
+<img src="src/8.9.png" width="500">
+
+except the fact that L2 is flat so it can not rely on stuff like prefixes. 
+
+<img src="src/8.10.png" width="500">
+
+*Learning*
+
+<img src="src/8.11.png" width="500">
+
+*Address resolution*
+
+ARP request:
+
+<img src="src/8.12.png" width="500">
+
