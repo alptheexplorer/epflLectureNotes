@@ -670,3 +670,31 @@ The fully associative cache architecture
 
 As we compare if incoming tag is contained in the container tags, the final oring result determines if we have a hit or a miss. 
 
+**Valid bit**
+
+A special bit called a valid bit is added to every cache line to indicate whether the line content is relevant to current program. At reset or program beginning, valid bit is 0. When checking for hit/miss, valid must be checked, we have a hit only if tag matches and valid bit is 1. 
+
+Here is a design that takes advantage of spatial locality by mapping 4 words to the same tag:
+
+<img src="src/9.12.png" width="500" >
+
+In the more general case, if 2^m bits are loaded at a time and the memory is n-bits wide, then:
+
+- last m bits of the address are used to select a word from cache
+- first (n-m) bits of the address form the tag of the cache line 
+
+But the issue is that fully-associative caches come at a high cost because they require a lot of comparators so we must do better. On the opposite spectrum lies the direct-mapped cache:
+
+<img src="src/9.13.png" width="500" >
+
+Example of accessing to a fully-associative cache:
+
+<img src="src/9.14.png" width="500" >
+
+Below we see an occurenece of a conflict miss, that is we need to overwrite a location that already is filled up. The location to write is specified by bit indices 2-7. 
+
+Let's remind that the difference between fully-associative and direct-mapped is that in the former every word can go in every line of cache, whereas in the later, every word is mapped to a single line of the cache. The compromise of the two is **set-associative** where every word is mapped to as many lines of cache as there are ways, where the lines have the same index. 
+
+Example:
+
+Two-way associative cache is like having two direct-mapped caches. 
