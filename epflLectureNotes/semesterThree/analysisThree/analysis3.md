@@ -141,12 +141,12 @@ Recall the boundary of some set $S$ is $\partial S = \{x \in \mathbb{R}^{n} | \f
  **Green's theorem**
  $$\int_{C} F \cdot dr = \int_{C} Pdx + Qdy = \int \int_{D}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dxdy$$ in terms of the curl we would say:
 
- $$\int \int _{D} rot F(x,y)dxdy = \int F \cdot dl $$
+ $$\int \int _{D} rot F(x,y)dxdy = \int_{\partial \Omega} F \cdot dl $$
 
 
  **Corollary to Green**
  Let $\Omega$ be a simple regular curve. Let $F = (-y,x)$ and $G_{1} = (0,x)$ and $G_{2} = (-y,0)$ then: 
- $$\text{area}(\Omega) = \frac{1}{2}\int_{\partial \Omega} F \cdot dl = \int_{\partial \Omega} G_{1} \cdot dl = \int_{\partial \Omega} G_{1} \cdot dl$$
+ $$\text{area}(\Omega) = \frac{1}{2}\int_{\partial \Omega} F \cdot dl = \int_{\partial \Omega} G_{1} \cdot dl$$
 
 **Exterior normal**
 For some simple regular curve $\Omega$, $v_{x_{0}}$ is a normal unit exterior if:
@@ -159,12 +159,24 @@ let $\lambda: [a,b] \to \mathbb{R}^{2}$ be a parametrisation of the boundary of 
 
 $$v_{\lambda} = \frac{1}{|\lambda^{\prime}|(\lambda_{2}^{\prime},- \lambda_{1}^{\prime})}$$
 
+**Some examples of Green**
 
+<img src="src/4.3.png" width="200" >
 
+An example using the LHS:
+<img src="src/4.4.png" width="200" >
 
+Now same result integrating along boundary: 
+<img src="src/4.5.png" width="200" >
 
+<img src="src/4.6.png" width="200" >
 
+<img src="src/4.7.png" width="200" >
 
+Another useful formula we have describes the integral when integrating over part of a boundary:
 
+<img src="src/4.8.png" width="200" >
 
+And another important result:
+<img src="src/4.9.png" width="200" >
 
