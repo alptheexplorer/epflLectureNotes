@@ -32,12 +32,9 @@ I initially took notes for semesters one and two in latex, using markdown only f
 | COM-208  | [Computer networks](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/computerNetworks/compNetworks.md)                | 3        |                                                          |
 | PHYS-114 | [General Physics II](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/physicsTwo/physics2.pdf)                                                                                                                                                 | 3        |                                                          |
 | CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                          |
-| CS-212   | [Intro to C]
-https://github.com/alptheexplorer/CS-212)                         | 3        |                                                          |
+| CS-212   | [Intro to C](https://github.com/alptheexplorer/CS-212)                         | 4        |                                                          |
 
 
-
-https://github.com/alptheexplorer/CS-212
 
 **Only the clickable courses are available**
 ***PS: I apologize if not everything is up to date on time. EPFL has a veryyyy busy curriculum and trying to keep a healthy social life and staying physically fit sometimes makes it hard to stay up to date with everything(wink wink, the redundant physics courses we have every semester just to make life harder).***
