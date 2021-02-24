@@ -33,6 +33,8 @@ I initially took notes for semesters one and two in latex, using markdown only f
 | PHYS-114 | [General Physics II](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/physicsTwo/physics2.pdf)                                                                                                                                                 | 3        |                                                          |
 | CS-210   | [Functional programming](https://github.com/alptheexplorer/epflLectureNotes/blob/master/epflLectureNotes/semesterThree/funProg/funProg.md)                         | 3        |                                                          |
 | CS-212   | [Intro to C](https://github.com/alptheexplorer/CS-212)                         | 4        |                                                          |
+| CS-206   | [Parallelism and concurrency](https://github.com/alptheexplorer/epflLectureNotes/tree/master/epflLectureNotes/semesterFour/CS-206/Recitation%20session)                         | 4        |                                                          |
+
 
 
 
